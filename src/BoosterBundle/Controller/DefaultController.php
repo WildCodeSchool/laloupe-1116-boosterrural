@@ -6,8 +6,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class DefaultController extends Controller
 {
-    public function indexAction()
+    public function mayorAction()
     {
-        return $this->render('BoosterBundle:Default:index.html.twig');
+        return $this->render('BoosterBundle::mayor.html.twig');
     }
 }

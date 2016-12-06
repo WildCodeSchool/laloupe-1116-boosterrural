@@ -1,10 +1,35 @@
 
 /*-------------------- commom------------------------ */
+body{
+    background-color: rgb(204,204,204);
+
+}
 .container-fluid{
-    background-color: rgb(204, 204, 204);
+    width: 80%;
 }
 /*-------------------End Common-------------------*/
 /*----------- Mayor------------------*/
 
+h1{
+    color: #6b9311;
+}
+.two_col{
+    display: flex;
 
+}
+img{
+    margin: 0;
+}
+
+.section, .thumbnail{
+    background-color: white;
+}
+
+.thumbnail{
+    border: none;
+}
+
+.word{
+    margin: 30px 0 30px 0;
+}
 /*----------- End Mayor------------------*/
