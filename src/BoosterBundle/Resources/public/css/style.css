@@ -4,9 +4,6 @@ body{
     background-color: rgb(204,204,204);
 
 }
-.container-fluid{
-    width: 80%;
-}
 /*-------------------End Common-------------------*/
 /*----------- Mayor------------------*/
 
@@ -17,19 +14,30 @@ h1{
     display: flex;
 
 }
-img{
-    margin: 0;
+img, .text{
+    margin: 10px 0 10px 0;
 }
 
 .section, .thumbnail{
     background-color: white;
-}
-
-.thumbnail{
     border: none;
+    margin-bottom: 0;
 }
 
-.word{
+.word, .town{
     margin: 30px 0 30px 0;
+
+}
+
+.title{
+    text-align: center;
+}
+
+.why{
+
+}
+
+.geolocation{
+
 }
 /*----------- End Mayor------------------*/
