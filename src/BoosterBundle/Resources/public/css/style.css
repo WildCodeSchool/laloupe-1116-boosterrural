@@ -4,59 +4,48 @@
 
 body{
     background-color: rgb(204,204,204);
+}
 
+li {
+    list-style-type: none;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+p {
+    text-align: justify;
+}
+
+section {
+    border: 1px solid gray;
 }
 
 /******************************************************/
 /************************ END COMMON ******************/
 /******************************************************/
 
+.backWhite {
+    background-color: white;
+}
+
+span {
+    font-weight: bold;
+}
+
+.pitureMini {
+    width: 100%;
+    padding-top: 20px;
+}
+
 /******************************************************/
 /************************ ACTOR ***********************/
 /******************************************************/
 
-h1{
-    text-align: center;
-}
-img{
-    margin-right: auto;
-    margin-left: auto;
-}
-.pict1{
-    margin-top: 20px;
-    margin-bottom: 20px;
 
-}
-img, .text{
-    margin: 10px 0 10px 0;
-}
-
-.section, .thumbnail{
-    background-color: white;
-    border: none;
-    margin-bottom: 0;
-}
-
-.word, .town{
-    margin: 30px 0 30px 0;
-
-}
-
-.title{
-    text-align: center;
-}
-
-.block-map{
-    padding-right: 0;
-    padding-left: 0;
-    margin-bottom: 30px;
-}
-.map1{
-    height: 300px;
-}
-.map2{
-    padding-bottom: 25px;
-}
 
 
 /******************************************************/
