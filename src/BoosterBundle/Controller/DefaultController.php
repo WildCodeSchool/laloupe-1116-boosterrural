@@ -6,8 +6,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class DefaultController extends Controller
 {
-    public function mayorAction()
+    public function actorAction()
     {
-        return $this->render('BoosterBundle::mayor.html.twig');
+        return $this->render('BoosterBundle::actor.html.twig');
     }
 }

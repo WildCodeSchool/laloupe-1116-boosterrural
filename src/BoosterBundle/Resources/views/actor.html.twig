@@ -1,0 +1,145 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+    <div class="row town ">
+        <div class="col-xs-12 col-md-offset-1 col-md-10 section">
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="row">
+                    {# <div class="thumbnail col-xs-12">#}
+                    <img src="{{ asset ('bundles/booster/img/ville.jpg') }}" alt="ville" class="pict1 block-center ">
+                    {#</div>#}
+                </div>
+            </div>
+            <div>
+
+                <div class="col-xs-12 col-md-6 section text">
+
+                    <h1>LA LOUPE</h1>
+                    <ul class="col-xs-6 col-md-6">
+                        <li>lieu: 28240 Eure et loir Centre val de loire</li>
+                        <li>Nbre d'habitants : 3350 </li>
+                        <li>https://mairielaloupe.fr</li>
+                    </ul>
+                    <ul class="col-xs-6  col-md-6">
+                        <li>mail: mairielaloupe@mail.fr</li>
+                        <li>Téléphone : 0237895865</li>
+                        <li>Maire: Florian Martin</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row word ">
+        <div class="col-md-offset-1 col-md-10 section">
+            <div class="col-xs-12 col-md-6 section text   ">
+                <h2 class="title">Le mot du Maire</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut inventore, quibusdam. Aperiam culpa dolore ea facere fugiat, inventore iusto laborum numquam officiis optio placeat quas sapiente soluta suscipit voluptatem voluptatibus!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut inventore, quibusdam. Aperiam culpa dolore ea facere fugiat, inventore iusto laborum numquam officiis optio placeat quas sapiente soluta suscipit voluptatem voluptatibus!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut inventore, quibusdam. Aperiam culpa dolore ea facere fugiat, inventore iusto laborum numquam officiis optio placeat quas sapiente soluta suscipit voluptatem voluptatibus!</p>
+                </ul>
+            </div>
+            <div class="row">
+
+                <div class="col-xs-12 col-sm-6 col-md-6 section">
+                    {# <div class="thumbnail ">#}
+                    <img src="{{ asset ('bundles/booster/img/maire.jpg') }}" alt="ville" class="img-responsive ">
+                    {#</div>#}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row ">
+        <div class="col-md-offset-1 col-md-10 block-map ">
+            <div class="col-md-6 why ">
+                <div class="col-md-12 section ">
+                    <img src="" alt="">
+                    <img src="" alt="">
+                    <img src="" alt="">
+                    <h2 class="title">Pourquoi nous sommes dynamique ?</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut inventore, quibusdam. Aperiam culpa dolore ea facere fugiat, inventore iusto laborum numquam officiis optio placeat quas sapiente soluta suscipit voluptatem voluptatibus!</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut inventore, quibusdam. Aperiam culpa dolore ea facere fugiat, inventore iusto laborum numquam officiis optio placeat quas sapiente soluta suscipit voluptatem voluptatibus!</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut inventore, quibusdam. Aperiam culpa dolore ea facere fugiat, inventore iusto laborum numquam officiis optio placeat quas sapiente soluta suscipit voluptatem voluptatibus!</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 geolocation ">
+                <div class="col-md-12 section map2">
+                    <h2 class="title">Ma localisation</h2>
+                    <div class="col-md-offset-1 col-md-10 map1" id="map"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row ">
+        <div class="col-md-offset-1 col-md-10 block-matching ">
+            <div class="col-md-6 offers ">
+                <div class="col-md-12 section">
+                    <h2 class="title">Mes Offres</h2>
+                    <ul>
+                        <li>Offre 1</li>
+                        <li>Offre 2</li>
+                        <li>Offre 3</li>
+                        <li>Offre 4</li>
+                        <li>Offre 5</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-6 need ">
+                <div class="col-md-12 section">
+                    <h2 class="title">Mes Besoins</h2>
+                    <ul>
+                        <li>Offre 1</li>
+                        <li>Offre 2</li>
+                        <li>Offre 3</li>
+                        <li>Offre 4</li>
+                        <li>Offre 5</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+{% block javascripts %}
+    <script>
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 14,
+                center: {lat: 48.471285, lng: 1.0143050000000358}
+            });
+
+            var layer = new google.maps.visualization.DynamicMapsEngineLayer({
+                layerId: '06673056454046135537-08896501997766553811',
+                map: map,
+                suppressInfoWindows: true,
+                clickable: true
+            });
+
+            layer.addListener('mouseover', function(event) {
+                var style = layer.getFeatureStyle(event.featureId);
+                style.fillColor = colors[event.featureId - 1];
+                style.fillOpacity = '0.8';
+            });
+
+            layer.addListener('mouseout', function(event) {
+                layer.getFeatureStyle(event.featureId).resetAll();
+            });
+        }
+
+        var colors = ['red', 'blue', 'yellow', 'green'];
+
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoRRGMzU918m3yrQaoeyvNuU0U0hjCqfo&signed_in=true&libraries=visualization&callback=initMap">
+    </script>
+
+{% endblock %}
