@@ -9,9 +9,12 @@ body{
 
 h1{
     color: #6b9311;
+    text-align: center;
+
 }
-.two_col{
-    display: flex;
+.pict1{
+    margin-top: 20px;
+    margin-bottom: 20px;
 
 }
 img, .text{
@@ -33,11 +36,17 @@ img, .text{
     text-align: center;
 }
 
-.why{
-
+.block-map{
+    padding-right: 0;
+    padding-left: 0;
+    margin-bottom: 30px;
+}
+.map1{
+    height: 300px;
+}
+.map2{
+    padding-bottom: 25px;
 }
 
-.geolocation{
 
-}
 /*----------- End Mayor------------------*/
