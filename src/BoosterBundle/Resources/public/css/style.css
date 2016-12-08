@@ -1,10 +1,118 @@
+/*******************************************************/
+/********************* COMMON **************************/
+/*******************************************************/
 
-/*-------------------- commom------------------------ */
-.container-fluid{
+body {
     background-color: rgb(204, 204, 204);
 }
-/*-------------------End Common-------------------*/
-/*----------- Mayor------------------*/
 
+.container-fluid {
+    width: 80%;
+}
 
-/*----------- End Mayor------------------*/
+h1, h2 {
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 50px 0px;
+}
+
+p {
+    text-align: justify;
+}
+
+/*******************************************************/
+/******************** END COMMON ***********************/
+/*******************************************************/
+
+/*******************************************************/
+/****************** PAGE MAYOR FRONT *******************/
+/*******************************************************/
+
+/*******************************************************/
+/************* END MAYOR PAGE FRONT ********************/
+/*******************************************************/
+
+/*******************************************************/
+/************** HOME PAGE NO CONNECT *******************/
+/*******************************************************/
+
+section {
+    background-color: white;
+}
+
+@media all and (max-width: 1800px)
+
+{
+    .map_deco {
+        display: none;
+    }
+}
+
+#HPmap {
+    height: 600px;
+    width: 600px;
+    border: 1px solid gray;
+}
+
+.map_deco {
+    position: relative;
+    padding-top: 300px;
+    padding-bottom: 450px;
+    border: 1px solid gray;
+}
+
+.imgHP1 {
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    width: 20%;
+}
+
+.imgHP2 {
+    position: absolute;
+    right: 130px;
+    bottom: 700px;
+    width: 15%;
+}
+
+.imgHP3 {
+    position: absolute;
+    left: 600px;
+    bottom: 30px;
+    width: 20%;
+}
+
+.fleche1 {
+    position: absolute;
+    right: 600px;
+    top: -150px;
+    transform: rotate(250deg);
+    width: 20%;
+}
+
+.fleche2 {
+    position: absolute;
+    left: 100px;
+    bottom: 250px;
+    transform: rotate(500deg);
+    width: 20%;
+}
+
+.fleche3 {
+    position: absolute;
+    right: 150px;
+    bottom: 150px;
+    transform: rotate(15deg);
+    width: 20%;
+}
+
+.downPage {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid gray;
+}
+
+/*******************************************************/
+/************** END HOME PAGE NO CONNECT ***************/
+/*******************************************************/

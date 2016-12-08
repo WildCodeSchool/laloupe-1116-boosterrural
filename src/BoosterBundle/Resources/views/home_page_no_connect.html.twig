@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+    <h1>rejoignez la communauté</h1>
+
+    <div class="row">
+        <div class="hidden-xs hidden-sm hidden-md col-lg-12">
+            <section class="map_deco">
+                        <img src="{{ asset('bundles/booster/img/maire.png') }}" alt="photo_maire" class="center-block imgHP1"/>
+                        <img src="{{ asset('bundles/booster/img/fleche.png') }}" alt="fleche" class="fleche1"/>
+
+                        <img src="{{ asset('bundles/booster/img/citoyen.png') }}" alt="photo_citoyen" class="center-block imgHP2"/>
+                        <img src="{{ asset('bundles/booster/img/fleche.png') }}" alt="fleche" class="fleche2"/>
+
+                        <div id="HPmap" class="center-block"></div>
+
+                        <img src="{{ asset('bundles/booster/img/acteur.png') }}" alt="photo_acteur" class="center-block imgHP3"/>
+                        <img src="{{ asset('bundles/booster/img/fleche.png') }}" alt="fleche" class="fleche3"/>
+            </section>
+        </div>
+    </div>
+
+        <h2>concept du projet</h2>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <section class="downPage">
+                <p>
+                    Ensemble le booster Rural, La Plateforme Numérique dynamique des Ruralités
+                    est un outil  de  mise en relationS de bonnes pratiques et d’opportunitEs INNOVANTES sur les territoires ruraux entre  Des maires, Des porteurs de projets, des acteurs, Des TPE, Des Citoyens Urbains et D’ autres plateformes DU MONDE RURAL
+                    Ce projet a pour objectif de soutenir les territoires ruraux  par un maillage des acteurs dynamiques des territoires entendu les maires, les acteurs ou porteurs de projets, les TPE et les citoyens urbains.
+                    Ceci afin d’enrichir, de diversifier, de rajeunir, et de dynamiser l’action locale grâce à la mise lien d’une multitude d’acteurs innovants qui ne se connaissent ou ne se rencontrent pas
+                    L’objectif est à la fois d’enrayer la désertification rurale, d’offrir une ouverture sur des territoires aux nombreuses ressources et d’inciter à innover ensemble sur ces territoires.<br><br>
+                    Pour ce faire, la plateforme offre plusieurs services :
+                    <ul>
+                        <li>Un espace d’expression pour les maires et leur écosystème dynamique, les porteurs de projets et les réseaux d’acteurs</li>
+                        <li>Un service de mise en relation ou de matching qualitatif entre les acteurs</li>
+                        <li>Le repérage et l’identification des réseaux ou acteurs les plus innovants sur le territoire dans tous les secteurs grâce à une carte</li>
+                        <li>La présentation d’événements et de partenariat avec d’autres plateformes</li>
+                    </ul>
+                </p>
+            </section>
+        </div>
+    </div>
+
+    {% block javascripts %}
+        <script>
+            function initMap() {
+            var map = new google.maps.Map(document.getElementById('HPmap'), {
+            zoom: 6,
+            center: {lat: 46.811434, lng: 1.6867790000000014}
+            });
+
+            var layer = new google.maps.visualization.DynamicMapsEngineLayer({
+            layerId: '06673056454046135537-08896501997766553811',
+            map: map,
+            suppressInfoWindows: true,
+            clickable: true
+            });
+
+            layer.addListener('mouseover', function(event) {
+            var style = layer.getFeatureStyle(event.featureId);
+            style.fillColor = colors[event.featureId - 1];
+            style.fillOpacity = '0.8';
+            });
+
+            layer.addListener('mouseout', function(event) {
+            layer.getFeatureStyle(event.featureId).resetAll();
+            });
+            }
+
+            var colors = ['red', 'blue', 'yellow', 'green'];
+        </script>
+        <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBR84fXWLx5T5AOpRQHNXs7w3U9jdPneFU&signed_in=true&libraries=visualization&callback=initMap">
+        </script>
+
+    {% endblock %}
+
+{% endblock %}
