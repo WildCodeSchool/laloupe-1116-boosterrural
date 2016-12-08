@@ -12,6 +12,10 @@ h1{
     text-align: center;
 
 }
+img{
+    margin-right: auto;
+    margin-left: auto;
+}
 .pict1{
     margin-top: 20px;
     margin-bottom: 20px;
