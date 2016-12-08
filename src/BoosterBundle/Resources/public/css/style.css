@@ -41,17 +41,9 @@ section {
     background-color: white;
 }
 
-@media all and (max-width: 1800px)
-
-{
-    .map_deco {
-        display: none;
-    }
-}
-
 #HPmap {
     height: 600px;
-    width: 600px;
+    width: 40%;
     border: 1px solid gray;
 }
 
@@ -64,45 +56,45 @@ section {
 
 .imgHP1 {
     position: absolute;
-    left: 100px;
-    top: 100px;
+    left: 5%;
+    top: 5%;
     width: 20%;
 }
 
 .imgHP2 {
     position: absolute;
-    right: 130px;
-    bottom: 700px;
+    right: 10%;
+    top: 20%;
     width: 15%;
 }
 
 .imgHP3 {
     position: absolute;
-    left: 600px;
-    bottom: 30px;
+    left: 40%;
+    bottom: 2%;
     width: 20%;
 }
 
 .fleche1 {
     position: absolute;
-    right: 600px;
-    top: -150px;
+    right: 40%;
+    top: -10%;
     transform: rotate(250deg);
     width: 20%;
 }
 
 .fleche2 {
     position: absolute;
-    left: 100px;
-    bottom: 250px;
+    left: 5%;
+    bottom: 15%;
     transform: rotate(500deg);
     width: 20%;
 }
 
 .fleche3 {
     position: absolute;
-    right: 150px;
-    bottom: 150px;
+    right: 10%;
+    bottom: 10%;
     transform: rotate(15deg);
     width: 20%;
 }
@@ -111,6 +103,51 @@ section {
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid gray;
+}
+
+/************** Media Queries ***************/
+
+@media all and (max-width: 1670px)
+
+{
+    #HPmap {
+        height: 550px;
+    }
+
+    .map_deco {
+        position: relative;
+        padding-top: 250px;
+        padding-bottom: 400px;
+    }
+}
+
+
+@media all and (max-width: 1500px)
+
+{
+    #HPmap {
+        height: 400px;
+    }
+
+    .map_deco {
+        position: relative;
+        padding-top: 250px;
+        padding-bottom: 400px;
+    }
+}
+
+@media all and (max-width: 1350px)
+
+{
+    #HPmap {
+        height: 350px;
+    }
+
+    .map_deco {
+        position: relative;
+        padding-top: 150px;
+        padding-bottom: 300px;
+    }
 }
 
 /*******************************************************/
