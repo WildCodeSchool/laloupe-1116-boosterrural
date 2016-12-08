@@ -1,9 +1,99 @@
 
-/*-------------------- commom------------------------ */
+/*--------------------commom------------------------ */
 .container-fluid{
     background-color: rgb(204, 204, 204);
 }
 /*-------------------End Common-------------------*/
+
+/*----------------Header---------------*/
+.navbar{
+    background-color: rgb(252, 183, 0);
+    padding-top: 7px;
+    border-color: rgb(252, 183, 0);
+}
+
+.color{
+    background-color: rgb(252, 183, 0);
+}
+
+.logo-header{
+    text-align: center;
+    padding-top: 7px;
+}
+
+.navbar-default .navbar-nav > li > a{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+}
+
+.navbar-default .navbar-nav > li > a:hover{
+    color: white;
+    text-decoration: none;
+    border: none;
+}
+
+.navbar-default .navbar-nav > li > a:focus{
+    color: white;
+    text-decoration: none;
+    border: none;
+}
+
+button:hover{
+    background-color: rgb(252, 183, 0);
+}
+
+button:focus{
+    background-color: rgb(252, 183, 0);
+}
+
+.icon-bar{
+    background-color: white;
+}
+
+/*----------------End Header---------------*/
+
+/*----------------Footer-------------------*/
+
+.color-footer{
+    background-color: rgb(99, 88, 88);
+}
+
+.foot-item{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
+
+}
+
+.foot-item:hover{
+    text-decoration: none;
+    color: white;
+}
+
+.foot-item:focus{
+    text-decoration: none;
+    color: white;
+}
+
+.li-footer{
+    list-style: none;
+    padding-bottom: 15px;
+}
+
+.ul-footer{
+    padding-top: 25px;
+    text-align: center;
+}
+
+.logo-footer{
+    padding-top: 18px;
+    padding-left: 10px;
+}
+/*----------------End Footer-------------------*/
+
 /*----------- Mayor------------------*/
 
 

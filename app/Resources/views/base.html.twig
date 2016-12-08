@@ -4,17 +4,122 @@
     <meta charset="UTF-8" />
     <title>{% block title %}Welcome!{% endblock %}</title>
     {% block stylesheets %}
-        <link rel="stylesheet" href="{{ asset('bundles/booster/css/style.css') }}"
-
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/booster/css/style.css') }}" />
     {% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 </head>
 
 <body>
-<div class="container-fluid">
-    {% block body %}{% endblock %}
-    {% block javascripts %}{% endblock %}
+<!-- header -->
+<div class="container-fluid color">
+
+    <!-- logo-->
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="logo-header">
+                <img src="{{ asset('bundles/booster/img/logo-ss-fond.png') }}" alt="logo booster rural">
+            </div>
+        </div>
+    </div>
+    <!-- end logo -->
+
+    <!-- navbar -->
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid color">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <!-- dropdown -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="">
+                            <ul class="nav navbar-nav">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-log-in"></span>   S'INSCRIRE</a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="#">Je suis un maire</a></li>
+                                        <li><a href="#">Je suis un acteur dynamique</a></li>
+                                        <li><a href="#">Je suis un citoyen</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- end dropdown -->
+                    <div class="col-md-6">
+                        <div class="">
+                            <ul class="nav navbar-nav">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span>   SE CONNECTER </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+    </nav>
+    <!-- end navbar -->
 </div>
+<!--end header -->
+
+{% block body %}
+{% endblock %}
+
+<!-- footer -->
+<footer>
+    <div class="container-fluid color-footer">
+        <div class="row">
+            <div class="col-xs-2">
+                <div class="logo-footer">
+                    <img src="{{ asset('bundles/booster/img/logo-footer.png') }}" alt="logo booster rural">
+                </div>
+            </div>
+            <div class="col-xs-offset-1 col-xs-2">
+                <ul class="ul-footer">
+                    <li class="li-footer"><a class="foot-item">MENTIONS LEGALES</a></li>
+                    <li class="li-footer"><a class="foot-item">CREDITS</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-offset-1 col-xs-2">
+                <ul class="ul-footer">
+                    <li class="li-footer"><a class="foot-item">NOS PARTENAIRES</a></li>
+                    <li class="li-footer"><a class="foot-item">NOS EXPERTS</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-offset-1 col-xs-2">
+                <ul class="ul-footer">
+                    <li class="li-footer"><a class="foot-item"><span class="glyphicon glyphicon-envelope"></span> NOUS CONTACTER</a></li>
+                    <li class="li-footer"><a class="foot-item"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>
+                            <i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>   <i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- end footer -->
+
+{% block javascripts %}
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/2ac71d0e85.js"></script>
+{% endblock %}
+
 </body>
 
 </html>
