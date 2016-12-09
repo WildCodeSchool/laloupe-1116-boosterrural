@@ -8,17 +8,21 @@
 /*----------------Header---------------*/
 .navbar{
     background-color: rgb(252, 183, 0);
-    padding-top: 7px;
-    border-color: rgb(252, 183, 0);
+    border:inherit;
+    position: relative;
+}
+
+.navbar-brand{
+    position: absolute;
+    left: calc(50% - 125px);
 }
 
 .color{
     background-color: rgb(252, 183, 0);
 }
 
-.logo-header{
-    text-align: center;
-    padding-top: 7px;
+.navbar-collapse{
+    margin-top: 150px;
 }
 
 .navbar-default .navbar-nav > li > a{
@@ -40,16 +44,60 @@
     border: none;
 }
 
-button:hover{
-    background-color: rgb(252, 183, 0);
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover{
+    color: white;
+    background-color: transparent;
 }
 
-button:focus{
-    background-color: rgb(252, 183, 0);
+a .dropdown-toggle{
+    background-color: transparent;
+    width: 60%;
 }
 
-.icon-bar{
+.navbar-toggle.collapsed:hover{
+    background-color: transparent;
+}
+
+.navbar-toggle:hover{
+    background-color: transparent;
+}
+
+.navbar-toggle:active{
+    background-color: transparent;
+}
+
+.navbar-default .navbar-toggle:focus{
+    background-color: transparent;
+}
+
+.navbar-default .navbar-toggle .icon-bar{
     background-color: white;
+}
+
+.navbar-default .navbar-toggle{
+    border-color: white;
+}
+
+.navbar-toggle.collapsed{
+    margin-top: -13%;
+    }
+
+@media all and (max-width: 445px) {
+    img{
+        width: 70%;
+    }
+    button .navbar-toggle.collapsed{
+        width: 70%;
+    }
+}
+
+@media all and (max-width: 767px){
+    .navbar-toggle.collapsed:active{
+        margin-bottom: -13%;
+    }
+    .navbar-default .navbar-nav > li > a{
+        font-size: 15px;
+    }
 }
 
 /*----------------End Header---------------*/
@@ -92,6 +140,14 @@ button:focus{
     padding-top: 18px;
     padding-left: 10px;
 }
+
+@media all and (max-width: 991px){
+    .logo-footer{
+        text-align: center;
+    }
+}
+
+
 /*----------------End Footer-------------------*/
 
 /*----------- Mayor------------------*/

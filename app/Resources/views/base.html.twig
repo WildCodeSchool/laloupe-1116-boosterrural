@@ -15,23 +15,19 @@
 <!-- header -->
 <div class="container-fluid color">
 
-    <!-- logo-->
-
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="logo-header">
-                <img src="{{ asset('bundles/booster/img/logo-ss-fond.png') }}" alt="logo booster rural">
-            </div>
-        </div>
-    </div>
-    <!-- end logo -->
-
     <!-- navbar -->
 
     <nav class="navbar navbar-default">
         <div class="container-fluid color">
+
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
+                <!-- logo-->
+                <!--<div >-->
+                    <a class="navbar-brand" href="#"><img class="img-responsive" src="{{ asset('bundles/booster/img/logo-ss-fond.png') }}" alt="logo booster rural"></a>
+                <!--</div>-->
+                <!-- end logo -->
+
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
@@ -43,39 +39,28 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <!-- dropdown -->
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="">
-                            <ul class="nav navbar-nav">
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-log-in"></span>   S'INSCRIRE</a>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li><a href="#">Je suis un maire</a></li>
-                                        <li><a href="#">Je suis un acteur dynamique</a></li>
-                                        <li><a href="#">Je suis un citoyen</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- end dropdown -->
-                    <div class="col-md-6">
-                        <div class="">
-                            <ul class="nav navbar-nav">
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span>   SE CONNECTER </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.navbar-collapse -->
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-log-in"></span>   S'INSCRIRE</a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Je suis un maire</a></li>
+                            <li><a href="#">Je suis un acteur dynamique</a></li>
+                            <li><a href="#">Je suis un citoyen</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- end dropdown -->
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span>   SE CONNECTER </a>
+                    </li>
+                </ul>
             </div>
-            <!-- /.container-fluid -->
+            <!-- /.navbar-collapse -->
         </div>
-    </nav>
-    <!-- end navbar -->
+<!-- /.container-fluid -->
+</nav>
+<!-- end navbar -->
 </div>
 <!--end header -->
 
@@ -86,24 +71,24 @@
 <footer>
     <div class="container-fluid color-footer">
         <div class="row">
-            <div class="col-xs-2">
+            <div class="col-xs-12 col-md-2">
                 <div class="logo-footer">
                     <img src="{{ asset('bundles/booster/img/logo-footer.png') }}" alt="logo booster rural">
                 </div>
             </div>
-            <div class="col-xs-offset-1 col-xs-2">
+            <div class="col-xs-12 col-md-offset-1 col-md-2">
                 <ul class="ul-footer">
                     <li class="li-footer"><a class="foot-item">MENTIONS LEGALES</a></li>
                     <li class="li-footer"><a class="foot-item">CREDITS</a></li>
                 </ul>
             </div>
-            <div class="col-xs-offset-1 col-xs-2">
+            <div class="col-xs-12 col-md-offset-1 col-md-2">
                 <ul class="ul-footer">
                     <li class="li-footer"><a class="foot-item">NOS PARTENAIRES</a></li>
                     <li class="li-footer"><a class="foot-item">NOS EXPERTS</a></li>
                 </ul>
             </div>
-            <div class="col-xs-offset-1 col-xs-2">
+            <div class="col-xs-12 col-md-offset-1 col-md-2">
                 <ul class="ul-footer">
                     <li class="li-footer"><a class="foot-item"><span class="glyphicon glyphicon-envelope"></span> NOUS CONTACTER</a></li>
                     <li class="li-footer"><a class="foot-item"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>
@@ -116,8 +101,10 @@
 <!-- end footer -->
 
 {% block javascripts %}
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://use.fontawesome.com/2ac71d0e85.js"></script>
+
 {% endblock %}
 
 </body>
