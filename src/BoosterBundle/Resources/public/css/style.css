@@ -52,5 +52,9 @@ img, .text{
     padding-bottom: 25px;
 }
 
+.offers, .need, .why{
+    padding: 0;
+}
+
 
 /*----------- End Mayor------------------*/
