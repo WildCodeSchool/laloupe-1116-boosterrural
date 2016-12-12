@@ -67,7 +67,7 @@ body{
 }
 
 .nav-icon{
-    padding-right: 5px; /* ???????????????? */
+    padding-right: 5px;
 }
 
 .navbar-default .navbar-toggle .icon-bar{
@@ -157,36 +157,6 @@ body{
         padding-right: 0px;
     }
 }
-
-
-
-
-
-
-/*@media all and (max-width: 767px){
-    .navbar-default .navbar-nav > li > a{
-        font-size: 15px;
-    }
-    .nav
-}
-
-@media all and (max-width: 445px) {
-    .navbar-brand img{
-        width: 70%;
-    }
-    .navbar-brand {
-        left: 0px;
-    }
-    .navbar{
-        height: 100px;
-    }
-    .navbar-toggle.collapsed {
-        top: calc(50% - 21px);
-        margin-top: 0px;
-        position: absolute;
-        right: 15px;
-    }
-}*/
 
 /*----------------End Header---------------*/
 /*----------------Main-----------------*/
