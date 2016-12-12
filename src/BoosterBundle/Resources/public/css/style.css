@@ -1,6 +1,6 @@
 
 /*--------------------commom------------------------ */
-.container-fluid{
+body{
     background-color: rgb(204, 204, 204);
 }
 /*-------------------End Common-------------------*/
@@ -9,103 +9,201 @@
 .navbar{
     background-color: rgb(252, 183, 0);
     border:inherit;
-    position: relative;
+    font-weight: bold;
+    margin-bottom: 0px;
 }
 
 .navbar-brand{
     position: absolute;
-    left: calc(50% - 125px);
+    left: calc(50% - 200px);
 }
 
-.color{
-    background-color: rgb(252, 183, 0);
+.navbar-brand a{
+    text-decoration: inherit;
+    color: white;
 }
 
 .navbar-collapse{
-    margin-top: 150px;
+    margin-top: 200px; /* voir si modif */
+    text-align: center;
+}
+
+#logo{
+    width: 350px;
+    margin-top: 40px;
+}
+
+.navbar .navbar-nav{
+    float: none;
+    display: inline-block;
+}
+
+.navbar-default{
+    border: inherit;
+}
+
+.navbar-default .navbar-nav > li{
+    margin-left: 60px;
+}
+
+.navbar-default .navbar-nav > li:first-child{
+    margin-left: 0px;
 }
 
 .navbar-default .navbar-nav > li > a{
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 1.5em;
+    padding-bottom: 30px;
+    text-transform: uppercase;
     color: white;
 }
 
-.navbar-default .navbar-nav > li > a:hover{
-    color: white;
-    text-decoration: none;
-    border: none;
+.liNav1{
+    padding-right: 350px;
 }
 
-.navbar-default .navbar-nav > li > a:focus{
-    color: white;
-    text-decoration: none;
-    border: none;
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus{
+    color: #444444;
 }
 
-.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover{
-    color: white;
-    background-color: transparent;
-}
-
-a .dropdown-toggle{
-    background-color: transparent;
-    width: 60%;
-}
-
-.navbar-toggle.collapsed:hover{
-    background-color: transparent;
-}
-
-.navbar-toggle:hover{
-    background-color: transparent;
-}
-
-.navbar-toggle:active{
-    background-color: transparent;
-}
-
-.navbar-default .navbar-toggle:focus{
-    background-color: transparent;
+.nav-icon{
+    padding-right: 5px; /* ???????????????? */
 }
 
 .navbar-default .navbar-toggle .icon-bar{
     background-color: white;
 }
 
-.navbar-default .navbar-toggle{
-    border-color: white;
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover{
+    background-color: #444444;
 }
 
-.navbar-toggle.collapsed{
-    margin-top: -13%;
-    }
 
-@media all and (max-width: 445px) {
-    img{
-        width: 70%;
-    }
-    button .navbar-toggle.collapsed{
-        width: 70%;
+/*************************************Nav Dropdown ******************************/
+
+
+.dropdown-menu{
+    background-color: rgb(252, 183, 0);
+    border: inherit;
+}
+
+.dropdown-menu > li > a{
+    background-color: rgb(252, 183, 0);
+    color: white;
+    font-weight: bold;
+}
+
+.dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover{
+    background-color: rgb(252, 183, 0);
+    color: #444444;
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+    background-color: rgb(252, 183, 0);
+    color: #444444;
+}
+
+/******************************************Media Queries Nav********************************/
+
+@media (max-width: 1060px){
+    .navbar-default .navbar-nav > li > a{
+        font-size: 1.3em;
     }
 }
 
-@media all and (max-width: 767px){
-    .navbar-toggle.collapsed:active{
-        margin-bottom: -13%;
+@media (max-width: 992px){
+    .navbar-default .navbar-nav > li{
+        margin-left: 0px;
     }
+    .nav > li > a{
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width:768px){
+    .navbar-brand{
+        left: 0;
+        position: inherit;
+    }
+
+    #logo{
+        width: 150px;
+        margin-top: 0px;
+    }
+    .navbar-collapse{
+        margin-top: 0px;
+        text-align: right;
+    }
+    .navbar-toggle{
+        margin-top: 20px;
+        margin-bottom: 0px;
+        margin-right: 20px;
+    }
+
+    .navbar-default .navbar-nav > li{
+        margin-right: 20px;
+    }
+    .navbar-default .navbar-nav > li > a{
+        padding-bottom: 10px;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a{
+        color: white;
+        text-align: right;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover{
+        color:#444444;
+    }
+    .liNav1{
+        padding-right: 0px;
+    }
+}
+
+
+
+
+
+
+/*@media all and (max-width: 767px){
     .navbar-default .navbar-nav > li > a{
         font-size: 15px;
     }
+    .nav
 }
 
-/*----------------End Header---------------*/
+@media all and (max-width: 445px) {
+    .navbar-brand img{
+        width: 70%;
+    }
+    .navbar-brand {
+        left: 0px;
+    }
+    .navbar{
+        height: 100px;
+    }
+    .navbar-toggle.collapsed {
+        top: calc(50% - 21px);
+        margin-top: 0px;
+        position: absolute;
+        right: 15px;
+    }
+}*/
 
+/*----------------End Header---------------*/
+/*----------------Main-----------------*/
+/*main{
+    height: 400px;
+}*/
+/*---------------End Main---------------*/
 /*----------------Footer-------------------*/
 
-.color-footer{
-    background-color: rgb(99, 88, 88);
+footer{
+    background-color: #444444;
+}
+
+footer a{
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
 }
 
 .foot-item{
@@ -113,41 +211,95 @@ a .dropdown-toggle{
     font-size: 15px;
     font-weight: 700;
     color: white;
+}
+
+footer a:hover{
+    text-decoration: none;
+    color: white;
+    border-bottom: 1px solid white;
+    cursor: pointer;
 
 }
 
-.foot-item:hover{
-    text-decoration: none;
+footer .icon-social a:hover{
+    border-bottom: 0px;
+}
+
+footer a:focus{
     color: white;
 }
 
-.foot-item:focus{
-    text-decoration: none;
-    color: white;
-}
-
-.li-footer{
-    list-style: none;
-    padding-bottom: 15px;
-}
-
-.ul-footer{
-    padding-top: 25px;
+footer h4{
     text-align: center;
 }
 
-.logo-footer{
-    padding-top: 18px;
-    padding-left: 10px;
+footer i{
+    padding-right: 2%;
+    padding-top: 1%;
 }
 
-@media all and (max-width: 991px){
+footer ul, li{
+    list-style: none;
+    padding: 0%;
+    text-align: center;
+}
+
+.li-footer{
+    padding-top: 3%;
+}
+
+.ul-footer{
+    padding-top: 1%;
+}
+
+.logo-footer{
+    margin-top: 1%;
+    width: 70%;
+}
+
+.mentions_légales_text {
+    text-align: center;
+}
+
+#credits {
+    text-align: center;
+}
+
+#credits a {
+    color: #56ADD8;
+    font-weight: normal;
+}
+
+#credits a:hover {
+    border-bottom: 1px solid #56ADD8;
+}
+
+/**************************media-queries footer*********************************/
+@media (max-width: 1400px){
     .logo-footer{
-        text-align: center;
+        width: 100%;
     }
 }
 
+@media (max-width: 768px){
+    .logo-footer{
+        width: 25%;
+    }
+    footer ul{
+        margin: 0;
+        padding: 0;
+    }
+    footer li{
+        margin: 0;
+        padding: 2% 0%;
+    }
+}
 
+@media (max-width: 400px){
+    .logo-footer{
+        width: 40%;
+    }
+}
 /*----------------End Footer-------------------*/
 
 /*----------- Mayor------------------*/
