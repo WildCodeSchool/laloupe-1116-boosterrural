@@ -1,3 +1,7 @@
 booster_homepage:
     path:     /
     defaults: { _controller: BoosterBundle:Default:index }
+
+booster_citizenfront:
+    path:     /citizenfront
+    defaults: { _controller: BoosterBundle:Default:index }
