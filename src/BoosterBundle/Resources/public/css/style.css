@@ -24,7 +24,7 @@ body{
 }
 
 .navbar-collapse{
-    margin-top: 200px; /* voir si modif */
+    margin-top: 200px;
     text-align: center;
 }
 
@@ -83,18 +83,18 @@ body{
 
 
 .dropdown-menu{
-    background-color: rgb(252, 183, 0);
+    /*background-color: rgb(252, 183, 0);*/
     border: inherit;
 }
 
 .dropdown-menu > li > a{
-    background-color: rgb(252, 183, 0);
-    color: white;
+   /* background-color: rgb(252, 183, 0);*/
+    /*color: white;*/
     font-weight: bold;
 }
 
 .dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover{
-    background-color: rgb(252, 183, 0);
+    /*background-color: rgb(252, 183, 0);*/
     color: #444444;
 }
 
@@ -102,6 +102,7 @@ body{
     background-color: rgb(252, 183, 0);
     color: #444444;
 }
+
 
 /******************************************Media Queries Nav********************************/
 
@@ -145,11 +146,22 @@ body{
     }
     .navbar-default .navbar-nav > li > a{
         padding-bottom: 10px;
+        background-color: white; /**************modif******************/
     }
     .navbar-default .navbar-nav .open .dropdown-menu > li > a{
-        color: white;
+        /*color: white;*/ /****** origine ******/
         text-align: right;
+        color: #444444; /****** modif*****/
     }
+    /***************************************************/
+    #navbar-collapse-1{
+
+        background-color: white;
+    }
+    .liNav1 .open > .dropdown-toggle{
+        color: #444444;
+    }
+    /*****************************************************/
     .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover{
         color:#444444;
     }
