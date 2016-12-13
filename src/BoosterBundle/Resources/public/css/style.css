@@ -14,10 +14,15 @@ h1, h2, h3 {
     text-align: center;
     text-transform: uppercase;
     font-weight: bold;
+    padding: 3% 0%;
 }
 
 p {
     text-align: justify;
+}
+
+ul {
+    padding-left: 0;
 }
 
 section {
@@ -32,9 +37,17 @@ section {
 /************************ ACTOR ***********************/
 /******************************************************/
 
-.map {
-    height: 350px;
-    width: 40%;
+#ulPad {
+    padding-left: 45%;
+}
+
+.flexMap {
+    display: flex;
+}
+
+#map {
+    height: 80%;
+    width: 100%;
     border: 1px solid gray;
 }
 
@@ -48,7 +61,57 @@ span {
 
 .pitureMini {
     width: 100%;
-    padding-top: 20px;
+    margin-top: 50px;
+    border: 1px solid gray;
+}
+
+#title2 {
+    padding: 2% 0%;
+    margin: 0%;
+}
+
+.sec1 {
+    margin-bottom: 2%;
+}
+
+.secPad1 {
+    margin-left: 2%;
+    width: 50%;
+}
+
+.secPad2 {
+    width: 49%;
+}
+
+.secPad3 {
+    margin-left: 2%;
+    width: 49%;
+}
+
+@media all and (max-width: 992px) {
+    .mediaTitle {
+        font-size: 1.5em;
+    }
+}
+
+@media all and (max-width: 768px) {
+    .margeMobile {
+        margin-bottom: 30px;
+    }
+
+    .secPad2 {
+        width: 100%;
+    }
+
+    .secPad3 {
+        margin-left: 0%;
+        width: 100%;
+    }
+
+    #title2 {
+        padding: 2% 0%;
+        margin: 5% 0%;
+    }
 }
 
 /******************************************************/

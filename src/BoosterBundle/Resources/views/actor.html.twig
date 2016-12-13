@@ -4,23 +4,23 @@
 {% block body %}
 
 <div class="row">
-    <section class="col-xs-12 backWhite">
+    <section class="col-sm-offset-1 col-sm-10 col-xs-12 backWhite sec1">
         <div class="row">
-            <div class="col-sm-6 col-xs-12">
-                <img src="{{ asset('bundles/booster/img/acteur_logo.jpg') }}" alt="photo_logo"/>
+            <div class="col-md-6 col-xs-12">
+                <img src="{{ asset('bundles/booster/img/acteur_logo.jpg') }}" alt="photo_logo" class="center-block img-responsive"/>
             </div>
-            <div class="col-sm-6 col-xs-12">
+            <div class="col-md-6 col-xs-12">
                 <h1>biodynamic association</h1>
                     <div class="row">
-                        <div class="col-xs-6">
+                        <div class="col-sm-6 col-xs-12">
                             <ul>
-                                <li><span>Président :</span></li>
-                                <li><span>Adresse :</span></li>
-                                <li><span>Code Postal :</span></li>
-                                <li><span>Adresse Mail :</span></li>
-                                <li><span>Catégorie :</span></li>
+                                <li><span>Président :</span> Gilles LE LOUP</li>
+                                <li><span>Adresse :</span> 11 rue de Chartres</li>
+                                <li><span>Code Postal :</span> 28240</li>
+                                <li><span>Adresse Mail :</span> biodynamicassociation@gmail.com</li>
+                                <li><span>Catégorie :</span> Développement durable</li>
                                 <li><span>Proposition de projet :</span>
-                                    <ul>
+                                    <ul id="ulPad">
                                         <li>Coopérer</li>
                                         <li>Former</li>
                                         <li>Partager</li>
@@ -28,10 +28,10 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="col-xs-6">
+                        <div class="col-sm-6 col-xs-12">
                             <ul>
-                                <li><span>Statut :</span></li>
-                                <li><span>Commune :</span></li>
+                                <li><span>Statut :</span> Réseau</li>
+                                <li><span>Commune :</span> La Loupe</li>
                             </ul>
                         </div>
                     </div>
@@ -41,120 +41,112 @@
 </div>
 
 <div class="row">
-    <section class="col-xs-6 backWhite">
-        <div class="row">
-            <div class="col-xs-5">
-                <ul>
-                    <li><img src="{{ asset('bundles/booster/img/photo1.jpg') }}" alt="photo" class="pitureMini img-responsive"/></li>
-                    <li><img src="{{ asset('bundles/booster/img/photo2.jpg') }}" alt="photo" class="pitureMini img-responsive"/></li>
-                    <li><img src="{{ asset('bundles/booster/img/photo3.jpg') }}" alt="photo" class="pitureMini img-responsive"/></li>
-                </ul>
-            </div>
-            <div class="col-xs-7">
-                <h2>pourquoi nous sommes dynamiques ?</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id dignissim nibh. Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim. Sed augue nisi, maximus eu imperdiet eu, fermentum in eros. Vestibulum varius lacus at neque hendrerit, in blandit nisl molestie. Proin vitae erat imperdiet, porttitor ex quis, vulputate diam. Duis vel sem vitae nisi convallis iaculis at venenatis est. Phasellus id rhoncus leo. Integer quis sem quis dui venenatis pretium.</p>
+    <div class="col-sm-offset-1 col-sm-10">
+        <div class="row flexMap">
+            <section class="col-sm-6 col-xs-12 backWhite sec2">
+                <div class="row">
+                    <div class="col-md-5 col-sm-12">
+                        <ul class="ulBorder">
+                            <li><img src="{{ asset('bundles/booster/img/photo1.jpg') }}" alt="photo" class="pitureMini img-responsive center-block"/></li>
+                            <li><img src="{{ asset('bundles/booster/img/photo2.jpg') }}" alt="photo" class="pitureMini img-responsive center-block"/></li>
+                            <li><img src="{{ asset('bundles/booster/img/photo3.jpg') }}" alt="photo" class="pitureMini img-responsive center-block"/></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-7 col-sm-12">
+                        <h2 class="mediaTitle">pourquoi nous sommes dynamiques ?</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id dignissim nibh. Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim. Sed augue nisi, maximus eu imperdiet eu, fermentum in eros. Vestibulum varius lacus at neque hendrerit, in blandit nisl molestie. Proin vitae erat imperdiet, porttitor ex quis, vulputate diam. Duis vel sem vitae nisi convallis iaculis at venenatis est. Phasellus id rhoncus leo. Integer quis sem quis dui venenatis pretium.</p>
+                    </div>
+                </div>
+            </section>
+            <section class=" hidden-xs col-sm-5 col-xs-12 backWhite secPad1">
+                <h2>localisation</h2>
+                    <div id="map" class="center-block"></div>
+            </section>
+        </div>
+    </div>
+</div>
+
+    <h2 id="title2">ses activités</h2>
+    <div class="row">
+        <div class="col-sm-offset-1 col-sm-10">
+          <div class="row">
+            <section class="col-sm-6 col-xs-12 backWhite margeMobile secPad2">
+                <h3>ses besoins</h3>
+                    <ul>
+                        <li><span>Lorem ipsum dolor sit amet</span>
+                            <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
+                        </li>
+                        <hr>
+                        <li><span>Lorem ipsum dolor sit amet</span>
+                            <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
+                        </li>
+                        <hr>
+                        <li><span>Lorem ipsum dolor sit amet</span>
+                            <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
+                        </li>
+                        <hr>
+                        <li><span>Lorem ipsum dolor sit amet</span>
+                            <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
+                        </li>
+                    </ul>
+            </section>
+
+            <section class="col-sm-5 col-xs-12 backWhite secPad3">
+                <h3>ses offres</h3>
+                    <ul>
+                        <li><span>Lorem ipsum dolor sit amet</span>
+                            <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
+                        </li>
+                        <hr>
+                        <li><span>Lorem ipsum dolor sit amet</span>
+                            <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
+                        </li>
+                        <hr>
+                        <li><span>Lorem ipsum dolor sit amet</span>
+                            <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
+                        </li>
+                        <hr>
+                        <li><span>Lorem ipsum dolor sit amet</span>
+                            <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
+                        </li>
+                    </ul>
+                </section>
             </div>
         </div>
-    </section>
-
-    <section class="col-xs-6 backWhite">
-        <h2>localisation</h2>
-        <div class="map center-block"></div>
-    </section>
-</div>
-    <h2>ses activitées</h2>
-    <div class="row">
-        <section class="col-xs-6 backWhite">
-            <h3>ses besoins</h3>
-                <ul>
-                    <li><span>Lorem ipsum dolor sit amet</span>
-                        <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
-                    </li>
-                    <hr>
-                    <li><span>Lorem ipsum dolor sit amet</span>
-                        <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
-                    </li>
-                    <hr>
-                    <li><span>Lorem ipsum dolor sit amet</span>
-                        <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
-                    </li>
-                    <hr>
-                    <li><span>Lorem ipsum dolor sit amet</span>
-                        <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
-                    </li>
-                    <hr>
-                    <li><span>Lorem ipsum dolor sit amet</span>
-                        <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
-                    </li>
-                    <hr>
-                    <li><span>Lorem ipsum dolor sit amet</span>
-                        <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
-                    </li>
-                </ul>
-        </section>
-
-        <section class="col-xs-6 backWhite">
-            <h3>ses offres</h3>
-                <ul>
-                    <li><span>Lorem ipsum dolor sit amet</span>
-                        <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
-                    </li>
-                    <hr>
-                    <li><span>Lorem ipsum dolor sit amet</span>
-                        <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
-                    </li>
-                    <hr>
-                    <li><span>Lorem ipsum dolor sit amet</span>
-                        <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
-                    </li>
-                    <hr>
-                    <li><span>Lorem ipsum dolor sit amet</span>
-                        <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
-                    </li>
-                    <hr>
-                    <li><span>Lorem ipsum dolor sit amet</span>
-                        <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
-                    </li>
-                    <hr>
-                    <li><span>Lorem ipsum dolor sit amet</span>
-                        <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
-                    </li>
-                </ul>
-        </section>
     </div>
 
-{% endblock %}
-{% block javascripts %}
-    <script>
-        function initMap() {
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 14,
-                center: {lat: 48.471285, lng: 1.0143050000000358}
-            });
+    {% block javascriptsMap %}
+        <script>
+            function initMap() {
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 14,
+                    center: {lat: 48.471285, lng: 1.0143050000000358}
+                });
 
-            var layer = new google.maps.visualization.DynamicMapsEngineLayer({
-                layerId: '06673056454046135537-08896501997766553811',
-                map: map,
-                suppressInfoWindows: true,
-                clickable: true
-            });
+                var layer = new google.maps.visualization.DynamicMapsEngineLayer({
+                    layerId: '06673056454046135537-08896501997766553811',
+                    map: map,
+                    suppressInfoWindows: true,
+                    clickable: true
+                });
 
-            layer.addListener('mouseover', function(event) {
-                var style = layer.getFeatureStyle(event.featureId);
-                style.fillColor = colors[event.featureId - 1];
-                style.fillOpacity = '0.8';
-            });
+                layer.addListener('mouseover', function(event) {
+                    var style = layer.getFeatureStyle(event.featureId);
+                    style.fillColor = colors[event.featureId - 1];
+                    style.fillOpacity = '0.8';
+                });
 
-            layer.addListener('mouseout', function(event) {
-                layer.getFeatureStyle(event.featureId).resetAll();
-            });
-        }
+                layer.addListener('mouseout', function(event) {
+                    layer.getFeatureStyle(event.featureId).resetAll();
+                });
+            }
 
-        var colors = ['red', 'blue', 'yellow', 'green'];
+            var colors = ['red', 'blue', 'yellow', 'green'];
 
-    </script>
-    <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoRRGMzU918m3yrQaoeyvNuU0U0hjCqfo&signed_in=true&libraries=visualization&callback=initMap">
-    </script>
+        </script>
+        <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBR84fXWLx5T5AOpRQHNXs7w3U9jdPneFU&signed_in=true&libraries=visualization&callback=initMap">
+        </script>
+    {% endblock %}
 
 {% endblock %}
