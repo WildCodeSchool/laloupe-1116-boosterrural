@@ -2,30 +2,29 @@
 <html>
 <head>
     <meta charset="UTF-8" />
+
     <title>{% block title %}Welcome!{% endblock %}</title>
     {% block stylesheets %}
-        <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/booster/css/style.css') }}"/>
+
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/booster/css/style.css') }}">
+
     {% endblock %}
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 </head>
 
 <body>
-<main>
+    <div class="container-fluid">
+        {% block body %}
 
-</main>
-<div class="container-fluid">
+        {% endblock %}
 
-    {% block body %}
+        {% block javascriptsBase %}
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
-    {% endblock %}
-
-    {% block javascripts %}
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    {% endblock %}
-
-</div>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        {% endblock %}
+    </div>
 </body>
 </html>

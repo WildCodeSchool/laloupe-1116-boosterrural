@@ -4,4 +4,9 @@ booster_homepage:
 
 booster_citizenfront:
     path:     /citizenfront
-    defaults: { _controller: BoosterBundle:Default:index }
+    defaults: { _controller: BoosterBundle:Default:citizen }
+
+booster_actor:
+    path:     /actor
+    defaults: { _controller: BoosterBundle:Default:actor}
+
