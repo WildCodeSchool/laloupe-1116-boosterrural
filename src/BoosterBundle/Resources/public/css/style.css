@@ -1,42 +1,26 @@
-<<<<<<< HEAD
-/* citizenfront */
-
-/*************************MAIN**********************/
-main{
-    height: 150px;
-    background-color: rgb(252, 183, 0);
-}
-/************************MAIN**********************/
-
-body{
-    background-color: rgb(204, 204, 204);
+/******************************************************/
+/*************************CITIZEN**********************/
+/******************************************************/
+.pic1citiz{
+    margin-top: 7%;
+    margin-bottom: 7%;
 }
 
 .identity{
-    background-color: white;
-    margin: 35px 50px 35px 50px;
+    font-size: 112%;
 }
 
-.citizen .col-md-6 > img{
-    padding-top: 3%;
-    padding-left: 10%;
+.state{
+    margin-top: 7px;
 }
 
-.text-identity > h1{
-    font-size: 25px;
-    margin-left: 3%;
+.identity > div > ul > li{
+    padding-bottom: 3px;
 }
+/******************************************************/
+/*************************CITIZEN**********************/
+/******************************************************/
 
-.identity-citizen{
-    list-style: none;
-}
-
-.identity-citizen > span{
-    font-weight: bold;
-    
-}
-/*end citizenfront*/
-=======
 /******************************************************/
 /************************ COMMON **********************/
 /******************************************************/
@@ -54,6 +38,14 @@ h1, h2, h3 {
     text-transform: uppercase;
     font-weight: bold;
     padding: 3% 0%;
+}
+
+h2{
+    font-size: 22px; /*modifs*/
+}
+
+.backWhite > h2{ 
+    padding: 2% 0%; /*modifs*/
 }
 
 p {
@@ -156,4 +148,4 @@ span {
 /******************************************************/
 /********************** END ACTOR *********************/
 /******************************************************/
->>>>>>> 4548cd685e2afc23991ce0fdafceea6f456db80d
+

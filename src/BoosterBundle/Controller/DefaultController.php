@@ -17,7 +17,6 @@ class DefaultController extends Controller
 
         return $this->render('BoosterBundle::citizen.html.twig');
 
-
     }
 
 }
