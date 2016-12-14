@@ -1,60 +1,119 @@
+/******************************************************/
+/************************ COMMON **********************/
+/******************************************************/
 
-/*-------------------- commom------------------------ */
 body{
     background-color: rgb(204,204,204);
-
 }
-/*-------------------End Common-------------------*/
-/*----------- Mayor------------------*/
 
-h1{
-    color: #6b9311;
+li {
+    list-style-type: none;
+}
+
+h1, h2, h3 {
     text-align: center;
-
-}
-img{
-    margin-right: auto;
-    margin-left: auto;
-}
-.pict1{
-    margin-top: 20px;
-    margin-bottom: 20px;
-
-}
-img, .text{
-    margin: 10px 0 10px 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 3% 0%;
 }
 
-.section, .thumbnail{
-    background-color: white;
-    border: none;
-    margin-bottom: 0;
+p {
+    text-align: justify;
 }
 
-.word, .town{
-    margin: 30px 0 30px 0;
-
-}
-
-.title{
-    text-align: center;
-}
-
-.block-map{
-    padding-right: 0;
+ul {
     padding-left: 0;
-    margin-bottom: 30px;
-}
-.map1{
-    height: 300px;
-}
-.map2{
-    padding-bottom: 25px;
 }
 
-.offers, .need, .why{
-    padding: 0;
+section {
+    border: 1px solid gray;
 }
 
+/******************************************************/
+/************************ END COMMON ******************/
+/******************************************************/
 
-/*----------- End Mayor------------------*/
+/******************************************************/
+/************************ ACTOR ***********************/
+/******************************************************/
+
+#ulPad {
+    padding-left: 45%;
+}
+
+.flexMap {
+    display: flex;
+}
+
+#map {
+    height: 80%;
+    width: 100%;
+    border: 1px solid gray;
+}
+
+.backWhite {
+    background-color: white;
+}
+
+span {
+    font-weight: bold;
+}
+
+.pitureMini {
+    width: 100%;
+    margin-top: 50px;
+    border: 1px solid gray;
+}
+
+#title2 {
+    padding: 2% 0%;
+    margin: 0%;
+}
+
+.sec1 {
+    margin-bottom: 2%;
+}
+
+.secPad1 {
+    margin-left: 2%;
+    width: 50%;
+}
+
+.secPad2 {
+    width: 49%;
+}
+
+.secPad3 {
+    margin-left: 2%;
+    width: 49%;
+}
+
+@media all and (max-width: 992px) {
+    .mediaTitle {
+        font-size: 1.5em;
+    }
+}
+
+@media all and (max-width: 768px) {
+    .margeMobile {
+        margin-bottom: 30px;
+    }
+
+    .secPad2 {
+        width: 100%;
+    }
+
+    .secPad3 {
+        margin-left: 0%;
+        width: 100%;
+    }
+
+    #title2 {
+        padding: 2% 0%;
+        margin: 5% 0%;
+    }
+}
+
+/******************************************************/
+/********************** END ACTOR *********************/
+/******************************************************/
