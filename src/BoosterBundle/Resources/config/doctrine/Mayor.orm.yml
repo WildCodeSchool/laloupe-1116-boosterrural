@@ -44,4 +44,12 @@ BoosterBundle\Entity\Mayor:
             type: string
             length: 255
             column: town_description
+        oneToMany:
+            offers:
+                targetEntity: BoosterBundle/Entity/Offer
+                mappedBy: id
+            needs:
+                targetEntity: BoosterBundle/Entity/Needs
+                mappedBy: id
+
     lifecycleCallbacks: {  }

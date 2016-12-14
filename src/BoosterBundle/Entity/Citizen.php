@@ -248,4 +248,32 @@ class Citizen
     {
         return $this->description;
     }
+    /**
+     * @var string
+     */
+    private $oneToMany;
+
+
+    /**
+     * Set oneToMany
+     *
+     * @param string $oneToMany
+     * @return Citizen
+     */
+    public function setOneToMany($oneToMany)
+    {
+        $this->oneToMany = $oneToMany;
+
+        return $this;
+    }
+
+    /**
+     * Get oneToMany
+     *
+     * @return string 
+     */
+    public function getOneToMany()
+    {
+        return $this->oneToMany;
+    }
 }

@@ -32,4 +32,12 @@ BoosterBundle\Entity\Citizen:
             length: 255
         description:
             type: text
+        oneToMany:
+            offers:
+                targetEntity: BoosterBundle/Entity/Offer
+                mappedBy: id
+            needs:
+                targetEntity: BoosterBundle/Entity/Needs
+                mappedBy: id
+
     lifecycleCallbacks: {  }

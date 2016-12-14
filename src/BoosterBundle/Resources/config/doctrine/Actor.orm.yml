@@ -49,4 +49,11 @@ BoosterBundle\Entity\Actor:
         description:
             type: string
             length: 255
+        oneToMany:
+            offers:
+                targetEntity: BoosterBundle/Entity/Offer
+                mappedBy: id
+            needs:
+                targetEntity: BoosterBundle/Entity/Needs
+                mappedBy: id
     lifecycleCallbacks: {  }
