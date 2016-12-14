@@ -1,0 +1,52 @@
+BoosterBundle\Entity\Actor:
+    type: entity
+    table: null
+    repositoryClass: BoosterBundle\Repository\ActorRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        organisation:
+            type: string
+            length: 255
+        boss:
+            type: string
+            length: 255
+        firstnameBoss:
+            type: string
+            length: 255
+            column: firstname_boss
+        status:
+            type: string
+            length: 255
+        category:
+            type: string
+            length: 255
+        town:
+            type: string
+            length: 255
+        cp:
+            type: string
+            length: 255
+        address:
+            type: string
+            length: 255
+        mail:
+            type: string
+            length: 255
+        lat:
+            type: integer
+        lgt:
+            type: string
+            length: 255
+        propositionProject:
+            type: string
+            length: 255
+            column: proposition_project
+        description:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

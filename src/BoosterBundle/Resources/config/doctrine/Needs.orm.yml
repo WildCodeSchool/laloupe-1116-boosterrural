@@ -1,0 +1,26 @@
+BoosterBundle\Entity\Needs:
+    type: entity
+    table: null
+    repositoryClass: BoosterBundle\Repository\NeedsRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: 255
+        cp:
+            type: integer
+        town:
+            type: string
+            length: 255
+        description:
+            type: text
+        lat:
+            type: integer
+        lgt:
+            type: integer
+    lifecycleCallbacks: {  }

@@ -1,0 +1,28 @@
+BoosterBundle\Entity\Offer:
+    type: entity
+    table: null
+    repositoryClass: BoosterBundle\Repository\OfferRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: 255
+        cp:
+            type: string
+            length: 255
+        town:
+            type: string
+            length: 255
+        description:
+            type: string
+            length: 255
+        lat:
+            type: integer
+        lgt:
+            type: integer
+    lifecycleCallbacks: {  }

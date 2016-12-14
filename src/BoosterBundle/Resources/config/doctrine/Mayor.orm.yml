@@ -1,0 +1,47 @@
+BoosterBundle\Entity\Mayor:
+    type: entity
+    table: null
+    repositoryClass: BoosterBundle\Repository\MayorRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        town:
+            type: string
+            length: 255
+        cp:
+            type: integer
+        address:
+            type: string
+            length: 255
+        mail:
+            type: string
+            length: 255
+        lat:
+            type: integer
+        lgt:
+            type: integer
+        phone:
+            type: string
+            length: 255
+        nbCitizen:
+            type: integer
+            column: nb_citizen
+        mayorName:
+            type: string
+            length: 255
+            column: mayor_name
+        website:
+            type: string
+            length: 255
+        message:
+            type: string
+            length: 255
+        townDescription:
+            type: string
+            length: 255
+            column: town_description
+    lifecycleCallbacks: {  }
