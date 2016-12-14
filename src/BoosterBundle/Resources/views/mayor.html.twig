@@ -1,8 +1,169 @@
 {% extends 'base.html.twig' %}
 
 
-{% block body %}
+    {% block body %}
 
 
+        <div class="row">
+            <section class="col-sm-offset-1 col-sm-10 col-xs-12 backWhite sec1">
+                <div class="row">
+                    <div class="col-md-6 col-xs-12 picture">
+                        <img src="{{ asset('bundles/booster/img/ville.jpg') }}" alt="photo_logo" class="center-block img-responsive "/>
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        <h1>La Loupe</h1>
+                        <div class="row">
+                            <div class="col-sm-12 col-xs-12">
+                                <div class="row">
+                                    <ul class="col-xs-6">
+                                        <div class="row">
+                                            <div class="col-xs-12"
+                                            <li><b>lieu:</b> 28240 Eure et loir Centre val de loire</li>
+                                            <li><b>Nbre d'habitants :</b> 3350 </li>
+                                            <li>https://mairielaloupe.fr</li>
+                                        </div>
+                                    </ul>
+                                    <ul class="col-xs-6 ">
+                                        <div class="row">
+                                            <div class="col-xs-12"
+                                            <li><b>mail:</b> mairielaloupe@mail.fr</li>
+                                            <li><b>Téléphone :</b> 0237895865</li>
+                                            <li><b>Maire:</b> Florian Martin</li>
+                                        </div>
 
-{% endblock %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+        </div>
+        <div class="row">
+            <section class="col-sm-offset-1 col-sm-10 col-xs-12 backWhite sec1">
+                <div class="row">
+                    <div class="col-md-8 col-xs-12">
+                        <h2>Le mot du Maire</h2>
+                        <div class="row">
+                            <div class="col-sm-12 col-xs-12">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aspernatur atque consectetur, corporis delectus deleniti distinctio esse fugit illum in, laudantium officia placeat porro praesentium quas vero vitae? Repellat, velit? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis eaque excepturi inventore molestiae nulla quod totam ut voluptatum. Accusamus dolores doloribus illo iure possimus qui reprehenderit voluptate? Ab, aspernatur, quidem.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-12">
+                        <img src="{{ asset('bundles/booster/img/maire.jpg') }}" alt="photo_logo" class="center-block img-responsive picture "/>
+                    </div>
+            </section>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-offset-1 col-sm-10">
+                <div class="row flexMap">
+                    <section class="col-sm-6 col-xs-12 backWhite sec2">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-12">
+                                <ul class="ulBorder">
+                                    <li><img src="{{ asset('bundles/booster/img/tof1.png') }}" alt="photo" class="pitureMini img-responsive center-block"/></li>
+                                    <li><img src="{{ asset('bundles/booster/img/tof2.png') }}" alt="photo" class="pitureMini img-responsive center-block"/></li>
+                                    <li><img src="{{ asset('bundles/booster/img/tof3.png') }}" alt="photo" class="pitureMini img-responsive center-block"/></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-8 col-sm-12">
+                                <h2 class="mediaTitle">pourquoi nous sommes dynamiques ?</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id dignissim nibh. Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim. Sed augue nisi, maximus eu imperdiet eu, fermentum in eros. Vestibulum varius lacus at neque hendrerit, in blandit nisl molestie. Proin vitae erat imperdiet, porttitor ex quis, vulputate diam. Duis vel sem vitae nisi convallis iaculis at venenatis est. Phasellus id rhoncus leo. Integer quis sem quis dui venenatis pretium.</p>
+                            </div>
+                        </div>
+                    </section>
+                    <section class=" hidden-xs col-sm-5 col-xs-12 backWhite secPad1">
+                        <h2>localisation</h2>
+                        <div id="map" class="center-block"></div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <h2 id="title2">ses activités</h2>
+        <div class="row">
+            <div class="col-sm-offset-1 col-sm-10">
+                <div class="row">
+                    <section class="col-sm-6 col-xs-12 backWhite margeMobile secPad2">
+                        <h3>ses besoins</h3>
+                        <ul>
+                            <li><span>Lorem ipsum dolor sit amet</span>
+                                <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
+                            </li>
+                            <hr>
+                            <li><span>Lorem ipsum dolor sit amet</span>
+                                <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
+                            </li>
+                            <hr>
+                            <li><span>Lorem ipsum dolor sit amet</span>
+                                <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
+                            </li>
+                            <hr>
+                            <li><span>Lorem ipsum dolor sit amet</span>
+                                <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section class="col-sm-5 col-xs-12 backWhite secPad3">
+                        <h3>ses offres</h3>
+                        <ul>
+                            <li><span>Lorem ipsum dolor sit amet</span>
+                                <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
+                            </li>
+                            <hr>
+                            <li><span>Lorem ipsum dolor sit amet</span>
+                                <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
+                            </li>
+                            <hr>
+                            <li><span>Lorem ipsum dolor sit amet</span>
+                                <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
+                            </li>
+                            <hr>
+                            <li><span>Lorem ipsum dolor sit amet</span>
+                                <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+
+        {% block javascripts %}
+            <script>
+                function initMap() {
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                        zoom: 14,
+                        center: {lat: 48.471285, lng: 1.0143050000000358}
+                    });
+
+                    var layer = new google.maps.visualization.DynamicMapsEngineLayer({
+                        layerId: '06673056454046135537-08896501997766553811',
+                        map: map,
+                        suppressInfoWindows: true,
+                        clickable: true
+                    });
+
+                    layer.addListener('mouseover', function(event) {
+                        var style = layer.getFeatureStyle(event.featureId);
+                        style.fillColor = colors[event.featureId - 1];
+                        style.fillOpacity = '0.8';
+                    });
+
+                    layer.addListener('mouseout', function(event) {
+                        layer.getFeatureStyle(event.featureId).resetAll();
+                    });
+                }
+
+                var colors = ['red', 'blue', 'yellow', 'green'];
+
+            </script>
+            <script async defer
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoRRGMzU918m3yrQaoeyvNuU0U0hjCqfo&signed_in=true&libraries=visualization&callback=initMap">
+            </script>
+
+        {% endblock %}
+

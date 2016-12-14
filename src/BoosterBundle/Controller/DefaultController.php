@@ -22,5 +22,11 @@ class DefaultController extends Controller
         return $this->render('BoosterBundle::citizen.html.twig');
 
     }
+    public function mayorAction()
+    {
+
+        return $this->render('BoosterBundle::mayor.html.twig');
+
+    }
 
 }

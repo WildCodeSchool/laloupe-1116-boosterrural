@@ -1,3 +1,4 @@
+
 booster_citizenfront:
     path:     /citizen
     defaults: { _controller: BoosterBundle:Default:citizen }
@@ -9,3 +10,8 @@ booster_actor:
 booster_homepage:
     path:     /
     defaults: { _controller: BoosterBundle:Default:home_page_no_connect }
+
+booster_mayor:
+    path:     /mayor
+    defaults: { _controller: BoosterBundle:Default:mayor}
+
