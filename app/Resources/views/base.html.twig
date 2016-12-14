@@ -3,15 +3,20 @@
 <head>
     <meta charset="UTF-8" />
     <title>{% block title %}Welcome!{% endblock %}</title>
+
     {% block stylesheets %}
+
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
         <link rel="stylesheet" type="text/css" href="{{ asset('bundles/booster/css/style.css') }}" />
+
     {% endblock %}
+
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 </head>
 
 <body>
+
 <!-- header -->
 <header>
 <!-- navbar -->
@@ -61,254 +66,263 @@
 </header>
 <!--end header -->
 
-{% block body %}
 
-{% endblock %}
-
-<!-- footer -->
-<footer class="container-fluid">
-
-    <div class="row">
-
-        <div class="col-xs-12 col-sm-3">
-            <img class="logo-footer center-block" src="{{ asset('bundles/booster/img/logo-ss-fond.png') }}" alt="logo booster rural">
-        </div>
-
-        <div class="col-xs-12 col-sm-3">
-            <ul class="ul-footer">
-                <li class="li-footer"><a class="foot-item" data-toggle="modal" data-target="#mentions_légales">Mentions légales</a></li>
-                <li class="li-footer"><a class="foot-item" data-toggle="modal" data-target="#credits">Crédits</a></li>
-            </ul>
-        </div>
-
-        <div class="col-xs-12 col-sm-3">
-            <ul class="ul-footer">
-                <li class="li-footer"><a class="foot-item" data-toggle="modal" data-target="#partenaires">Nos partenaires</a></li>
-                <li class="li-footer"><a class="foot-item" data-toggle="modal" data-target="#experts">Nos experts</a></li>
-            </ul>
-        </div>
-
-        <div class="col-xs-12 col-sm-3">
-            <ul class="ul-footer">
-                <li class="li-footer"><a class="foot-item" data-toggle="modal" data-target="#contact"><span class="glyphicon glyphicon-envelope"></span> Nous contacter</a></li>
-                <li class="icon-social">
-                    <a class="foot-item" href="#"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a> <a class="foot-item" href="#"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a> <a class="foot-item" href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
-                </li>
-            </ul>
-        </div>
+    <div class="container-fluid">
+    {% block body %}
 
 
-        <!-- ********************************* modales ************************************* -->
 
 
-        <div class="modal fade" id="credits" tabindex="-1" role="dialog" aria-labelledby="creditsmodal">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
-                        <h3 class="modal-title">Crédits</h3>
-                    </div>
-                    <div class="modal-body">
-                        <h4>Développé par les étudiants de la Wild Code School :</h4><br>
-                        <div class="center-block">
-                            <a href="https://www.linkedin.com/in/pascale-barboteau-4a0409a5?authType=NAME_SEARCH&authToken=Rp5D&locale=fr_FR&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A374259576%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1481378936405%2Ctas%3Apas" target="_blank">Pascale BARBOTEAU</a><br>
-                            <a href="https://www.linkedin.com/in/florian-galerne-610525114?authType=NAME_SEARCH&authToken=inXW&locale=fr_FR&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A479052588%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1481379014930%2Ctas%3Aflo" target="_blank">Florian GALERNE</a><br>
-                            <a href="https://fr.linkedin.com/in/julien-saint-laurent" target="_blank">Julien SAINT-LAURENT</a>
-                        </div>
-                        <br>
-                    </div>
-                    <a href="http://www.wildcodeschool.fr" target="_blank"><img src="{{ asset('bundles/booster/img/wcs.jpg') }}" width="20%"/></a>
-                    <br><br>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
 
-
-        <div class="modal fade" id="mentions_légales" tabindex="-1" role="dialog" aria-labelledby="LargeMentionslégalesmodal">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
-                        <h4 class="modal-title">Mentions légales</h4>
-                    </div>
-                    <br>
-                    <div class="modal-body">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <div class="mentions_légales_text">
-
-                                        XXXXXXXXXXXXXXXXX <br>
-                                        XXXXXXXXXXXXXXXXX <br>
-                                        XXXXXXXXXXXXXXXXX <br>
-
-                                    </div>
-
-                                    <p>
-                                        <br>
-                                    <div class="mentions_légales_text">
-                                        Droits de propriété du site
-                                    </div>
-                                    <br>
-                                    <h3>1. Présentation du site :</h3>
-
-                                    Conformément aux dispositions des articles 6-III et 19 de la Loi n° 2004-575 du 21 juin 2004 pour la Confiance dans l'économie numérique, dite L.C.E.N., nous portons à la connaissance des utilisateurs et visiteurs du site : XXXXXXXXXXXXXXXXX les informations suivantes :<br>
-
-                                    Informations légales :<br>
-
-                                    Statut du propriétaire : XXXXXXXXXXXXXXXXX<br>
-                                    Préfixe : XXXXXXXXXXXXXXXXX<br>
-                                    Nom de la Société : XXXXXXXXXXXXXXXXX<br>
-                                    Adresse : XXXXXXXXXXXXXXXXXs<br>
-                                    Tél  : XXXXXXXXXXXXXXXXX<br>
-                                    Au Capital de : XXXXXXXXXXXXXXXXX<br>
-                                    SIRET :  XXXXXXXXXXXXXXXXX<br>
-                                    Numéro TVA intracommunautaire : XXXXXXXXXXXXXXXXX<br>
-                                    Adresse de courrier électronique : XXXXXXXXXXXXXXXXX<br>
-
-                                    Le Créateur du site est : wildcodeschool.com<br>
-                                    Le Responsable de la  publication est : XXXXXXXXXXXXXXXXX<br>
-                                    Contactez le responsable de la publication : XXXXXXXXXXXXXXXXX<br>
-                                    Le responsable de la publication est une personne physique<br>
-
-                                    Le Webmaster est  : XXXXXXXXXXXXXXXXX<br>
-                                    Contactez le Webmaster : XXXXXXXXXXXXXXXXX<br>
-                                    L’hebergeur du site est : XXXXXXXXXXXXXXXXX<br>
-                                    CREDITS : les mentions légales ont étés générées par http://www.generer-mentions-legales.com
-                                    <br>
-                                    <br>
-                                    <div class="text-justify">
-                                        <h3>2. Description des services fournis :</h3>
-
-                                        Le site XXXXXXXXXXXXXXXXX a pour objet de fournir une information concernant l’ensemble des activités de l'organisation.
-                                        Le proprietaire du site s’efforce de fournir sur le site XXXXXXXXXXXXXXXXX des informations aussi précises que possible. Toutefois, il ne pourra être tenue responsable des omissions, des inexactitudes et des carences dans la mise à jour, qu’elles soient de son fait ou du fait des tiers partenaires qui lui fournissent ces informations.
-                                        Tous les informations proposées sur le site XXXXXXXXXXXXXXXXX sont données à titre indicatif, sont non exhaustives, et sont susceptibles d’évoluer. Elles sont données sous réserve de modifications ayant été apportées depuis leur mise en ligne.
-                                        <br>
-                                        <br>
-                                        <h3>3. Propriété intellectuelle et contrefaçons :</h3>
-
-                                        Le proprietaire du site est propriétaire des droits de propriété intellectuelle ou détient les droits d’usage sur tous les éléments accessibles sur le site, notamment les textes, images, graphismes, logo, icônes, sons, logiciels…
-                                        Toute reproduction, représentation, modification, publication, adaptation totale ou partielle des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite, sauf autorisation écrite préalable à l'email : XXXXXXXXXXXXXXXXX.
-                                        Toute exploitation non autorisée du site ou de l’un de ces éléments qu’il contient sera considérée comme constitutive d’une contrefaçon et poursuivie conformément aux dispositions des articles L.335-2 et suivants du Code de Propriété Intellectuelle.
-                                        <br>
-                                        <br>
-                                        <h3>4. Liens hypertextes et cookies :</h3>
-
-                                        Le site XXXXXXXXXXXXXXXXX contient un certain nombre de liens hypertextes vers d’autres sites (partenaires, informations …) mis en place avec l’autorisation du proprietaire du site . Cependant, le proprietaire du site n’a pas la possibilité de vérifier le contenu des sites ainsi visités  et décline donc toute responsabilité de ce fait quand aux risques éventuels de contenus illicites.
-
-                                        L’utilisateur est informé que lors de ses visites sur le site XXXXXXXXXXXXXXXXX, un ou des cookies sont susceptible de s’installer automatiquement sur son ordinateur. Un cookie est un fichier de petite taille, qui ne permet pas l’identification de l’utilisateur, mais qui enregistre des informations relatives à la navigation d’un ordinateur sur un site. Les données ainsi obtenues visent à faciliter la navigation ultérieure sur le site, et ont également vocation à permettre diverses mesures de fréquentation.
-
-                                        Le paramétrage du logiciel de navigation permet d’informer de la présence de cookie et éventuellement, de refuser de la manière décrite à l’adresse suivante : www.cnil.fr
-                                        Le refus d’installation d’un cookie peut entraîner l’impossibilité d’accéder à certains services. L’utilisateur peut toutefois configurer son ordinateur de la manière suivante, pour refuser l’installation des cookies :
-                                        Sous Internet Explorer : onglet outil / options internet. Cliquez sur Confidentialité et choisissez Bloquer tous les cookies. Validez sur Ok.
-                                        Sous Netscape : onglet édition / préférences. Cliquez sur Avancées et choisissez Désactiver les cookies. Validez sur Ok.
-                                        <br>
-                                        <br>
-                                        <h3>5. Protection des biens et des personnes - gestion des données personnelles :</h3>
-
-                                        Utilisateur : Internaute se connectant, utilisant le site susnommé : www.clubdelopinion.com
-                                        En France, les données personnelles sont notamment protégées par la loi n° 78-87 du 6 janvier 1978, la loi n° 2004-801 du 6 août 2004, l'article L. 226-13 du Code pénal et la Directive Européenne du 24 octobre 1995.
-
-                                        Sur le site XXXXXXXXXXXXXXXXX, le proprietaire du site ne collecte des informations personnelles relatives à l'utilisateur que pour le besoin de certains services proposés par le site XXXXXXXXXXXXXXXXX. L'utilisateur fournit ces informations en toute connaissance de cause, notamment lorsqu'il procède par lui-même à leur saisie. Il est alors précisé à l'utilisateur du site XXXXXXXXXXXXXXXXX l’obligation ou non de fournir ces informations.
-                                        Conformément aux dispositions des articles 38 et suivants de la loi 78-17 du 6 janvier 1978 relative à l’informatique, aux fichiers et aux libertés, tout utilisateur dispose d’un droit d’accès, de rectification, de suppression et d’opposition aux données personnelles le concernant. Pour l’exercer, adressez votre demande à XXXXXXXXXXXXXXXXX par email : email du webmaster ou en effectuant sa demande écrite et signée, accompagnée d’une copie du titre d’identité avec signature du titulaire de la pièce, en précisant l’adresse à laquelle la réponse doit être envoyée.
-
-                                        Aucune information personnelle de l'utilisateur du site XXXXXXXXXXXXXXXXX n'est publiée à l'insu de l'utilisateur, échangée, transférée, cédée ou vendue sur un support quelconque à des tiers. Seule l'hypothèse du rachat du site XXXXXXXXXXXXXXXXX à le proprietaire du site et de ses droits permettrait la transmission des dites informations à l'éventuel acquéreur qui serait à son tour tenu de la même obligation de conservation et de modification des données vis à vis de l'utilisateur du site XXXXXXXXXXXXXXXXX.
-                                        Le site XXXXXXXXXXXXXXXXX est déclaré à la CNIL sous le numéro "XXXXXXXXXXXXXXXXX".
-
-                                        Les bases de données sont protégées par les dispositions de la loi du 1er juillet 1998 transposant la directive 96/9 du 11 mars 1996 relative à la protection juridique des bases de données.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
-
-        <div class="modal fade" id="partenaires" tabindex="-1" role="dialog" aria-labelledby="partenaires">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
-                        <h4 class="modal-title">Devenir Partenaires</h4>
-                    </div>
-                    <br>
-                    <div class="modal-body">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-xs-12 text-justify">
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br>                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-
-
-        <div class="modal fade" id="experts" tabindex="-1" role="dialog" aria-labelledby="experts">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
-                        <h4 class="modal-title">Nos Experts</h4>
-                    </div>
-                    <br>
-                    <div class="modal-body">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-xs-12 text-justify">
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br>                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-
-        <div class="modal fade" id="contact" tabindex="-1" role="dialog" aria-labelledby="contact">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
-                        <h4 class="modal-title">Contact</h4>
-                    </div>
-                    <br>
-                    <div class="modal-body">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-xs-12 text-justify">
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-        <!-- *****************************************END MODALES*****************************************-->
+    {% endblock %}
     </div>
-</footer>
+        <!-- footer -->
+        <footer class="container-fluid">
 
-<!-- end footer -->
+            <div class="row">
 
-{% block javascripts %}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://use.fontawesome.com/2ac71d0e85.js"></script>
-{% endblock %}
+                <div class="col-xs-12 col-sm-3">
+                    <img class="logo-footer center-block" src="{{ asset('bundles/booster/img/logo-ss-fond.png') }}" alt="logo booster rural">
+                </div>
+
+                <div class="col-xs-12 col-sm-3">
+                    <ul class="ul-footer">
+                        <li class="li-footer"><a class="foot-item" data-toggle="modal" data-target="#mentions_légales">Mentions légales</a></li>
+                        <li class="li-footer"><a class="foot-item" data-toggle="modal" data-target="#credits">Crédits</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-xs-12 col-sm-3">
+                    <ul class="ul-footer">
+                        <li class="li-footer"><a class="foot-item" data-toggle="modal" data-target="#partenaires">Nos partenaires</a></li>
+                        <li class="li-footer"><a class="foot-item" data-toggle="modal" data-target="#experts">Nos experts</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-xs-12 col-sm-3">
+                    <ul class="ul-footer">
+                        <li class="li-footer"><a class="foot-item" data-toggle="modal" data-target="#contact"><span class="glyphicon glyphicon-envelope"></span> Nous contacter</a></li>
+                        <li class="icon-social">
+                            <a class="foot-item" href="#"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a> <a class="foot-item" href="#"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a> <a class="foot-item" href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <!-- ********************************* modales ************************************* -->
+
+
+                <div class="modal fade" id="credits" tabindex="-1" role="dialog" aria-labelledby="creditsmodal">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+                                <h3 class="modal-title">Crédits</h3>
+                            </div>
+                            <div class="modal-body">
+                                <h4>Développé par les étudiants de la Wild Code School :</h4><br>
+                                <div class="center-block">
+                                    <a href="https://www.linkedin.com/in/pascale-barboteau-4a0409a5?authType=NAME_SEARCH&authToken=Rp5D&locale=fr_FR&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A374259576%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1481378936405%2Ctas%3Apas" target="_blank">Pascale BARBOTEAU</a><br>
+                                    <a href="https://www.linkedin.com/in/florian-galerne-610525114?authType=NAME_SEARCH&authToken=inXW&locale=fr_FR&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A479052588%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1481379014930%2Ctas%3Aflo" target="_blank">Florian GALERNE</a><br>
+                                    <a href="https://fr.linkedin.com/in/julien-saint-laurent" target="_blank">Julien SAINT-LAURENT</a>
+                                </div>
+                                <br>
+                            </div>
+                            <a href="http://www.wildcodeschool.fr" target="_blank"><img src="{{ asset('bundles/booster/img/wcs.jpg') }}" width="20%"/></a>
+                            <br><br>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+
+
+                <div class="modal fade" id="mentions_légales" tabindex="-1" role="dialog" aria-labelledby="LargeMentionslégalesmodal">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+                                <h4 class="modal-title">Mentions légales</h4>
+                            </div>
+                            <br>
+                            <div class="modal-body">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="mentions_légales_text">
+
+                                                XXXXXXXXXXXXXXXXX <br>
+                                                XXXXXXXXXXXXXXXXX <br>
+                                                XXXXXXXXXXXXXXXXX <br>
+
+                                            </div>
+
+                                            <p>
+                                                <br>
+                                            <div class="mentions_légales_text">
+                                                Droits de propriété du site
+                                            </div>
+                                            <br>
+                                            <h3>1. Présentation du site :</h3>
+
+                                            Conformément aux dispositions des articles 6-III et 19 de la Loi n° 2004-575 du 21 juin 2004 pour la Confiance dans l'économie numérique, dite L.C.E.N., nous portons à la connaissance des utilisateurs et visiteurs du site : XXXXXXXXXXXXXXXXX les informations suivantes :<br>
+
+                                            Informations légales :<br>
+
+                                            Statut du propriétaire : XXXXXXXXXXXXXXXXX<br>
+                                            Préfixe : XXXXXXXXXXXXXXXXX<br>
+                                            Nom de la Société : XXXXXXXXXXXXXXXXX<br>
+                                            Adresse : XXXXXXXXXXXXXXXXXs<br>
+                                            Tél  : XXXXXXXXXXXXXXXXX<br>
+                                            Au Capital de : XXXXXXXXXXXXXXXXX<br>
+                                            SIRET :  XXXXXXXXXXXXXXXXX<br>
+                                            Numéro TVA intracommunautaire : XXXXXXXXXXXXXXXXX<br>
+                                            Adresse de courrier électronique : XXXXXXXXXXXXXXXXX<br>
+
+                                            Le Créateur du site est : wildcodeschool.com<br>
+                                            Le Responsable de la  publication est : XXXXXXXXXXXXXXXXX<br>
+                                            Contactez le responsable de la publication : XXXXXXXXXXXXXXXXX<br>
+                                            Le responsable de la publication est une personne physique<br>
+
+                                            Le Webmaster est  : XXXXXXXXXXXXXXXXX<br>
+                                            Contactez le Webmaster : XXXXXXXXXXXXXXXXX<br>
+                                            L’hebergeur du site est : XXXXXXXXXXXXXXXXX<br>
+                                            CREDITS : les mentions légales ont étés générées par http://www.generer-mentions-legales.com
+                                            <br>
+                                            <br>
+                                            <div class="text-justify">
+                                                <h3>2. Description des services fournis :</h3>
+
+                                                Le site XXXXXXXXXXXXXXXXX a pour objet de fournir une information concernant l’ensemble des activités de l'organisation.
+                                                Le proprietaire du site s’efforce de fournir sur le site XXXXXXXXXXXXXXXXX des informations aussi précises que possible. Toutefois, il ne pourra être tenue responsable des omissions, des inexactitudes et des carences dans la mise à jour, qu’elles soient de son fait ou du fait des tiers partenaires qui lui fournissent ces informations.
+                                                Tous les informations proposées sur le site XXXXXXXXXXXXXXXXX sont données à titre indicatif, sont non exhaustives, et sont susceptibles d’évoluer. Elles sont données sous réserve de modifications ayant été apportées depuis leur mise en ligne.
+                                                <br>
+                                                <br>
+                                                <h3>3. Propriété intellectuelle et contrefaçons :</h3>
+
+                                                Le proprietaire du site est propriétaire des droits de propriété intellectuelle ou détient les droits d’usage sur tous les éléments accessibles sur le site, notamment les textes, images, graphismes, logo, icônes, sons, logiciels…
+                                                Toute reproduction, représentation, modification, publication, adaptation totale ou partielle des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite, sauf autorisation écrite préalable à l'email : XXXXXXXXXXXXXXXXX.
+                                                Toute exploitation non autorisée du site ou de l’un de ces éléments qu’il contient sera considérée comme constitutive d’une contrefaçon et poursuivie conformément aux dispositions des articles L.335-2 et suivants du Code de Propriété Intellectuelle.
+                                                <br>
+                                                <br>
+                                                <h3>4. Liens hypertextes et cookies :</h3>
+
+                                                Le site XXXXXXXXXXXXXXXXX contient un certain nombre de liens hypertextes vers d’autres sites (partenaires, informations …) mis en place avec l’autorisation du proprietaire du site . Cependant, le proprietaire du site n’a pas la possibilité de vérifier le contenu des sites ainsi visités  et décline donc toute responsabilité de ce fait quand aux risques éventuels de contenus illicites.
+
+                                                L’utilisateur est informé que lors de ses visites sur le site XXXXXXXXXXXXXXXXX, un ou des cookies sont susceptible de s’installer automatiquement sur son ordinateur. Un cookie est un fichier de petite taille, qui ne permet pas l’identification de l’utilisateur, mais qui enregistre des informations relatives à la navigation d’un ordinateur sur un site. Les données ainsi obtenues visent à faciliter la navigation ultérieure sur le site, et ont également vocation à permettre diverses mesures de fréquentation.
+
+                                                Le paramétrage du logiciel de navigation permet d’informer de la présence de cookie et éventuellement, de refuser de la manière décrite à l’adresse suivante : www.cnil.fr
+                                                Le refus d’installation d’un cookie peut entraîner l’impossibilité d’accéder à certains services. L’utilisateur peut toutefois configurer son ordinateur de la manière suivante, pour refuser l’installation des cookies :
+                                                Sous Internet Explorer : onglet outil / options internet. Cliquez sur Confidentialité et choisissez Bloquer tous les cookies. Validez sur Ok.
+                                                Sous Netscape : onglet édition / préférences. Cliquez sur Avancées et choisissez Désactiver les cookies. Validez sur Ok.
+                                                <br>
+                                                <br>
+                                                <h3>5. Protection des biens et des personnes - gestion des données personnelles :</h3>
+
+                                                Utilisateur : Internaute se connectant, utilisant le site susnommé : www.clubdelopinion.com
+                                                En France, les données personnelles sont notamment protégées par la loi n° 78-87 du 6 janvier 1978, la loi n° 2004-801 du 6 août 2004, l'article L. 226-13 du Code pénal et la Directive Européenne du 24 octobre 1995.
+
+                                                Sur le site XXXXXXXXXXXXXXXXX, le proprietaire du site ne collecte des informations personnelles relatives à l'utilisateur que pour le besoin de certains services proposés par le site XXXXXXXXXXXXXXXXX. L'utilisateur fournit ces informations en toute connaissance de cause, notamment lorsqu'il procède par lui-même à leur saisie. Il est alors précisé à l'utilisateur du site XXXXXXXXXXXXXXXXX l’obligation ou non de fournir ces informations.
+                                                Conformément aux dispositions des articles 38 et suivants de la loi 78-17 du 6 janvier 1978 relative à l’informatique, aux fichiers et aux libertés, tout utilisateur dispose d’un droit d’accès, de rectification, de suppression et d’opposition aux données personnelles le concernant. Pour l’exercer, adressez votre demande à XXXXXXXXXXXXXXXXX par email : email du webmaster ou en effectuant sa demande écrite et signée, accompagnée d’une copie du titre d’identité avec signature du titulaire de la pièce, en précisant l’adresse à laquelle la réponse doit être envoyée.
+
+                                                Aucune information personnelle de l'utilisateur du site XXXXXXXXXXXXXXXXX n'est publiée à l'insu de l'utilisateur, échangée, transférée, cédée ou vendue sur un support quelconque à des tiers. Seule l'hypothèse du rachat du site XXXXXXXXXXXXXXXXX à le proprietaire du site et de ses droits permettrait la transmission des dites informations à l'éventuel acquéreur qui serait à son tour tenu de la même obligation de conservation et de modification des données vis à vis de l'utilisateur du site XXXXXXXXXXXXXXXXX.
+                                                Le site XXXXXXXXXXXXXXXXX est déclaré à la CNIL sous le numéro "XXXXXXXXXXXXXXXXX".
+
+                                                Les bases de données sont protégées par les dispositions de la loi du 1er juillet 1998 transposant la directive 96/9 du 11 mars 1996 relative à la protection juridique des bases de données.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+
+                <div class="modal fade" id="partenaires" tabindex="-1" role="dialog" aria-labelledby="partenaires">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+                                <h4 class="modal-title">Devenir Partenaires</h4>
+                            </div>
+                            <br>
+                            <div class="modal-body">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-xs-12 text-justify">
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br>
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br>                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br>
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+
+
+                <div class="modal fade" id="experts" tabindex="-1" role="dialog" aria-labelledby="experts">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+                                <h4 class="modal-title">Nos Experts</h4>
+                            </div>
+                            <br>
+                            <div class="modal-body">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-xs-12 text-justify">
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br>
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br>                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br>
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+
+                <div class="modal fade" id="contact" tabindex="-1" role="dialog" aria-labelledby="contact">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+                                <h4 class="modal-title">Contact</h4>
+                            </div>
+                            <br>
+                            <div class="modal-body">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-xs-12 text-justify">
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+                <!-- *****************************************END MODALES*****************************************-->
+            </div>
+        </footer>
+
+        <!-- end footer -->
+
+
+    {% block javascripts %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="https://use.fontawesome.com/2ac71d0e85.js"></script>
+    {% endblock %}
 
 </body>
 
