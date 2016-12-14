@@ -103,7 +103,9 @@ body{
     color: #444444;
 }
 
-
+header{
+    margin-bottom: 30px;
+}
 /******************************************Media Queries Nav********************************/
 
 @media (max-width: 1060px){
@@ -165,6 +167,7 @@ body{
 
 footer{
     background-color: #444444;
+    margin-top: 30px;
 }
 
 footer a{
