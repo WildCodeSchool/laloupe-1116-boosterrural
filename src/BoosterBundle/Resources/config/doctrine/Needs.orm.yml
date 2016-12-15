@@ -29,4 +29,8 @@ BoosterBundle\Entity\Needs:
             type: integer
         lgt:
             type: integer
+    manyToOne:
+        users:
+            targetEntity: BoosterBundle\Entity\User
+            inversedBy: Id
     lifecycleCallbacks: {  }

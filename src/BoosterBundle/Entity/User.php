@@ -487,4 +487,80 @@ class User extends BaseUser
     {
         return $this->project;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $offers;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $needs;
+
+
+    /**
+     * Add offers
+     *
+     * @param \BoosterBundle\Entity\Offer $offers
+     * @return User
+     */
+    public function addOffer(\BoosterBundle\Entity\Offer $offers)
+    {
+        $this->offers[] = $offers;
+
+        return $this;
+    }
+
+    /**
+     * Remove offers
+     *
+     * @param \BoosterBundle\Entity\Offer $offers
+     */
+    public function removeOffer(\BoosterBundle\Entity\Offer $offers)
+    {
+        $this->offers->removeElement($offers);
+    }
+
+    /**
+     * Get offers
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getOffers()
+    {
+        return $this->offers;
+    }
+
+    /**
+     * Add needs
+     *
+     * @param \BoosterBundle\Entity\Needs $needs
+     * @return User
+     */
+    public function addNeed(\BoosterBundle\Entity\Needs $needs)
+    {
+        $this->needs[] = $needs;
+
+        return $this;
+    }
+
+    /**
+     * Remove needs
+     *
+     * @param \BoosterBundle\Entity\Needs $needs
+     */
+    public function removeNeed(\BoosterBundle\Entity\Needs $needs)
+    {
+        $this->needs->removeElement($needs);
+    }
+
+    /**
+     * Get needs
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getNeeds()
+    {
+        return $this->needs;
+    }
 }

@@ -53,6 +53,12 @@ BoosterBundle\Entity\User:
             type: string
             length: 255
 
-
+    oneToMany:
+        offers:
+            targetEntity: BoosterBundle\Entity\Offer
+            mappedBy: Id
+        needs:
+            targetEntity: BoosterBundle\Entity\Needs
+            mappedBy: Id
 
     lifecycleCallbacks: {  }
