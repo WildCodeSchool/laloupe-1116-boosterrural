@@ -4,5 +4,55 @@ BoosterBundle\Entity\User:
     id:
         id:
             type: integer
+            id: true
             generator:
                 strategy: AUTO
+    fields:
+        town:
+            type: string
+            length: 255
+        cp:
+            type: integer
+        address:
+            type: string
+            length: 255
+        phone:
+            type: integer
+        resident:
+            type: integer
+        website:
+            type: string
+            length: 255
+        firstname:
+            type: string
+            length: 255
+        lastname:
+            type: string
+            length: 255
+        message_mayor:
+            type: text
+        description:
+            type: text
+        lat:
+            type: integer
+        lgt:
+            type: integer
+        organization:
+            type: string
+            length: 255
+        status_actor:
+            type: string
+            length: 255
+        status_citizen:
+            type: string
+            length: 255
+        category:
+            type: string
+            length: 255
+        project:
+            type: string
+            length: 255
+
+
+
+    lifecycleCallbacks: {  }
