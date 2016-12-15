@@ -192,4 +192,60 @@ class Offer
     {
         return $this->lgt;
     }
+    /**
+     * @var string
+     */
+    private $activity;
+
+    /**
+     * @var string
+     */
+    private $wish;
+
+
+    /**
+     * Set activity
+     *
+     * @param string $activity
+     * @return Offer
+     */
+    public function setActivity($activity)
+    {
+        $this->activity = $activity;
+
+        return $this;
+    }
+
+    /**
+     * Get activity
+     *
+     * @return string 
+     */
+    public function getActivity()
+    {
+        return $this->activity;
+    }
+
+    /**
+     * Set wish
+     *
+     * @param string $wish
+     * @return Offer
+     */
+    public function setWish($wish)
+    {
+        $this->wish = $wish;
+
+        return $this;
+    }
+
+    /**
+     * Get wish
+     *
+     * @return string 
+     */
+    public function getWish()
+    {
+        return $this->wish;
+    }
 }
