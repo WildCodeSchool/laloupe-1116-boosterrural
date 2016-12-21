@@ -27,7 +27,7 @@
 {%- block form_widget_simple -%}
     {%- set type = type|default('text') -%}
     <div class="row">
-        <div class="col-xs-5">
+        <div class="col-xs-12">
             <input type="{{ type }}" {{ block('widget_attributes') }} {% if value is not empty %}value="{{ value }}" {% endif %} class="form-control"/>
         </div>
     </div>

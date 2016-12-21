@@ -3,14 +3,15 @@
 <div class="row">
     <section class="col-sm-offset-2 col-sm-8 col-xs-12 backWhite sec1">
         <div class="row">
-            <div class="col-sm-offset+">
+            <div class="col-sm-offset-3 col-sm-6">
+                <h2>Incription</h2>
         {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
         {{ form_widget(form) }}
 
 
 
         <div>
-            <input type="submit" value="{{ 'registration.submit'|trans }}" />
+            <input type="submit" value="{{ 'registration.submit'|trans }}" class="btn btn-success center-block successButton" />
         </div>
 
         {{ form_end(form) }}
