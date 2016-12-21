@@ -5,7 +5,7 @@ namespace BoosterBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 
-class RegistrationType extends AbstractType {
+class MayorRegistrationType extends AbstractType {
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -22,6 +22,6 @@ class RegistrationType extends AbstractType {
     }
 
     public function getName() {
-        return 'booster_user_registration';
+        return 'booster_mayor_registration';
     }
 }

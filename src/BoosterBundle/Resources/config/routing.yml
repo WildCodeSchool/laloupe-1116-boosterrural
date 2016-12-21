@@ -15,3 +15,7 @@ booster_mayor:
     path:     /mayor
     defaults: { _controller: BoosterBundle:Default:mayor}
 
+booster_registerMayor:
+    path:     /mayor/register
+    defaults: { _controller: BoosterBundle:Registration:mayorRegister}
+
