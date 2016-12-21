@@ -18,40 +18,54 @@ BoosterBundle\Entity\User:
             length: 255
         phone:
             type: integer
+            nullable: true
         resident:
             type: integer
+            nullable: true
         website:
             type: string
             length: 255
+            nullable: true
         firstname:
             type: string
             length: 255
+            nullable: true
         lastname:
             type: string
             length: 255
+            nullable: true
         message_mayor:
             type: text
+            nullable: true
         description:
             type: text
+            nullable: true
         lat:
             type: integer
+            nullable: true
         lgt:
             type: integer
+            nullable: true
         organization:
             type: string
             length: 255
+            nullable: true
         status_actor:
             type: string
             length: 255
+            nullable: true
         status_citizen:
             type: string
             length: 255
+            nullable: true
         category:
             type: string
             length: 255
+            nullable: true
         project:
             type: string
             length: 255
+            nullable: true
 
     oneToMany:
         offers:
