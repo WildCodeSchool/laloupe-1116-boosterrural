@@ -146,13 +146,13 @@ span {
 }
 
 .navbar-collapse {
-    margin-top: 200px;
+    margin-top: 150px; /*modif*/
     text-align: center;
 }
 
 #logo {
     width: 350px;
-    margin-top: 40px;
+    margin-top: 15px; /*modif*/
 }
 
 .navbar .navbar-nav {
