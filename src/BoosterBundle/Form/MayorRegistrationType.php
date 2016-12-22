@@ -10,11 +10,15 @@ class MayorRegistrationType extends AbstractType {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            -> add('town')
-            -> add('cp')
-            -> add('address');
-
-
+            -> add('address', null, array(
+                'label'=>'Adresse'
+            ))
+            -> add('cp', null, array(
+                'label'=>'Code postal'
+            ))
+            -> add('town', Null, array(
+                'label'=>'Ville'
+            ));
     }
 
     public function getParent(){
