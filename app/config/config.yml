@@ -73,6 +73,6 @@ fos_user:
     user_class: BoosterBundle\Entity\User
     registration:
         form:
-           type: booster_user_registration
+           type: booster_mayor_registration
         confirmation:
            enabled: true
