@@ -11,8 +11,12 @@ class CitizenRegistrationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add ('Lastname')
-            ->add('Firstname')
+            ->add ('Lastname', null, [
+                "label" => "Nom"
+            ])
+            ->add('Firstname', null, [
+                "label" => "Prénom"
+            ])
         ;
     }
 
