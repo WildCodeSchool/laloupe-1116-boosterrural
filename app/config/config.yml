@@ -74,3 +74,5 @@ fos_user:
     registration:
         form:
             type: boosterrural_citizenregister
+        confirmation:
+            enabled: true

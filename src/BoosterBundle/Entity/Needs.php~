@@ -248,4 +248,32 @@ class Needs
     {
         return $this->availability;
     }
+    /**
+     * @var \BoosterBundle\Entity\User
+     */
+    private $users;
+
+
+    /**
+     * Set users
+     *
+     * @param \BoosterBundle\Entity\User $users
+     * @return Needs
+     */
+    public function setUsers(\BoosterBundle\Entity\User $users = null)
+    {
+        $this->users = $users;
+
+        return $this;
+    }
+
+    /**
+     * Get users
+     *
+     * @return \BoosterBundle\Entity\User 
+     */
+    public function getUsers()
+    {
+        return $this->users;
+    }
 }
