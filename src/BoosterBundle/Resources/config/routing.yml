@@ -15,3 +15,7 @@ booster_mayor:
     path:     /mayor
     defaults: { _controller: BoosterBundle:Default:mayor}
 
+booster_formActor:
+    path:     /formactor
+    defaults: { _controller: BoosterBundle:Default:formactor}
+

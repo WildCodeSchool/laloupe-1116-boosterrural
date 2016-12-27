@@ -9,24 +9,27 @@ class DefaultController extends Controller
 
     public function actorAction()
     {
-
         return $this->render('BoosterBundle::actor.html.twig');
     }
+
     public function home_page_no_connectAction()
     {
         return $this->render('BoosterBundle::home_page_no_connect.html.twig');
     }
+
     public function citizenAction()
     {
-
         return $this->render('BoosterBundle::citizen.html.twig');
-
     }
+
     public function mayorAction()
     {
-
         return $this->render('BoosterBundle::mayor.html.twig');
+    }
 
+    public function formactorAction()
+    {
+        return $this->render('BoosterBundle::formActor.html.twig');
     }
 
 }
