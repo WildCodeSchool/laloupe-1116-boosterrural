@@ -586,3 +586,16 @@ footer > ul > li {
 
 /****************************************************************/
 /*******************form citizen*********************************/
+
+.btn_form_citizen{
+    color: white;
+    background-color: rgb(252, 183, 0);
+}
+
+.background_form_citizen{
+    margin: 2% 30% 2% 30%;
+}
+
+.btn_regist_citizen{
+    text-align: center;
+}
