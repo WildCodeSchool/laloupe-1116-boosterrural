@@ -1,4 +1,3 @@
-
 booster_citizenfront:
     path:     /citizen
     defaults: { _controller: BoosterBundle:Default:citizen }
@@ -15,7 +14,6 @@ booster_mayor:
     path:     /mayor
     defaults: { _controller: BoosterBundle:Default:mayor}
 
-booster_formActor:
-    path:     /formactor
-    defaults: { _controller: BoosterBundle:Default:formactor}
-
+booster_registerActor:
+    path:     /actor/register
+    defaults: { _controller: BoosterBundle:Registration:actorRegister}

@@ -13,41 +13,49 @@ class User extends BaseUser
 
     /**
      * @var string
+     * @ORM\Column (type="string", length=255)
      */
     private $town;
 
     /**
      * @var integer
+     * @ORM\Column (type="integer")
      */
     private $cp;
 
     /**
      * @var string
+     * @ORM\Column (type="string", length=255)
      */
     private $address;
 
     /**
      * @var integer
+     * @ORM\Column (type="integer", nullable=true)
      */
     private $phone;
 
     /**
      * @var integer
+     * @ORM\Column (type="integer")
      */
     private $resident;
 
     /**
      * @var string
+     * @ORM\Column (type="string", length=255)
      */
     private $website;
 
     /**
      * @var string
+     * @ORM\Column (type="string", length=255)
      */
     private $firstname;
 
     /**
      * @var string
+     * @ORM\Column (type="string", length=255)
      */
     private $lastname;
 
@@ -73,26 +81,31 @@ class User extends BaseUser
 
     /**
      * @var string
+     * @ORM\Column (type="string", length=255)
      */
     private $organization;
 
     /**
      * @var string
+     * @ORM\Column (type="string", length=255)
      */
     private $status_actor;
 
     /**
      * @var string
+     * @ORM\Column (type="string", length=255)
      */
     private $status_citizen;
 
     /**
      * @var string
+     * @ORM\Column (type="string", length=255)
      */
     private $category;
 
     /**
      * @var string
+     * @ORM\Column (type="string", length=255)
      */
     private $project;
 

@@ -27,9 +27,4 @@ class DefaultController extends Controller
         return $this->render('BoosterBundle::mayor.html.twig');
     }
 
-    public function formactorAction()
-    {
-        return $this->render('BoosterBundle::formActor.html.twig');
-    }
-
 }
