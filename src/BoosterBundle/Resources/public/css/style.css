@@ -412,7 +412,7 @@ label {
     margin-bottom: 2.5%;
 }
 
-.successButton{
+.successButton {
     background-color: rgb(252, 183, 0);
     border: 1px solid black;
     margin-top: 5%;
@@ -420,9 +420,8 @@ label {
     color:black;
 }
 
-.successButton:hover{
+.successButton:hover {
     background-color: rgb(252, 183, 0);
-
 }
 
 /******************************************************/
