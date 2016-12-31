@@ -98,7 +98,7 @@ class RegistrationController extends BaseController
 
         }
 
-        return $this->render('FOSUserBundle:Registration:register.html.twig', array(
+        return $this->render('BoosterBundle:Registration:register.html.twig', array(
 
             'form' => $form->createView(),
 

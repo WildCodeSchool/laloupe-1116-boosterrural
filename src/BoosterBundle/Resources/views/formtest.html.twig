@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h1>Inscription acteur dynamique</h1>
+    <form class="center-block">
+        <div class="form-group">
+            <label for="nom_de_la_structure">nom de la structure</label>
+            <input type="text" class="form-control" id="nom_de_la_structure" placeholder="Nom de la structure">
+        </div>
+        <div class="form-group">
+            <label for="nom_du_responsable">nom du responsable</label>
+            <input type="text" class="form-control" id="nom_du_responsable" placeholder="Nom du responsable">
+        </div>
+        <div class="form-group">
+            <label for="prenom_du_responsable">prénom du responsable</label>
+            <input type="text" class="form-control" id="prenom_du_responsable" placeholder="Prénom du responsable">
+        </div>
+        <div class="form-group">
+            <label for="statut">statut</label>
+            <select class="form-control">
+                <option>Réseaux</option>
+                <option>Acteur individuel</option>
+                <option>TPE/Artisans</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="categorie">categorie</label>
+            <select class="form-control">
+                <option>Développement durable</option>
+                <option>Habitat</option>
+                <option>Agriculture/Agroalimentaire</option>
+                <option>Culture/Patrimoine</option>
+                <option>Mobilité</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="nom_de_la_commune">nom de la commune</label>
+            <input type="text" class="form-control" id="nom_de_la_commune" placeholder="Nom de la commune">
+        </div>
+        <div class="form-group">
+            <label for="code_postal">code postal</label>
+            <input type="text" class="form-control" id="code_postal" placeholder="Code postal">
+        </div>
+        <div class="form-group">
+            <label for="adresse_postale">adresse postale</label>
+            <input type="text" class="form-control" id="adresse_postale" placeholder="Adresse postale">
+        </div>
+        <div class="form-group">
+            <label for="adresse_mail">adresse mail</label>
+            <input type="email" class="form-control" id="adresse_mail" placeholder="Adresse mail">
+        </div>
+        <div class="form-group">
+            <label for="entrer_un_mot_de_passe">entrer un mot de passe</label>
+            <input type="password" class="form-control" id="entrer_un_mot_de_passe" placeholder="Entrer un mot de passe">
+        </div>
+        <div class="form-group">
+            <label for="confirmer_le_mot_de_passe">confirmer le mot de passe</label>
+            <input type="password" class="form-control" id="confirmer_le_mot_de_passe" placeholder="Confirmer le mot de passe">
+        </div>
+        <button type="submit" class="btn btn-default center-block">ENVOYER</button>
+    </form>
+{% endblock %}

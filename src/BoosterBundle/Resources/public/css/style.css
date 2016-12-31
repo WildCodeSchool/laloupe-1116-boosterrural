@@ -412,6 +412,19 @@ label {
     margin-bottom: 2.5%;
 }
 
+.successButton{
+    background-color: rgb(252, 183, 0);
+    border: 1px solid black;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    color:black;
+}
+
+.successButton:hover{
+    background-color: rgb(252, 183, 0);
+
+}
+
 /******************************************************/
 /************************ CITIZEN *********************/
 /******************************************************/

@@ -74,5 +74,5 @@ fos_user:
     registration:
         form:
             type: booster_actor_registration
-        #confirmation:
-            #enabled: true
+        confirmation:
+            enabled: true
