@@ -6,8 +6,21 @@
 
 {% block body %}
 <div class="background_form_citizen">
-{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
-    {{ form_widget(form) }}
+    {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+
+    <h4>Nom</h4>
+    {{ form_widget(form.Lastname) }}
+
+    <h4>Prénom</h4>
+    {{ form_widget(form.Firstname) }}
+
+    <h4>Adresse mail</h4>
+    {{ form_widget(form.email) }}
+
+    <h4>Nom d'utilisateur</h4>
+    {{ form_widget(form.username) }}
+
+
     <br/>
     <div class="btn_regist_citizen">
         <input type="submit" value="{{ 'registration.submit'|trans }}" class="btn btn-default btn_form_citizen" />
