@@ -8,19 +8,14 @@
 <div class="background_form_citizen">
     {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
 
-    <h4>Nom</h4>
+
+    {{ form_label(form.Lastname) }}
     {{ form_widget(form.Lastname) }}
 
-    <h4>Prénom</h4>
+    {{ form_label(form.Firstname) }}
     {{ form_widget(form.Firstname) }}
 
-    <h4>Adresse mail</h4>
-    {{ form_widget(form.email) }}
-
-    <h4>Nom d'utilisateur</h4>
-    {{ form_widget(form.username) }}
-
-    {{ form_widget(form.plainPassword) }}
+    {{ form_widget(form) }}
     
     <br/>
     <div class="btn_regist_citizen">
