@@ -8,6 +8,7 @@
  * file that was distributed with this source code.
  */
 namespace BoosterBundle\Controller;
+
 use BoosterBundle\Entity\User;
 use FOS\UserBundle\Event\FilterUserResponseEvent;
 use FOS\UserBundle\Event\FormEvent;
@@ -24,6 +25,8 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use FOS\UserBundle\Controller\RegistrationController as BaseController;
 use BoosterBundle\Form\MayorRegistrationType;
+use BoosterBundle\Form\CitizenRegistrationType;
+
 class RegistrationController extends BaseController
 {
     public function mayorRegisterAction(Request $request)
@@ -49,9 +52,7 @@ class RegistrationController extends BaseController
             if ($form->isValid()) {
                 $event = new FormEvent($form, $request);
                 $dispatcher->dispatch(FOSUserEvents::REGISTRATION_SUCCESS, $event);
-                $address = $user->getAddress;
-                $cp = $user->getCp;
-                $town = $user->getTown;
+
 
                 $userManager->updateUser($user);
                 if (null === $response = $event->getResponse()) {

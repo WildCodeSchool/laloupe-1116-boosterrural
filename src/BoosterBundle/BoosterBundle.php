@@ -10,8 +10,4 @@ class BoosterBundle extends Bundle
     {
         return 'FOSUserBundle';
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> ce989169ae3c49b09645f4755955a2526da8afce
 }

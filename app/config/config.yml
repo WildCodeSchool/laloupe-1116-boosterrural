@@ -75,10 +75,7 @@ fos_user:
         form:
 
            type: booster_mayor_registration
-        confirmation:
-           enabled: true
-
-            type: boosterrural_citizenregister
+           type: boosterrural_citizenregister
         confirmation:
             enabled: true
 
