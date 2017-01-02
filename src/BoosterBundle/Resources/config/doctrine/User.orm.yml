@@ -11,11 +11,14 @@ BoosterBundle\Entity\User:
         town:
             type: string
             length: 255
+            nullable: true
         cp:
             type: integer
+            nullable: true
         address:
             type: string
             length: 255
+            nullable: true
         phone:
             type: integer
             nullable: true

@@ -1,4 +1,3 @@
-
 /******************************************************/
 /************************ COMMON **********************/
 /******************************************************/
@@ -23,7 +22,7 @@ h2{
     font-size: 22px; /*modifs*/
 }
 
-.backWhite > h2{ 
+.backWhite > h2{
     padding: 2% 0%; /*modifs*/
 }
 
@@ -146,13 +145,13 @@ span {
 }
 
 .navbar-collapse {
-    margin-top: 200px;
+    margin-top: 150px; /*modif*/
     text-align: center;
 }
 
 #logo {
     width: 350px;
-    margin-top: 40px;
+    margin-top: 15px; /*modif*/
 }
 
 .navbar .navbar-nav {
@@ -281,6 +280,13 @@ header {
         padding-right: 0px;
     }
 }
+
+/****************nav-connect**************/
+li .liNav2{
+    padding-right: 40px;
+    margin-left: 60px;
+}
+
 
 /*******************************************************/
 /************** HOME PAGE NO CONNECT *******************/
@@ -599,5 +605,4 @@ footer > ul > li {
 
 .successButton:hover{
     background-color: rgb(252, 183, 0);
-
 }
