@@ -2,8 +2,8 @@
 
 namespace BoosterBundle\Form;
 
-use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\AbstractType;
 
 class CitizenRegistrationType extends AbstractType
 {
@@ -11,10 +11,10 @@ class CitizenRegistrationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add ('Lastname', null, [
+            ->add ('lastname', null, [
                 "label" => "Nom"
             ])
-            ->add('Firstname', null, [
+            ->add('firstname', null, [
                 "label" => "Prénom"
             ])
         ;
@@ -27,6 +27,6 @@ class CitizenRegistrationType extends AbstractType
 
     public function getName()
     {
-        return 'boosterrural_citizenregister';
+        return 'booster_citizen_registration';
     }
 }

@@ -2,4 +2,4 @@ services:
     booste.form.registration:
         class: BoosterBundle\Form\CitizenRegistrationType
         tags:
-        - { name: form.type, alias: boosterrural_citizenregister }
+            - { name: form.type, alias: booster_citizen_registration }

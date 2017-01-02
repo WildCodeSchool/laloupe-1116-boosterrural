@@ -1,28 +1,17 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <link rel="template" href="{{ asset("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css") }}"/>
-    </head>
-    <body>
-    <!-- bouton 'se connecter' du FosUserBundle -->
-
-
-        {% if app.request.hasPreviousSession %}
-            {% for type, messages in app.session.flashbag.all() %}
-                {% for message in messages %}
-                    <div class="flash-{{ type }}">
-                        {{ message }}
-                    </div>
-                {% endfor %}
-            {% endfor %}
-        {% endif %}
+{% extends 'base.html.twig' %}
+{% block body %}
 
         <div>
             {% block fos_user_content %}
+                {% if app.request.hasPreviousSession %}
+                    {% for type, messages in app.session.flashbag.all() %}
+                        {% for message in messages %}
+                            <div class="flash-{{ type }}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endfor %}
+                {% endif %}
             {% endblock fos_user_content %}
         </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    </body>
-</html>
+{% endblock %}
