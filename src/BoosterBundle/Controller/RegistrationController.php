@@ -11,6 +11,7 @@
 
 namespace BoosterBundle\Controller;
 
+use BoosterBundle\Entity\User;
 use FOS\UserBundle\Event\FilterUserResponseEvent;
 use FOS\UserBundle\Event\FormEvent;
 use FOS\UserBundle\Event\GetResponseUserEvent;
@@ -59,6 +60,11 @@ class RegistrationController extends BaseController
             if ($form->isValid()) {
                 $event = new FormEvent($form, $request);
                 $dispatcher->dispatch(FOSUserEvents::REGISTRATION_SUCCESS, $event);
+                $address = $user->getAddress;
+                $cp = $user->getCp;
+                $town = $user->getTown;
+
+                
 
                 $userManager->updateUser($user);
 
@@ -80,9 +86,41 @@ class RegistrationController extends BaseController
             }
         }
 
-        return $this->render('FOSUserBundle:Registration:register.html.twig', array(
+        return $this->render('FOSUserBundle:Registration:register_mayor.html.twig', array(
             'form' => $form->createView(),
         ));
+    }
+
+    /**
+     *
+     * We use this API to recover latitude and longitude.
+     *
+     * */
+    public function geocode($address, $cp, $town){
+        $user = new User();
+        // Récupération de l'adresse totale
+        $plainAddress= str_replace(' ', '%20', $address). '%20' . $cp . '%20' . $town;
+
+        $url = "https://maps.google.com/maps/api/geocode/json?address=". $plainAddress ."&key=AIzaSyBSFjZGurwwEtOnMOg1mKgJgS3WcP8ucrk";
+// get the json response
+        $resp_json = file_get_contents($url);
+// decode the json
+        $resp = json_decode($resp_json, true);
+// response status will be 'OK', if able to geocode given address
+        if ($resp['status'] == 'OK') {
+            // get the important data
+            $lati = $resp['results'][0]['geometry']['location']['lat'];
+            $longi = $resp['results'][0]['geometry']['location']['lng'];
+            // verify if data is complete
+            if ($lati && $longi) {
+                $user->setLat($lati);
+                $user->setLgt($longi);
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($user);
+                $em->flush($user);
+            }
+        }
+
     }
 }
 
