@@ -137,6 +137,7 @@ span {
 .navbar-brand{
     position: absolute;
     left: calc(50% - 200px);
+    padding: 0;
 }
 
 .navbar-brand a {
@@ -145,13 +146,14 @@ span {
 }
 
 .navbar-collapse {
-    margin-top: 150px; /*modif*/
+    margin-top: 100px; /*modif*/
     text-align: center;
 }
 
 #logo {
     width: 350px;
-    margin-top: 15px; /*modif*/
+    margin-top: 5px; /*modif*/
+
 }
 
 .navbar .navbar-nav {

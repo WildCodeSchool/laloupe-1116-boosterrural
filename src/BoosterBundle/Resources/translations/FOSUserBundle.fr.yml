@@ -17,6 +17,12 @@ registration:
 
             L'équipe du Booster Rural.
 
+layout:
+    logout: 'Déconnexion'
+    login: 'Connexion'
+    register: 'Inscription'
+    logged_in_as: '%username%'
+
 form:
     group_name: 'Nom du groupe'
     username: 'Nom d''utilisateur'
