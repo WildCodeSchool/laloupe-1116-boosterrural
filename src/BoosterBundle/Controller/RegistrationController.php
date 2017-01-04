@@ -15,14 +15,10 @@ use FOS\UserBundle\Event\FormEvent;
 use FOS\UserBundle\Event\GetResponseUserEvent;
 use FOS\UserBundle\Form\Factory\FactoryInterface;
 use FOS\UserBundle\FOSUserEvents;
-use FOS\UserBundle\Model\UserInterface;
 use FOS\UserBundle\Model\UserManagerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use FOS\UserBundle\Controller\RegistrationController as BaseController;
 use BoosterBundle\Form\MayorRegistrationType;
 use BoosterBundle\Form\CitizenRegistrationType;
@@ -68,7 +64,7 @@ class RegistrationController extends BaseController
                 return $response;
             }
         }
-        return $this->render('FOSUserBundle:Registration:register_mayor.html.twig', array(
+        return $this->render('BoosterBundle:Registration:formMayor.html.twig', array(
             'form' => $form->createView(),
         ));
     }
@@ -110,7 +106,7 @@ class RegistrationController extends BaseController
                 return $response;
             }
         }
-        return $this->render('BoosterBundle:Registration:register_citizen.html.twig', array(
+        return $this->render('BoosterBundle:Registration:formCitizen.html.twig', array(
             'form' => $form->createView(),
         ));
     }
