@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Offers list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Cp</th>
+                <th>Town</th>
+                <th>Description</th>
+                <th>Activity</th>
+                <th>Wish</th>
+                <th>Lat</th>
+                <th>Lgt</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for offer in offers %}
+            <tr>
+                <td><a href="{{ path('offer_show', { 'id': offer.id }) }}">{{ offer.id }}</a></td>
+                <td>{{ offer.title }}</td>
+                <td>{{ offer.cp }}</td>
+                <td>{{ offer.town }}</td>
+                <td>{{ offer.description }}</td>
+                <td>{{ offer.activity }}</td>
+                <td>{{ offer.wish }}</td>
+                <td>{{ offer.lat }}</td>
+                <td>{{ offer.lgt }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('offer_show', { 'id': offer.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('offer_edit', { 'id': offer.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('offer_new') }}">Create a new offer</a>
+        </li>
+    </ul>
+{% endblock %}
