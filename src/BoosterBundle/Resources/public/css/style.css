@@ -599,12 +599,30 @@ footer > ul > li {
 
 .successButton{
     background-color: rgb(252, 183, 0);
-    border: 1px solid black;
     margin-top: 5%;
     margin-bottom: 5%;
     color:black;
 }
 
 .successButton:hover{
+    background-color: rgb(252, 183, 0);
+}
+
+/******************************************************/
+/************************ LOGIN ******************/
+/******************************************************/
+.log{
+    margin-top: 10px;
+}
+
+.loglabel {
+    padding-top: 5px;
+}
+.connectButton {
+    background-color: rgb(252, 183, 0);
+    border: 1px solid black;
+    color: black;
+}
+.connectButton:hover{
     background-color: rgb(252, 183, 0);
 }
