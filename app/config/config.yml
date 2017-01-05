@@ -68,14 +68,14 @@ swiftmailer:
 
 # FOSUserBundle Configuration
 fos_user:
-    db_driver: orm # other valid values are 'mongodb' and 'couchdb'
+    db_driver: orm
     firewall_name: main
     user_class: BoosterBundle\Entity\User
     registration:
         form:
-
            type: booster_mayor_registration
            type: boosterrural_citizenregister
+           type: booster_actor_registration
         confirmation:
             enabled: true
 

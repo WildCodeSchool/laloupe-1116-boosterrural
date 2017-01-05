@@ -1,5 +1,6 @@
 services:
 
+
     boosteruser.form.registration:
         class: BoosterBundle\Form\MayorRegistrationType
         tags:
@@ -10,3 +11,7 @@ services:
         tags:
             - { name: form.type, alias: booster_citizen_registration }
 
+    boosteruser.form.registration:
+        class: BoosterBundle\Form\ActorRegistrationType
+        tags:
+            - { name: form.type, alias: booster_actor_registration }

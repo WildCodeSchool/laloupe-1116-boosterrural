@@ -12,16 +12,8 @@ registration:
             Bonjour %username% !
 
             Pour valider votre compte utilisateur, merci de vous rendre sur %confirmationUrl%
-
             Cordialement,
-
             L'équipe du Booster Rural.
-
-layout:
-    logout: 'Déconnexion'
-    login: 'Connexion'
-    register: 'Inscription'
-    logged_in_as: '%username%'
 
 form:
     group_name: 'Nom du groupe'
@@ -32,3 +24,4 @@ form:
     password_confirmation: 'Confirmer le mot de passe'
     new_password: 'Nouveau mot de passe'
     new_password_confirmation: 'Confirmer le nouveau mot de passe'
+

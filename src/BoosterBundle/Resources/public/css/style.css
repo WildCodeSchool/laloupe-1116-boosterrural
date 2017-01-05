@@ -403,7 +403,7 @@ li .liNav2{
 }
 
 /******************************************************/
-/*************************CITIZEN**********************/
+/************************ CITIZEN *********************/
 /******************************************************/
 
 .pic1citiz{
@@ -594,10 +594,10 @@ footer > ul > li {
 }
 
 /******************************************************/
-/************************ FORM MAYOR ******************/
+/************************ FORM ************************/
 /******************************************************/
 
-.successButton{
+.successButton {
     background-color: rgb(252, 183, 0);
     border: 1px solid black;
     margin-top: 5%;
@@ -605,6 +605,21 @@ footer > ul > li {
     color:black;
 }
 
-.successButton:hover{
+.successButton:hover {
     background-color: rgb(252, 183, 0);
 }
+
+label {
+    text-transform: uppercase;
+}
+
+/****************** Form Actor ************************/
+
+.formActorWidth {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 2.5%;
+}
+
