@@ -626,3 +626,6 @@ footer > ul > li {
 .connectButton:hover{
     background-color: rgb(252, 183, 0);
 }
+.inline{
+    display: inline-block;
+}
