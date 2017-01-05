@@ -606,6 +606,10 @@ footer > ul > li {
 
 .successButton:hover{
     background-color: rgb(252, 183, 0);
+
+}
+.col-form-label{
+    padding: 0;
 }
 
 /******************************************************/
