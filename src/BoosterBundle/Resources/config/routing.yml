@@ -1,3 +1,7 @@
+booster_needs:
+    resource: "@BoosterBundle/Resources/config/routing/needs.yml"
+    prefix:   /needs
+
 
 booster_citizenfront:
     path:     /citizen
@@ -22,5 +26,6 @@ booster_registerMayor:
 booster_registerCitizen:
     path:     /citizen/register
     defaults: { _controller: BoosterBundle:Registration:citizenRegister}
+
 
 
