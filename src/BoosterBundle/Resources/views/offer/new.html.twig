@@ -2,11 +2,18 @@
 {% form_theme form ":FormTemplate:bootstrap.html.twig" %}
 
 {% block body %}
-
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
+    <div class="row">
+        <div class="col-sm-offset-2 col-sm-8 col-xs-12  ">
+            <div class="row">
+                <div class="col-sm-offset-3 col-sm-6">
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                    <input type="submit" value="Create" class="btn center-block Button" />
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
 
     <ul>
         <li>
