@@ -127,7 +127,7 @@ span {
 /******************* HEADER ****************************/
 /*******************************************************/
 
-.navbar{
+.navColor{
     background-color: rgb(252, 183, 0);
     border:inherit;
     font-weight: bold;
@@ -427,7 +427,7 @@ li .liNav2{
 /******************* FOOTER ****************************/
 /*******************************************************/
 
-footer {
+.footerColor {
     background-color: #444444;
     margin-top: 30px;
 }
@@ -599,7 +599,6 @@ footer > ul > li {
 
 .successButton {
     background-color: rgb(252, 183, 0);
-    border: 1px solid black;
     margin-top: 5%;
     margin-bottom: 5%;
     color:black;
@@ -607,6 +606,7 @@ footer > ul > li {
 
 .successButton:hover {
     background-color: rgb(252, 183, 0);
+
 }
 
 label {
@@ -621,5 +621,32 @@ label {
 
 .form-group {
     margin-bottom: 2.5%;
+}
+
+
+.col-form-label{
+    padding: 0;
+}
+
+/******************************************************/
+/************************ LOGIN ******************/
+/******************************************************/
+.log{
+    margin-top: 10px;
+}
+
+.loglabel {
+    padding-top: 5px;
+}
+.connectButton {
+    background-color: rgb(252, 183, 0);
+    border: 1px solid black;
+    color: black;
+}
+.connectButton:hover{
+    background-color: rgb(252, 183, 0);
+}
+.inline{
+    display: inline-block;
 }
 

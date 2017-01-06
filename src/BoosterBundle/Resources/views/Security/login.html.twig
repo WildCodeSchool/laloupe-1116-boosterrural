@@ -1,5 +1,47 @@
 {% extends "FOSUserBundle::layout.html.twig" %}
 
-{% block fos_user_content %}
-    {{ include('FOSUserBundle:Security:login_content.html.twig') }}
-{% endblock fos_user_content %}
+{% block fos_user_content %}{% trans_default_domain 'FOSUserBundle' %}
+
+    {% if error %}
+        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+<div class="row">
+    <div class="col-sm-offset-2 col-sm-8 col-xs-12">
+        <div class="row">
+            <div class="col-sm-offset-3 col-sm-6">
+                <form action="{{ path("fos_user_security_check") }}" method="post" class="loginForm">
+                    {% if csrf_token %}
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                    {% endif %}
+                    <div class="form-group row">
+                        <div class="row log">
+                            <label for="username" class="col-xs-3 col-form-label loglabel">{{ 'security.login.username'|trans }}</label>
+                            <div class="col-xs-9">
+                                <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="row log">
+                            <label for="password" class="col-xs-3 col-form-label loglabel">{{ 'security.login.password'|trans }}</label>
+                            <div class="col-xs-9">
+                                <input type="password" id="password" name="_password" required="required" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+<div class="col-xs-5">
+                    <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                    <label for="remember_me" class="">{{ 'security.login.remember_me'|trans }}</label>
+</div>
+
+
+                    <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" class="btn btn-success  connectButton col-xs-offset-2 />
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    {% endblock fos_user_content %}

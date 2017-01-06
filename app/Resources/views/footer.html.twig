@@ -1,0 +1,160 @@
+<footer class="container-fluid ">
+
+    <div class="row">
+        <div class="navbar navbar-default navbar-fixed-bottom footerColor">
+
+            <div class="col-xs-12 col-sm-3">
+                <img class="logo-footer center-block" src="{{ asset('bundles/booster/img/logo-ss-fond.png') }}" alt="logo booster rural">
+            </div>
+
+            <div class="col-xs-12 col-sm-3">
+                <ul class="ul-footer">
+                    <li class="li-footer"><a class="foot-item" data-toggle="modal" data-target="#mentions_légales">Mentions légales</a></li>
+                    <li class="li-footer"><a class="foot-item" data-toggle="modal" data-target="#credits">Crédits</a></li>
+                </ul>
+            </div>
+
+            <div class="col-xs-12 col-sm-3">
+                <ul class="ul-footer">
+                    <li class="li-footer"><a class="foot-item" data-toggle="modal" data-target="#partenaires">Nos partenaires</a></li>
+                    <li class="li-footer"><a class="foot-item" data-toggle="modal" data-target="#experts">Nos experts</a></li>
+                </ul>
+            </div>
+
+            <div class="col-xs-12 col-sm-3">
+                <ul class="ul-footer">
+                    <li class="li-footer"><a class="foot-item" data-toggle="modal" data-target="#contact"><span class="glyphicon glyphicon-envelope"></span> Nous contacter</a></li>
+                    <li class="icon-social">
+                        <a class="foot-item" href="#"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a> <a class="foot-item" href="#"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a> <a class="foot-item" href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <!-- ********************************* modales ************************************* -->
+
+
+        <div class="modal fade" id="credits" tabindex="-1" role="dialog" aria-labelledby="creditsmodal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+                        <h3 class="modal-title">Crédits</h3>
+                    </div>
+                    <div class="modal-body">
+                        <h4>Développé par les étudiants de la Wild Code School :</h4><br>
+                        <div class="center-block">
+                            <a href="https://www.linkedin.com/in/pascale-barboteau-4a0409a5?authType=NAME_SEARCH&authToken=Rp5D&locale=fr_FR&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A374259576%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1481378936405%2Ctas%3Apas" target="_blank">Pascale BARBOTEAU</a><br>
+                            <a href="https://www.linkedin.com/in/florian-galerne-610525114?authType=NAME_SEARCH&authToken=inXW&locale=fr_FR&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A479052588%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1481379014930%2Ctas%3Aflo" target="_blank">Florian GALERNE</a><br>
+                            <a href="https://fr.linkedin.com/in/julien-saint-laurent" target="_blank">Julien SAINT-LAURENT</a>
+                        </div>
+                        <br>
+                    </div>
+                    <a href="http://www.wildcodeschool.fr" target="_blank"><img src="{{ asset('bundles/booster/img/wcs.jpg') }}" width="20%"/></a>
+                    <br><br>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+
+        <div class="modal fade" id="mentions_légales" tabindex="-1" role="dialog" aria-labelledby="LargeMentionslégalesmodal">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+                        <h4 class="modal-title">Mentions légales</h4>
+                    </div>
+                    <br>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="mentions_légales_text">
+
+                                        XXXXXXXXXXXXXXXXX <br>
+                                        XXXXXXXXXXXXXXXXX <br>
+                                        XXXXXXXXXXXXXXXXX <br>
+
+                                    </div>
+
+                                    <p>
+                                        <br>
+                                    <div class="mentions_légales_text">
+                                        {% include '::legalMentions.html.twig' %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+        <div class="modal fade" id="partenaires" tabindex="-1" role="dialog" aria-labelledby="partenaires">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+                        <h4 class="modal-title">Devenir Partenaires</h4>
+                    </div>
+                    <br>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-xs-12 text-justify">
+                                    {% include '::partners.html.twig' %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+
+
+        <div class="modal fade" id="experts" tabindex="-1" role="dialog" aria-labelledby="experts">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+                        <h4 class="modal-title">Nos Experts</h4>
+                    </div>
+                    <br>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-xs-12 text-justify">
+                                    {% include '::experts.html.twig' %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+
+        <div class="modal fade" id="contact" tabindex="-1" role="dialog" aria-labelledby="contact">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+                        <h4 class="modal-title">Contact</h4>
+                    </div>
+                    <br>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-xs-12 text-justify">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+        <!-- *****************************************END MODALES*****************************************-->
+    </div>
+</footer>
