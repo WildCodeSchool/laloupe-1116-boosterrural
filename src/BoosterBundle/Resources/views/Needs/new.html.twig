@@ -1,25 +1,17 @@
 {% extends 'base.html.twig' %}
 
+{% form_theme form ":FormTemplate:bootstrap.html.twig" %}
+
 {% block body %}
+
+<div class="row">
+    <div class="col-sm-offset-2 col-sm-8 col-xs-12  ">
+        <div class="row">
+            <div class="col-sm-offset-3 col-sm-6">
     <h1>Mes besoins</h1>
 
     {{ form_start(form) }}
         {{ form_widget(form) }}
-
-    {{ form_label(form.title) }}
-    {{ form_widget(form.title) }}
-
-    {{ form_label(form.cp) }}
-    {{ form_widget(form.cp) }}
-
-    {{ form_label(form.town) }}
-    {{ form_widget(form.town) }}
-
-    {{ form_label(form.activity) }}
-    {{ form_widget(form.activity) }}
-
-    {{ form_label(form.description) }}
-    {{ form_widget(form.description) }}
 
 
     <input type="submit" value="Create" />
@@ -30,4 +22,10 @@
             <a href="{{ path('needs_index') }}">Back to the list</a>
         </li>
     </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}

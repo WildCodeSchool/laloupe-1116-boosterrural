@@ -24,12 +24,9 @@ class NeedsType extends AbstractType
                 ])
                 ->add('description', null, [
                     "label" => "Description"
-                ])
+                ], TextareaType::class)
                 ->add('activity', null, [
                     "label" => "Domaine d'activité"
-                ])
-                ->add('users', null, [
-                    "label" => ""
                 ])
         ;
     }

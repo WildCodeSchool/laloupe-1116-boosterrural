@@ -597,17 +597,18 @@ footer > ul > li {
 /************************ FORM MAYOR ******************/
 /******************************************************/
 
-.successButton{
+.Button{
     background-color: rgb(252, 183, 0);
     margin-top: 5%;
     margin-bottom: 5%;
-    color:black;
+    color:white;
     border-color: rgb(252, 183, 0);
 }
 
-.successButton:hover{
+.Button:hover{
     background-color: rgb(252, 183, 0);
     border-color: rgb(252, 183, 0);
+    color:black;
 }
 
 label{
