@@ -24,13 +24,17 @@ BoosterBundle\Entity\Offer:
         activity:
             type: string
             length: 255
+            nullable: true
         wish:
             type: string
             length: 255
+            nullable: true
         lat:
             type: integer
+            nullable: true
         lgt:
             type: integer
+            nullable: true
 
     manyToOne:
         users:
