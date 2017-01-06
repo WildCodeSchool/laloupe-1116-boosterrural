@@ -3,6 +3,7 @@
 namespace BoosterBundle\Controller;
 
 use BoosterBundle\Entity\Needs;
+use BoosterBundle\Form\NeedsType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -33,20 +34,20 @@ class NeedsController extends Controller
      */
     public function newAction(Request $request)
     {
-        $need = new Need();
-        $form = $this->createForm('BoosterBundle\Form\NeedsType', $need);
+        $needs = new Needs();
+        $form = $this->createForm('BoosterBundle\Form\NeedsType', $needs);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->persist($need);
-            $em->flush($need);
+            $em->persist($needs);
+            $em->flush($needs);
 
-            return $this->redirectToRoute('needs_show', array('id' => $need->getId()));
+            return $this->redirectToRoute('needs_show', array('id' => $needs->getId()));
         }
 
         return $this->render('BoosterBundle:Needs:new.html.twig', array(
-            'need' => $need,
+            'needs' => $needs,
             'form' => $form->createView(),
         ));
     }

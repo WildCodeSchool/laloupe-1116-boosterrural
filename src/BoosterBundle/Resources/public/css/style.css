@@ -599,12 +599,18 @@ footer > ul > li {
 
 .successButton{
     background-color: rgb(252, 183, 0);
-    border: 1px solid black;
     margin-top: 5%;
     margin-bottom: 5%;
     color:black;
+    border-color: rgb(252, 183, 0);
 }
 
 .successButton:hover{
     background-color: rgb(252, 183, 0);
+    border-color: rgb(252, 183, 0);
 }
+
+label{
+    padding: 0px;
+}
+

@@ -13,15 +13,24 @@ class NeedsType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('title')
-                ->add('cp')
-                ->add('town')
-                ->add('description')
-                ->add('activity')
-                ->add('availability')
-                ->add('lat')
-                ->add('lgt')
-                ->add('users')
+        $builder->add('title', null, [
+                    "label" => "Titre"
+                ])
+                ->add('cp', null, [
+                    "label" => "Code postal"
+                ])
+                ->add('town', null, [
+                    "label" => "Ville"
+                ])
+                ->add('description', null, [
+                    "label" => "Description"
+                ])
+                ->add('activity', null, [
+                    "label" => "Domaine d'activité"
+                ])
+                ->add('users', null, [
+                    "label" => ""
+                ])
         ;
     }
     

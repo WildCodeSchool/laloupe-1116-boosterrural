@@ -1,11 +1,28 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Need creation</h1>
+    <h1>Mes besoins</h1>
 
     {{ form_start(form) }}
         {{ form_widget(form) }}
-        <input type="submit" value="Create" />
+
+    {{ form_label(form.title) }}
+    {{ form_widget(form.title) }}
+
+    {{ form_label(form.cp) }}
+    {{ form_widget(form.cp) }}
+
+    {{ form_label(form.town) }}
+    {{ form_widget(form.town) }}
+
+    {{ form_label(form.activity) }}
+    {{ form_widget(form.activity) }}
+
+    {{ form_label(form.description) }}
+    {{ form_widget(form.description) }}
+
+
+    <input type="submit" value="Create" />
     {{ form_end(form) }}
 
     <ul>
