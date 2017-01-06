@@ -14,7 +14,8 @@ BoosterBundle\Entity\Needs:
             length: 255
             nullable: true
         cp:
-            type: integer
+            type: string
+            length: 255
             nullable: true
         town:
             type: string
