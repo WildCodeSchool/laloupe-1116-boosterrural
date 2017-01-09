@@ -9,19 +9,20 @@ class ActorRegistrationType extends AbstractType {
     {
         $builder
             -> add('organization', null, array(
-                'label'=>'nom de la structure'
+                'label'=>'nom de la structure',
+
+
             ))
             -> add('lastname', null, array(
-                'label'=>'nom du responsable'
-            ))
-            -> add('firstname', null, array(
-                'label'=>'prénom du responsable'
+                'label'=>'nom et prénom du responsable'
             ))
             -> add('status_actor', ChoiceType::class, array(
                 'choices' => array(
-                    'Réseaux ' => 'Réseaux ',
-                    'Acteur individuel' => 'Acteur individuel',
+
+                    'Réseaux (Fondation RTE, Compagnons bâtisseurs...)' => 'Réseaux (Fondation RTE, Compagnons bâtisseurs...)',
+                    'Association' => 'Association',
                     'TPE/Artisans' => 'TPE/Artisans'),
+                'placeholder'=>'Choisir',
                 'label'=>'statut'
             ))
             -> add('category', ChoiceType::class, array(
@@ -31,7 +32,9 @@ class ActorRegistrationType extends AbstractType {
                     'Agriculture/Agroalimentaire' => 'Agriculture/Agroalimentaire',
                     'Culture/Patrimoine' => 'Culture/Patrimoine',
                     'Mobilité' => 'Mobilité'),
-                'label'=>'categorie'
+                'placeholder'=>'Choisir',
+                'label'=>'catégorie',
+
             ))
             -> add('town', null, array(
                 'label'=>'nom de la commune'
@@ -40,7 +43,7 @@ class ActorRegistrationType extends AbstractType {
                 'label'=>'code postal'
             ))
             -> add('address', null, array(
-                'label'=>'adresse postale'
+                'label'=>'adresse'
             ));
     }
     public function getParent(){

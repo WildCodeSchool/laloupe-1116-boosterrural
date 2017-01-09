@@ -12,12 +12,9 @@ class CitizenRegistrationType extends AbstractType
     {
         $builder
             ->add ('lastname', null, [
-                "label" => "Nom"
-            ])
-            ->add('firstname', null, [
-                "label" => "Prénom"
-            ])
-        ;
+                "label" => "Nom et Prénom"
+            ]);
+
     }
 
     public function getParent()
