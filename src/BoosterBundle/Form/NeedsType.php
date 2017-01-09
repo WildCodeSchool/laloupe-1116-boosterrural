@@ -26,13 +26,16 @@ class NeedsType extends AbstractType
             ->add('activity', ChoiceType::class, array (
                 "label" => "Domaine d'activité",
                 'choices'  => array(
-                    'hobbies' => "Loisirs",
-                    'artisan' => "Artisan",
-                    'voluntary' => "Bénévolat",
-                    'communication' => "Communication")))
+                    "Choisir un domaine" => "Choisir un domaine",
+                    "Loisirs" => "Loisirs",
+                    "Artisan" => "Artisan",
+                    "Bénévolat" => "Bénévolat",
+                    "Communication" => "Communication")))
             ->add('description', null, [
                 "label" => "Description"
             ])
+            ->add('image2')
+            ->add('file2','file', array( 'required'=>false))
         ;
     }
 

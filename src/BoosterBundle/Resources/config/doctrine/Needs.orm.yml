@@ -12,18 +12,14 @@ BoosterBundle\Entity\Needs:
         title:
             type: string
             length: 255
-            nullable: true
         cp:
             type: string
             length: 255
-            nullable: true
         town:
             type: string
             length: 255
-            nullable: true
         description:
             type: text
-            nullable: true
         activity:
             type: string
             length: 255
@@ -38,8 +34,19 @@ BoosterBundle\Entity\Needs:
         lgt:
             type: integer
             nullable: true
+        image2:
+            type: string
+            length: 255
+            nullable: true
+
     manyToOne:
         users:
             targetEntity: BoosterBundle\Entity\User
             inversedBy: Id
-    lifecycleCallbacks: {  }
+
+    lifecycleCallbacks:
+      prePersist: [preUpload2]
+      preUpdate: [preUpload2]
+      postPersist: [upload2]
+      postUpdate: [upload2]
+      postRemove: [removeUpload2]
