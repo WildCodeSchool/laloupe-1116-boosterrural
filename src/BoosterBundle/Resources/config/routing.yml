@@ -1,3 +1,7 @@
+booster_offer:
+    resource: "@BoosterBundle/Resources/config/routing/offer.yml"
+    prefix:   /offer
+
 booster_citizenfront:
     path:     /citizen
     defaults: { _controller: BoosterBundle:Default:citizen }
