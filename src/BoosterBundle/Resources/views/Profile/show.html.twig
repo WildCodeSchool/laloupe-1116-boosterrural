@@ -8,7 +8,7 @@
                     <img src="{{ asset('bundles/booster/img/acteur_logo.jpg') }}" alt="photo_logo" class="center-block img-responsive"/>
                 </div>
                 <div class="col-md-6 col-xs-12">
-                    <li><a class="pencil col-xs-offset-11 col-xs-1" data-toggle="modal" href="#headmod"><span class="glyphicon glyphicon-pencil"></span></a></li>
+                    <li><a class="pencil col-xs-offset-11 col-xs-1"  href="#"><span class="glyphicon glyphicon-pencil"></span></a></li>
                     <h1>biodynamic association</h1>
 
                     <div class="row">
@@ -69,20 +69,20 @@
         </div>
     </div>
 
-
-    <h2 id="title2">Mes activités</h2>
     <div class="row">
         <div class="col-sm-offset-1 col-sm-10 block1">
             <div class="row">
+                {% for offer in offers %}
                 <section class="col-sm-6 col-xs-12 backWhite margeMobile secPad2">
-                    <h3>Mes offres</h3>
+                    <h3 class="title">Mes offres</h3>
+                    <h4 class="underTitle">Ce que je propose...</h4>
                     <ul>
                         <li>
                             <div class="row">
                                 <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="no photo" class=" col-xs-2">
                                 <div class="col-xs-8">
-                                    <span>Lorem ipsum dolor sit amet</span>
-                                    <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
+                                    <span>{{ offer.title }}</span>
+                                    <p>{{ offer.description }}</p>
                                 </div>
                                 <div class="col-xs-1">
                                     <span class="glyphicon glyphicon-pencil"></span >
@@ -91,55 +91,16 @@
                             </div>
                         </li>
                         <hr>
-                        <li>
-                            <div class="row">
-                                <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="no photo" class=" col-xs-2">
-                                <div class="col-xs-8">
-                                    <span>Lorem ipsum dolor sit amet</span>
-                                    <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
-                                </div>
-                                <div class="col-xs-1">
-                                    <span class="glyphicon glyphicon-pencil"></span >
-                                    <span class="glyphicon glyphicon-remove"></span >
-                                </div>
-                            </div>
-                        </li>
-                        <hr>
-                        <li>
-                            <div class="row">
-                                <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="no photo" class=" col-xs-2">
-                                <div class="col-xs-8">
-                                    <span>Lorem ipsum dolor sit amet</span>
-                                    <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
-                                </div>
-                                <div class="col-xs-1">
-                                    <span class="glyphicon glyphicon-pencil"></span >
-                                    <span class="glyphicon glyphicon-remove"></span >
-                                </div>
-                            </div>
-                        </li>
-                        <hr>
-                        <li>
-                            <div class="row">
-                                <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="no photo" class=" col-xs-2">
-                                <div class="col-xs-8">
-                                    <span>Lorem ipsum dolor sit amet</span>
-                                    <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
-                                </div>
-                                <div class="col-xs-1">
-                                    <span class="glyphicon glyphicon-pencil"></span >
-                                    <span class="glyphicon glyphicon-remove"></span >
-                                </div>
-                            </div>
-                        </li>
                         <div class="row">
                             <a href="{{ path('offer_new') }}" class="col-xs-offset-11"> <span class="glyphicon glyphicon-plus"></span ></a>
                         </div>
                     </ul>
-                </section>
+                </section>0
+                {% endfor%}
 
                 <section class="col-sm-5 col-xs-12 backWhite secPad3">
-                    <h3>Mes matchings</h3>
+                    <h3 class="title">Mes matchings</h3>
+                    <h4 class="underTitle">Qui puis-je aider ?</h4>
                     <ul>
                         <li>
                             <div class="row">
@@ -193,7 +154,8 @@
         <div class="col-sm-offset-1 col-sm-10 block2">
             <div class="row">
                 <section class="col-sm-6 col-xs-12 backWhite margeMobile secPad2">
-                    <h3>Mes besoins</h3>
+                    <h3 class="title">Mes besoins</h3>
+                    <h4 class="underTitle">Ce dont j'ai besoin...</h4>
                     <ul>
                         <li>
                             <div class="row">
@@ -257,7 +219,8 @@
                 </section>
 
                 <section class="col-sm-5 col-xs-12 backWhite secPad3">
-                    <h3>mes matchings</h3>
+                    <h3 class="title">mes matchings</h3>
+                    <h4 class="underTitle">Qui peut m'maider ?</h4>
                     <ul>
                         <li>
                             <div class="row">
@@ -328,7 +291,7 @@
     </div><!-- /.modal -->
 
 
-    {% block javascriptsMap %}
+    {% block javascripts %}
         <script>
             function initMap() {
                 var map = new google.maps.Map(document.getElementById('#map'), {
