@@ -26,7 +26,7 @@ class NeedsType extends AbstractType
             ->add('activity', ChoiceType::class, array (
                 "label" => "Domaine d'activité",
                 'choices'  => array(
-                    "Choisir un domaine" => "Choisir un domaine",
+                    "Choisir" => "Choisir",
                     "Loisirs" => "Loisirs",
                     "Artisan" => "Artisan",
                     "Bénévolat" => "Bénévolat",

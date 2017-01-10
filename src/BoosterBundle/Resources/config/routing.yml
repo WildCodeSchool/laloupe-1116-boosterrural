@@ -27,5 +27,6 @@ booster_registerCitizen:
     path:     /citizen/register
     defaults: { _controller: BoosterBundle:Registration:citizenRegister}
 
-
-
+booster_profileActor:
+    path: /actor/profile
+    defaults: { _controller: BoosterBundle:Profile:edit}

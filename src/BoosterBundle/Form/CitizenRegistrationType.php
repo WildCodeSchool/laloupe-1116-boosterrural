@@ -14,9 +14,6 @@ class CitizenRegistrationType extends AbstractType
             ->add ('lastname', null, [
                 "label" => "Nom"
             ])
-            ->add('firstname', null, [
-                "label" => "Prénom"
-            ])
         ;
     }
 
