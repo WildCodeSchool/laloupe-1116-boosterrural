@@ -23,12 +23,12 @@ class Needs
 
     public function getWebPath()
     {
-        return null === $this->image ? null : $this->getUploadDir().'/'.$this->image;
+        return null === $this->image3 ? null : $this->getUploadDir().'/'.$this->image3;
     }
 
     public function getAbsolutePath()
     {
-        return null === $this->image ? null : $this->getUploadRootDir().'/'.$this->image;
+        return null === $this->image3 ? null : $this->getUploadRootDir().'/'.$this->image3;
     }
     public function preUpload3()
     {
@@ -38,7 +38,7 @@ class Needs
         }
     }
 
-    public function upload1()
+    public function upload3()
     {
         if (null === $this->file3) {
             return;
@@ -362,11 +362,5 @@ class Needs
         return $this->image3;
     }
 
-    /**
-     * @ORM\PostPersist
-     */
-    public function upload3()
-    {
-        // Add your code here
-    }
+
 }

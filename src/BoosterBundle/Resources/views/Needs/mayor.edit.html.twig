@@ -10,17 +10,17 @@
 
                     {{ form_start(form) }}
                     {{ form_widget(form) }}
-                    <input type="submit" value="Modifier" class="btn center-block"/>
+                    <a href="{{ path('needs_edit', { 'id': need.id }) }}"><input type="submit" value="Modifier" class="center-block showLien2"></a>
                     {{ form_end(form) }}
 
                     <ul>
                         <li>
-                            <a href="{{ path('needs_index') }}" class="btn center-block">Retour à la liste</a>
+                            {{ form_start(delete_form) }}
+                            <input type="submit" value="Supprimer" class="center-block">
+                            {{ form_end(delete_form) }}
                         </li>
                         <li>
-                            {{ form_start(delete_form) }}
-                            <input type="submit" value="Supprimer" class="btn center-block">
-                            {{ form_end(delete_form) }}
+                            <a href="{{ path('needs_index') }}" class="center-block">Retour à la liste</a>
                         </li>
                     </ul>
                 </div>

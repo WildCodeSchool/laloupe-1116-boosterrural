@@ -7,9 +7,9 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Title</th>
-                <th>Cp</th>
-                <th>Town</th>
+                <th>Titre</th>
+                <th>Code Postal</th>
+                <th>Villes</th>
                 <th>Description</th>
             </tr>
         </thead>
@@ -39,10 +39,11 @@
         {% endfor %}
         </tbody>
     </table>
-
+<div>
     <ul>
         <li>
-            <a href="{{ path('needs_new') }}" class="btn center-block">Créer un nouveu besoin</a>
+            <a href="{{ path('needs_new') }}">Créer un nouveu besoin</a>
         </li>
     </ul>
+</div>
 {% endblock %}

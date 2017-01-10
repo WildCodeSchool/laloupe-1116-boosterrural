@@ -39,6 +39,14 @@ section {
     background-color: white;
 }
 
+.col-xs-4 {
+    padding: 0;
+}
+
+th {
+    padding-right: 5%;
+}
+
 /******************************************************/
 /************************ FRONT PAGE ******************/
 /******************************************************/
@@ -654,4 +662,8 @@ td {
 
 .showLien a:hover {
     text-decoration: none;
+}
+
+#boosterbundle_needs_file3 > .form-control {
+
 }
