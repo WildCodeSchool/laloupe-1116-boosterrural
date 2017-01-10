@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Need</h1>
+
+    <table>
+        <tbody>
+
+            <tr>
+                <th>Titre</th>
+                <td>{{ need.title }}</td>
+            </tr>
+            <tr>
+                <th>Code postal</th>
+                <td>{{ need.cp }}</td>
+            </tr>
+            <tr>
+                <th>Ville</th>
+                <td>{{ need.town }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ need.description }}</td>
+            </tr>
+            <tr>
+                <th>Domaine d'activité</th>
+                <td>{{ need.activity }}</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('needs_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('needs_edit', { 'id': need.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

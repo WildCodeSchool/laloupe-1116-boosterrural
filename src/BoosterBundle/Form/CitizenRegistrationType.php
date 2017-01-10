@@ -14,7 +14,6 @@ class CitizenRegistrationType extends AbstractType
             ->add ('lastname', null, [
                 "label" => "Nom et Prénom"
             ]);
-
     }
 
     public function getParent()

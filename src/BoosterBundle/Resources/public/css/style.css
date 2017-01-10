@@ -609,16 +609,13 @@ footer > ul > li {
 /************************ FORM ************************/
 /******************************************************/
 
-.successButton {
+.Button{
+>>>>>>> profilactor2
     background-color: rgb(252, 183, 0);
     margin-top: 5%;
     margin-bottom: 5%;
-    color:black;
-}
-
-.successButton:hover {
-    background-color: rgb(252, 183, 0);
-
+    color:white;
+    border-color: rgb(252, 183, 0);
 }
 
 label {
@@ -666,7 +663,16 @@ label {
 .connectButton:hover{
     background-color: rgb(252, 183, 0);
 }
-.inline{
+.inline {
     display: inline-block;
+}
+.Button:hover{
+    background-color: rgb(252, 183, 0);
+    border-color: rgb(252, 183, 0);
+    color:black;
+}
+
+label{
+    padding: 0px;
 }
 
