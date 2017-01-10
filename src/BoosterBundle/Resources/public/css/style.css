@@ -714,3 +714,23 @@ td {
 
 }
 
+.imgShow {
+    padding: 25%;
+}
+
+.padShow {
+    padding: 2%;
+    height: 80vh;
+    overflow-y: scroll;
+}
+
+.listIndex {
+    padding: 2%;
+    height: 40vh;
+    overflow-y: scroll;
+}
+
+.imgList {
+    height: 250px;
+    margin-top: 2%;
+}
