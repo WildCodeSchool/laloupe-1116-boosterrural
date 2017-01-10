@@ -5,6 +5,8 @@ namespace BoosterBundle\Controller;
 use BoosterBundle\Entity\Offer;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use BoosterBundle\Entity\User;
+
 
 /**
  * Offer controller.
@@ -18,9 +20,12 @@ class OfferController extends Controller
      */
     public function indexAction()
     {
+        $user=$this->get('security.context')->getToken()->getUser();
         $em = $this->getDoctrine()->getManager();
 
-        $offers = $em->getRepository('BoosterBundle:Offer')->findAll();
+        $offers = $em->getRepository('BoosterBundle:Offer')->findBy(
+            array('users'=>$user
+            ));
 
         return $this->render('BoosterBundle:offer:index.html.twig', array(
             'offers' => $offers,
@@ -33,7 +38,9 @@ class OfferController extends Controller
      */
     public function newAction(Request $request)
     {
+        $user=$this->get('security.context')->getToken()->getUser();
         $offer = new Offer();
+        $offer->setUsers($user);
         $form = $this->createForm('BoosterBundle\Form\OfferType', $offer);
         $form->handleRequest($request);
 
@@ -42,7 +49,10 @@ class OfferController extends Controller
             $em->persist($offer);
             $em->flush($offer);
 
-            return $this->redirectToRoute('offer_show', array('id' => $offer->getId()));
+            return $this->redirectToRoute('offer_show', array('id' => $offer->getId(
+                array($offer->getUsers()
+            ))));
+
         }
 
         return $this->render('BoosterBundle:offer:new.html.twig', array(
@@ -119,6 +129,6 @@ class OfferController extends Controller
             ->setAction($this->generateUrl('offer_delete', array('id' => $offer->getId())))
             ->setMethod('DELETE')
             ->getForm()
-        ;
+            ;
     }
 }
