@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+{#{% form_theme form ":FormTemplate:bootstrap.html.twig" %}#}
+
+{% block body %}
+    <div class="row">
+        <div class="col-sm-offset-2 col-sm-8 col-xs-12">
+            <div class="row">
+                <div class="col-sm-offset-3 col-sm-6 showAlign">
+                    <h1>Mon Besoin</h1>
+                    <table>
+                        <tbody>
+                        <tr>
+                            <th>Id</th>
+                            <td>{{ need.id }}</td>
+                        </tr>
+                        <tr>
+                            <th>Titre</th>
+                            <td>{{ need.title }}</td>
+                        </tr>
+                        <tr>
+                            <th>Code Postal</th>
+                            <td>{{ need.cp }}</td>
+                        </tr>
+                        <tr>
+                            <th>Nom de la Commune</th>
+                            <td>{{ need.town }}</td>
+                        </tr>
+                        <tr>
+                            <th>Description du Besoin</th>
+                            <td>{{ need.description }}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <ul>
+                        <li class="showLien">
+                            <a href="{{ path('needs_edit', { 'id': need.id }) }}"><input type="submit" value="Modifier" class="center-block showLien2"></a>
+                        </li>
+                        <li>
+                            {{ form_start(delete_form) }}
+                            <input type="submit" value="Supprimer" class="center-block">
+                            {{ form_end(delete_form) }}
+                        </li>
+                        <li>
+                            <a href="{{ path('needs_index') }}" class="center-block">Retour à la liste</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
