@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Needs list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Cp</th>
+                <th>Town</th>
+                <th>Description</th>
+                <th>Activity</th>
+                <th>Availability</th>
+                <th>Lat</th>
+                <th>Lgt</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for need in needs %}
+            <tr>
+                <td><a href="{{ path('needs_show', { 'id': need.id }) }}">{{ need.id }}</a></td>
+                <td>{{ need.title }}</td>
+                <td>{{ need.cp }}</td>
+                <td>{{ need.town }}</td>
+                <td>{{ need.description }}</td>
+                <td>{{ need.activity }}</td>
+                <td>{{ need.image2 }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('needs_show', { 'id': need.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('needs_edit', { 'id': need.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('needs_new') }}">Create a new need</a>
+        </li>
+    </ul>
+{% endblock %}

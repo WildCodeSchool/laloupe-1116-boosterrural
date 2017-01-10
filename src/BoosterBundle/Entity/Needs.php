@@ -9,8 +9,59 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Needs
 {
+    public $file2;
+
+    protected function getUploadDir()
+    {
+        return 'uploads';
+    }
+
+    protected function getUploadRootDir()
+    {
+        return __DIR__.'/../../../web/'.$this->getUploadDir();
+    }
+
+    public function getWebPath()
+    {
+        return null === $this->image2 ? null : $this->getUploadDir().'/'.$this->image2;
+    }
+
+    public function getAbsolutePath()
+    {
+        return null === $this->image2 ? null : $this->getUploadRootDir().'/'.$this->image2;
+    }
+    public function preUpload2()
+    {
+        if (null !== $this->file2) {
+            // do whatever you want to generate a unique name
+            $this->image2 = uniqid().'.'.$this->file2->guessExtension();
+        }
+    }
+
+    public function upload2()
+    {
+        if (null === $this->file2) {
+            return;
+        }
+
+        // if there is an error when moving the file, an exception will
+        // be automatically thrown by move(). This will properly prevent
+        // the entity from being persisted to the database on error
+        $this->file2->move($this->getUploadRootDir(), $this->image2);
+
+        unset($this->file2);
+    }
+
+    public function removeUpload2()
+    {
+        if ($file2 = $this->getAbsolutePath()) {
+            unlink($file2);
+        }
+    }
+
+
     /**
-     * @var int
+     * @var integer
      */
     private $id;
 
@@ -20,7 +71,7 @@ class Needs
     private $title;
 
     /**
-     * @var int
+     * @var string
      */
     private $cp;
 
@@ -35,14 +86,34 @@ class Needs
     private $description;
 
     /**
-     * @var int
+     * @var string
+     */
+    private $activity;
+
+    /**
+     * @var string
+     */
+    private $availability;
+
+    /**
+     * @var integer
      */
     private $lat;
 
     /**
-     * @var int
+     * @var integer
      */
     private $lgt;
+
+    /**
+     * @var string
+     */
+    private $image2;
+
+    /**
+     * @var \BoosterBundle\Entity\User
+     */
+    private $users;
 
 
     /**
@@ -81,7 +152,7 @@ class Needs
     /**
      * Set cp
      *
-     * @param integer $cp
+     * @param string $cp
      * @return Needs
      */
     public function setCp($cp)
@@ -94,7 +165,7 @@ class Needs
     /**
      * Get cp
      *
-     * @return integer 
+     * @return string 
      */
     public function getCp()
     {
@@ -148,62 +219,6 @@ class Needs
     }
 
     /**
-     * Set lat
-     *
-     * @param integer $lat
-     * @return Needs
-     */
-    public function setLat($lat)
-    {
-        $this->lat = $lat;
-
-        return $this;
-    }
-
-    /**
-     * Get lat
-     *
-     * @return integer 
-     */
-    public function getLat()
-    {
-        return $this->lat;
-    }
-
-    /**
-     * Set lgt
-     *
-     * @param integer $lgt
-     * @return Needs
-     */
-    public function setLgt($lgt)
-    {
-        $this->lgt = $lgt;
-
-        return $this;
-    }
-
-    /**
-     * Get lgt
-     *
-     * @return integer 
-     */
-    public function getLgt()
-    {
-        return $this->lgt;
-    }
-    /**
-     * @var string
-     */
-    private $activity;
-
-    /**
-     * @var string
-     */
-    private $availability;
-
-
-    /**
      * Set activity
      *
      * @param string $activity
@@ -248,11 +263,75 @@ class Needs
     {
         return $this->availability;
     }
-    /**
-     * @var \BoosterBundle\Entity\User
-     */
-    private $users;
 
+    /**
+     * Set lat
+     *
+     * @param integer $lat
+     * @return Needs
+     */
+    public function setLat($lat)
+    {
+        $this->lat = $lat;
+
+        return $this;
+    }
+
+    /**
+     * Get lat
+     *
+     * @return integer 
+     */
+    public function getLat()
+    {
+        return $this->lat;
+    }
+
+    /**
+     * Set lgt
+     *
+     * @param integer $lgt
+     * @return Needs
+     */
+    public function setLgt($lgt)
+    {
+        $this->lgt = $lgt;
+
+        return $this;
+    }
+
+    /**
+     * Get lgt
+     *
+     * @return integer 
+     */
+    public function getLgt()
+    {
+        return $this->lgt;
+    }
+
+    /**
+     * Set image2
+     *
+     * @param string $image2
+     * @return Needs
+     */
+    public function setImage2($image2)
+    {
+        $this->image2 = $image2;
+
+        return $this;
+    }
+
+    /**
+     * Get image2
+     *
+     * @return string 
+     */
+    public function getImage2()
+    {
+        return $this->image2;
+    }
 
     /**
      * Set users

@@ -39,6 +39,9 @@ section {
     background-color: white;
 }
 
+.center-block1{
+    display: initial;
+}
 /******************************************************/
 /************************ FRONT PAGE ******************/
 /******************************************************/
@@ -353,11 +356,21 @@ li .liNav2{
 }
 
 .downPage {
-    padding: 10px;
+    padding: 30px;
     margin-bottom: 10px;
     border: 1px solid gray;
+    font-size: 18px;
 }
-
+.project{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.chipUl{
+    margin-left: 3%;
+}
+.chip{
+    list-style-type: disc;
+}
 /************** Media Queries home page no connect ***************/
 
 @media all and (max-width: 1670px)
@@ -430,18 +443,20 @@ li .liNav2{
 .footerColor {
     background-color: #444444;
     margin-top: 30px;
+    text-align: center;
+    padding: 1%;
+    margin-bottom: inherit;
 }
 
 footer a {
     color: white;
-    font-weight: bold;
     font-size: 1.2em;
 }
 
 .foot-item {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
-    font-weight: 700;
+    font-size: 18px;
+
     color: white;
 }
 
@@ -597,20 +612,23 @@ footer > ul > li {
 /************************ FORM ************************/
 /******************************************************/
 
-.successButton {
+.Button{
     background-color: rgb(252, 183, 0);
     margin-top: 5%;
     margin-bottom: 5%;
-    color:black;
+    color:white;
+    border-color: rgb(252, 183, 0);
 }
 
-.successButton:hover {
+.Button:hover{
     background-color: rgb(252, 183, 0);
-
+    border-color: rgb(252, 183, 0);
+    color:black;
 }
 
 label {
     text-transform: uppercase;
+    padding: 0;
 }
 
 /****************** Form Actor ************************/
@@ -627,9 +645,14 @@ label {
 .col-form-label{
     padding: 0;
 }
-.secPad2, .secPad3{
+.secPad2, .secPad3 {
     margin-top: 20px;
 }
+.titleFormActor{
+    margin-bottom: 0;
+}
+
+
 
 .block2{
     margin-top: 20px;
@@ -662,9 +685,10 @@ label {
 .connectButton:hover{
     background-color: rgb(252, 183, 0);
 }
-.inline{
+.inline {
     display: inline-block;
 }
+
 
 /**
 * Profile
@@ -673,4 +697,8 @@ label {
 .block2{
     margin-top: 20px;
 }
+
+
+
+
 
