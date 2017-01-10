@@ -1,0 +1,24 @@
+needs_index:
+    path:     /
+    defaults: { _controller: "BoosterBundle:Needs:index" }
+    methods:  GET
+
+needs_show:
+    path:     /{id}/show
+    defaults: { _controller: "BoosterBundle:Needs:show" }
+    methods:  GET
+
+needs_new:
+    path:     /new
+    defaults: { _controller: "BoosterBundle:Needs:new" }
+    methods:  [GET, POST]
+
+needs_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BoosterBundle:Needs:edit" }
+    methods:  [GET, POST]
+
+needs_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BoosterBundle:Needs:delete" }
+    methods:  DELETE

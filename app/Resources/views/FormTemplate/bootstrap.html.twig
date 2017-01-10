@@ -19,7 +19,7 @@
             {%- endif -%}
         {%- endif -%}
 
-        <label{% for attrname, attrvalue in label_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %} class=" col-xs-4 col-form-label">{{ translation_domain is same as(false) ? label : label|trans({}, translation_domain) }}</label>
+        <label{% for attrname, attrvalue in label_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %} class="col-xs-4 col-form-label">{{ translation_domain is same as(false) ? label : label|trans({}, translation_domain) }}</label>
     {%- endif -%}
 {%- endblock form_label -%}
 
@@ -33,3 +33,6 @@
     </div>
 {%- endblock form_widget_simple -%}
 
+{%- block textarea_widget -%}
+    <textarea {{ block('widget_attributes') }} class="form-control">{{ value }}</textarea>
+{%- endblock textarea_widget -%}

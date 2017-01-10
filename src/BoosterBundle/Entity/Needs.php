@@ -9,6 +9,62 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Needs
 {
+
+    public $file3;
+    protected function getUploadDir()
+    {
+        return 'uploads';
+    }
+
+    protected function getUploadRootDir()
+    {
+        return __DIR__.'/../../../web/'.$this->getUploadDir();
+    }
+
+    public function getWebPath()
+    {
+        return null === $this->image3 ? null : $this->getUploadDir().'/'.$this->image3;
+    }
+
+    public function getAbsolutePath()
+    {
+        return null === $this->image3 ? null : $this->getUploadRootDir().'/'.$this->image3;
+    }
+    public function preUpload3()
+    {
+        if (null !== $this->file3) {
+            // do whatever you want to generate a unique name
+            $this->image3 = uniqid().'.'.$this->file3->guessExtension();
+        }
+    }
+
+    public function upload3()
+    {
+        if (null === $this->file3) {
+            return;
+        }
+
+        // if there is an error when moving the file, an exception will
+        // be automatically thrown by move(). This will properly prevent
+        // the entity from being persisted to the database on error
+        $this->file3->move($this->getUploadRootDir(), $this->image3);
+
+        unset($this->file3);
+    }
+
+    public function removeUpload3()
+    {
+        if ($file = $this->getAbsolutePath()) {
+            unlink($file);
+        }
+    }
+
+
+    /**
+     * Generate code
+    **/
+
+
     /**
      * @var int
      */
@@ -276,4 +332,35 @@ class Needs
     {
         return $this->users;
     }
+    /**
+     * @var string
+     */
+    private $image3;
+
+
+    /**
+     * Set image3
+     *
+     * @param string $image3
+     *
+     * @return Needs
+     */
+    public function setImage3($image3)
+    {
+        $this->image3 = $image3;
+
+        return $this;
+    }
+
+    /**
+     * Get image3
+     *
+     * @return string
+     */
+    public function getImage3()
+    {
+        return $this->image3;
+    }
+
+
 }
