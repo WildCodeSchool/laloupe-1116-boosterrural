@@ -34,7 +34,7 @@ class NeedsType extends AbstractType
             ->add('description', null, [
                 "label" => "Description"
             ])
-            ->add('image2')
+            //->add('image2')
             ->add('file2','file', array( 'required'=>false))
         ;
     }

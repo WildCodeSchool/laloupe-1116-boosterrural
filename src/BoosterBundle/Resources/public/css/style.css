@@ -39,6 +39,9 @@ section {
     background-color: white;
 }
 
+.center-block1{
+    display: initial;
+}
 /******************************************************/
 /************************ FRONT PAGE ******************/
 /******************************************************/
@@ -610,12 +613,17 @@ footer > ul > li {
 /******************************************************/
 
 .Button{
->>>>>>> profilactor2
     background-color: rgb(252, 183, 0);
     margin-top: 5%;
     margin-bottom: 5%;
     color:white;
     border-color: rgb(252, 183, 0);
+}
+
+.Button:hover{
+    background-color: rgb(252, 183, 0);
+    border-color: rgb(252, 183, 0);
+    color:black;
 }
 
 label {
@@ -666,13 +674,8 @@ label {
 .inline {
     display: inline-block;
 }
-.Button:hover{
-    background-color: rgb(252, 183, 0);
-    border-color: rgb(252, 183, 0);
-    color:black;
-}
+
 
 label{
     padding: 0px;
 }
-

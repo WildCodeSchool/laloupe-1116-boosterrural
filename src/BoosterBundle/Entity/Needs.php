@@ -23,12 +23,12 @@ class Needs
 
     public function getWebPath()
     {
-        return null === $this->image ? null : $this->getUploadDir().'/'.$this->image;
+        return null === $this->image2 ? null : $this->getUploadDir().'/'.$this->image2;
     }
 
     public function getAbsolutePath()
     {
-        return null === $this->image ? null : $this->getUploadRootDir().'/'.$this->image;
+        return null === $this->image2 ? null : $this->getUploadRootDir().'/'.$this->image2;
     }
     public function preUpload2()
     {
@@ -54,8 +54,8 @@ class Needs
 
     public function removeUpload2()
     {
-        if ($file = $this->getAbsolutePath()) {
-            unlink($file);
+        if ($file2 = $this->getAbsolutePath()) {
+            unlink($file2);
         }
     }
 

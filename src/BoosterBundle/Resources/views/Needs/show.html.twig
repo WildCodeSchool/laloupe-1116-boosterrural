@@ -1,46 +1,28 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Need</h1>
 
-    <table>
-        <tbody>
+    <div class="row">
+        <section class="col-sm-offset-1 col-sm-10 col-xs-12 backWhite sec1 padSHOW">
+            <div class="row">
+                <div class="col-md-6 col-xs-12">
+                    <img src="{{ app.request.basepath }}/uploads/{{ need.image2 }}" alt="photo_logo" class="center-block img-responsive imgSHOW"/>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <h1>{{ need.title }}</h1>
+                    <ul>
+                        <div class="row">
+                            <li class="col-md-4 col-xs-12"><span>Ville :</span>{{ need.town }}</li>
+                            <li class="col-md-4 col-xs-12"><span>Code Postal :</span>{{ need.cp }}</li>
+                            <li class="col-md-4 col-xs-12"><span>Domaine d'activité :</span>{{ need.activity }}</li>
+                        </div>
+                        <li><span>Description :</span>{{ need.description }}</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
 
-            <tr>
-                <th>Titre</th>
-                <td>{{ need.title }}</td>
-            </tr>
-            <tr>
-                <th>Code postal</th>
-                <td>{{ need.cp }}</td>
-            </tr>
-            <tr>
-                <th>Ville</th>
-                <td>{{ need.town }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ need.description }}</td>
-            </tr>
-            <tr>
-                <th>Domaine d'activité</th>
-                <td>{{ need.activity }}</td>
-            </tr>
+    <a href="{{ path('needs_index') }}" class="btn center-block1 Button">Retour à la liste</a>
 
-        </tbody>
-    </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('needs_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('needs_edit', { 'id': need.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
 {% endblock %}
