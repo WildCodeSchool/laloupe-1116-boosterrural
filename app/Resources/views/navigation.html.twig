@@ -58,8 +58,6 @@
                         <li><a href="#">Citoyens</a></li>
                     </ul>
                 </li>
-
-
             </ul>
         </li>
         {% else %}
@@ -72,8 +70,9 @@
                 </ul>
             </li>
             <li>
-                <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
-            </li>
+
+                <a href="{{ path('fos_user_security_login') }}"><span class="glyphicon glyphicon-user"></span>{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+
 
         {% endif %}
     </div>

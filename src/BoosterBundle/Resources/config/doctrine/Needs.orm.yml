@@ -13,7 +13,8 @@ BoosterBundle\Entity\Needs:
             type: string
             length: 255
         cp:
-            type: integer
+            type: string
+            length: 255
         town:
             type: string
             length: 255
@@ -33,7 +34,13 @@ BoosterBundle\Entity\Needs:
         lgt:
             type: integer
             nullable: true
+
         image3:
+            type: string
+            length: 255
+            nullable: true
+
+        image2:
             type: string
             length: 255
             nullable: true
@@ -44,8 +51,8 @@ BoosterBundle\Entity\Needs:
             inversedBy: Id
 
     lifecycleCallbacks:
-      prePersist:  [preUpload3]
-      preUpdate:   [preUpload3]
-      postPersist: [upload3]
-      postUpdate:  [upload3]
-      postRemove:  [removeUpload3]
+      prePersist:  [preUpload2, preUpload3]
+      preUpdate:   [preUpload2, preUpload3]
+      postPersist: [upload2, upload3]
+      postUpdate:  [upload2, upload3]
+      postRemove:  [removeUpload2, removeUpload3]

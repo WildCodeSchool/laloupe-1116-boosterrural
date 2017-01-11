@@ -5,6 +5,7 @@ namespace BoosterBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class NeedsType extends AbstractType
 {
@@ -13,27 +14,33 @@ class NeedsType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder
-            ->add('title', null, array(
-                'label'=>'titre du besoin'
-            ))
-            ->add('cp', 'text', array(
-                'label'=>'code postal'
-            ))
-            ->add('town', null, array(
-                'label'=>'nom de la commune'
-            ))
-            ->add('description', null, array(
-                'label'=>'description du besoin'
-            ))
-            //->add('image3', null, array(
-                //'label'=>'ajouter une image'
-            //))
-            ->add('file3', 'file', array('required' => false,
-                'label'=>'fichier image'
-            ));
+
+        $builder->add('title', null, [
+            "label" => "Titre"
+        ])
+            ->add('cp', null, [
+                "label" => "Code postal"
+            ])
+            ->add('town', null, [
+                "label" => "Ville"
+            ])
+            ->add('activity', ChoiceType::class, array (
+                "label" => "Domaine d'activité",
+                'choices'  => array(
+                    "Choisir" => "Choisir",
+                    "Loisirs" => "Loisirs",
+                    "Artisan" => "Artisan",
+                    "Bénévolat" => "Bénévolat",
+                    "Communication" => "Communication")))
+            ->add('description', null, [
+                "label" => "Description"
+            ])
+            //->add('image2')
+            ->add('file2','file', array( 'required'=>false))
+        ;
     }
-    
+
+
     /**
      * {@inheritdoc}
      */
