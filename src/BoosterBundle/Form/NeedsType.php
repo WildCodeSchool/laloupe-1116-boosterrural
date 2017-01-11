@@ -6,6 +6,9 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+
+
 class NeedsType extends AbstractType
 {
     /**
@@ -33,7 +36,7 @@ class NeedsType extends AbstractType
                 'label'=>'fichier image'
             ));
     }
-    
+
     /**
      * {@inheritdoc}
      */
@@ -51,6 +54,4 @@ class NeedsType extends AbstractType
     {
         return 'boosterbundle_needs';
     }
-
-
 }

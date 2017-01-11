@@ -1,31 +1,24 @@
 <?php
-
 namespace BoosterBundle\Entity;
-
 use Doctrine\ORM\Mapping as ORM;
-
 /**
  * Needs
  */
 class Needs
 {
-
     public $file3;
     protected function getUploadDir()
     {
         return 'uploads';
     }
-
     protected function getUploadRootDir()
     {
         return __DIR__.'/../../../web/'.$this->getUploadDir();
     }
-
     public function getWebPath()
     {
         return null === $this->image3 ? null : $this->getUploadDir().'/'.$this->image3;
     }
-
     public function getAbsolutePath()
     {
         return null === $this->image3 ? null : $this->getUploadRootDir().'/'.$this->image3;
@@ -37,80 +30,63 @@ class Needs
             $this->image3 = uniqid().'.'.$this->file3->guessExtension();
         }
     }
-
     public function upload3()
     {
         if (null === $this->file3) {
             return;
         }
-
         // if there is an error when moving the file, an exception will
         // be automatically thrown by move(). This will properly prevent
         // the entity from being persisted to the database on error
         $this->file3->move($this->getUploadRootDir(), $this->image3);
-
         unset($this->file3);
     }
-
     public function removeUpload3()
     {
         if ($file = $this->getAbsolutePath()) {
             unlink($file);
         }
     }
-
-
     /**
      * Generate code
-    **/
-
-
+     **/
     /**
      * @var int
      */
     private $id;
-
     /**
      * @var string
      */
     private $title;
-
     /**
      * @var int
      */
     private $cp;
-
     /**
      * @var string
      */
     private $town;
-
     /**
      * @var string
      */
     private $description;
-
     /**
      * @var int
      */
     private $lat;
-
     /**
      * @var int
      */
     private $lgt;
-
-
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
         return $this->id;
     }
-
     /**
      * Set title
      *
@@ -120,20 +96,17 @@ class Needs
     public function setTitle($title)
     {
         $this->title = $title;
-
         return $this;
     }
-
     /**
      * Get title
      *
-     * @return string 
+     * @return string
      */
     public function getTitle()
     {
         return $this->title;
     }
-
     /**
      * Set cp
      *
@@ -143,20 +116,17 @@ class Needs
     public function setCp($cp)
     {
         $this->cp = $cp;
-
         return $this;
     }
-
     /**
      * Get cp
      *
-     * @return integer 
+     * @return integer
      */
     public function getCp()
     {
         return $this->cp;
     }
-
     /**
      * Set town
      *
@@ -166,20 +136,17 @@ class Needs
     public function setTown($town)
     {
         $this->town = $town;
-
         return $this;
     }
-
     /**
      * Get town
      *
-     * @return string 
+     * @return string
      */
     public function getTown()
     {
         return $this->town;
     }
-
     /**
      * Set description
      *
@@ -189,20 +156,17 @@ class Needs
     public function setDescription($description)
     {
         $this->description = $description;
-
         return $this;
     }
-
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
         return $this->description;
     }
-
     /**
      * Set lat
      *
@@ -212,20 +176,17 @@ class Needs
     public function setLat($lat)
     {
         $this->lat = $lat;
-
         return $this;
     }
-
     /**
      * Get lat
      *
-     * @return integer 
+     * @return integer
      */
     public function getLat()
     {
         return $this->lat;
     }
-
     /**
      * Set lgt
      *
@@ -235,14 +196,12 @@ class Needs
     public function setLgt($lgt)
     {
         $this->lgt = $lgt;
-
         return $this;
     }
-
     /**
      * Get lgt
      *
-     * @return integer 
+     * @return integer
      */
     public function getLgt()
     {
@@ -252,13 +211,10 @@ class Needs
      * @var string
      */
     private $activity;
-
     /**
      * @var string
      */
     private $availability;
-
-
     /**
      * Set activity
      *
@@ -268,20 +224,17 @@ class Needs
     public function setActivity($activity)
     {
         $this->activity = $activity;
-
         return $this;
     }
-
     /**
      * Get activity
      *
-     * @return string 
+     * @return string
      */
     public function getActivity()
     {
         return $this->activity;
     }
-
     /**
      * Set availability
      *
@@ -291,14 +244,12 @@ class Needs
     public function setAvailability($availability)
     {
         $this->availability = $availability;
-
         return $this;
     }
-
     /**
      * Get availability
      *
-     * @return string 
+     * @return string
      */
     public function getAvailability()
     {
@@ -308,8 +259,6 @@ class Needs
      * @var \BoosterBundle\Entity\User
      */
     private $users;
-
-
     /**
      * Set users
      *
@@ -319,14 +268,12 @@ class Needs
     public function setUsers(\BoosterBundle\Entity\User $users = null)
     {
         $this->users = $users;
-
         return $this;
     }
-
     /**
      * Get users
      *
-     * @return \BoosterBundle\Entity\User 
+     * @return \BoosterBundle\Entity\User
      */
     public function getUsers()
     {
@@ -336,8 +283,6 @@ class Needs
      * @var string
      */
     private $image3;
-
-
     /**
      * Set image3
      *
@@ -348,10 +293,8 @@ class Needs
     public function setImage3($image3)
     {
         $this->image3 = $image3;
-
         return $this;
     }
-
     /**
      * Get image3
      *
@@ -361,6 +304,4 @@ class Needs
     {
         return $this->image3;
     }
-
-
 }

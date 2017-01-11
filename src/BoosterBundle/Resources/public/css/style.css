@@ -47,6 +47,10 @@ th {
     padding-right: 5%;
 }
 
+.center-block1{
+    display: initial;
+}
+
 /******************************************************/
 /************************ FRONT PAGE ******************/
 /******************************************************/
@@ -450,7 +454,7 @@ li .liNav2{
     margin-top: 30px;
     text-align: center;
     padding: 1%;
-
+    margin-bottom: inherit;
 }
 
 footer a {
@@ -617,16 +621,18 @@ footer > ul > li {
 /************************ FORM ************************/
 /******************************************************/
 
-.successButton {
+.Button{
     background-color: rgb(252, 183, 0);
     margin-top: 5%;
     margin-bottom: 5%;
-    color:black;
+    color:white;
+    border-color: rgb(252, 183, 0);
 }
 
-.successButton:hover {
+.Button:hover{
     background-color: rgb(252, 183, 0);
-
+    border-color: rgb(252, 183, 0);
+    color:black;
 }
 
 label {
@@ -636,6 +642,7 @@ label {
 
 input {
     margin-bottom: 1%;
+
 }
 
 textarea {
@@ -655,15 +662,28 @@ textarea {
 .col-form-label{
     padding: 0;
 }
+.secPad2, .secPad3 {
+    margin-top: 20px;
+}
 .titleFormActor{
     margin-bottom: 0;
 }
-.underTitle{
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 40px;
-}
 
+
+
+.block2{
+    margin-top: 20px;
+}
+.title{
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.underTitle {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
 /******************************************************/
 /************************ LOGIN ******************/
 /******************************************************/
@@ -682,9 +702,10 @@ textarea {
 .connectButton:hover{
     background-color: rgb(252, 183, 0);
 }
-.inline{
+.inline {
     display: inline-block;
 }
+
 
 /******************************************************/
 /************************ PAGE SHOW *******************/
@@ -738,3 +759,16 @@ td {
 #lienListe {
     color: black;
 }
+
+/**
+* Profile
+*/
+
+.block2{
+    margin-top: 20px;
+}
+
+
+
+
+
