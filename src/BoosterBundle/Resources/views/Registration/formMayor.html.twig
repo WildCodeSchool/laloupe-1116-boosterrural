@@ -6,6 +6,7 @@
 
 {% block fos_user_content %}
 
+
 <div class="row">
     <div class="col-sm-offset-2 col-sm-8 col-xs-12  ">
         <div class="row">
@@ -13,34 +14,35 @@
                 <h2>Inscription</h2>
                 {{ form_start(form, {'method': 'post', 'action': path('booster_registerMayor'), 'attr': {'class': 'fos_user_registration_register'}}) }}
 
-                {{ form_label(form.town) }}
-                {{ form_widget(form.town) }}
+                    {{ form_label(form.town) }}
+                    {{ form_widget(form.town) }}
 
-                {{ form_label(form.cp) }}
-                {{ form_widget(form.cp) }}
+                    {{ form_label(form.cp) }}
+                    {{ form_widget(form.cp) }}
 
-                {{ form_label(form.address) }}
-                {{ form_widget(form.address) }}
+                    {{ form_label(form.address) }}
+                    {{ form_widget(form.address) }}
 
-                {{ form_widget(form) }}
+                    {{ form_widget(form) }}
+
 
                 <input type="submit" value="{{ 'registration.submit'|trans }}" class="btn center-block Button" data-toggle="modal" href="#send_mail"/>
 
-                <div class="modal fade" id="send_mail">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-body">
-                                <p>Un email de confirmation vient de vous être envoyé.</p>
-                            </div>
-                        </div><!-- /.modal-content -->
-                    </div><!-- /.modal-dialog -->
-                </div><!-- /.modal -->
 
-                {{ form_end(form) }}
+                    <div class="modal fade" id="send_mail">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <p>Un email de confirmation vient de vous être envoyé.</p>
+                                </div>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal -->
 
+                    {{ form_end(form) }}
+
+                </div>
             </div>
         </div>
     </div>
-
-</div>
 {% endblock fos_user_content %}

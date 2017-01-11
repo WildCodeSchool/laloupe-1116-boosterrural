@@ -7,13 +7,14 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
-class NeedsType extends AbstractType
+class ActorNeedsType extends AbstractType
 {
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+
         $builder->add('title', null, [
             "label" => "Titre"
         ])
@@ -38,6 +39,7 @@ class NeedsType extends AbstractType
             ->add('file2','file', array( 'required'=>false))
         ;
     }
+
 
     /**
      * {@inheritdoc}

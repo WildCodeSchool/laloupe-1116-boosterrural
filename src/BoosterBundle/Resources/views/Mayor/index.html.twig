@@ -1,0 +1,298 @@
+{% extends "base.html.twig" %}
+
+  {% block body %}
+
+      <div class="row">
+          <section class="col-sm-offset-1 col-sm-10 col-xs-12 backWhite sec1">
+              <div class="row">
+                  <div class="col-md-6 col-xs-12">
+                      <img src="{{ asset('bundles/booster/img/acteur_logo.jpg') }}" alt="photo_logo" class="center-block img-responsive"/>
+                  </div>
+                  <div class="col-md-6 col-xs-12">
+                      <li><a class="pencil col-xs-offset-11 col-xs-1" data-toggle="modal" href="#headmod"><span class="glyphicon glyphicon-pencil"></span></a></li>
+                      <h1>biodynamic association</h1>
+
+                      <div class="row">
+                          <div class="col-sm-6 col-xs-12">
+                              <ul>
+                                  <li><span>Président :</span> {{ user.lastname }}</li>
+                                  <li><span>Adresse :</span> {{ user.address }}</li>
+                                  <li><span>Code Postal :</span> {{ user.cp }}</li>
+                                  <li><span>Adresse Mail :</span> {{ user.email }}</li>
+                                  <li><span>Catégorie :</span> {{ user.category }}</li>
+                              </ul>
+                          </div>
+                          <div class="col-sm-6 col-xs-12">
+                              <ul>
+                                  <li><span>Statut :</span>{{ user.statusActor }}</li>
+                                  <li><span>Commune :</span>{{ user.town }}</li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+
+              </div>
+          </section>
+      </div>
+
+      <div class="row">
+          <div class="col-sm-offset-1 col-sm-10">
+              <div class="row flexMap">
+                  <section class="col-sm-6 col-xs-12 backWhite sec2">
+                      <div class="row">
+                          <div class="col-md-5 col-sm-12">
+                              <ul class="ulBorder">
+                                  <li><img src="{{ asset('bundles/booster/img/photo1.jpg') }}" alt="photo" class="pitureMini img-responsive center-block"/></li>
+                                  <li><img src="{{ asset('bundles/booster/img/photo2.jpg') }}" alt="photo" class="pitureMini img-responsive center-block"/></li>
+                                  <li><img src="{{ asset('bundles/booster/img/photo3.jpg') }}" alt="photo" class="pitureMini img-responsive center-block"/></li>
+                              </ul>
+                          </div>
+                          <div class="col-md-7 col-sm-12">
+                              <h2 class="mediaTitle">pourquoi nous sommes dynamiques ?</h2>
+                              <p>{{ user.description }}</p>
+                          </div>
+
+                      </div>
+                      <li><a class="pencil"><span class="glyphicon glyphicon-pencil"></span></a></li>
+                  </section>
+                  <section class=" hidden-xs col-sm-5 col-xs-12 backWhite secPad1">
+                      <h2>localisation</h2>
+                      <div id="map" class="center-block"></div>
+                  </section>
+              </div>
+          </div>
+      </div>
+
+
+
+      <div class="row">
+          <div class="col-sm-offset-1 col-sm-10 block1">
+              <div class="row">
+
+                  <section class="col-sm-6 col-xs-12 backWhite margeMobile secPad2">
+                      <h3 class="title">Mes offres</h3>
+                      <h4 class="underTitle">Ce que je propose...</h4>
+                      {% if offers == NULL %}
+                      <p>Absence de d'offres</p>
+                      {% else %}
+                      {% for offer in offers %}
+                      <ul>
+                          <li>
+                              <div class="row">
+                                  <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="no photo" class=" col-xs-2">
+                                  <div class="col-xs-8">
+                                      <span>{{ offer.title }}</span>
+                                      <p>{{ offer.description }}</p>
+                                  </div>
+                                  <div class="col-xs-1">
+                                      <a href="#"><span class="glyphicon glyphicon-pencil btn-lg"></span ></a>
+                                      <span class="glyphicon glyphicon-remove btn-lg"></span >
+                                  </div>
+                              </div>
+                          </li>
+                          <hr>
+                          {% endfor %}
+                          {% endif %}
+
+                          <div class="row">
+                              <a href="{{ path('actor_newOffer') }}" class="col-xs-offset-11"> <span class="glyphicon glyphicon-plus btn-lg"></span ></a>
+                          </div>
+                      </ul>
+                  </section>
+
+
+
+                  <section class="col-sm-5 col-xs-12 backWhite secPad3">
+                      <h3 class="title">Mes matchings</h3>
+                      <h4 class="underTitle">Qui puis-je aider ?</h4>
+                      <ul>
+                          <li>
+                              <div class="row">
+                                  <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="no photo" class=" col-xs-2">
+                                  <div class="col-xs-9">
+                                      <span>Lorem ipsum dolor sit amet</span>
+                                      <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
+                                  </div>
+
+                              </div>
+                          </li>
+                          <hr>
+                          <li>
+                              <div class="row">
+                                  <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="no photo" class=" col-xs-2">
+                                  <div class="col-xs-9">
+                                      <span>Lorem ipsum dolor sit amet</span>
+                                      <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
+                                  </div>
+
+                              </div>
+                          </li>
+                          <hr>
+                          <li>
+                              <div class="row">
+                                  <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="no photo" class=" col-xs-2">
+                                  <div class="col-xs-9">
+                                      <span>Lorem ipsum dolor sit amet</span>
+                                      <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
+                                  </div>
+
+                              </div>
+                          </li>
+                          <hr>
+                          <li>
+                              <div class="row">
+                                  <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="no photo" class=" col-xs-2">
+                                  <div class="col-xs-9">
+                                      <span>Lorem ipsum dolor sit amet</span>
+                                      <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
+                                  </div>
+
+                              </div>
+                          </li>
+                      </ul>
+                  </section>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-sm-offset-1 col-sm-10 block2">
+              <div class="row">
+                  <section class="col-sm-6 col-xs-12 backWhite margeMobile secPad2">
+                      <h3 class="title">Mes besoins</h3>
+                      <h4 class="underTitle">Ce dont j'ai besoin...</h4>
+                      <ul>
+                          {% if needs == NULL %}
+                              <p>Absence de besoins</p>
+                          {% else %}
+                              {% for needs in needs %}
+
+                                  <li>
+
+                                      <div class="row">
+                                          <a href="{{ path('actor_showNeeds',{'id' : needs.id}) }}">
+                                              <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="no photo" class=" col-xs-2">
+                                              <div class="col-xs-8">
+                                                  <span>{{ needs.title }}</span>
+                                                  <p>{{ needs.description }}</p>
+                                              </div>
+                                          </a>
+                                          <div class="col-xs-1">
+                                              <span class="glyphicon glyphicon-pencil btn-lg"></span >
+                                              <span class="glyphicon glyphicon-remove btn-lg"></span >
+                                          </div>
+                                      </div>
+                                  </li>
+
+
+                              {% endfor %}
+                              <hr>
+                          {% endif %}
+                          <div class="row">
+                              <a href="{{ path('actor_newNeeds') }}" class="col-xs-offset-11"> <span class="glyphicon glyphicon-plus btn-lg"></span ></a>
+                          </div>
+                      </ul>
+                  </section>
+
+                  <section class="col-sm-5 col-xs-12 backWhite secPad3">
+                      <h3 class="title">mes matchings</h3>
+                      <h4 class="underTitle">Qui peut m'maider ?</h4>
+                      <ul>
+                          <li>
+                              <div class="row">
+                                  <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="no photo" class=" col-xs-2">
+                                  <div class="col-xs-9">
+                                      <span>Lorem ipsum dolor sit amet</span>
+                                      <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
+                                  </div>
+
+                              </div>
+                          </li>
+                          <hr>
+                          <li>
+                              <div class="row">
+                                  <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="no photo" class=" col-xs-2">
+                                  <div class="col-xs-9">
+                                      <span>Lorem ipsum dolor sit amet</span>
+                                      <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
+                                  </div>
+
+                              </div>
+                          </li>
+                          <hr>
+                          <li>
+                              <div class="row">
+                                  <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="no photo" class=" col-xs-2">
+                                  <div class="col-xs-9">
+                                      <span>Lorem ipsum dolor sit amet</span>
+                                      <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
+                                  </div>
+
+                              </div>
+                          </li>
+                          <hr>
+                          <li>
+                              <div class="row">
+                                  <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="no photo" class=" col-xs-2">
+                                  <div class="col-xs-9">
+                                      <span>Lorem ipsum dolor sit amet</span>
+                                      <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
+                                  </div>
+
+                              </div>
+                          </li>
+                      </ul>
+                  </section>
+              </div>
+          </div>
+      </div>
+
+
+
+  {% endblock %}
+
+
+
+    {% block javascripts %}
+        {{ parent () }}
+        <script>
+            function initMap() {
+                var map = new google.maps.Map(document.getElementById('#map'), {
+                    zoom: 14,
+                    center: {lat: 48.471285, lng: 1.0143050000000358}
+                });
+
+                var layer = new google.maps.visualization.DynamicMapsEngineLayer({
+                    layerId: '06673056454046135537-08896501997766553811',
+                    map: map,
+                    suppressInfoWindows: true,
+                    clickable: true
+                });
+
+                layer.addListener('mouseover', function(event) {
+                    var style = layer.getFeatureStyle(event.featureId);
+                    style.fillColor = colors[event.featureId - 1];
+                    style.fillOpacity = '0.8';
+                });
+
+                layer.addListener('mouseout', function(event) {
+                    layer.getFeatureStyle(event.featureId).resetAll();
+                });
+            }
+
+            var colors = ['red', 'blue', 'yellow', 'green'];
+
+        </script>
+        <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBR84fXWLx5T5AOpRQHNXs7w3U9jdPneFU&signed_in=true&libraries=visualization&callback=initMap">
+        </script>
+
+    {% endblock %}
+
+
+
+
+
+
+
+
+

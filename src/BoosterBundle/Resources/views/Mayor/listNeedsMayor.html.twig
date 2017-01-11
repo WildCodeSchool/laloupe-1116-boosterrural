@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Liste des Besoins</h1>
+    {% for need in needs %}
+        <a href="{{ path('needs_show', { 'id': need.id }) }}" id="lienListe">
+            <div class="row">
+                <section class="col-sm-offset-1 col-sm-10 col-xs-12 backWhite sec1 listIndex">
+                    <div class="row">
+                        <div class="col-md-6 col-xs-12">
+                            <img src="{{ app.request.basepath }}/uploads/{{ need.image3 }}" alt="photo_logo" class="center-block img-responsive imgList"/>
+                        </div>
+                        <div class="col-md-6 col-xs-12">
+                            <h2>{{ need.title }}</h2>
+                            <div class="row">
+                                <div class="col-sm-6 col-xs-12">
+                                    <ul>
+                                        <li><span>Nom de la Commune :</span> {{ need.town }}</li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-6 col-xs-12">
+                                    <ul>
+                                        <li><span>Code Postal :</span> {{ need.cp }}</li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-12 col-xs-12">
+                                    <ul>
+                                        <li><span>Description du Besoin :</span><p> {{ need.description[:300]}} ...</p></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </a>
+        <div>
+            <ul>
+                {#<li>#}
+                    {#<a href="{{ path('needs_show', { 'id': need.id }) }}" class="btn Button center-block">Voir</a>#}
+                {#</li>#}
+                <li>
+                    <a href="{{ path('needs_edit', { 'id': need.id }) }}" class="btn Button center-block">Modifier</a>
+                </li>
+            </ul>
+        </div>
+    {% endfor %}
+    <div class="row">
+        <div class="col-sm-offset-1 col-sm-10 col-xs-12">
+            <ul>
+                <li>
+                    <a href="{{ path('needs_new') }}" class="btn Button center-block">Créer un nouveu besoin</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

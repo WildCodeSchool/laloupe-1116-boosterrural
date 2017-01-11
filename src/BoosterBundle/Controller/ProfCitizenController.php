@@ -12,7 +12,7 @@ use BoosterBundle\Entity\Needs;
  * Offer controller.
  *
  */
-class ProfActorController extends Controller
+class ProfCitizenController extends Controller
 {
 
     public function indexAction()
@@ -240,13 +240,13 @@ class ProfActorController extends Controller
             ;
     }
 
-    public function listNeedsActorAction()
+    public function listNeeds()
     {
         $em = $this->getDoctrine()->getManager();
 
         $needs = $em->getRepository('BoosterBundle:Needs')->findAll();
 
-        return $this->render('BoosterBundle:Actor:listNeedsMayor.html.twig', array(
+        return $this->render('BoosterBundle:Needs:mayor.index.html.twig', array(
             'needs' => $needs,
         ));
     }

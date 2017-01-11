@@ -3,14 +3,14 @@
 
 {% block body %}
 
-<div class="row">
-    <section class="col-sm-offset-1 col-sm-10 col-xs-12 backWhite sec1">
-        <div class="row">
-            <div class="col-md-6 col-xs-12">
-                <img src="{{ asset('bundles/booster/img/acteur_logo.jpg') }}" alt="photo_logo" class="center-block img-responsive"/>
-            </div>
-            <div class="col-md-6 col-xs-12">
-                <h1>biodynamic association</h1>
+    <div class="row">
+        <section class="col-sm-offset-1 col-sm-10 col-xs-12 backWhite sec1">
+            <div class="row">
+                <div class="col-md-6 col-xs-12">
+                    <img src="{{ asset('bundles/booster/img/acteur_logo.jpg') }}" alt="photo_logo" class="center-block img-responsive"/>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <h1>biodynamic association</h1>
                     <div class="row">
                         <div class="col-sm-6 col-xs-12">
                             <ul>
@@ -35,43 +35,43 @@
                             </ul>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-offset-1 col-sm-10">
+            <div class="row flexMap">
+                <section class="col-sm-6 col-xs-12 backWhite sec2">
+                    <div class="row">
+                        <div class="col-md-5 col-sm-12">
+                            <ul class="ulBorder">
+                                <li><img src="{{ asset('bundles/booster/img/photo1.jpg') }}" alt="photo" class="pitureMini img-responsive center-block"/></li>
+                                <li><img src="{{ asset('bundles/booster/img/photo2.jpg') }}" alt="photo" class="pitureMini img-responsive center-block"/></li>
+                                <li><img src="{{ asset('bundles/booster/img/photo3.jpg') }}" alt="photo" class="pitureMini img-responsive center-block"/></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-7 col-sm-12">
+                            <h2 class="mediaTitle">pourquoi nous sommes dynamiques ?</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id dignissim nibh. Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim. Sed augue nisi, maximus eu imperdiet eu, fermentum in eros. Vestibulum varius lacus at neque hendrerit, in blandit nisl molestie. Proin vitae erat imperdiet, porttitor ex quis, vulputate diam. Duis vel sem vitae nisi convallis iaculis at venenatis est. Phasellus id rhoncus leo. Integer quis sem quis dui venenatis pretium.</p>
+                        </div>
+                    </div>
+                </section>
+                <section class=" hidden-xs col-sm-5 col-xs-12 backWhite secPad1">
+                    <h2>localisation</h2>
+                    <div id="map" class="center-block"></div>
+                </section>
             </div>
         </div>
-    </section>
-</div>
-
-<div class="row">
-    <div class="col-sm-offset-1 col-sm-10">
-        <div class="row flexMap">
-            <section class="col-sm-6 col-xs-12 backWhite sec2">
-                <div class="row">
-                    <div class="col-md-5 col-sm-12">
-                        <ul class="ulBorder">
-                            <li><img src="{{ asset('bundles/booster/img/photo1.jpg') }}" alt="photo" class="pitureMini img-responsive center-block"/></li>
-                            <li><img src="{{ asset('bundles/booster/img/photo2.jpg') }}" alt="photo" class="pitureMini img-responsive center-block"/></li>
-                            <li><img src="{{ asset('bundles/booster/img/photo3.jpg') }}" alt="photo" class="pitureMini img-responsive center-block"/></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-7 col-sm-12">
-                        <h2 class="mediaTitle">pourquoi nous sommes dynamiques ?</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id dignissim nibh. Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim. Sed augue nisi, maximus eu imperdiet eu, fermentum in eros. Vestibulum varius lacus at neque hendrerit, in blandit nisl molestie. Proin vitae erat imperdiet, porttitor ex quis, vulputate diam. Duis vel sem vitae nisi convallis iaculis at venenatis est. Phasellus id rhoncus leo. Integer quis sem quis dui venenatis pretium.</p>
-                    </div>
-                </div>
-            </section>
-            <section class=" hidden-xs col-sm-5 col-xs-12 backWhite secPad1">
-                <h2>localisation</h2>
-                    <div id="map" class="center-block"></div>
-            </section>
-        </div>
     </div>
-</div>
 
     <h2 id="title2">ses activités</h2>
     <div class="row">
         <div class="col-sm-offset-1 col-sm-10">
-          <div class="row">
-            <section class="col-sm-6 col-xs-12 backWhite margeMobile secPad2">
-                <h3>ses besoins</h3>
+            <div class="row">
+                <section class="col-sm-6 col-xs-12 backWhite margeMobile secPad2">
+                    <h3>ses besoins</h3>
                     <ul>
                         <div class="row">
                             <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="no photo" class=" col-xs-2">
@@ -109,10 +109,10 @@
 
                         </div>
                     </ul>
-            </section>
+                </section>
 
-            <section class="col-sm-5 col-xs-12 backWhite secPad3">
-                <h3>ses offres</h3>
+                <section class="col-sm-5 col-xs-12 backWhite secPad3">
+                    <h3>ses offres</h3>
                     <ul>
                         <div class="row">
                             <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="no photo" class=" col-xs-2">

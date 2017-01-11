@@ -1,11 +1,14 @@
-
-booster_offer:
+booster_actorBack:
     resource: "@BoosterBundle/Resources/config/routing/actor.yml"
     prefix:   /actor
 
-booster_needs:
-    resource: "@BoosterBundle/Resources/config/routing/needs.yml"
-    prefix:   /needs
+booster_mayorBack:
+    resource: "@BoosterBundle/Resources/config/routing/mayor.yml"
+    prefix:   /mayor
+
+booster_citizenack:
+    resource: "@BoosterBundle/Resources/config/routing/citizen.yml"
+    prefix:   /citizen
 
 booster_citizenfront:
     path:     /citizen
