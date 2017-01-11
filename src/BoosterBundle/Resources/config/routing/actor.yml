@@ -4,43 +4,43 @@ actor_index:
     methods:  GET
 
 actor_showOffer:
-    path:     /{id}/show
+    path:     /offer/{id}/show
     defaults: { _controller: "BoosterBundle:ProfActor:showOffer" }
     methods:  GET
 
 actor_newOffer:
-    path:     /new
+    path:     /offer/new
     defaults: { _controller: "BoosterBundle:ProfActor:newOffer" }
     methods:  [GET, POST]
 
 actor_editOffer:
-    path:     /{id}/edit
+    path:     /offer/{id}/edit
     defaults: { _controller: "BoosterBundle:ProfActor:editOffer" }
     methods:  [GET, POST]
 
 actor_deleteOffer:
-    path:     /{id}/delete
+    path:     /offer/{id}/delete
     defaults: { _controller: "BoosterBundle:ProfActor:deleteOffer" }
     methods:  DELETE
 
 
 actor_showNeeds:
-    path:     /{id}/show
+    path:     /needs/{id}/show
     defaults: { _controller: "BoosterBundle:ProfActor:showNeed" }
     methods:  GET
 
 actor_newNeeds:
-    path:     /new
+    path:     /needs/new
     defaults: { _controller: "BoosterBundle:ProfActor:newNeed" }
     methods:  [GET, POST]
 
 actor_editNeeds:
-    path:     /{id}/edit
+    path:     /needs/{id}/edit
     defaults: { _controller: "BoosterBundle:ProfActor:editNeed" }
     methods:  [GET, POST]
 
 actor_deleteNeeds:
-    path:     /{id}/delete
+    path:     /needs/{id}/delete
     defaults: { _controller: "BoosterBundle:ProfActor:deleteNeed" }
     methods:  DELETE
 
