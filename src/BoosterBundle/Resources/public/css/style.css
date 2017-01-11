@@ -39,6 +39,14 @@ section {
     background-color: white;
 }
 
+.col-xs-4 {
+    padding: 0;
+}
+
+th {
+    padding-right: 5%;
+}
+
 /******************************************************/
 /************************ FRONT PAGE ******************/
 /******************************************************/
@@ -318,7 +326,7 @@ li .liNav2{
     position: absolute;
     right: 10%;
     top: 20%;
-    width: 15%;
+    width: 18%;
 }
 
 .imgHP3 {
@@ -623,8 +631,17 @@ footer > ul > li {
 
 label {
     text-transform: uppercase;
+    padding: 0;
 }
 
+input {
+    margin-bottom: 1%;
+}
+
+textarea {
+    margin-bottom: 1%;
+    resize: none;
+}
 /****************** Form Actor ************************/
 
 .formActorWidth {
@@ -634,7 +651,6 @@ label {
 .form-group {
     margin-bottom: 2.5%;
 }
-
 
 .col-form-label{
     padding: 0;
@@ -670,3 +686,55 @@ label {
     display: inline-block;
 }
 
+/******************************************************/
+/************************ PAGE SHOW *******************/
+/******************************************************/
+
+table {
+    margin: 0 auto;
+}
+
+td {
+    padding: 10px;
+}
+
+.showAlign {
+    text-align: center;
+}
+
+.showLien2 {
+    color: #3F3343;
+}
+
+.showLien a:hover {
+    text-decoration: none;
+}
+
+#boosterbundle_needs_file3 > .form-control {
+
+}
+
+.imgShow {
+    padding: 25%;
+}
+
+.padShow {
+    padding: 2%;
+    height: 80vh;
+    overflow-y: scroll;
+}
+
+.listIndex {
+    padding: 2%;
+    height: 40vh;
+    overflow-y: scroll;
+}
+
+.imgList {
+    height: 250px;
+    margin-top: 2%;
+}
+
+#lienListe {
+    color: black;
+}

@@ -78,4 +78,3 @@ fos_user:
            type: booster_actor_registration
         confirmation:
             enabled: true
-

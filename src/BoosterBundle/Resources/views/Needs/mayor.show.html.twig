@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+{#{% form_theme form ":FormTemplate:bootstrap.html.twig" %}#}
+
+{% block body %}
+    <div class="row">
+        <section class="col-sm-offset-1 col-sm-10 col-xs-12 backWhite sec1 padShow">
+            <div class="row">
+                <div class="col-md-6 col-xs-12">
+                    <img src="{{ app.request.basepath }}/uploads/{{ need.image3 }}" alt="photo_logo" class="center-block img-responsive imgShow"/>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <h1>{{ need.title }}</h1>
+                    <div class="row">
+                        <div class="col-sm-6 col-xs-12">
+                            <ul>
+                                <li><span>Nom de la Commune :</span> {{ need.town }}</li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-xs-12">
+                            <ul>
+                                <li><span>Code Postal :</span> {{ need.cp }}</li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-12 col-xs-12">
+                            <ul>
+                                <li><span>Description du Besoin :</span><p> {{ need.description }}</p></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="row">
+        <div class="col-sm-offset-1 col-sm-10 col-xs-12">
+            <ul>
+                <li>
+                    <a href="{{ path('needs_index') }}" class="btn Button center-block">Retour à la liste</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

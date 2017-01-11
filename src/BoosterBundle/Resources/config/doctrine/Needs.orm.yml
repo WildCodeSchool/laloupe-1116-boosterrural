@@ -22,15 +22,30 @@ BoosterBundle\Entity\Needs:
         activity:
             type: string
             length: 255
+            nullable: true
         availability:
             type: string
             length: 255
+            nullable: true
         lat:
             type: integer
+            nullable: true
         lgt:
             type: integer
+            nullable: true
+        image3:
+            type: string
+            length: 255
+            nullable: true
+
     manyToOne:
         users:
             targetEntity: BoosterBundle\Entity\User
             inversedBy: Id
-    lifecycleCallbacks: {  }
+
+    lifecycleCallbacks:
+      prePersist:  [preUpload3]
+      preUpdate:   [preUpload3]
+      postPersist: [upload3]
+      postUpdate:  [upload3]
+      postRemove:  [removeUpload3]
