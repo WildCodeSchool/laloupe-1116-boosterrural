@@ -30,7 +30,7 @@ class ProfCitizenController extends Controller
             ));
 
 
-        return $this->render('BoosterBundle:Actor:index.html.twig', array(
+        return $this->render('BoosterBundle:Citizen:index.html.twig', array(
             'user'=>$user,
             'offers' => $offers,
             'needs' => $needs,
@@ -60,13 +60,13 @@ class ProfCitizenController extends Controller
             $em->persist($offer);
             $em->flush($offer);
 
-            return $this->redirectToRoute('actor_showOffer', array('id' => $offer->getId(
+            return $this->redirectToRoute('citizen_showOffer', array('id' => $offer->getId(
                 array($offer->getUsers()
             ))));
 
         }
 
-        return $this->render('BoosterBundle:Actor:newOffer.html.twig', array(
+        return $this->render('BoosterBundle:Citizen:newOffer.html.twig', array(
             'offer' => $offer,
             'form' => $form->createView(),
         ));
@@ -79,7 +79,7 @@ class ProfCitizenController extends Controller
     {
         $deleteForm = $this->createDeleteForm($offer);
 
-        return $this->render('BoosterBundle:Actor:showOffer.html.twig', array(
+        return $this->render('BoosterBundle:Citizen:showOffer.html.twig', array(
             'offer' => $offer,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -97,10 +97,10 @@ class ProfCitizenController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('actor_editOffer', array('id' => $offer->getId()));
+            return $this->redirectToRoute('citizen_editOffer', array('id' => $offer->getId()));
         }
 
-        return $this->render('BoosterBundle:Actor:editNeeds.html.twig', array(
+        return $this->render('BoosterBundle:Citizen:editNeeds.html.twig', array(
             'offer' => $offer,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
@@ -122,7 +122,7 @@ class ProfCitizenController extends Controller
             $em->flush($offer);
         }
 
-        return $this->redirectToRoute('actor_index');
+        return $this->redirectToRoute('citizen_index');
     }
 
     /**
@@ -135,7 +135,7 @@ class ProfCitizenController extends Controller
     private function createDeleteForm(Offer $offer)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('actor_deleteOffer', array('id' => $offer->getId())))
+            ->setAction($this->generateUrl('citizen_deleteOffer', array('id' => $offer->getId())))
             ->setMethod('DELETE')
             ->getForm()
             ;
@@ -150,7 +150,7 @@ class ProfCitizenController extends Controller
         $user = $this->get('security.context')->getToken()->getUser();
         $needs = new Needs();
         $needs->setUsers($user);
-        $form = $this->createForm('BoosterBundle\Form\ActorNeedsType', $needs);
+        $form = $this->createForm('BoosterBundle\Form\CitizenNeedsType', $needs);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
