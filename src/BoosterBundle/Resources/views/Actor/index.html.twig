@@ -1,7 +1,7 @@
 {% extends "base.html.twig" %}
 
   {% block body %}
-
+      <!-- *******Identity of actor******* -->
       <div class="row">
           <section class="col-sm-offset-1 col-sm-10 col-xs-12 backWhite sec1">
               <div class="row">
@@ -11,7 +11,6 @@
                   <div class="col-md-6 col-xs-12">
                       <li><a class="pencil col-xs-offset-11 col-xs-1" data-toggle="modal" href="#headmod"><span class="glyphicon glyphicon-pencil btn-lg"></span></a></li>
                       <h1>biodynamic association</h1>
-
                       <div class="row">
                           <div class="col-sm-6 col-xs-12">
                               <ul>
@@ -30,11 +29,12 @@
                           </div>
                       </div>
                   </div>
-
               </div>
           </section>
       </div>
+      <!-- *******End Identity of actor******* -->
 
+      <!-- ********** Presentation of actor ********* -->
       <div class="row">
           <div class="col-sm-offset-1 col-sm-10">
               <div class="row flexMap">
@@ -51,10 +51,12 @@
                               <h2 class="mediaTitle">Pourquoi nous sommes dynamiques ?</h2>
                               <p>{{ user.description }}</p>
                           </div>
-
                       </div>
                       <li><a class="pencil"><span class="glyphicon glyphicon-pencil btn-lg"></span></a></li>
                   </section>
+                  <!-- ********** End Presentation of actor ********* -->
+
+                  <!-- ********** Localisation of actor ********* -->
                   <section class=" hidden-xs col-sm-5 col-xs-12 backWhite secPad1">
                       <h2>localisation</h2>
                       <div id="map" class="center-block"></div>
@@ -62,13 +64,12 @@
               </div>
           </div>
       </div>
+      <!-- ********** End Localisation of actor ********* -->
 
-
-
+      <!-- ********** Offers of actor ********* -->
       <div class="row">
           <div class="col-sm-offset-1 col-sm-10 block1">
               <div class="row">
-
                   <section class="col-sm-6 col-xs-12 backWhite margeMobile secPad2">
                       <h3 class="title">Nos offres</h3>
                       <h4 class="underTitle">Ce que nous proposons...</h4>
@@ -99,9 +100,9 @@
                           </div>
                       </ul>
                   </section>
+                  <!-- ********** End offers of actor ********* -->
 
-
-
+                  <!-- **********Offer's Matching of actor ********* -->
                   <section class="col-sm-5 col-xs-12 backWhite secPad3">
                       <h3 class="title">Nos matchings</h3>
                       <h4 class="underTitle">Qui pouvons-nous aider ?</h4>
@@ -113,7 +114,6 @@
                                       <span>Lorem ipsum dolor sit amet</span>
                                       <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
                                   </div>
-
                               </div>
                           </li>
                           <hr>
@@ -124,7 +124,6 @@
                                       <span>Lorem ipsum dolor sit amet</span>
                                       <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
                                   </div>
-
                               </div>
                           </li>
                           <hr>
@@ -135,7 +134,6 @@
                                       <span>Lorem ipsum dolor sit amet</span>
                                       <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
                                   </div>
-
                               </div>
                           </li>
                           <hr>
@@ -146,7 +144,6 @@
                                       <span>Lorem ipsum dolor sit amet</span>
                                       <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
                                   </div>
-
                               </div>
                           </li>
                       </ul>
@@ -154,21 +151,21 @@
               </div>
           </div>
       </div>
+      <!-- ********** End of offer's matching of actor ********* -->
+
+      <!-- ********** Needs of actor ********* -->
       <div class="row">
           <div class="col-sm-offset-1 col-sm-10 block2">
               <div class="row">
                   <section class="col-sm-6 col-xs-12 backWhite margeMobile secPad2">
                       <h3 class="title">Nos besoins</h3>
                       <h4 class="underTitle">Ce dont nous avons besoin...</h4>
-
                       <ul>
                           {% if needs == NULL %}
                               <p>Absence de besoins</p>
                           {% else %}
                               {% for needs in needs %}
-
                                   <li>
-
                                       <div class="row">
                                           <a href="{{ path('actor_showNeeds',{'id' : needs.id}) }}">
                                               <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="no photo" class=" col-xs-2">
@@ -183,8 +180,6 @@
                                           </div>
                                       </div>
                                   </li>
-
-
                               {% endfor %}
                               <hr>
                           {% endif %}
@@ -193,7 +188,9 @@
                           </div>
                       </ul>
                   </section>
+                  <!-- ********** End needs of actor ********* -->
 
+                  <!-- ********** Needs' matching of actor ********* -->
                   <section class="col-sm-5 col-xs-12 backWhite secPad3">
                       <h3 class="title">nos matchings</h3>
                       <h4 class="underTitle">Qui peut nous aider ?</h4>
@@ -238,7 +235,6 @@
                                       <span>Lorem ipsum dolor sit amet</span>
                                       <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
                                   </div>
-
                               </div>
                           </li>
                       </ul>
@@ -246,50 +242,49 @@
               </div>
           </div>
       </div>
-
-
-
   {% endblock %}
 
+<!-- ********** End needs' matching of actor ********* -->
 
 
-    {% block javascripts %}
-        {{ parent () }}
-        <script>
-            function initMap() {
-                var map = new google.maps.Map(document.getElementById('#map'), {
-                    zoom: 14,
-                    center: {lat: 48.471285, lng: 1.0143050000000358}
-                });
+<!-- ********** Dynamic map ********* -->
+{% block javascripts %}
+    {{ parent () }}
+    <script>
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('#map'), {
+                zoom: 14,
+                center: {lat: 48.471285, lng: 1.0143050000000358}
+            });
 
-                var layer = new google.maps.visualization.DynamicMapsEngineLayer({
-                    layerId: '06673056454046135537-08896501997766553811',
-                    map: map,
-                    suppressInfoWindows: true,
-                    clickable: true
-                });
+            var layer = new google.maps.visualization.DynamicMapsEngineLayer({
+                layerId: '06673056454046135537-08896501997766553811',
+                map: map,
+                suppressInfoWindows: true,
+                clickable: true
+            });
 
-                layer.addListener('mouseover', function(event) {
-                    var style = layer.getFeatureStyle(event.featureId);
-                    style.fillColor = colors[event.featureId - 1];
-                    style.fillOpacity = '0.8';
-                });
+            layer.addListener('mouseover', function(event) {
+                var style = layer.getFeatureStyle(event.featureId);
+                style.fillColor = colors[event.featureId - 1];
+                style.fillOpacity = '0.8';
+            });
 
-                layer.addListener('mouseout', function(event) {
-                    layer.getFeatureStyle(event.featureId).resetAll();
-                });
-            }
+            layer.addListener('mouseout', function(event) {
+                layer.getFeatureStyle(event.featureId).resetAll();
+            });
+        }
 
-            var colors = ['red', 'blue', 'yellow', 'green'];
+        var colors = ['red', 'blue', 'yellow', 'green'];
 
-        </script>
-        <script async defer
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBR84fXWLx5T5AOpRQHNXs7w3U9jdPneFU&signed_in=true&libraries=visualization&callback=initMap">
-        </script>
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBR84fXWLx5T5AOpRQHNXs7w3U9jdPneFU&signed_in=true&libraries=visualization&callback=initMap">
+    </script>
 
-    {% endblock %}
+{% endblock %}
 
-
+<!-- ********** End dynamic map ********* -->
 
 
 
