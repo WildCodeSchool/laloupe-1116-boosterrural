@@ -40,10 +40,10 @@ BoosterBundle\Entity\User:
             type: text
             nullable: true
         lat:
-            type: integer
+            type: float
             nullable: true
         lgt:
-            type: integer
+            type: float
             nullable: true
         organization:
             type: string
