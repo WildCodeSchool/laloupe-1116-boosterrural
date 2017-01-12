@@ -1,0 +1,46 @@
+citizen_index:
+    path:     /
+    defaults: { _controller: "BoosterBundle:ProfActor:index" }
+    methods:  GET
+
+citizen_showOffer:
+    path:     /offer/{id}/show
+    defaults: { _controller: "BoosterBundle:ProfActor:showOffer" }
+    methods:  GET
+
+citizen_newOffer:
+    path:     /offer/new
+    defaults: { _controller: "BoosterBundle:ProfActor:newOffer" }
+    methods:  [GET, POST]
+
+citizen_editOffer:
+    path:     /offer/{id}/edit
+    defaults: { _controller: "BoosterBundle:ProfActor:editOffer" }
+    methods:  [GET, POST]
+
+citizen_deleteOffer:
+    path:     /offer/{id}/delete
+    defaults: { _controller: "BoosterBundle:ProfActor:deleteOffer" }
+    methods:  DELETE
+
+
+citizen_showNeeds:
+    path:     /needs/{id}/show
+    defaults: { _controller: "BoosterBundle:ProfActor:showNeed" }
+    methods:  GET
+
+citizen_newNeeds:
+    path:     /needs/new
+    defaults: { _controller: "BoosterBundle:ProfActor:newNeed" }
+    methods:  [GET, POST]
+
+citizen_editNeeds:
+    path:     /needs/{id}/edit
+    defaults: { _controller: "BoosterBundle:ProfActor:editNeed" }
+    methods:  [GET, POST]
+
+citizen_deleteNeeds:
+    path:     /needs/{id}/delete
+    defaults: { _controller: "BoosterBundle:ProfActor:deleteNeed" }
+    methods:  DELETE
+

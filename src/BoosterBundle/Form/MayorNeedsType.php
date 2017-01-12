@@ -6,13 +6,15 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class NeedsType extends AbstractType
+
+class MayorNeedsType extends AbstractType
 {
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+
         $builder
             ->add('title', null, array(
                 'label'=>'titre du besoin'
@@ -33,7 +35,8 @@ class NeedsType extends AbstractType
                 'label'=>'fichier image'
             ));
     }
-    
+
+
     /**
      * {@inheritdoc}
      */
