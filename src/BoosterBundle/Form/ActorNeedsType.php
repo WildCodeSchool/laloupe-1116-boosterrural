@@ -36,7 +36,9 @@ class ActorNeedsType extends AbstractType
                 "label" => "Description"
             ])
             //->add('image2')
-            ->add('file2','file', array( 'required'=>false))
+            ->add('file2','file', [
+                "label" => "Photo"],
+                array( 'required'=>false))
         ;
     }
 

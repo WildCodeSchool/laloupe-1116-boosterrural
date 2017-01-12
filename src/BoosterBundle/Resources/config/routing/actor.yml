@@ -1,5 +1,5 @@
 actor_index:
-    path:     /
+    path:     /profile
     defaults: { _controller: "BoosterBundle:ProfActor:index" }
     methods:  GET
 

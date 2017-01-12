@@ -9,9 +9,17 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Needs
 {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> listneedA
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7afb573b696f3e56d4098a745d18a2e4be427401
+>>>>>>> listneedA
     protected function getUploadDir()
     {
         return 'uploads';
@@ -24,15 +32,27 @@ class Needs
 
     public function getWebPath()
     {
+<<<<<<< HEAD
 
         return null === $this->image ? null : $this->getUploadDir().'/'.$this->image;
 
 
+=======
+<<<<<<< HEAD
+        return null === $this->image ? null : $this->getUploadDir().'/'.$this->image;
+=======
+        return null === $this->image2 ? null : $this->getUploadDir().'/'.$this->image2;
+>>>>>>> 7afb573b696f3e56d4098a745d18a2e4be427401
+>>>>>>> listneedA
     }
 
     public function getAbsolutePath()
     {
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+>>>>>>> listneedA
         return null === $this->image ? null : $this->getUploadRootDir().'/'.$this->image;
 
     }
@@ -51,13 +71,22 @@ class Needs
     public function upload2()
     {
         if (null === $this->file2) {
+<<<<<<< HEAD
+=======
+>>>>>>> 7afb573b696f3e56d4098a745d18a2e4be427401
+>>>>>>> listneedA
             return;
         }
 
         // if there is an error when moving the file, an exception will
         // be automatically thrown by move(). This will properly prevent
         // the entity from being persisted to the database on error
+<<<<<<< HEAD
         $this->file2->move($this->getUploadRootDir(), $this->image2);
+=======
+<<<<<<< HEAD
+        $this->file3->move($this->getUploadRootDir(), $this->image3);
+>>>>>>> listneedA
 
         unset($this->file2);
     }
@@ -82,8 +111,14 @@ class Needs
 
     public function upload3()
     {
+<<<<<<< HEAD
         if (null === $this->file3) {
             return;
+=======
+        if ($file2 = $this->getAbsolutePath()) {
+            unlink($file2);
+>>>>>>> 7afb573b696f3e56d4098a745d18a2e4be427401
+>>>>>>> listneedA
         }
 
         // if there is an error when moving the file, an exception will
@@ -101,11 +136,20 @@ class Needs
         }
     }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> listneedA
     /**
      * Generate code
      **/
 
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 7afb573b696f3e56d4098a745d18a2e4be427401
+>>>>>>> listneedA
     /**
      * @var integer
      */

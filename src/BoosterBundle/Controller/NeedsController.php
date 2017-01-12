@@ -24,6 +24,7 @@ class NeedsController extends Controller
         $needs = $em->getRepository('BoosterBundle:Needs')->findAll();
 
         return $this->render('BoosterBundle:Needs:mayor.index.html.twig', array(
+
             'needs' => $needs,
         ));
     }
@@ -48,6 +49,7 @@ class NeedsController extends Controller
 
         return $this->render('BoosterBundle:Needs:mayor.new.html.twig', array(
             'need' => $needs,
+
             'form' => $form->createView(),
         ));
     }
@@ -56,11 +58,13 @@ class NeedsController extends Controller
      * Finds and displays a need entity.
      *
      */
+
     public function ShowAction(Needs $need)
     {
         $deleteForm = $this->createDeleteForm($need);
 
         return $this->render('BoosterBundle:Needs:mayor.show.html.twig', array(
+
             'need' => $need,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -70,7 +74,10 @@ class NeedsController extends Controller
      * Displays a form to edit an existing need entity.
      *
      */
+
     public function EditAction(Request $request, Needs $need)
+
+
     {
         $deleteForm = $this->createDeleteForm($need);
         $editForm = $this->createForm('BoosterBundle\Form\NeedsType', $need);
@@ -82,9 +89,11 @@ class NeedsController extends Controller
             return $this->redirectToRoute('needs_edit', array('id' => $need->getId()));
         }
 
+
         return $this->render('BoosterBundle:Needs:mayor.edit.html.twig', array(
             'need' => $need,
             'form' => $editForm->createView(),
+
             'delete_form' => $deleteForm->createView(),
         ));
     }
@@ -95,6 +104,7 @@ class NeedsController extends Controller
      *
      */
     public function DeleteAction(Request $request, Needs $need)
+
     {
         $form = $this->createDeleteForm($need);
         $form->handleRequest($request);
