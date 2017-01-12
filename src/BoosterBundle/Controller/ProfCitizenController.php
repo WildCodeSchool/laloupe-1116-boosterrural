@@ -240,13 +240,13 @@ class ProfCitizenController extends Controller
             ;
     }
 
-    public function listNeeds()
+    public function listNeedsCitizenAction()
     {
         $em = $this->getDoctrine()->getManager();
 
         $needs = $em->getRepository('BoosterBundle:Needs')->findAll();
 
-        return $this->render('BoosterBundle:Needs:mayor.index.html.twig', array(
+        return $this->render('BoosterBundle:Needs:citizen.index.html.twig', array(
             'needs' => $needs,
         ));
     }

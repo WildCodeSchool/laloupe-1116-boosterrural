@@ -35,6 +35,7 @@ class RegistrationController extends BaseController
         $user = $userManager->createUser();
         $user->setEnabled(true);
         $user->addRole('ROLE_MAYOR');
+
         $event = new GetResponseUserEvent($user, $request);
         $dispatcher->dispatch(FOSUserEvents::REGISTRATION_INITIALIZE, $event);
         if (null !== $event->getResponse()) {
@@ -45,6 +46,14 @@ class RegistrationController extends BaseController
         $form->handleRequest($request);
         if ($form->isSubmitted()) {
             if ($form->isValid()) {
+
+                $address = str_replace(' ','%20',$user->getAddress()) . '%20' . $user->getCp() . '%20' . $user->getTown();
+                echo '<pre>';
+                var_dump($address);
+                echo '<pre>';
+                die();
+
+
                 $event = new FormEvent($form, $request);
                 $dispatcher->dispatch(FOSUserEvents::REGISTRATION_SUCCESS, $event);
                 $userManager->updateUser($user);

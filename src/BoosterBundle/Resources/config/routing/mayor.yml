@@ -1,47 +1,47 @@
 mayor_index:
     path:     /
-    defaults: { _controller: "BoosterBundle:ProfActor:index" }
+    defaults: { _controller: "BoosterBundle:ProfMayor:index" }
     methods:  GET
 
 mayor_showOffer:
     path:     /offer/{id}/show
-    defaults: { _controller: "BoosterBundle:ProfActor:showOffer" }
+    defaults: { _controller: "BoosterBundle:ProfMayor:showOffer" }
     methods:  GET
 
 mayor_newOffer:
     path:     /offer/new
-    defaults: { _controller: "BoosterBundle:ProfActor:newOffer" }
+    defaults: { _controller: "BoosterBundle:ProfMayor:newOffer" }
     methods:  [GET, POST]
 
 mayor_editOffer:
     path:     /offer/{id}/edit
-    defaults: { _controller: "BoosterBundle:ProfActor:editOffer" }
+    defaults: { _controller: "BoosterBundle:ProfMayor:editOffer" }
     methods:  [GET, POST]
 
 mayor_deleteOffer:
     path:     /offer/{id}/delete
-    defaults: { _controller: "BoosterBundle:ProfActor:deleteOffer" }
+    defaults: { _controller: "BoosterBundle:ProfMayor:deleteOffer" }
     methods:  DELETE
 
 
 mayor_showNeeds:
     path:     /needs/{id}/show
-    defaults: { _controller: "BoosterBundle:ProfActor:showNeed" }
+    defaults: { _controller: "BoosterBundle:ProfMayor:showNeed" }
     methods:  GET
 
 mayor_newNeeds:
     path:     /needs/new
-    defaults: { _controller: "BoosterBundle:ProfActor:newNeed" }
+    defaults: { _controller: "BoosterBundle:ProfMayor:newNeed" }
     methods:  [GET, POST]
 
 mayor_editNeeds:
     path:     /needs/{id}/edit
-    defaults: { _controller: "BoosterBundle:ProfActor:editNeed" }
+    defaults: { _controller: "BoosterBundle:ProfMayor:editNeed" }
     methods:  [GET, POST]
 
 mayor_deleteNeeds:
     path:     /needs/{id}/delete
-    defaults: { _controller: "BoosterBundle:ProfActor:deleteNeed" }
+    defaults: { _controller: "BoosterBundle:ProfMayor:deleteNeed" }
     methods:  DELETE
 
 mayor_listNeed:
