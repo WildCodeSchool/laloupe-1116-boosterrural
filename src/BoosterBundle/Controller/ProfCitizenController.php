@@ -158,13 +158,13 @@ class ProfCitizenController extends Controller
             $em->persist($needs);
             $em->flush($needs);
 
-            return $this->redirectToRoute('actor_showNeeds', array('id' => $needs->getId(
+            return $this->redirectToRoute('citizen_showNeeds', array('id' => $needs->getId(
                 array($needs->getUsers()
                 ))));
 
         }
 
-        return $this->render('BoosterBundle:Actor:newNeeds.html.twig', array(
+        return $this->render('BoosterBundle:Citizen:newNeeds.html.twig', array(
             'needs' => $needs,
             'form' => $form->createView(),
         ));
@@ -177,7 +177,7 @@ class ProfCitizenController extends Controller
     {
         $deleteForm = $this->createNeedDeleteForm($need);
 
-        return $this->render('BoosterBundle:Actor:showNeeds.html.twig', array(
+        return $this->render('BoosterBundle:Citizen:showNeeds.html.twig', array(
             'need' => $need,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -190,16 +190,16 @@ class ProfCitizenController extends Controller
     public function editNeedAction(Request $request, Needs $need)
     {
         $deleteForm = $this->createNeedDeleteForm($need);
-        $editForm = $this->createForm('BoosterBundle\Form\ActorNeedsType', $need);
+        $editForm = $this->createForm('BoosterBundle\Form\CitizenNeedsType', $need);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('actor_editNeeds', array('id' => $need->getId()));
+            return $this->redirectToRoute('citizen_editNeeds', array('id' => $need->getId()));
         }
 
-        return $this->render('BoosterBundle:Actor:editNeeds.html.twig', array(
+        return $this->render('BoosterBundle:Citizen:editNeeds.html.twig', array(
             'need' => $need,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
@@ -210,18 +210,18 @@ class ProfCitizenController extends Controller
      * Deletes a need entity.
      *
      */
-    public function deleteNeedAction(Request $request, Needs $need)
+    public function deleteNeedAction(Request $request, Needs $needs)
     {
-        $form = $this->createDeleteForm($need);
+        $form = $this->createDeleteForm($needs);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->remove($need);
-            $em->flush($need);
+            $em->remove($needs);                                       /*******essai****/
+            $em->flush($needs);
         }
 
-        return $this->redirectToRoute('actor_index');
+        return $this->redirectToRoute('citizen_index');
     }
 
     /**
@@ -234,7 +234,7 @@ class ProfCitizenController extends Controller
     private function createNeedDeleteForm(Needs $need)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('actor_deleteNeeds', array('id' => $need->getId())))
+            ->setAction($this->generateUrl('citizen_deleteNeeds', array('id' => $need->getId())))
             ->setMethod('DELETE')
             ->getForm()
             ;
@@ -246,7 +246,7 @@ class ProfCitizenController extends Controller
 
         $needs = $em->getRepository('BoosterBundle:Needs')->findAll();
 
-        return $this->render('BoosterBundle:Needs:actor.index.html.twig', array(
+        return $this->render('BoosterBundle:Citizen:listNeedsCitizen.html.twig', array(
             'needs' => $needs,
         ));
     }

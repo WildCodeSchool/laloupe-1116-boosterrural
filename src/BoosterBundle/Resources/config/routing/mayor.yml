@@ -1,5 +1,5 @@
 mayor_index:
-    path:     /
+    path:     /profile
     defaults: { _controller: "BoosterBundle:ProfMayor:index" }
     methods:  GET
 

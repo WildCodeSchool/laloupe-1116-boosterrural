@@ -1,4 +1,4 @@
-{% extends "base.html.twig" %}
+{% extends 'base.html.twig' %}
 
   {% block body %}
       <!-- *******Identity of actor******* -->
@@ -14,7 +14,7 @@
                       <div class="row">
                           <div class="col-sm-6 col-xs-12">
                               <ul>
-                                  <li><span>Président :</span> {{ user.lastname }}</li>
+                                  <li><span>Responsable :</span> {{ user.lastname }}</li>
                                   <li><span>Adresse :</span> {{ user.address }}</li>
                                   <li><span>Code Postal :</span> {{ user.cp }}</li>
                                   <li><span>Adresse Mail :</span> {{ user.email }}</li>
@@ -242,7 +242,6 @@
               </div>
           </div>
       </div>
-  {% endblock %}
 
 <!-- ********** End needs' matching of actor ********* -->
 
@@ -286,7 +285,7 @@
 
 <!-- ********** End dynamic map ********* -->
 
-
+  {% endblock %}
 
 
 

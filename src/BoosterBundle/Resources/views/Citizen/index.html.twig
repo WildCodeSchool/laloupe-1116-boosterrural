@@ -9,7 +9,7 @@
                       <img src="{{ asset('bundles/booster/img/pic1citiz.jpg') }}" alt="my photo" class="center-block img-responsive pic1citiz"/>
                   </div>
                   <div class="col-md-6 col-xs-12">
-                      <li><a class="pencil col-xs-offset-11 col-xs-1" data-toggle="modal" href="#headmod"><span class="glyphicon glyphicon-pencil"></span></a></li>
+                      <li><a class="pencil col-xs-offset-11 col-xs-1" data-toggle="modal" href="#headmod"><span class="glyphicon glyphicon-pencil btn-lg"></span></a></li>
                       <h1>Louise MARTIN</h1>
                       <div class="row identity">
                           <div class="col-sm-6 col-xs-12">
@@ -46,7 +46,7 @@
                               <p>{{ user.description }}</p>
                           </div>
                       </div>
-                      <li><a class="pencil"><span class="glyphicon glyphicon-pencil"></span></a></li>
+                      <li><a class="pencil"><span class="glyphicon glyphicon-pencil btn-lg"></span></a></li>
                   </section>
                   <!-- ********** End Presentation of citizen ********* -->
 
@@ -81,8 +81,8 @@
                                       <p>{{ offer.description }}</p>
                                   </div>
                                   <div class="col-xs-1">
-                                      <a href="#"><span class="glyphicon glyphicon-pencil btn-lg"></span ></a>
-                                      <span class="glyphicon glyphicon-remove btn-lg"></span >
+                                      <a href="{{ path('citizen_editOffer',{'id' : needs.id}) }}"><span class="glyphicon glyphicon-pencil btn-lg"></span ></a>
+                                      <a href="{{ path('citizen_deleteOffer',{'id' : needs.id}) }}"><span class="glyphicon glyphicon-remove btn-lg"></span ></a>
                                   </div>
                               </div>
                           </li>
@@ -176,8 +176,8 @@
                                               </div>
                                           </a>
                                           <div class="col-xs-1">
-                                              <span class="glyphicon glyphicon-pencil btn-lg"></span >
-                                              <span class="glyphicon glyphicon-remove btn-lg"></span >
+                                            <a href="{{ path('citizen_editNeeds',{'id' : needs.id}) }}" > <span class="glyphicon glyphicon-pencil btn-lg"></span ></a>
+                                             <a href="{{ path('citizen_deleteNeeds',{'id' : needs.id}) }}"> <span class="glyphicon glyphicon-remove btn-lg"></span ></a>
                                           </div>
                                       </div>
                                   </li>
@@ -195,7 +195,7 @@
 
                   <section class="col-sm-5 col-xs-12 backWhite secPad3">
                       <h3 class="title">mes matchings</h3>
-                      <h4 class="underTitle">Qui peut m'maider ?</h4>
+                      <h4 class="underTitle">Qui peut m'aider ?</h4>
                       <ul>
                           <li>
                               <div class="row">
@@ -248,8 +248,6 @@
 
       <!-- ********** End needs' matching of citizen ********* -->
 
-  {% endblock %}
-
 
         <!-- ********** Dynamic map ********* -->
     {% block javascripts %}
@@ -290,7 +288,7 @@
 
             <!-- ********** End dynamic map ********* -->
 
-
+  {% endblock %}
 
 
 
