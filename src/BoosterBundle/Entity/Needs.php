@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Needs
 {
-
+//*********************image2**********************/
     public $file2;
 
 
@@ -66,6 +66,41 @@ class Needs
         }
     }
 
+//**************image3*****************/
+
+    public $file3;
+
+    public function preUpload3()
+    {
+        if (null !== $this->file3) {
+            // do whatever you want to generate a unique name
+            $this->image3= uniqid().'.'.$this->file3->guessExtension();
+        }
+    }
+
+    public function upload3()
+    {
+        if (null === $this->file3) {
+
+            return;
+        }
+
+        // if there is an error when moving the file, an exception will
+        // be automatically thrown by move(). This will properly prevent
+        // the entity from being persisted to the database on error
+
+        $this->file3->move($this->getUploadRootDir(), $this->image3);
+
+        unset($this->file3);
+    }
+
+    public function removeUpload3()
+    {
+        if ($file3 = $this->getAbsolutePath()) {
+            unlink($file3);
+
+        }
+    }
 
     /**
      * Generate code

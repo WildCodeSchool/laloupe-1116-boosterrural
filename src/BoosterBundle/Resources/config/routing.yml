@@ -34,7 +34,5 @@ booster_registerActor:
     path:     /actor/register
     defaults: { _controller: BoosterBundle:Registration:actorRegister}
 
-booster_profileActor:
-    path: /actor/profile
-    defaults: { _controller: BoosterBundle:Profile:edit}
+
 
