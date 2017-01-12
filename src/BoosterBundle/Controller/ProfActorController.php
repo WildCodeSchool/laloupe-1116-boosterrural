@@ -122,7 +122,7 @@ class ProfActorController extends Controller
             $em->flush($offer);
         }
 
-        return $this->redirectToRoute('actor_index');
+        return $this->redirectToRoute('actor_deleteOffer');
     }
 
     /**
@@ -221,7 +221,7 @@ class ProfActorController extends Controller
             $em->flush($need);
         }
 
-        return $this->redirectToRoute('actor_index');
+        return $this->redirectToRoute('actor_deleteNeeds');
     }
 
     /**
