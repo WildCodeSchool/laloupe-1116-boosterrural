@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Offer</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ offer.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ offer.title }}</td>
+            </tr>
+            <tr>
+                <th>Cp</th>
+                <td>{{ offer.cp }}</td>
+            </tr>
+            <tr>
+                <th>Town</th>
+                <td>{{ offer.town }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ offer.description }}</td>
+            </tr>
+            <tr>
+                <th>Activity</th>
+                <td>{{ offer.activity }}</td>
+            </tr>
+            <tr>
+                <th>Wish</th>
+                <td>{{ offer.wish }}</td>
+            </tr>
+            <tr>
+                <th>Lat</th>
+                <td>{{ offer.lat }}</td>
+            </tr>
+            <tr>
+                <th>Lgt</th>
+                <td>{{ offer.lgt }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('mayor_listNeed') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('mayor_editOffer', { 'id': offer.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

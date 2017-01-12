@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Need edit</h1>
+    <h1>Offer edit</h1>
 
     {{ form_start(edit_form) }}
         {{ form_widget(edit_form) }}
@@ -9,8 +9,8 @@
     {{ form_end(edit_form) }}
 
     <ul>
-        <li>needs_index
-            <a href="{{ path('actor_showNeeds') }}">Back to the list</a>
+        <li>
+            <a href="{{ path('mayor_listNeed') }}">Back to the list</a>
         </li>
         <li>
             {{ form_start(delete_form) }}

@@ -10,12 +10,16 @@ use Doctrine\ORM\Mapping as ORM;
 class Needs
 {
 <<<<<<< HEAD
-
-    public $file3;
+<<<<<<< HEAD
 =======
-    public $file2;
+>>>>>>> 5d6259fe70bb7f350b1e192b133ca18fb233f814
 
+
+<<<<<<< HEAD
 >>>>>>> 7afb573b696f3e56d4098a745d18a2e4be427401
+=======
+
+>>>>>>> 5d6259fe70bb7f350b1e192b133ca18fb233f814
     protected function getUploadDir()
     {
         return 'uploads';
@@ -29,31 +33,33 @@ class Needs
     public function getWebPath()
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         return null === $this->image ? null : $this->getUploadDir().'/'.$this->image;
 =======
         return null === $this->image2 ? null : $this->getUploadDir().'/'.$this->image2;
 >>>>>>> 7afb573b696f3e56d4098a745d18a2e4be427401
+=======
+
+        return null === $this->image ? null : $this->getUploadDir().'/'.$this->image;
+
+
+>>>>>>> 5d6259fe70bb7f350b1e192b133ca18fb233f814
     }
 
     public function getAbsolutePath()
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5d6259fe70bb7f350b1e192b133ca18fb233f814
         return null === $this->image ? null : $this->getUploadRootDir().'/'.$this->image;
-    }
-    public function preUpload3()
-    {
-        if (null !== $this->file3) {
-            // do whatever you want to generate a unique name
-            $this->image3 = uniqid().'.'.$this->file3->guessExtension();
-        }
+
     }
 
-    public function upload1()
-    {
-        if (null === $this->file3) {
-=======
-        return null === $this->image2 ? null : $this->getUploadRootDir().'/'.$this->image2;
-    }
+    /*Image 2*/
+    public $file2;
+
     public function preUpload2()
     {
         if (null !== $this->file2) {
@@ -65,7 +71,10 @@ class Needs
     public function upload2()
     {
         if (null === $this->file2) {
+<<<<<<< HEAD
 >>>>>>> 7afb573b696f3e56d4098a745d18a2e4be427401
+=======
+>>>>>>> 5d6259fe70bb7f350b1e192b133ca18fb233f814
             return;
         }
 
@@ -73,6 +82,48 @@ class Needs
         // be automatically thrown by move(). This will properly prevent
         // the entity from being persisted to the database on error
 <<<<<<< HEAD
+<<<<<<< HEAD
+        $this->file3->move($this->getUploadRootDir(), $this->image3);
+=======
+        $this->file2->move($this->getUploadRootDir(), $this->image2);
+>>>>>>> 5d6259fe70bb7f350b1e192b133ca18fb233f814
+
+        unset($this->file2);
+    }
+
+    public function removeUpload2()
+    {
+        if ($file = $this->getAbsolutePath()) {
+            unlink($file);
+        }
+    }
+
+    /*Image 3*/
+    public $file3;
+
+    public function preUpload3()
+    {
+        if (null !== $this->file3) {
+            // do whatever you want to generate a unique name
+            $this->image3 = uniqid().'.'.$this->file3->guessExtension();
+        }
+    }
+
+    public function upload3()
+    {
+<<<<<<< HEAD
+        if ($file2 = $this->getAbsolutePath()) {
+            unlink($file2);
+>>>>>>> 7afb573b696f3e56d4098a745d18a2e4be427401
+=======
+        if (null === $this->file3) {
+            return;
+>>>>>>> 5d6259fe70bb7f350b1e192b133ca18fb233f814
+        }
+
+        // if there is an error when moving the file, an exception will
+        // be automatically thrown by move(). This will properly prevent
+        // the entity from being persisted to the database on error
         $this->file3->move($this->getUploadRootDir(), $this->image3);
 
         unset($this->file3);
@@ -82,29 +133,23 @@ class Needs
     {
         if ($file = $this->getAbsolutePath()) {
             unlink($file);
-=======
-        $this->file2->move($this->getUploadRootDir(), $this->image2);
-
-        unset($this->file2);
-    }
-
-    public function removeUpload2()
-    {
-        if ($file2 = $this->getAbsolutePath()) {
-            unlink($file2);
->>>>>>> 7afb573b696f3e56d4098a745d18a2e4be427401
         }
     }
 
-
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 5d6259fe70bb7f350b1e192b133ca18fb233f814
     /**
      * Generate code
-    **/
+     **/
 
 
+<<<<<<< HEAD
 =======
 >>>>>>> 7afb573b696f3e56d4098a745d18a2e4be427401
+=======
+>>>>>>> 5d6259fe70bb7f350b1e192b133ca18fb233f814
     /**
      * @var integer
      */
@@ -164,7 +209,7 @@ class Needs
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -187,7 +232,7 @@ class Needs
     /**
      * Get title
      *
-     * @return string 
+     * @return string
      */
     public function getTitle()
     {
@@ -210,7 +255,7 @@ class Needs
     /**
      * Get cp
      *
-     * @return string 
+     * @return string
      */
     public function getCp()
     {
@@ -233,7 +278,7 @@ class Needs
     /**
      * Get town
      *
-     * @return string 
+     * @return string
      */
     public function getTown()
     {
@@ -256,7 +301,7 @@ class Needs
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
@@ -279,7 +324,7 @@ class Needs
     /**
      * Get activity
      *
-     * @return string 
+     * @return string
      */
     public function getActivity()
     {
@@ -302,7 +347,7 @@ class Needs
     /**
      * Get availability
      *
-     * @return string 
+     * @return string
      */
     public function getAvailability()
     {
@@ -325,7 +370,7 @@ class Needs
     /**
      * Get lat
      *
-     * @return integer 
+     * @return integer
      */
     public function getLat()
     {
@@ -348,7 +393,7 @@ class Needs
     /**
      * Get lgt
      *
-     * @return integer 
+     * @return integer
      */
     public function getLgt()
     {
@@ -371,7 +416,7 @@ class Needs
     /**
      * Get image2
      *
-     * @return string 
+     * @return string
      */
     public function getImage2()
     {
@@ -394,7 +439,7 @@ class Needs
     /**
      * Get users
      *
-     * @return \BoosterBundle\Entity\User 
+     * @return \BoosterBundle\Entity\User
      */
     public function getUsers()
     {
@@ -430,11 +475,5 @@ class Needs
         return $this->image3;
     }
 
-    /**
-     * @ORM\PostPersist
-     */
-    public function upload3()
-    {
-        // Add your code here
-    }
+
 }

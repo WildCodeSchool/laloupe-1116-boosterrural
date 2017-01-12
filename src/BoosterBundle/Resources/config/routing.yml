@@ -1,18 +1,21 @@
-
-booster_offer:
+booster_actorBack:
     resource: "@BoosterBundle/Resources/config/routing/actor.yml"
     prefix:   /actor
 
-booster_needs:
-    resource: "@BoosterBundle/Resources/config/routing/needs.yml"
-    prefix:   /needs
+booster_mayorBack:
+    resource: "@BoosterBundle/Resources/config/routing/mayor.yml"
+    prefix:   /mayor
+
+booster_citizenBack:
+    resource: "@BoosterBundle/Resources/config/routing/citizen.yml"
+    prefix:   /citizen
 
 booster_citizenfront:
-    path:     /citizen
+    path:     /citizenfront
     defaults: { _controller: BoosterBundle:Default:citizen }
 
 booster_actor:
-    path:     /actor
+    path:     /actorfront
     defaults: { _controller: BoosterBundle:Default:actor}
 
 booster_homepage:
@@ -20,7 +23,7 @@ booster_homepage:
     defaults: { _controller: BoosterBundle:Default:home_page_no_connect }
 
 booster_mayor:
-    path:     /mayor
+    path:     /mayorfront
     defaults: { _controller: BoosterBundle:Default:mayor}
 
 booster_registerMayor:

@@ -6,16 +6,15 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
-
-class NeedsType extends AbstractType
+class MayorNeedsType extends AbstractType
 {
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+
         $builder
             ->add('title', null, array(
                 'label'=>'titre du besoin'
@@ -37,6 +36,7 @@ class NeedsType extends AbstractType
             ));
     }
 
+
     /**
      * {@inheritdoc}
      */
@@ -54,4 +54,6 @@ class NeedsType extends AbstractType
     {
         return 'boosterbundle_needs';
     }
+
+
 }

@@ -18,6 +18,10 @@ class NeedsController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $needs = $em->getRepository('BoosterBundle:Needs')->findAll();
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5d6259fe70bb7f350b1e192b133ca18fb233f814
         return $this->render('BoosterBundle:Needs:mayor.index.html.twig', array(
             'needs' => $needs,
         ));
@@ -37,6 +41,10 @@ class NeedsController extends Controller
             $em->flush($needs);
             return $this->redirectToRoute('needs_show', array('id' => $needs->getId()));
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5d6259fe70bb7f350b1e192b133ca18fb233f814
         return $this->render('BoosterBundle:Needs:mayor.new.html.twig', array(
             'need' => $needs,
             'form' => $form->createView(),
@@ -67,6 +75,10 @@ class NeedsController extends Controller
             $this->getDoctrine()->getManager()->flush();
             return $this->redirectToRoute('needs_edit', array('id' => $need->getId()));
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5d6259fe70bb7f350b1e192b133ca18fb233f814
         return $this->render('BoosterBundle:Needs:mayor.edit.html.twig', array(
             'need' => $need,
             'form' => $editForm->createView(),

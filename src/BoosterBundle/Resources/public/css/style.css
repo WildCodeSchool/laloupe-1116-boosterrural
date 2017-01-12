@@ -39,6 +39,14 @@ section {
     background-color: white;
 }
 
+<<<<<<< HEAD
+=======
+
+.center-block1{
+    display: initial;
+}
+
+>>>>>>> 5d6259fe70bb7f350b1e192b133ca18fb233f814
 .col-xs-4 {
     padding: 0;
 }
@@ -47,10 +55,13 @@ th {
     padding-right: 5%;
 }
 
+<<<<<<< HEAD
 .center-block1{
     display: initial;
 }
 
+=======
+>>>>>>> 5d6259fe70bb7f350b1e192b133ca18fb233f814
 /******************************************************/
 /************************ FRONT PAGE ******************/
 /******************************************************/
@@ -638,11 +649,18 @@ footer > ul > li {
 label {
     text-transform: uppercase;
     padding: 0;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5d6259fe70bb7f350b1e192b133ca18fb233f814
 }
 
 input {
     margin-bottom: 1%;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5d6259fe70bb7f350b1e192b133ca18fb233f814
 }
 
 textarea {
@@ -707,6 +725,21 @@ textarea {
 }
 
 
+<<<<<<< HEAD
+=======
+/**
+* Profile
+*/
+
+.block2{
+    margin-top: 20px;
+}
+.gyphicon-plus{
+    ;
+}
+
+
+>>>>>>> 5d6259fe70bb7f350b1e192b133ca18fb233f814
 /******************************************************/
 /************************ PAGE SHOW *******************/
 /******************************************************/
@@ -759,6 +792,7 @@ td {
 #lienListe {
     color: black;
 }
+<<<<<<< HEAD
 
 /**
 * Profile
@@ -771,4 +805,6 @@ td {
 
 
 
+=======
+>>>>>>> 5d6259fe70bb7f350b1e192b133ca18fb233f814
 
