@@ -44,7 +44,7 @@ citizen_deleteNeeds:
     defaults: { _controller: "BoosterBundle:ProfCitizen:deleteNeed" }
     methods:  DELETE
 
-mayor_listNeed:
+citizen_listNeed:
     path:     /needs/list
     defaults: { _controller: "BoosterBundle:ProfCitizen:listNeedsCitizen" }
     methods:  [GET, POST]

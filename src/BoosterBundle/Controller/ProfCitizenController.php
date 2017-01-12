@@ -246,7 +246,7 @@ class ProfCitizenController extends Controller
 
         $needs = $em->getRepository('BoosterBundle:Needs')->findAll();
 
-        return $this->render('BoosterBundle:Needs:mayor.index.html.twig', array(
+        return $this->render('BoosterBundle:Needs:actor.index.html.twig', array(
             'needs' => $needs,
         ));
     }
