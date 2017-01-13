@@ -48,7 +48,6 @@ class RegistrationController extends BaseController
             if ($form->isValid()) {
                 $event = new FormEvent($form, $request);
 
-
                 //recupération de l'adresse totale
                 $plainAddress = str_replace(' ', '%20', $user->getAddress()) . '%20' . $user->getCp() . '%20' . $user->getTown();
 
@@ -60,9 +59,6 @@ class RegistrationController extends BaseController
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($user);
                 $em->flush($user);
-
-
-
 
 
                 $dispatcher->dispatch(FOSUserEvents::REGISTRATION_SUCCESS, $event);
@@ -107,6 +103,9 @@ class RegistrationController extends BaseController
         if ($form->isSubmitted()) {
             if ($form->isValid()) {
                 $event = new FormEvent($form, $request);
+
+
+
                 $dispatcher->dispatch(FOSUserEvents::REGISTRATION_SUCCESS, $event);
                 $userManager->updateUser($user);
                 if (null === $response = $event->getResponse()) {
@@ -150,6 +149,19 @@ class RegistrationController extends BaseController
         if ($form->isSubmitted()) {
             if ($form->isValid()) {
                 $event = new FormEvent($form, $request);
+
+                //recupération de l'adresse totale
+                $plainAddress = str_replace(' ', '%20', $user->getAddress()) . '%20' . $user->getCp() . '%20' . $user->getTown();
+
+                $result = $this->geocodeAction($plainAddress);
+                $lat = $result[0];
+                $lgt = $result[1];
+                $user->setLat($lat);
+                $user->setLgt($lgt);
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($user);
+                $em->flush($user);
+
                 $dispatcher->dispatch(FOSUserEvents::REGISTRATION_SUCCESS, $event);
                 $userManager->updateUser($user);
                 if (null === $response = $event->getResponse()) {

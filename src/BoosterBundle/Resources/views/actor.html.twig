@@ -147,12 +147,13 @@
                 {% endfor %}
 
             ];
-            {% for user in users %}
+
             var map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 6,
                 center: new google.maps.LatLng({{ user.lat }}, {{ user.lgt }}),
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             });
+
             var infowindow = new google.maps.InfoWindow();
             var marker, i;
             for (i = 0; i < locations.length; i++) {
@@ -166,7 +167,7 @@
                         infowindow.open(map2, marker);
                     }
                 })(marker, i));
-                {% endfor %}
+
             }
         </script>
 
