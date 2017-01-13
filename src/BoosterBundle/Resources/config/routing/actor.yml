@@ -43,7 +43,7 @@ actor_deleteNeeds:
     defaults: { _controller: "BoosterBundle:ProfActor:deleteNeed" }
     methods:  DELETE
 
-mayor_listNeed:
+actor_listNeed:
     path:     /needs/list
     defaults: { _controller: "BoosterBundle:ProfActor:listNeedsActor" }
     methods:  [GET, POST]

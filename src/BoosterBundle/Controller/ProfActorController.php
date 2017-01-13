@@ -240,14 +240,14 @@ class ProfActorController extends Controller
             ;
     }
 
-//    public function listNeedsActorAction()
-//    {
-//        $em = $this->getDoctrine()->getManager();
-//
-//        $needs = $em->getRepository('BoosterBundle:Needs')->findAll();
-//
-//        return $this->render('BoosterBundle:Actor:listNeedsActor.html.twig', array(
-//            'needs' => $needs,
-//        ));
-//    }
+    public function listNeedsActorAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $needs = $em->getRepository('BoosterBundle:Needs')->findAll();
+
+        return $this->render('BoosterBundle:Actor:listNeedsActor.html.twig', array(
+            'needs' => $needs,
+        ));
+    }
 }

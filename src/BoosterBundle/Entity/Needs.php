@@ -1,5 +1,6 @@
 <?php
 namespace BoosterBundle\Entity;
+
 use Doctrine\ORM\Mapping as ORM;
 /**
  * Needs
@@ -10,14 +11,17 @@ class Needs
     {
         return 'uploads';
     }
+
     protected function getUploadRootDir()
     {
         return __DIR__.'/../../../web/'.$this->getUploadDir();
     }
+
     public function getWebPath()
     {
         return null === $this->image ? null : $this->getUploadDir().'/'.$this->image;
     }
+
     public function getAbsolutePath()
     {
         return null === $this->image ? null : $this->getUploadRootDir().'/'.$this->image;
@@ -45,8 +49,8 @@ class Needs
     }
     public function removeUpload2()
     {
-        if ($file = $this->getAbsolutePath()) {
-            unlink($file);
+        if ($file2 = $this->getAbsolutePath()) {
+            unlink($file2);
         }
     }
 
@@ -72,57 +76,79 @@ class Needs
     }
     public function removeUpload3()
     {
-        if ($file = $this->getAbsolutePath()) {
-            unlink($file);
+        if ($file3 = $this->getAbsolutePath()) {
+            unlink($file3);
         }
     }
-    /**
-     * Generate code
-     **/
+
+
+
     /**
      * @var integer
      */
     private $id;
+
     /**
      * @var string
      */
     private $title;
+
     /**
      * @var string
      */
     private $cp;
+
     /**
      * @var string
      */
     private $town;
+
     /**
      * @var string
      */
     private $description;
+
     /**
      * @var string
      */
     private $activity;
+
     /**
      * @var string
      */
     private $availability;
+
     /**
      * @var integer
      */
     private $lat;
+
     /**
      * @var integer
      */
     private $lgt;
+
+    /**
+     * @var string
+     */
+    private $image;
+
     /**
      * @var string
      */
     private $image2;
+
+    /**
+     * @var string
+     */
+    private $image3;
+
     /**
      * @var \BoosterBundle\Entity\User
      */
     private $users;
+
+
     /**
      * Get id
      *
@@ -132,17 +158,21 @@ class Needs
     {
         return $this->id;
     }
+
     /**
      * Set title
      *
      * @param string $title
+     *
      * @return Needs
      */
     public function setTitle($title)
     {
         $this->title = $title;
+
         return $this;
     }
+
     /**
      * Get title
      *
@@ -152,17 +182,21 @@ class Needs
     {
         return $this->title;
     }
+
     /**
      * Set cp
      *
      * @param string $cp
+     *
      * @return Needs
      */
     public function setCp($cp)
     {
         $this->cp = $cp;
+
         return $this;
     }
+
     /**
      * Get cp
      *
@@ -172,17 +206,21 @@ class Needs
     {
         return $this->cp;
     }
+
     /**
      * Set town
      *
      * @param string $town
+     *
      * @return Needs
      */
     public function setTown($town)
     {
         $this->town = $town;
+
         return $this;
     }
+
     /**
      * Get town
      *
@@ -192,17 +230,21 @@ class Needs
     {
         return $this->town;
     }
+
     /**
      * Set description
      *
      * @param string $description
+     *
      * @return Needs
      */
     public function setDescription($description)
     {
         $this->description = $description;
+
         return $this;
     }
+
     /**
      * Get description
      *
@@ -212,17 +254,21 @@ class Needs
     {
         return $this->description;
     }
+
     /**
      * Set activity
      *
      * @param string $activity
+     *
      * @return Needs
      */
     public function setActivity($activity)
     {
         $this->activity = $activity;
+
         return $this;
     }
+
     /**
      * Get activity
      *
@@ -232,17 +278,21 @@ class Needs
     {
         return $this->activity;
     }
+
     /**
      * Set availability
      *
      * @param string $availability
+     *
      * @return Needs
      */
     public function setAvailability($availability)
     {
         $this->availability = $availability;
+
         return $this;
     }
+
     /**
      * Get availability
      *
@@ -252,17 +302,21 @@ class Needs
     {
         return $this->availability;
     }
+
     /**
      * Set lat
      *
      * @param integer $lat
+     *
      * @return Needs
      */
     public function setLat($lat)
     {
         $this->lat = $lat;
+
         return $this;
     }
+
     /**
      * Get lat
      *
@@ -272,17 +326,21 @@ class Needs
     {
         return $this->lat;
     }
+
     /**
      * Set lgt
      *
      * @param integer $lgt
+     *
      * @return Needs
      */
     public function setLgt($lgt)
     {
         $this->lgt = $lgt;
+
         return $this;
     }
+
     /**
      * Get lgt
      *
@@ -292,17 +350,51 @@ class Needs
     {
         return $this->lgt;
     }
+
+
+
+    /**
+     * Set image
+     *
+     * @param string $image
+     * @return Needs
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+
+
+
+
+
     /**
      * Set image2
      *
      * @param string $image2
+     *
      * @return Needs
      */
     public function setImage2($image2)
     {
         $this->image2 = $image2;
+
         return $this;
     }
+
     /**
      * Get image2
      *
@@ -312,30 +404,7 @@ class Needs
     {
         return $this->image2;
     }
-    /**
-     * Set users
-     *
-     * @param \BoosterBundle\Entity\User $users
-     * @return Needs
-     */
-    public function setUsers(\BoosterBundle\Entity\User $users = null)
-    {
-        $this->users = $users;
-        return $this;
-    }
-    /**
-     * Get users
-     *
-     * @return \BoosterBundle\Entity\User
-     */
-    public function getUsers()
-    {
-        return $this->users;
-    }
-    /**
-     * @var string
-     */
-    private $image3;
+
     /**
      * Set image3
      *
@@ -346,8 +415,10 @@ class Needs
     public function setImage3($image3)
     {
         $this->image3 = $image3;
+
         return $this;
     }
+
     /**
      * Get image3
      *
@@ -356,5 +427,29 @@ class Needs
     public function getImage3()
     {
         return $this->image3;
+    }
+
+    /**
+     * Set users
+     *
+     * @param \BoosterBundle\Entity\User $users
+     *
+     * @return Needs
+     */
+    public function setUsers(\BoosterBundle\Entity\User $users = null)
+    {
+        $this->users = $users;
+
+        return $this;
+    }
+
+    /**
+     * Get users
+     *
+     * @return \BoosterBundle\Entity\User
+     */
+    public function getUsers()
+    {
+        return $this->users;
     }
 }

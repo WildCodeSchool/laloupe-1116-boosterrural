@@ -40,5 +40,5 @@ security:
         - { path: ^/mayor/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/citizen/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
-#        - { path: ^/admin/, role: ROLE_ADMIN }
+        - { path: ^/admin/, role: ROLE_ADMIN }
 #        - { path: ^/mayor/, role: ROLE_MAYOR }

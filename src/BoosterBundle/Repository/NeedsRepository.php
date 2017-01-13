@@ -3,7 +3,6 @@
 namespace BoosterBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
-
 /**
  * NeedsRepository
  *

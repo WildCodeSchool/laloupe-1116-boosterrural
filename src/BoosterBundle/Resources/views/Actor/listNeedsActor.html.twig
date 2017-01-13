@@ -3,12 +3,12 @@
 {% block body %}
     <h1>Liste des Besoins</h1>
     {% for need in needs %}
-        <a href="{{ path('mayor_showNeeds', { 'id': need.id }) }}" id="lienListe">
+        <a href="{{ path('actor_showNeeds', { 'id': need.id }) }}" id="lienListe">
             <div class="row">
                 <section class="col-sm-offset-1 col-sm-10 col-xs-12 backWhite sec1 listIndex">
                     <div class="row">
                         <div class="col-md-6 col-xs-12">
-                            <img src="{{ app.request.basepath }}/uploads/{{ need.image3 }}" alt="photo_logo" class="center-block img-responsive imgList"/>
+                            <img src="{{ app.request.basepath }}/uploads/{{ need.image2 }}" alt="photo_logo" class="center-block img-responsive imgList"/>
                         </div>
                         <div class="col-md-6 col-xs-12">
                             <h2>{{ need.title }}</h2>
@@ -40,7 +40,7 @@
                     {#<a href="{{ path('needs_show', { 'id': need.id }) }}" class="btn Button center-block">Voir</a>#}
                 {#</li>#}
                 <li>
-                    <a href="{{ path('mayor_editNeeds', { 'id': need.id }) }}" class="btn Button center-block">Modifier</a>
+                    <a href="{{ path('actor_editNeeds', { 'id': need.id }) }}" class="btn Button center-block">Modifier</a>
                 </li>
             </ul>
         </div>
@@ -49,7 +49,7 @@
         <div class="col-sm-offset-1 col-sm-10 col-xs-12">
             <ul>
                 <li>
-                    <a href="{{ path('mayor_newNeeds') }}" class="btn Button center-block">Créer un nouveu besoin</a>
+                    <a href="{{ path('actor_newNeeds') }}" class="btn Button center-block">Créer un nouveu besoin</a>
                 </li>
             </ul>
         </div>
