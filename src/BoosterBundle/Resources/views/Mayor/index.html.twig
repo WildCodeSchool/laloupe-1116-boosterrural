@@ -5,32 +5,55 @@
       <div class="row">
           <section class="col-sm-offset-1 col-sm-10 col-xs-12 backWhite sec1">
               <div class="row">
-                  <div class="col-md-6 col-xs-12">
-                      <img src="{{ asset('bundles/booster/img/acteur_logo.jpg') }}" alt="photo_logo" class="center-block img-responsive"/>
+                  <div class="col-md-6 col-xs-12 picture">
+                      <img src="{{ asset('bundles/booster/img/ville.jpg') }}" alt="photo_logo" class="center-block img-responsive "/>
                   </div>
                   <div class="col-md-6 col-xs-12">
-                      <li><a class="pencil col-xs-offset-11 col-xs-1" data-toggle="modal" href="#headmod"><span class="glyphicon glyphicon-pencil"></span></a></li>
-                      <h1>biodynamic association</h1>
-
+                      <h1>La Loupe</h1>
                       <div class="row">
-                          <div class="col-sm-6 col-xs-12">
-                              <ul>
-                                  <li><span>Président :</span> {{ user.lastname }}</li>
-                                  <li><span>Adresse :</span> {{ user.address }}</li>
-                                  <li><span>Code Postal :</span> {{ user.cp }}</li>
-                                  <li><span>Adresse Mail :</span> {{ user.email }}</li>
-                                  <li><span>Catégorie :</span> {{ user.category }}</li>
-                              </ul>
-                          </div>
-                          <div class="col-sm-6 col-xs-12">
-                              <ul>
-                                  <li><span>Statut :</span>{{ user.statusActor }}</li>
-                                  <li><span>Commune :</span>{{ user.town }}</li>
-                              </ul>
+                          <div class="col-sm-12 col-xs-12">
+                              <div class="row">
+                                  <div class="col-xs-6">
+                                      <div class="row">
+                                          <ul class="col-xs-12">
+
+                                              <li><b>lieu:</b> {{ user.cp }} {{ user.lastname }}</li>
+                                              <li><b>Nbre d'habitants :</b> {{ user.resident }} </li>
+                                              <li>{{ user.website }}</li>
+                                          </ul>
+                                      </div>
+                                  </div>
+                                  <div class="col-xs-6 ">
+                                      <div class="row">
+                                          <ul class="col-xs-12">
+                                              <li><b>mail:</b>  {{ user.email }}</li>
+                                              <li><b>Téléphone :</b> {{ user.phone }}</li>
+                                              <li><b>Maire:</b> {{ user.lastname }}</li>
+                                          </ul>
+                                      </div>
+                                  </div>
+                              </div>
                           </div>
                       </div>
                   </div>
+              </div>
+          </section>
+      </div>
+      <div class="row">
+          <section class="col-sm-offset-1 col-sm-10 col-xs-12 backWhite sec1">
+              <div class="row">
+                  <div class="col-md-8 col-xs-12">
+                      <h2>Le mot du Maire</h2>
+                      <div class="row">
+                          <div class="col-sm-12 col-xs-12">
+                              <p>{{ user.messageMayor }}</p>
 
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-4 col-xs-12">
+                      <img src="{{ asset('bundles/booster/img/maire.jpg') }}" alt="photo_logo" class="center-block img-responsive picture "/>
+                  </div>
               </div>
           </section>
       </div>
@@ -40,20 +63,18 @@
               <div class="row flexMap">
                   <section class="col-sm-6 col-xs-12 backWhite sec2">
                       <div class="row">
-                          <div class="col-md-5 col-sm-12">
+                          <div class="col-md-4 col-sm-12">
                               <ul class="ulBorder">
-                                  <li><img src="{{ asset('bundles/booster/img/photo1.jpg') }}" alt="photo" class="pitureMini img-responsive center-block"/></li>
-                                  <li><img src="{{ asset('bundles/booster/img/photo2.jpg') }}" alt="photo" class="pitureMini img-responsive center-block"/></li>
-                                  <li><img src="{{ asset('bundles/booster/img/photo3.jpg') }}" alt="photo" class="pitureMini img-responsive center-block"/></li>
+                                  <li><img src="{{ asset('bundles/booster/img/tof1.png') }}" alt="photo" class="pitureMini img-responsive center-block"/></li>
+                                  <li><img src="{{ asset('bundles/booster/img/tof2.png') }}" alt="photo" class="pitureMini img-responsive center-block"/></li>
+                                  <li><img src="{{ asset('bundles/booster/img/tof3.png') }}" alt="photo" class="pitureMini img-responsive center-block"/></li>
                               </ul>
                           </div>
-                          <div class="col-md-7 col-sm-12">
+                          <div class="col-md-8 col-sm-12">
                               <h2 class="mediaTitle">pourquoi nous sommes dynamiques ?</h2>
                               <p>{{ user.description }}</p>
                           </div>
-
                       </div>
-                      <li><a class="pencil"><span class="glyphicon glyphicon-pencil"></span></a></li>
                   </section>
                   <section class=" hidden-xs col-sm-5 col-xs-12 backWhite secPad1">
                       <h2>localisation</h2>
@@ -63,7 +84,8 @@
           </div>
       </div>
 
-{% endfor %}
+
+
 
       <div class="row">
           <div class="col-sm-offset-1 col-sm-10 block1">

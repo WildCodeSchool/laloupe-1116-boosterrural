@@ -3,7 +3,7 @@
 
     {% block body %}
 
-        {% for user in users %}
+
             <div class="row">
                 <section class="col-sm-offset-1 col-sm-10 col-xs-12 backWhite sec1">
                     <div class="row">
@@ -85,7 +85,7 @@
                     </div>
                 </div>
             </div>
-        {% endfor %}
+
 
         <div class="row">
             <div class="col-sm-offset-1 col-sm-10 block1">
@@ -151,9 +151,6 @@
                 </div>
             </div>
         </div>
-    {% endblock %}
-
-        {% block javascripts %}
             <script src="http://maps.google.com/maps/api/js?sensor=false&key=AIzaSyBSFjZGurwwEtOnMOg1mKgJgS3WcP8ucrk" type="text/javascript"></script>
 
             <script>
@@ -168,9 +165,10 @@
                 ];
                 {% for user in users %}
                 var map = new google.maps.Map(document.getElementById('map'), {
-                    zoom: 14,
+                    zoom: 10,
                     center: new google.maps.LatLng({{ user.lat }}, {{ user.lgt }}),
-                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    scrollwheel: false
                 });
                 var infowindow = new google.maps.InfoWindow();
                 var marker, i;
@@ -185,8 +183,8 @@
                             infowindow.open(map, marker);
                         }
                     })(marker, i));
-                    {% endfor %}
                 }
+                {% endfor %}
             </script>
 
         {% endblock %}
