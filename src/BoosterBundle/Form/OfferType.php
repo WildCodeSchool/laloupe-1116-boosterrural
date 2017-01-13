@@ -44,8 +44,11 @@ class OfferType extends AbstractType
                     'help'=> 'Appuyer un projet similaire',
                     'tell'=>'Echanger sur ce projet'
                 ),
-                'label'=>'Souhaits'))
-
+                'label'=>'Souhaits'
+            ))
+            ->add('fileOffer','file', [
+                "label" => "Photo"],
+                array( 'required'=>false))
         ;
     }
 

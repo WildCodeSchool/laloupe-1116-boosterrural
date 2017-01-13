@@ -65,6 +65,26 @@ BoosterBundle\Entity\User:
             type: string
             length: 255
             nullable: true
+        imageIdentity:
+            type: string
+            length: 255
+            nullable: true
+        imageDescription1:
+            type: string
+            length: 255
+            nullable: true
+        imageDescription2:
+            type: string
+            length: 255
+            nullable: true
+        imageDescription3:
+            type: string
+            length: 255
+            nullable: true
+        imageMayor:
+            type: string
+            length: 255
+            nullable: true
 
     oneToMany:
         offers:
@@ -74,4 +94,10 @@ BoosterBundle\Entity\User:
             targetEntity: BoosterBundle\Entity\Needs
             mappedBy: Id
 
-    lifecycleCallbacks: {  }
+    lifecycleCallbacks:
+
+      prePersist: [preUploadIdentity, preUploadDescription1, preUploadDescription2, preUploadDescription3, preUploadMayor]
+      preUpdate: [preUploadIdentity, preUploadDescription1, preUploadDescription2, preUploadDescription3, preUploadMayor]
+      postPersist: [uploadIdentity, uploadDescription1, uploadDescription2, uploadDescription3, uploadMayor]
+      postUpdate: [uploadIdentity, uploadDescription1, uploadDescription2, uploadDescription3, uploadMayor]
+      postRemove: [removeUploadIdentity, removeUploadDescription1, removeUploadDescription2, removeUploadDescription3, removeUploadMayor]

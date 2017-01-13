@@ -8,6 +8,184 @@ use Doctrine\ORM\Mapping as ORM;
 class User extends BaseUser
 {
 
+    protected function getUploadDir()
+    {
+        return 'uploads';
+    }
+
+    protected function getUploadRootDir()
+    {
+        return __DIR__ . '/../../../web/' . $this->getUploadDir();
+    }
+
+    public function getWebPath()
+    {
+        return null === $this->image ? null : $this->getUploadDir() . '/' . $this->image;
+    }
+
+    public function getAbsolutePath()
+    {
+        return null === $this->image ? null : $this->getUploadRootDir() . '/' . $this->image;
+    }
+
+    // image identity
+
+    public $fileIdentity;
+
+    public function preUploadIdentity()
+    {
+        if (null !== $this->fileIdentity) {
+            // do whatever you want to generate a unique name
+            $this->imageIdentity = uniqid() . '.' . $this->fileIdentity->guessExtension();
+        }
+    }
+
+    public function uploadIdentity()
+    {
+        if (null === $this->fileIdentity) {
+            return;
+        }
+        // if there is an error when moving the file, an exception will
+        // be automatically thrown by move(). This will properly prevent
+        // the entity from being persisted to the database on error
+        $this->fileIdentity->move($this->getUploadRootDir(), $this->imageIdentity);
+        unset($this->fileIdentity);
+    }
+
+    public function removeUploadIdentity()
+    {
+        if ($file = $this->getAbsolutePath()) {
+            unlink($file);
+        }
+    }
+
+    //image description1
+
+    public $fileDescription1;
+
+    public function preUploadDescription1()
+    {
+        if (null !== $this->fileDescription1) {
+            // do whatever you want to generate a unique name
+            $this->imageDescription1 = uniqid() . '.' . $this->fileDescription1->guessExtension();
+        }
+    }
+
+    public function uploadDescription1()
+    {
+        if (null === $this->fileDescription1) {
+            return;
+        }
+        // if there is an error when moving the file, an exception will
+        // be automatically thrown by move(). This will properly prevent
+        // the entity from being persisted to the database on error
+        $this->fileDescription1->move($this->getUploadRootDir(), $this->imageDescription1);
+        unset($this->fileDescription1);
+    }
+
+    public function removeUploadDescription1()
+    {
+        if ($file = $this->getAbsolutePath()) {
+            unlink($file);
+        }
+    }
+
+    //image description2
+
+    public $fileDescription2;
+
+    public function preUploadDescription2()
+    {
+        if (null !== $this->fileDescription1) {
+            // do whatever you want to generate a unique name
+            $this->imageDescription1 = uniqid() . '.' . $this->fileDescription1->guessExtension();
+        }
+    }
+
+    public function uploadDescription2()
+    {
+        if (null === $this->fileDescription2) {
+            return;
+        }
+        // if there is an error when moving the file, an exception will
+        // be automatically thrown by move(). This will properly prevent
+        // the entity from being persisted to the database on error
+        $this->fileDescription2->move($this->getUploadRootDir(), $this->imageDescription2);
+        unset($this->fileDescription2);
+    }
+
+    public function removeUploadDescription2()
+    {
+        if ($file = $this->getAbsolutePath()) {
+            unlink($file);
+        }
+    }
+
+
+    //image description3
+
+    public $fileDescription3;
+
+    public function preUploadDescription3()
+    {
+        if (null !== $this->fileDescription3) {
+            // do whatever you want to generate a unique name
+            $this->imageDescription3 = uniqid() . '.' . $this->fileDescription3->guessExtension();
+        }
+    }
+
+    public function uploadDescription3()
+    {
+        if (null === $this->fileDescription3) {
+            return;
+        }
+        // if there is an error when moving the file, an exception will
+        // be automatically thrown by move(). This will properly prevent
+        // the entity from being persisted to the database on error
+        $this->fileDescription3->move($this->getUploadRootDir(), $this->imageDescription3);
+        unset($this->fileDescription3);
+    }
+
+    public function removeUploadDescription3()
+    {
+        if ($file = $this->getAbsolutePath()) {
+            unlink($file);
+        }
+    }
+
+
+    //image mayor
+
+    public $fileMayor;
+
+    public function preUploadMayor()
+    {
+        if (null !== $this->fileMayor) {
+            // do whatever you want to generate a unique name
+            $this->imageMayor = uniqid() . '.' . $this->fileMayor->guessExtension();
+        }
+    }
+
+    public function uploadMayor()
+    {
+        if (null === $this->fileMayor) {
+            return;
+        }
+        // if there is an error when moving the file, an exception will
+        // be automatically thrown by move(). This will properly prevent
+        // the entity from being persisted to the database on error
+        $this->fileMayor->move($this->getUploadRootDir(), $this->imageMayor);
+        unset($this->fileMayor);
+    }
+
+    public function removeUploadMayor()
+    {
+        if ($file = $this->getAbsolutePath()) {
+            unlink($file);
+        }
+    }
+    /* code généré */
+
     protected $id;
 
 
@@ -563,4 +741,140 @@ class User extends BaseUser
     {
         return $this->needs;
     }
+
+    /**
+     * Set imageIdentity
+     *
+     * @param string $imageIdentity
+     * @return User
+     */
+    public function setImageIdentity($imageIdentity)
+    {
+        $this->ImageIdentity = $imageIdentity;
+        return $this;
+    }
+
+    /**
+     * Get imageIdentity
+     *
+     * @return string
+     */
+    public function getImageIdentity()
+    {
+        return $this->imageIdentity;
+    }
+
+    /**
+     * Set imageDescription1
+     *
+     * @param string $imageDescription1
+     * @return User
+     */
+    public function setImageDescription1($imageDescription1)
+    {
+        $this->ImageDescription1 = $imageDescription1;
+        return $this;
+    }
+
+    /**
+     * Get imageDescription1
+     *
+     * @return string
+     */
+    public function getImageDescription1()
+    {
+        return $this->imageDescription1;
+    }
+
+    /**
+     * Set imageDescription2
+     *
+     * @param string $imageDescription2
+     * @return User
+     */
+    public function setImageDescription2($imageDescription2)
+    {
+        $this->ImageDescription2 = $imageDescription2;
+        return $this;
+    }
+
+    /**
+     * Get imageDescription2
+     *
+     * @return string
+     */
+    public function getImageDescription2()
+    {
+        return $this->imageDescription2;
+    }
+
+    /**
+     * Set imageDescription3
+     *
+     * @param string $imageDescription3
+     * @return User
+     */
+    public function setImageDescription3($imageDescription3)
+    {
+        $this->ImageDescription3 = $imageDescription3;
+        return $this;
+    }
+
+    /**
+     * Get imageDescription3
+     *
+     * @return string
+     */
+    public function getImageDescription3()
+    {
+        return $this->imageDescription3;
+    }
+
+    /**
+     * Set imageMayor
+     *
+     * @param string $imageMayor
+     * @return User
+     */
+    public function setImageMayor($imageMayor)
+    {
+        $this->ImageMayor = $imageMayor;
+        return $this;
+    }
+
+    /**
+     * Get imageMayor
+     *
+     * @return string
+     */
+    public function getImageMayor()
+    {
+        return $this->imageMayor;
+    }
+    /**
+     * @var string
+     */
+    private $imageIdentity;
+
+    /**
+     * @var string
+     */
+    private $imageDescription1;
+
+    /**
+     * @var string
+     */
+    private $imageDescription2;
+
+    /**
+     * @var string
+     */
+    private $imageDescription3;
+
+    /**
+     * @var string
+     */
+    private $imageMayor;
+
+
 }
