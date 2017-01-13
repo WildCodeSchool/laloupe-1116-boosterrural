@@ -39,10 +39,10 @@ section {
     background-color: white;
 }
 
-
 .center-block1{
     display: initial;
 }
+
 
 .col-xs-4 {
     padding: 0;
@@ -639,7 +639,6 @@ footer > ul > li {
 label {
     text-transform: uppercase;
     padding: 0;
-
 }
 
 input {
@@ -669,8 +668,6 @@ textarea {
 .titleFormActor{
     margin-bottom: 0;
 }
-
-
 
 .block2{
     margin-top: 20px;
@@ -715,23 +712,20 @@ textarea {
 .block2{
     margin-top: 20px;
 }
-.gyphicon-plus{
-    ;
-}
 
 
 /******************************************************/
 /************************ PAGE SHOW *******************/
 /******************************************************/
 
-table {
+/*table {
     margin: 0 auto;
 }
 
 td {
     padding: 10px;
 }
-
+*/
 .showAlign {
     text-align: center;
 }

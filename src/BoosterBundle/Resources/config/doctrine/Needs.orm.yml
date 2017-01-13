@@ -34,12 +34,10 @@ BoosterBundle\Entity\Needs:
         lgt:
             type: integer
             nullable: true
-
         image2:
             type: string
             length: 255
             nullable: true
-
         image3:
             type: string
             length: 255
@@ -51,6 +49,7 @@ BoosterBundle\Entity\Needs:
             inversedBy: Id
 
     lifecycleCallbacks:
+<<<<<<< HEAD
 
       prePersist: [preUpload2, preUpload3]
       preUpdate: [preUpload2, preUpload3]
@@ -58,3 +57,10 @@ BoosterBundle\Entity\Needs:
       postUpdate: [upload2, upload2]
       postRemove: [removeUpload2, removeUpload2]
 
+=======
+      prePersist:  [preUpload2, preUpload3]
+      preUpdate:   [preUpload2, preUpload3]
+      postPersist: [upload2, upload3]
+      postUpdate:  [upload2, upload3]
+      postRemove:  [removeUpload2, removeUpload3]
+>>>>>>> listneedA
