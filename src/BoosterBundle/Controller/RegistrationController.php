@@ -49,7 +49,7 @@ class RegistrationController extends BaseController
                 $event = new FormEvent($form, $request);
 
                 //recupération de l'adresse totale
-                $plainAddress = str_replace(' ', '%20', $user->getAddress()) . '%20' . $user->getCp() . '%20' . $user->getTown();
+                $plainAddress = str_replace(' ', '%20', $user->getAddress()) . '%20' . $user->getCp() . '%20' . str_replace(' ', '%20', $user->getTown());
 
                 $result = $this->geocodeAction($plainAddress);
                 $lat = $result[0];
@@ -151,8 +151,7 @@ class RegistrationController extends BaseController
                 $event = new FormEvent($form, $request);
 
                 //recupération de l'adresse totale
-                $plainAddress = str_replace(' ', '%20', $user->getAddress()) . '%20' . $user->getCp() . '%20' . $user->getTown();
-
+                $plainAddress = str_replace(' ', '%20', $user->getAddress()) . '%20' . $user->getCp() . '%20' . str_replace(' ', '%20', $user->getTown());
                 $result = $this->geocodeAction($plainAddress);
                 $lat = $result[0];
                 $lgt = $result[1];
