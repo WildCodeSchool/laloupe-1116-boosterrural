@@ -20,6 +20,7 @@ class ProfActorController extends Controller
         $user = $this->getUser();
         $user=$this->get('security.context')->getToken()->getUser();
         $em = $this->getDoctrine()->getManager();
+        $users = $em->getRepository('BoosterBundle:User')->findAll();
 
         $offers = $em->getRepository('BoosterBundle:Offer')->findBy(
             array('users'=>$user
@@ -32,6 +33,7 @@ class ProfActorController extends Controller
 
         return $this->render('BoosterBundle:Actor:index.html.twig', array(
             'user'=>$user,
+            'users'=>$users,
             'offers' => $offers,
             'needs' => $needs,
 
