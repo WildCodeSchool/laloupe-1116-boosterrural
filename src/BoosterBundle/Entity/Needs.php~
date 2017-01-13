@@ -1,25 +1,11 @@
 <?php
-
 namespace BoosterBundle\Entity;
-
 use Doctrine\ORM\Mapping as ORM;
-
 /**
  * Needs
  */
 class Needs
 {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> listneedA
-
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 7afb573b696f3e56d4098a745d18a2e4be427401
->>>>>>> listneedA
     protected function getUploadDir()
     {
         return 'uploads';
@@ -27,184 +13,95 @@ class Needs
 
     protected function getUploadRootDir()
     {
-        return __DIR__.'/../../../web/'.$this->getUploadDir();
+        return __DIR__ . '/../../../web/' . $this->getUploadDir();
     }
 
     public function getWebPath()
     {
-<<<<<<< HEAD
-
-        return null === $this->image ? null : $this->getUploadDir().'/'.$this->image;
-
-
-=======
-<<<<<<< HEAD
-        return null === $this->image ? null : $this->getUploadDir().'/'.$this->image;
-=======
-        return null === $this->image2 ? null : $this->getUploadDir().'/'.$this->image2;
->>>>>>> 7afb573b696f3e56d4098a745d18a2e4be427401
->>>>>>> listneedA
+        return null === $this->image ? null : $this->getUploadDir() . '/' . $this->image;
     }
 
     public function getAbsolutePath()
     {
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
->>>>>>> listneedA
-        return null === $this->image ? null : $this->getUploadRootDir().'/'.$this->image;
-
+        return null === $this->image ? null : $this->getUploadRootDir() . '/' . $this->image;
     }
 
-    /*Image 2*/
-    public $file2;
+    public $fileNeeds;
 
-    public function preUpload2()
+    public function preUploadNeeds()
     {
-        if (null !== $this->file2) {
+        if (null !== $this->fileNeeds) {
             // do whatever you want to generate a unique name
-            $this->image2 = uniqid().'.'.$this->file2->guessExtension();
+            $this->imageNeeds = uniqid() . '.' . $this->fileNeeds->guessExtension();
         }
     }
 
-    public function upload2()
+    public function uploadNeeds()
     {
-        if (null === $this->file2) {
-<<<<<<< HEAD
-=======
->>>>>>> 7afb573b696f3e56d4098a745d18a2e4be427401
->>>>>>> listneedA
+        if (null === $this->fileNeeds) {
             return;
         }
-
         // if there is an error when moving the file, an exception will
         // be automatically thrown by move(). This will properly prevent
         // the entity from being persisted to the database on error
-<<<<<<< HEAD
-        $this->file2->move($this->getUploadRootDir(), $this->image2);
-=======
-<<<<<<< HEAD
-        $this->file3->move($this->getUploadRootDir(), $this->image3);
->>>>>>> listneedA
-
-        unset($this->file2);
+        $this->fileNeeds->move($this->getUploadRootDir(), $this->imageNeeds);
+        unset($this->fileNeeds);
     }
 
-    public function removeUpload2()
+    public function removeUploadNeeds()
     {
         if ($file = $this->getAbsolutePath()) {
             unlink($file);
         }
     }
 
-    /*Image 3*/
-    public $file3;
-
-    public function preUpload3()
-    {
-        if (null !== $this->file3) {
-            // do whatever you want to generate a unique name
-            $this->image3 = uniqid().'.'.$this->file3->guessExtension();
-        }
-    }
-
-    public function upload3()
-    {
-<<<<<<< HEAD
-        if (null === $this->file3) {
-            return;
-=======
-        if ($file2 = $this->getAbsolutePath()) {
-            unlink($file2);
->>>>>>> 7afb573b696f3e56d4098a745d18a2e4be427401
->>>>>>> listneedA
-        }
-
-        // if there is an error when moving the file, an exception will
-        // be automatically thrown by move(). This will properly prevent
-        // the entity from being persisted to the database on error
-        $this->file3->move($this->getUploadRootDir(), $this->image3);
-
-        unset($this->file3);
-    }
-
-    public function removeUpload3()
-    {
-        if ($file = $this->getAbsolutePath()) {
-            unlink($file);
-        }
-    }
-
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> listneedA
     /**
      * Generate code
      **/
-
-
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 7afb573b696f3e56d4098a745d18a2e4be427401
->>>>>>> listneedA
     /**
      * @var integer
      */
     private $id;
-
     /**
      * @var string
      */
     private $title;
-
     /**
      * @var string
      */
     private $cp;
-
     /**
      * @var string
      */
     private $town;
-
     /**
      * @var string
      */
     private $description;
-
     /**
      * @var string
      */
     private $activity;
-
     /**
      * @var string
      */
     private $availability;
-
     /**
      * @var integer
      */
     private $lat;
-
     /**
      * @var integer
      */
     private $lgt;
-
     /**
      * @var string
      */
     private $image2;
-
     /**
      * @var \BoosterBundle\Entity\User
      */
     private $users;
-
 
     /**
      * Get id
@@ -225,7 +122,6 @@ class Needs
     public function setTitle($title)
     {
         $this->title = $title;
-
         return $this;
     }
 
@@ -248,7 +144,6 @@ class Needs
     public function setCp($cp)
     {
         $this->cp = $cp;
-
         return $this;
     }
 
@@ -271,7 +166,6 @@ class Needs
     public function setTown($town)
     {
         $this->town = $town;
-
         return $this;
     }
 
@@ -294,7 +188,6 @@ class Needs
     public function setDescription($description)
     {
         $this->description = $description;
-
         return $this;
     }
 
@@ -317,7 +210,6 @@ class Needs
     public function setActivity($activity)
     {
         $this->activity = $activity;
-
         return $this;
     }
 
@@ -340,7 +232,6 @@ class Needs
     public function setAvailability($availability)
     {
         $this->availability = $availability;
-
         return $this;
     }
 
@@ -363,7 +254,6 @@ class Needs
     public function setLat($lat)
     {
         $this->lat = $lat;
-
         return $this;
     }
 
@@ -386,7 +276,6 @@ class Needs
     public function setLgt($lgt)
     {
         $this->lgt = $lgt;
-
         return $this;
     }
 
@@ -401,26 +290,25 @@ class Needs
     }
 
     /**
-     * Set image2
+     * Set imageNeeds
      *
-     * @param string $image2
+     * @param string $imageNeeds
      * @return Needs
      */
-    public function setImage2($image2)
+    public function setImageNeeds($imageNeeds)
     {
-        $this->image2 = $image2;
-
+        $this->ImageNeeds = $imageNeeds;
         return $this;
     }
 
     /**
-     * Get image2
+     * Get imageNeeds
      *
      * @return string
      */
-    public function getImage2()
+    public function getImageNeeds()
     {
-        return $this->image2;
+        return $this->imageNeeds;
     }
 
     /**
@@ -432,7 +320,6 @@ class Needs
     public function setUsers(\BoosterBundle\Entity\User $users = null)
     {
         $this->users = $users;
-
         return $this;
     }
 
@@ -445,35 +332,4 @@ class Needs
     {
         return $this->users;
     }
-    /**
-     * @var string
-     */
-    private $image3;
-
-
-    /**
-     * Set image3
-     *
-     * @param string $image3
-     *
-     * @return Needs
-     */
-    public function setImage3($image3)
-    {
-        $this->image3 = $image3;
-
-        return $this;
-    }
-
-    /**
-     * Get image3
-     *
-     * @return string
-     */
-    public function getImage3()
-    {
-        return $this->image3;
-    }
-
-
 }

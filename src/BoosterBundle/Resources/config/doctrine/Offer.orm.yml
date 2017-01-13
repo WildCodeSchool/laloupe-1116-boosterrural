@@ -35,10 +35,19 @@ BoosterBundle\Entity\Offer:
         lgt:
             type: integer
             nullable: true
-
+        imageOffer:
+            type: string
+            length: 255
+            nullable: true
     manyToOne:
         users:
             targetEntity: BoosterBundle\Entity\User
             inversedBy: Id
 
-    lifecycleCallbacks: {  }
+    lifecycleCallbacks:
+
+      prePersist: [preUploadOffer]
+      preUpdate: [preUploadOffer]
+      postPersist: [uploadOffer]
+      postUpdate: [uploadOffer]
+      postRemove: [removeUploadOffer]

@@ -249,6 +249,7 @@ class ProfCitizenController extends Controller
         $needs = $em->getRepository('BoosterBundle:Needs')->findAll();
 
         return $this->render('BoosterBundle:Citizen:listNeedsCitizen.html.twig', array(
+
             'needs' => $needs,
         ));
     }

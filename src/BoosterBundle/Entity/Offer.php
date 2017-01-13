@@ -9,6 +9,57 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Offer
 {
+    protected function getUploadDir()
+    {
+        return 'uploads';
+    }
+
+    protected function getUploadRootDir()
+    {
+        return __DIR__ . '/../../../web/' . $this->getUploadDir();
+    }
+
+    public function getWebPath()
+    {
+        return null === $this->image ? null : $this->getUploadDir() . '/' . $this->image;
+    }
+
+    public function getAbsolutePath()
+    {
+        return null === $this->image ? null : $this->getUploadRootDir() . '/' . $this->image;
+    }
+
+    public $fileOffer;
+
+    public function preUploadOffer()
+    {
+        if (null !== $this->fileOffer) {
+            // do whatever you want to generate a unique name
+            $this->imageOffer = uniqid() . '.' . $this->fileOffer->guessExtension();
+        }
+    }
+
+    public function uploadOffer()
+    {
+        if (null === $this->fileOffer) {
+            return;
+        }
+        // if there is an error when moving the file, an exception will
+        // be automatically thrown by move(). This will properly prevent
+        // the entity from being persisted to the database on error
+        $this->fileOffer->move($this->getUploadRootDir(), $this->imageOffer);
+        unset($this->fileOffer);
+    }
+
+    public function removeUploadOffer()
+    {
+        if ($file = $this->getAbsolutePath()) {
+            unlink($file);
+        }
+    }
+
+
+    // code généré
     /**
      * @var int
      */
@@ -276,4 +327,33 @@ class Offer
     {
         return $this->users;
     }
+
+    /**
+     * Set imageOffer
+     *
+     * @param string $imageOffer
+     * @return Offer
+     */
+    public function setImageOffer($imageOffer)
+    {
+        $this->ImageOffer = $imageOffer;
+        return $this;
+    }
+
+    /**
+     * Get imageOffer
+     *
+     * @return string
+     */
+    public function getImageOffer()
+    {
+        return $this->imageOffer;
+    }
+
+    /**
+     * @var string
+     */
+    private $imageOffer;
+
+
 }
