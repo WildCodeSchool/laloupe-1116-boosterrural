@@ -7,7 +7,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
-class OfferType extends AbstractType
+class ActorOfferType extends AbstractType
 {
     /**
      * {@inheritdoc}
@@ -50,7 +50,6 @@ class OfferType extends AbstractType
                     'co-créer'=>'co-créer'
                 ),
                 'label'=>'Souhaits'))
-
         ;
     }
 

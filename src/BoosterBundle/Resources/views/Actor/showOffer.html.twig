@@ -1,48 +1,29 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Offer</h1>
+    <div class="row">
+        <section class="col-sm-offset-1 col-sm-10 col-xs-12 backWhite sec1 padSHOW">
+            <div class="row">
+                <div class="col-md-6 col-xs-12">
+                    <img src="{{ app.request.basepath }}/uploads/{{ need.image2 }}" alt="photo_logo" class="center-block img-responsive imgSHOW"/>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <h1>{{ offer.title }}</h1>
+                    <ul>
+                        <div class="row">
+                            <li class="col-md-4 col-xs-12"><span>Ville :</span>{{ need.town }}</li>
+                            <li class="col-md-4 col-xs-12"><span>Code Postal :</span>{{ need.cp }}</li>
+                            <li class="col-md-4 col-xs-12"><span>Domaine d'activité :</span>{{ need.activity }}</li>
+                        </div>
+                        <li><span>Description :</span>{{ need.description }}</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
 
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ offer.id }}</td>
-            </tr>
-            <tr>
-                <th>Title</th>
-                <td>{{ offer.title }}</td>
-            </tr>
-            <tr>
-                <th>Cp</th>
-                <td>{{ offer.cp }}</td>
-            </tr>
-            <tr>
-                <th>Town</th>
-                <td>{{ offer.town }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ offer.description }}</td>
-            </tr>
-            <tr>
-                <th>Activity</th>
-                <td>{{ offer.activity }}</td>
-            </tr>
-            <tr>
-                <th>Wish</th>
-                <td>{{ offer.wish }}</td>
-            </tr>
-            <tr>
-                <th>Lat</th>
-                <td>{{ offer.lat }}</td>
-            </tr>
-            <tr>
-                <th>Lgt</th>
-                <td>{{ offer.lgt }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <a href="{{ path('actor_listNeed') }}" class="btn center-block1 Button">Retour à la liste</a>
+
 
     <ul>
         <li>
@@ -58,3 +39,4 @@
         </li>
     </ul>
 {% endblock %}
+
