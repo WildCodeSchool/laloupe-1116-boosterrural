@@ -26,23 +26,28 @@ class OfferType extends AbstractType
             ))
             ->add('activity', choiceType::class, array(
                 'choices' => array(
-                    'hobby' => 'Loisirs',
-                    'craftsman'=> 'Artisan',
-                    'benevolat'=> 'Bénévolats',
-                    'communication'=>'Communication'
+                    'Choisir' => 'Choisir',
+                    'agriculture, maraîchage, circuit court,...' => 'agriculture, maraîchage, circuit court,...',
+                    'Agro-alimentaire, transformation,...'=> 'Agro-alimentaire, transformation,...',
+                    'Art et culture, bio-diversité, éco-conception... '=> 'Art et culture, bio-diversité, éco-conception... ',
+                    'Education, énergie et eau, formation innovante,...'=>'Education, énergie et eau, formation innovante,...',
+                    'Habillement, habitat, gouvernance et participation, gastronomie locale, patrimoine, recyclage,...'=>'Habillement, habitat, gouvernance et participation, gastronomie locale, patrimoine, recyclage,...',
+                    'Rénovation, savoirs et transmissions, santé, tourisme alternatif, transport alternatif, web numérique, ...'=>'Rénovation, savoirs et transmissions, santé, tourisme alternatif, transport alternatif, web numérique, ...'
                 ),
-                'label'=>'Categorie'))
+                'label'=>'Catégorie'
+                ))
             ->add('description', null, array(
                 'label'=>'Description'
             ))
-
-
             ->add('wish', choiceType::class, array(
                 'choices' => array(
-                    'dupliquate' => 'Dupliquer ce projet',
-                    'formation'=> 'Former sur ce projet',
-                    'help'=> 'Appuyer un projet similaire',
-                    'tell'=>'Echanger sur ce projet'
+                    'Choisir' => 'Choisir',
+                    'Dupliquer ce projet' => 'Dupliquer ce projet',
+                    'Former sur ce projet'=> 'Former sur ce projet',
+                    'Appuyer un projet similaire'=> 'Appuyer un projet similaire',
+                    'Echanger sur ce projet'=>'Echanger sur ce projet',
+                    'Rechercher un associé'=>'Rechercher un associé',
+                    'co-créer'=>'co-créer'
                 ),
                 'label'=>'Souhaits'))
 

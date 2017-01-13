@@ -3,7 +3,7 @@
 {% block body %}
     <h1>Liste des Besoins</h1>
     {% for need in needs %}
-        <a href="{{ path('actor_showNeeds', { 'id': need.id }) }}" id="lienListe">
+        <a href="{{ path('citizen_showNeeds', { 'id': need.id }) }}" id="lienListe">
             <div class="row">
                 <section class="col-sm-offset-1 col-sm-10 col-xs-12 backWhite sec1 padSHOW">
                     <div class="row">
@@ -19,7 +19,7 @@
                                 </div>
                                 <div class="row">
                                     <li class="col-md-6 col-xs-12"><span>Domaine d'activité :</span>{{ need.activity }}</li>
-                                    <li class="col-md-6 col-xs-12"><span>Disponibilité :</span>{{ need.availibility }}</li>
+                                    <li class="col-md-6 col-xs-12"><span>Disponibilité :</span>{{ need.availability }}</li>
                                 </div>
                                 <li><span>Description :</span>{{ need.description }}</li>
                             </ul>

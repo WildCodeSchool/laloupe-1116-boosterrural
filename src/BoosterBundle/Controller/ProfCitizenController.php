@@ -30,10 +30,12 @@ class ProfCitizenController extends Controller
             ));
 
 
+
         return $this->render('BoosterBundle:Citizen:index.html.twig', array(
             'user'=>$user,
             'offers' => $offers,
             'needs' => $needs,
+
 
         ));
     }
@@ -210,18 +212,18 @@ class ProfCitizenController extends Controller
      * Deletes a need entity.
      *
      */
-    public function deleteNeedAction(Request $request, Needs $needs)
+    public function deleteNeedAction(Request $request, Needs $need)
     {
-        $form = $this->createDeleteForm($needs);
+        $form = $this->createDeleteForm($need);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->remove($needs);                                       /*******essai****/
-            $em->flush($needs);
+            $em->remove($need);
+            $em->flush($need);
         }
 
-        return $this->redirectToRoute('citizen_index');
+        return $this->redirectToRoute('citizen_deleteNeeds');
     }
 
     /**
@@ -240,7 +242,7 @@ class ProfCitizenController extends Controller
             ;
     }
 
-    public function listNeeds()
+    public function listNeedsCitizenAction()
     {
         $em = $this->getDoctrine()->getManager();
 

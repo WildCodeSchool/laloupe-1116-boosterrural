@@ -12,9 +12,12 @@
                     <h1>{{ need.title }}</h1>
                     <ul>
                         <div class="row">
-                            <li class="col-md-4 col-xs-12"><span>Ville :</span>{{ need.town }}</li>
-                            <li class="col-md-4 col-xs-12"><span>Code Postal :</span>{{ need.cp }}</li>
-                            <li class="col-md-4 col-xs-12"><span>Domaine d'activité :</span>{{ need.activity }}</li>
+                            <li class="col-md-6 col-xs-12"><span>Ville :</span>{{ need.town }}</li>
+                            <li class="col-md-6 col-xs-12"><span>Code Postal :</span>{{ need.cp }}</li>
+                         </div>
+                        <div class="row">
+                            <li class="col-md-6 col-xs-12"><span>Domaine d'activité :</span>{{ need.activity }}</li>
+                            <li class="col-md-6 col-xs-12"><span>Disponibilité :</span>{{ need.availability }}</li>
                         </div>
                         <li><span>Description :</span>{{ need.description }}</li>
                     </ul>
@@ -23,6 +26,6 @@
         </section>
     </div>
 
-    <a href="{{ path('actor_index') }}" class="btn center-block1 Button">Retour à la liste</a>
+    <a href="{{ path('citizen_listNeed') }}" class="btn center-block1 Button">Retour à la liste</a>
 
 {% endblock %}

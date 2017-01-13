@@ -25,13 +25,16 @@ class CitizenNeedsType extends AbstractType
                 "label" => "Ville"
             ])
             ->add('activity', ChoiceType::class, array (
-                "label" => "Domaine d'activité",
+                "label" => "Je cherche",
                 'choices'  => array(
                     "Choisir" => "Choisir",
-                    "Loisirs" => "Loisirs",
-                    "Artisan" => "Artisan",
-                    "Bénévolat" => "Bénévolat",
-                    "Communication" => "Communication")))
+                    "Stage" => "Stage",
+                    "Un evironnement agricole, créatif..." => "Un evironnement agricole, créatif...",
+                    "Des personnes en phase avec mon projet" => "Des personnes en phase avec mon projet",
+                    "Du coaching pour me lancer" => "Du coaching pour me lancer")))
+            ->add('availability', null, [
+                "label" => "Disponibilité"
+            ])
             ->add('description', null, [
                 "label" => "Description"
             ])
