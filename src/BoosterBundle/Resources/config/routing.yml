@@ -6,7 +6,7 @@ booster_mayorBack:
     resource: "@BoosterBundle/Resources/config/routing/mayor.yml"
     prefix:   /mayor
 
-booster_citizenBack:
+booster_citizeginBack:
     resource: "@BoosterBundle/Resources/config/routing/citizen.yml"
     prefix:   /citizen
 
