@@ -10,11 +10,11 @@
                   </div>
                   <div class="col-md-6 col-xs-12">
                       <li><a class="pencil col-xs-offset-11 col-xs-1" data-toggle="modal" href="#headmod"><span class="glyphicon glyphicon-pencil btn-lg"></span></a></li>
-                      <h1>Louise MARTIN</h1>
+                      <h1>{{ user.lastname }}</h1>
                       <div class="row identity">
                           <div class="col-sm-6 col-xs-12">
                               <ul>
-                                  <li class="state"><span>Statut :</span> {{ user.statusCitizen }}</li>
+                                  <li class="state"><span>Statut :</span> {{ user.status_citizen }}</li>
                                   <li><span>Adresse :</span> {{ user.address }}</li>
                                   <li><span>Code Postal :</span> {{ user.cp }}</li>
                                   <li><span>Commune :</span> {{ user.town }}</li>
