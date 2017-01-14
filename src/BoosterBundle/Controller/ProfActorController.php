@@ -18,6 +18,8 @@ class ProfActorController extends Controller
     public function indexAction()
     {
         $user = $this->getUser();
+
+
         $user=$this->get('security.context')->getToken()->getUser();
         $em = $this->getDoctrine()->getManager();
         $users = $em->getRepository('BoosterBundle:User')->findAll();
@@ -36,6 +38,7 @@ class ProfActorController extends Controller
             'users'=>$users,
             'offers' => $offers,
             'needs' => $needs,
+
 
         ));
     }
@@ -102,7 +105,7 @@ class ProfActorController extends Controller
             return $this->redirectToRoute('actor_editOffer', array('id' => $offer->getId()));
         }
 
-        return $this->render('BoosterBundle:Actor:editNeeds.html.twig', array(
+        return $this->render('BoosterBundle:Actor:editOffer.html.twig', array(
             'offer' => $offer,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

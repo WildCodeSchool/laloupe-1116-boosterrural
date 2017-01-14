@@ -99,15 +99,19 @@ span {
 .secPad1 {
     margin-left: 2%;
     width: 50%;
+
+
 }
 
 .secPad2 {
     width: 49%;
+
 }
 
 .secPad3 {
     margin-left: 2%;
     width: 49%;
+
 }
 
 @media all and (max-width: 992px) {

@@ -53,7 +53,9 @@
                           </div>
 
                       </div>
-                      <li><a class="pencil"><span class="glyphicon glyphicon-pencil"></span></a></li>
+                      <div>
+                          <a class="pencil" {#href="{{ path('ed') }}"#}><span class="glyphicon glyphicon-pencil"></span></a>
+                      </div>
                   </section>
                   <section class=" hidden-xs col-sm-5 col-xs-12 backWhite secPad1">
                       <h2>localisation</h2>
@@ -85,8 +87,11 @@
                                       <p>{{ offer.description }}</p>
                                   </div>
                                   <div class="col-xs-1">
-                                      <a href="#"><span class="glyphicon glyphicon-pencil btn-lg"></span ></a>
-                                      <span class="glyphicon glyphicon-remove btn-lg"></span >
+                                      <a href="{{ path('actor_editOffer', {'id': offer.id}) }}') }}"><span class="glyphicon glyphicon-pencil btn-lg"></span ></a>
+                                      <a data-toggle="modal" href="#deleteOffer"">
+
+                                          <span class="glyphicon glyphicon-remove btn-lg" ></span >
+                                      </a>
                                   </div>
                               </div>
                           </li>
@@ -179,7 +184,7 @@
                                           </a>
                                           <div class="col-xs-1">
                                               <span class="glyphicon glyphicon-pencil btn-lg"></span >
-                                              <span class="glyphicon glyphicon-remove btn-lg"></span >
+                                              <a data-toggle="modal" href="#deleteNeeds"><span class="glyphicon glyphicon-remove btn-lg"></span ></a>
                                           </div>
                                       </div>
                                   </li>
@@ -247,45 +252,84 @@
           </div>
       </div>
 
+{#*************************************MODALS FOR DELETE AN OFFER AND A NEED********************************************#}
 
 
-<script src="http://maps.google.com/maps/api/js?sensor=false&key=AIzaSyBSFjZGurwwEtOnMOg1mKgJgS3WcP8ucrk" type="text/javascript"></script>
+      <div class="modal fade" id="deleteOffer">
+      	<div class="modal-dialog">
+      		<div class="modal-content">
+      			<div class="modal-header">
+      				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      				<h4 class="modal-title">SUPPRESSION D'UNE OFFRE</h4>
+      			</div>
+      			<div class="modal-body">
+      				<p>Confirmez-vous la suppression de cette offre ?</p>
+      			</div>
+      			<div class="modal-footer">
+      				<button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+      				<button type="button" class="btn btn-primary">Oui</button>
+      			</div>
+      		</div><!-- /.modal-content -->
+      	</div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
 
-<script>
-    {#
-    var adresse = '<?= $adresse ?>';
-    console.log(adresse);  var_dump en JS#}
-    var locations = [
-        {% for user in users %}
-        ['{{ user.cp }}', '{{ user.lat }}', '{{ user.lgt }}'],
-        {% endfor %}
 
-    ];
-    {% for user in users %}
-    var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 10,
-        center: new google.maps.LatLng({{ user.lat }}, {{ user.lgt }}),
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
-        scrollwheel: false
-    });
-    var infowindow = new google.maps.InfoWindow();
-    var marker, i;
-    for (i = 0; i < locations.length; i++) {
-        marker = new google.maps.Marker({
-            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-            map: map
-        });
-        google.maps.event.addListener(marker, 'click', (function(marker, i) {
-            return function() {
-                infowindow.setContent(locations[i][0]);
-                infowindow.open(map, marker);
-            }
-        })(marker, i));
-    }
-    {% endfor %}
-</script>
+      <div class="modal fade" id="deleteNeeds">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title">SUPPRESSION D'UN BESOIN</h4>
+                  </div>
+                  <div class="modal-body">
+                      <p>Confirmez-vous la suppression de ce besoin ?</p>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                      <button type="button" class="btn btn-primary">Oui</button>
+                  </div>
+              </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
 
-{% endblock %}
+
+{#*******************************************JAVASCRIPT FOR THIS PAGE *************************************************#}
+
+      <script src="http://maps.google.com/maps/api/js?sensor=false&key=AIzaSyBSFjZGurwwEtOnMOg1mKgJgS3WcP8ucrk" type="text/javascript"></script>
+
+      <script>
+
+          var locations = [
+              {% for user in users %}
+              ['{{ user.cp }}', '{{ user.lat }}', '{{ user.lgt }}'],
+              {% endfor %}
+
+          ];
+          {% for user in users %}
+          var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 10,
+              center: new google.maps.LatLng({{ user.lat }}, {{ user.lgt }}),
+              mapTypeId: google.maps.MapTypeId.ROADMAP,
+              scrollwheel: false
+          });
+          var infowindow = new google.maps.InfoWindow();
+          var marker, i;
+          for (i = 0; i < locations.length; i++) {
+              marker = new google.maps.Marker({
+                  position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                  map: map
+              });
+              google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                  return function() {
+                      infowindow.setContent(locations[i][0]);
+                      infowindow.open(map, marker);
+                  }
+              })(marker, i));
+          }
+          {% endfor %}
+      </script>
+
+  {% endblock %}
 
 
 
