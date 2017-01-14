@@ -23,6 +23,11 @@ actor_deleteOffer:
     defaults: { _controller: "BoosterBundle:ProfActor:deleteOffer" }
     methods:  DELETE
 
+actor_listOffer:
+    path:     /offer/list
+    defaults: { _controller: "BoosterBundle:ProfActor:listOfferActor" }
+    methods:  [GET, POST]
+
 actor_showNeeds:
     path:     /needs/{id}/show
     defaults: { _controller: "BoosterBundle:ProfActor:showNeed" }

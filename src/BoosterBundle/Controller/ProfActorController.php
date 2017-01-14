@@ -141,6 +141,18 @@ class ProfActorController extends Controller
             ;
     }
 
+    public function listOfferActorAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $offers = $em->getRepository('BoosterBundle:Offer')->createQueryBuilder('n')->join('n.users','u');
+        $offers = $offers->where($offers->expr()->in('u.roles', ['a:1:{i:0;s:10:"ROLE_ACTOR";}']))->getQuery()->getResult();
+        return $this->render('BoosterBundle:Actor:listOfferActor.html.twig', array(
+            'offers' => $offers,
+        ));
+    }
+
+
     /**
      * Lists all needs entities.
      */
@@ -201,7 +213,7 @@ class ProfActorController extends Controller
 
         return $this->render('BoosterBundle:Actor:editNeeds.html.twig', array(
             'need' => $need,
-            'edit_form' => $editForm->createView(),
+            'form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
@@ -244,8 +256,8 @@ class ProfActorController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $needs = $em->getRepository('BoosterBundle:Needs')->findAll();
-
+        $needs = $em->getRepository('BoosterBundle:Needs')->createQueryBuilder('n')->join('n.users','u');
+        $needs = $needs->where($needs->expr()->in('u.roles', ['a:1:{i:0;s:10:"ROLE_ACTOR";}']))->getQuery()->getResult();
         return $this->render('BoosterBundle:Actor:listNeedsActor.html.twig', array(
             'needs' => $needs,
         ));

@@ -10,13 +10,12 @@
 
                     {{ form_start(form) }}
                     {{ form_widget(form) }}
-                    <a href="{{ path('mayor_editNeeds', { 'id': need.id }) }}"><input type="submit" value="Modifier" class="center-block showLien2"></a>
+                    <a href="{{ path('mayor_editNeeds', { 'id': need.id }) }}"><input type="submit" value="Modifier" class="btn center-block Button"></a>
                     {{ form_end(form) }}
-
                     <ul>
                         <li>
                             {{ form_start(delete_form) }}
-                            <input type="submit" value="Supprimer" class="center-block">
+                            <input type="submit" value="Supprimer" class="btn center-block Button">
                             {{ form_end(delete_form) }}
                         </li>
                         <li>

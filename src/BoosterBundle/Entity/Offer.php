@@ -9,6 +9,81 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Offer
 {
+    protected function getUploadDir()
+    {
+        return 'uploads';
+    }
+
+    protected function getUploadRootDir()
+    {
+        return __DIR__.'/../../../web/'.$this->getUploadDir();
+    }
+
+    public function getWebPath()
+    {
+        return null === $this->image ? null : $this->getUploadDir().'/'.$this->image;
+    }
+
+    public function getAbsolutePath()
+    {
+        return null === $this->image ? null : $this->getUploadRootDir().'/'.$this->image;
+    }
+
+    /*Image 2*/
+    public $file2;
+    public function preUpload2()
+    {
+        if (null !== $this->file2) {
+            // do whatever you want to generate a unique name
+            $this->image2 = uniqid().'.'.$this->file2->guessExtension();
+        }
+    }
+    public function upload2()
+    {
+        if (null === $this->file2) {
+            return;
+        }
+        // if there is an error when moving the file, an exception will
+        // be automatically thrown by move(). This will properly prevent
+        // the entity from being persisted to the database on error
+        $this->file2->move($this->getUploadRootDir(), $this->image2);
+        unset($this->file2);
+    }
+    public function removeUpload2()
+    {
+        if ($file2 = $this->getAbsolutePath()) {
+            unlink($file2);
+        }
+    }
+
+    /*Image 3*/
+    public $file3;
+    public function preUpload3()
+    {
+        if (null !== $this->file3) {
+            // do whatever you want to generate a unique name
+            $this->image3 = uniqid().'.'.$this->file3->guessExtension();
+        }
+    }
+    public function upload3()
+    {
+        if (null === $this->file3) {
+            return;
+        }
+        // if there is an error when moving the file, an exception will
+        // be automatically thrown by move(). This will properly prevent
+        // the entity from being persisted to the database on error
+        $this->file3->move($this->getUploadRootDir(), $this->image3);
+        unset($this->file3);
+    }
+    public function removeUpload3()
+    {
+        if ($file3 = $this->getAbsolutePath()) {
+            unlink($file3);
+        }
+    }
+
+
     /**
      * @var int
      */
@@ -43,6 +118,27 @@ class Offer
      * @var int
      */
     private $lgt;
+
+    /**
+     * @var \BoosterBundle\Entity\User
+     */
+    private $users;
+
+
+    /**
+     * @var string
+     */
+    private $image;
+
+    /**
+     * @var string
+     */
+    private $image2;
+
+    /**
+     * @var string
+     */
+    private $image3;
 
 
     /**
@@ -248,11 +344,77 @@ class Offer
     {
         return $this->wish;
     }
-    /**
-     * @var \BoosterBundle\Entity\User
-     */
-    private $users;
 
+    /**
+     * Set image
+     *
+     * @param string $image
+     * @return Offer
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * Set image2
+     *
+     * @param string $image2
+     *
+     * @return Offer
+     */
+    public function setImage2($image2)
+    {
+        $this->image2 = $image2;
+
+        return $this;
+    }
+
+    /**
+     * Get image2
+     *
+     * @return string
+     */
+    public function getImage2()
+    {
+        return $this->image2;
+    }
+
+    /**
+     * Set image3
+     *
+     * @param string $image3
+     *
+     * @return Offer
+     */
+    public function setImage3($image3)
+    {
+        $this->image3 = $image3;
+
+        return $this;
+    }
+
+    /**
+     * Get image3
+     *
+     * @return string
+     */
+    public function getImage3()
+    {
+        return $this->image3;
+    }
 
     /**
      * Set users

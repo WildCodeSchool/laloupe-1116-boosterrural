@@ -52,7 +52,7 @@ class ProfCitizenController extends Controller
         $user = $this->get('security.context')->getToken()->getUser();
         $offer = new Offer();
         $offer->setUsers($user);
-        $form = $this->createForm('BoosterBundle\Form\OfferType', $offer);
+        $form = $this->createForm('BoosterBundle\Form\CitizenOfferType', $offer);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -91,7 +91,7 @@ class ProfCitizenController extends Controller
     public function editOfferAction(Request $request, Offer $offer)
     {
         $deleteForm = $this->createDeleteForm($offer);
-        $editForm = $this->createForm('BoosterBundle\Form\OfferType', $offer);
+        $editForm = $this->createForm('BoosterBundle\Form\CitizenOfferType', $offer);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
@@ -140,6 +140,19 @@ class ProfCitizenController extends Controller
             ->getForm()
             ;
     }
+
+    public function listOfferCitizenAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $offers = $em->getRepository('BoosterBundle:Offer')->createQueryBuilder('n')->join('n.users','u');
+        $offers = $offers->where($offers->expr()->in('u.roles', ['a:1:{i:0;s:12:"ROLE_CITIZEN";}']))->getQuery()->getResult();
+        return $this->render('BoosterBundle:Citizen:listOfferCitizen.html.twig', array(
+            'offers' => $offers,
+        ));
+    }
+
+
 
     /**
      * Lists all needs entities.
@@ -201,7 +214,7 @@ class ProfCitizenController extends Controller
 
         return $this->render('BoosterBundle:Citizen:editNeeds.html.twig', array(
             'need' => $need,
-            'edit_form' => $editForm->createView(),
+            'form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
@@ -240,14 +253,14 @@ class ProfCitizenController extends Controller
             ;
     }
 
-//    public function listNeeds()
-//    {
-//        $em = $this->getDoctrine()->getManager();
-//
-//        $needs = $em->getRepository('BoosterBundle:Needs')->findAll();
-//
-//        return $this->render('BoosterBundle:Needs:citizen.index.html.twig', array(
-//            'needs' => $needs,
-//        ));
-//    }
+    public function listNeedsCitizenAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $needs = $em->getRepository('BoosterBundle:Needs')->createQueryBuilder('n')->join('n.users','u');
+        $needs = $needs->where($needs->expr()->in('u.roles', ['a:1:{i:0;s:12:"ROLE_CITIZEN";}']))->getQuery()->getResult();
+        return $this->render('BoosterBundle:Citizen:listNeedsCitizen.html.twig', array(
+            'needs' => $needs,
+        ));
+    }
 }

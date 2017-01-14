@@ -351,8 +351,6 @@ class Needs
         return $this->lgt;
     }
 
-
-
     /**
      * Set image
      *
@@ -375,10 +373,6 @@ class Needs
     {
         return $this->image;
     }
-
-
-
-
 
 
     /**

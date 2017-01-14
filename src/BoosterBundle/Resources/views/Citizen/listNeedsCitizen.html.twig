@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Liste des Besoins pour les Villages</h1>
+    <h1>Liste des Besoins pour les Citoyens</h1>
     {% for need in needs %}
-        <a href="{{ path('mayor_showNeeds', { 'id': need.id }) }}" id="lienListe">
+        <a href="{{ path('citizen_showNeeds', { 'id': need.id }) }}" id="lienListe">
             <div class="row">
                 <section class="col-sm-offset-1 col-sm-10 col-xs-12 backWhite sec1 listIndex">
                     <div class="row">

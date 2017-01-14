@@ -52,7 +52,7 @@ class ProfMayorController extends Controller
         $user = $this->get('security.context')->getToken()->getUser();
         $offer = new Offer();
         $offer->setUsers($user);
-        $form = $this->createForm('BoosterBundle\Form\OfferType', $offer);
+        $form = $this->createForm('BoosterBundle\Form\MayorOfferType', $offer);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -91,7 +91,7 @@ class ProfMayorController extends Controller
     public function editOfferAction(Request $request, Offer $offer)
     {
         $deleteForm = $this->createDeleteForm($offer);
-        $editForm = $this->createForm('BoosterBundle\Form\OfferType', $offer);
+        $editForm = $this->createForm('BoosterBundle\Form\MayorOfferType', $offer);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
@@ -139,6 +139,17 @@ class ProfMayorController extends Controller
             ->setMethod('DELETE')
             ->getForm()
             ;
+    }
+
+    public function listOfferMayorAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $offers = $em->getRepository('BoosterBundle:Offer')->createQueryBuilder('n')->join('n.users','u');
+        $offers = $offers->where($offers->expr()->in('u.roles', ['a:1:{i:0;s:10:"ROLE_MAYOR";}']))->getQuery()->getResult();
+        return $this->render('BoosterBundle:Mayor:listOfferMayor.html.twig', array(
+            'offers' => $offers,
+        ));
     }
 
     /**

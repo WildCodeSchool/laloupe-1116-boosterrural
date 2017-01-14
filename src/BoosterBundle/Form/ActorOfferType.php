@@ -7,7 +7,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
-class OfferType extends AbstractType
+class ActorOfferType extends AbstractType
 {
     /**
      * {@inheritdoc}
@@ -32,10 +32,10 @@ class OfferType extends AbstractType
                     'communication'=>'Communication'
                 ),
                 'label'=>'Categorie'))
-            ->add('description', null, array(
-                'label'=>'Description'
-            ))
 
+            ->add('description','textarea', array(
+                'label'=>'Description de l\'offre'
+            ))
 
             ->add('wish', choiceType::class, array(
                 'choices' => array(
@@ -46,7 +46,9 @@ class OfferType extends AbstractType
                 ),
                 'label'=>'Souhaits'))
 
-        ;
+            ->add('file3', 'file', array('required' => false,
+                'label'=>'fichier image'
+            ));
     }
 
     /**

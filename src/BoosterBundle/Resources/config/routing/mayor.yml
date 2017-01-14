@@ -18,6 +18,11 @@ mayor_editOffer:
     defaults: { _controller: "BoosterBundle:ProfMayor:editOffer" }
     methods:  [GET, POST]
 
+mayor_listOffer:
+    path:     /offer/list
+    defaults: { _controller: "BoosterBundle:ProfMayor:listOfferMayor" }
+    methods:  [GET, POST]
+
 mayor_deleteOffer:
     path:     /offer/{id}/delete
     defaults: { _controller: "BoosterBundle:ProfMayor:deleteOffer" }
