@@ -77,7 +77,7 @@ class ProfMayorController extends Controller
      */
     public function showOfferAction(Offer $offer)
     {
-        $deleteForm = $this->createDeleteForm($offer);
+        $deleteForm = $this->createOfferDeleteForm($offer);
 
         return $this->render('BoosterBundle:Mayor:showOffer.html.twig', array(
             'offer' => $offer,
@@ -90,7 +90,7 @@ class ProfMayorController extends Controller
      */
     public function editOfferAction(Request $request, Offer $offer)
     {
-        $deleteForm = $this->createDeleteForm($offer);
+        $deleteForm = $this->createOfferDeleteForm($offer);
         $editForm = $this->createForm('BoosterBundle\Form\MayorOfferType', $offer);
         $editForm->handleRequest($request);
 
@@ -100,9 +100,9 @@ class ProfMayorController extends Controller
             return $this->redirectToRoute('mayor_editOffer', array('id' => $offer->getId()));
         }
 
-        return $this->render('BoosterBundle:Mayor:editNeeds.html.twig', array(
+        return $this->render('BoosterBundle:Mayor:editOffer.html.twig', array(
             'offer' => $offer,
-            'edit_form' => $editForm->createView(),
+            'form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }

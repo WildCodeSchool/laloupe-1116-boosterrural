@@ -77,7 +77,7 @@ class ProfCitizenController extends Controller
      */
     public function showOfferAction(Offer $offer)
     {
-        $deleteForm = $this->createDeleteForm($offer);
+        $deleteForm = $this->createOfferDeleteForm($offer);
 
         return $this->render('BoosterBundle:Citizen:showOffer.html.twig', array(
             'offer' => $offer,
@@ -90,7 +90,7 @@ class ProfCitizenController extends Controller
      */
     public function editOfferAction(Request $request, Offer $offer)
     {
-        $deleteForm = $this->createDeleteForm($offer);
+        $deleteForm = $this->createOfferDeleteForm($offer);
         $editForm = $this->createForm('BoosterBundle\Form\CitizenOfferType', $offer);
         $editForm->handleRequest($request);
 
@@ -100,9 +100,9 @@ class ProfCitizenController extends Controller
             return $this->redirectToRoute('citizen_editOffer', array('id' => $offer->getId()));
         }
 
-        return $this->render('BoosterBundle:Citizen:editNeeds.html.twig', array(
+        return $this->render('BoosterBundle:Citizen:editOffer.html.twig', array(
             'offer' => $offer,
-            'edit_form' => $editForm->createView(),
+            'form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
@@ -113,7 +113,7 @@ class ProfCitizenController extends Controller
      */
     public function deleteOfferAction(Request $request, Offer $offer)
     {
-        $form = $this->createDeleteForm($offer);
+        $form = $this->createOfferDeleteForm($offer);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -132,7 +132,7 @@ class ProfCitizenController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(Offer $offer)
+    private function createOfferDeleteForm(Offer $offer)
     {
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('citizen_deleteOffer', array('id' => $offer->getId())))

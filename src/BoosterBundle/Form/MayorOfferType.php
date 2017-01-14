@@ -46,7 +46,7 @@ class MayorOfferType extends AbstractType
                 ),
                 'label'=>'Souhaits'))
 
-            ->add('file3', 'file', array('required' => false,
+            ->add('file2', 'file', array('required' => false,
                 'label'=>'fichier image'
             ));
     }

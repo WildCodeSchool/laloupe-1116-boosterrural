@@ -29,6 +29,34 @@ class Offer
         return null === $this->image ? null : $this->getUploadRootDir().'/'.$this->image;
     }
 
+    /*Image 1*/
+    public $file1;
+    public function preUpload1()
+    {
+        if (null !== $this->file1) {
+            // do whatever you want to generate a unique name
+            $this->image1 = uniqid().'.'.$this->file1->guessExtension();
+        }
+    }
+    public function upload1()
+    {
+        if (null === $this->file1) {
+            return;
+        }
+        // if there is an error when moving the file, an exception will
+        // be automatically thrown by move(). This will properly prevent
+        // the entity from being persisted to the database on error
+        $this->file1->move($this->getUploadRootDir(), $this->image1);
+        unset($this->file1);
+    }
+    public function removeUpload1()
+    {
+        if ($file1 = $this->getAbsolutePath()) {
+            unlink($file1);
+        }
+    }
+
+
     /*Image 2*/
     public $file2;
     public function preUpload2()
@@ -129,6 +157,11 @@ class Offer
      * @var string
      */
     private $image;
+
+    /**
+     * @var string
+     */
+    private $image1;
 
     /**
      * @var string
@@ -367,6 +400,31 @@ class Offer
     {
         return $this->image;
     }
+
+    /**
+     * Set image1
+     *
+     * @param string $image1
+     *
+     * @return Offer
+     */
+    public function setImage1($image1)
+    {
+        $this->image1 = $image1;
+
+        return $this;
+    }
+
+    /**
+     * Get image1
+     *
+     * @return string
+     */
+    public function getImage1()
+    {
+        return $this->image1;
+    }
+
 
     /**
      * Set image2

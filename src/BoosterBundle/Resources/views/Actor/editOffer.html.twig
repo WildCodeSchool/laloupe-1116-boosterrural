@@ -1,21 +1,29 @@
 {% extends 'base.html.twig' %}
+{% form_theme form ":FormTemplate:bootstrap.html.twig" %}
 
 {% block body %}
-    <h1>Offer edit</h1>
+    <div class="row">
+        <div class="col-sm-offset-2 col-sm-8 col-xs-12">
+            <div class="row">
+                <div class="col-sm-offset-3 col-sm-6">
+                    <h1>Modification du besoin</h1>
 
-    {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
-    {{ form_end(edit_form) }}
-
-    <ul>
-        <li>
-            <a href="{{ path('actor_listNeed') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                    <a href="{{ path('actor_editOffer', { 'id': offer.id }) }}"><input type="submit" value="Modifier" class="btn center-block Button"></a>
+                    {{ form_end(form) }}
+                    <ul>
+                        <li>
+                            {{ form_start(delete_form) }}
+                            <input type="submit" value="Supprimer" class="btn center-block Button">
+                            {{ form_end(delete_form) }}
+                        </li>
+                        <li>
+                            <a href="{{ path('actor_listOffer') }}" class="btn center-block">Retour à la liste</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

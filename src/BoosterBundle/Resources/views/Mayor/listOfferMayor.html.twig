@@ -1,14 +1,14 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Liste des Besoins pour les Villages</h1>
+    <h1>Liste des Offres pour les Villages</h1>
     {% for offer in offers %}
         <a href="{{ path('mayor_showOffer', { 'id': offer.id }) }}" id="lienListe">
             <div class="row">
                 <section class="col-sm-offset-1 col-sm-10 col-xs-12 backWhite sec1 listIndex">
                     <div class="row">
                         <div class="col-md-6 col-xs-12">
-                            <img src="{{ app.request.basepath }}/uploads/{{ offer.image3 }}" alt="photo_logo" class="center-block img-responsive imgList"/>
+                            <img src="{{ app.request.basepath }}/uploads/{{ offer.image2 }}" alt="photo_logo" class="center-block img-responsive imgList"/>
                         </div>
                         <div class="col-md-6 col-xs-12">
                             <h2>{{ offer.title }}</h2>
@@ -20,7 +20,7 @@
                                 </div>
                                 <div class="col-sm-6 col-xs-12">
                                     <ul>
-                                        <li><span>Code Postal :</span> {{ ofer.cp }}</li>
+                                        <li><span>Code Postal :</span> {{ offer.cp }}</li>
                                     </ul>
                                 </div>
                                 <div class="col-sm-12 col-xs-12">

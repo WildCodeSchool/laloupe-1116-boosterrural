@@ -1,60 +1,41 @@
 {% extends 'base.html.twig' %}
+{#{% form_theme form ":FormTemplate:bootstrap.html.twig" %}#}
 
 {% block body %}
-    <h1>Offer</h1>
-
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ offer.id }}</td>
-            </tr>
-            <tr>
-                <th>Title</th>
-                <td>{{ offer.title }}</td>
-            </tr>
-            <tr>
-                <th>Cp</th>
-                <td>{{ offer.cp }}</td>
-            </tr>
-            <tr>
-                <th>Town</th>
-                <td>{{ offer.town }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ offer.description }}</td>
-            </tr>
-            <tr>
-                <th>Activity</th>
-                <td>{{ offer.activity }}</td>
-            </tr>
-            <tr>
-                <th>Wish</th>
-                <td>{{ offer.wish }}</td>
-            </tr>
-            <tr>
-                <th>Lat</th>
-                <td>{{ offer.lat }}</td>
-            </tr>
-            <tr>
-                <th>Lgt</th>
-                <td>{{ offer.lgt }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <ul>
-        <li>
-            <a href="#">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('citizen_editOffer', { 'id': offer.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+    <div class="row">
+        <section class="col-sm-offset-1 col-sm-10 col-xs-12 backWhite sec1 padShow">
+            <div class="row">
+                <div class="col-md-6 col-xs-12">
+                    <img src="{{ app.request.basepath }}/uploads/{{ offer.image3 }}" alt="photo_logo" class="center-block img-responsive imgShow"/>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <h1>{{ offer.title }}</h1>
+                    <div class="row">
+                        <div class="col-sm-6 col-xs-12">
+                            <ul>
+                                <li><span>Nom de la Commune :</span> {{ offer.town }}</li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-xs-12">
+                            <ul>
+                                <li><span>Code Postal :</span> {{ offer.cp }}</li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-12 col-xs-12">
+                            <ul>
+                                <li><span>Description du Besoin :</span><p> {{ offer.description }}</p></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div>
+        <ul>
+            <li>
+                <a href="{{ path('citizen_listOffer') }}" class="btn center-block">Retour à la liste</a>
+            </li>
+        </ul>
+    </div>
 {% endblock %}

@@ -35,6 +35,11 @@ BoosterBundle\Entity\Needs:
             type: integer
             nullable: true
 
+        image1:
+            type: string
+            length: 255
+            nullable: true
+
         image2:
             type: string
             length: 255
@@ -52,10 +57,10 @@ BoosterBundle\Entity\Needs:
 
     lifecycleCallbacks:
 
-      prePersist: [ preUpload2, preUpload3 ]
-      preUpdate: [ preUpload2, preUpload3 ]
-      postPersist: [ upload2, upload3 ]
-      postUpdate: [ upload2, upload3 ]
-      postRemove: [ removeUpload2, removeUpload3 ]
+      prePersist: [ preUpload1, preUpload2, preUpload3 ]
+      preUpdate: [ preUpload1, preUpload2, preUpload3 ]
+      postPersist: [ upload1, upload2, upload3 ]
+      postUpdate: [ upload1, upload2, upload3 ]
+      postRemove: [ removeUpload1, removeUpload2, removeUpload3 ]
 
 

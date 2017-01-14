@@ -73,20 +73,22 @@
                       <h3 class="title">Mes offres</h3>
                       <h4 class="underTitle">Ce que je propose...</h4>
                       {% if offers == NULL %}
-                      <p>Absence de d'offres</p>
+                      <p>Absence d'Offres</p>
                       {% else %}
                       {% for offer in offers %}
                       <ul>
                           <li>
                               <div class="row">
+                                  <a href="{{ path('mayor_showOffer',{'id' : offer.id}) }}">
                                   <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="no photo" class=" col-xs-2">
                                   <div class="col-xs-8">
                                       <span>{{ offer.title }}</span>
                                       <p>{{ offer.description }}</p>
                                   </div>
+                                  </a>
                                   <div class="col-xs-1">
-                                      <a href="#"><span class="glyphicon glyphicon-pencil btn-lg"></span ></a>
-                                      <span class="glyphicon glyphicon-remove btn-lg"></span >
+                                      <a href="{{ path('mayor_editOffer', { 'id': offer.id }) }}"><span class="glyphicon glyphicon-pencil btn-lg"></span ></a>
+                                      {#<span class="glyphicon glyphicon-remove btn-lg"></span >#}
                                   </div>
                               </div>
                           </li>
@@ -162,7 +164,7 @@
                       <h4 class="underTitle">Ce dont j'ai besoin...</h4>
                       <ul>
                           {% if needs == NULL %}
-                              <p>Absence de besoins</p>
+                              <p>Absence de Besoins</p>
                           {% else %}
                               {% for needs in needs %}
                                   <li>
