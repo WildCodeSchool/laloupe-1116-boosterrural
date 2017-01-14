@@ -24,22 +24,33 @@ class CitizenNeedsType extends AbstractType
             ->add('town', null, [
                 "label" => "Ville"
             ])
-            ->add('activity', ChoiceType::class, array (
+            ->add('activity', choiceType::class, array(
+                'choices' => array(
+                    'Choisir' => 'Choisir',
+                    'agriculture, maraîchage, circuit court,...' => 'agriculture, maraîchage, circuit court,...',
+                    'agro-alimentaire, transformation,...'=> 'agro-alimentaire, transformation,...',
+                    'art et culture, bio-diversité, éco-conception... '=> 'art et culture, bio-diversité, éco-conception... ',
+                    'éducation, énergie et eau, formation innovante,...'=>'éducation, énergie et eau, formation innovante,...',
+                    'habillement, habitat, gouvernance et participation, gastronomie locale, patrimoine, recyclage,...'=>'habillement, habitat, gouvernance et participation, gastronomie locale, patrimoine, recyclage,...',
+                    'rénovation, savoirs et transmissions, santé, tourisme alternatif, transport alternatif, web numérique, ...'=>'rénovation, savoirs et transmissions, santé, tourisme alternatif, transport alternatif, web numérique, ...'
+                ),
+                'label'=>"Domaine d'activité"
+            ))
+            ->add('wish', ChoiceType::class, array (
                 "label" => "Je cherche",
                 'choices'  => array(
                     "Choisir" => "Choisir",
-                    "Stage" => "Stage",
-                    "Un evironnement agricole, créatif..." => "Un evironnement agricole, créatif...",
-                    "Des personnes en phase avec mon projet" => "Des personnes en phase avec mon projet",
-                    "Du coaching pour me lancer" => "Du coaching pour me lancer")))
+                    "un stage" => "un stage",
+                    "un environnement agricole, créatif..." => "un environnement agricole, créatif...",
+                    "des personnes en phase avec mon projet" => "des personnes en phase avec mon projet",
+                    "du coaching pour me lancer" => "du coaching pour me lancer")))
             ->add('availability', null, [
                 "label" => "Disponibilité"
             ])
             ->add('description', null, [
                 "label" => "Description"
             ])
-            //->add('image2')
-            ->add('file2','file', [
+            ->add('fileNeeds','file', [
                 "label" => "Photo"],
                 array( 'required'=>false))
         ;

@@ -24,14 +24,18 @@ class ActorNeedsType extends AbstractType
             ->add('town', null, [
                 "label" => "Ville"
             ])
-            ->add('activity', ChoiceType::class, array (
-                "label" => "Domaine d'activité",
-                'choices'  => array(
-                    "Choisir" => "Choisir",
-                    "Loisirs" => "Loisirs",
-                    "Artisan" => "Artisan",
-                    "Bénévolat" => "Bénévolat",
-                    "Communication" => "Communication")))
+            ->add('activity', choiceType::class, array(
+                'choices' => array(
+                    'Choisir' => 'Choisir',
+                    'agriculture, maraîchage, circuit court,...' => 'agriculture, maraîchage, circuit court,...',
+                    'agro-alimentaire, transformation,...'=> 'agro-alimentaire, transformation,...',
+                    'art et culture, bio-diversité, éco-conception... '=> 'art et culture, bio-diversité, éco-conception... ',
+                    'éducation, énergie et eau, formation innovante,...'=>'éducation, énergie et eau, formation innovante,...',
+                    'habillement, habitat, gouvernance et participation, gastronomie locale, patrimoine, recyclage,...'=>'habillement, habitat, gouvernance et participation, gastronomie locale, patrimoine, recyclage,...',
+                    'rénovation, savoirs et transmissions, santé, tourisme alternatif, transport alternatif, web numérique, ...'=>'rénovation, savoirs et transmissions, santé, tourisme alternatif, transport alternatif, web numérique, ...'
+                ),
+                'label'=>"Domaine d'activité"
+            ))
             ->add('description', null, [
                 "label" => "Description"
             ])

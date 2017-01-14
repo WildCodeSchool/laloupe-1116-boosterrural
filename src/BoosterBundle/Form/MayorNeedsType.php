@@ -28,9 +28,7 @@ class MayorNeedsType extends AbstractType
             ->add('description', null, array(
                 'label'=>'description du besoin'
             ))
-            //->add('image3', null, array(
-                //'label'=>'ajouter une image'
-            //))
+
             ->add('fileNeeds', 'file', array('required' => false,
                 'label'=>'Photo'
             ));

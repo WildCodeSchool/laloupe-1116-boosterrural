@@ -350,6 +350,10 @@ class Offer
         return $this->imageOffer;
     }
 
+    /**
+     * @var string
+     */
+    private $imageOffer;
+
+
 }
-
-

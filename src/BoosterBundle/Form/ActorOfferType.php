@@ -16,7 +16,7 @@ class ActorOfferType extends AbstractType
     {
         $builder
             ->add('title', null, array(
-                'label'=>'Titre de l\'offre'
+                "label"=>"Titre de l'offre"
             ))
             ->add('cp', null, array(
                 'label'=>'Code postal'
@@ -28,13 +28,13 @@ class ActorOfferType extends AbstractType
                 'choices' => array(
                     'Choisir' => 'Choisir',
                     'agriculture, maraîchage, circuit court,...' => 'agriculture, maraîchage, circuit court,...',
-                    'Agro-alimentaire, transformation,...'=> 'Agro-alimentaire, transformation,...',
-                    'Art et culture, bio-diversité, éco-conception... '=> 'Art et culture, bio-diversité, éco-conception... ',
-                    'Education, énergie et eau, formation innovante,...'=>'Education, énergie et eau, formation innovante,...',
-                    'Habillement, habitat, gouvernance et participation, gastronomie locale, patrimoine, recyclage,...'=>'Habillement, habitat, gouvernance et participation, gastronomie locale, patrimoine, recyclage,...',
-                    'Rénovation, savoirs et transmissions, santé, tourisme alternatif, transport alternatif, web numérique, ...'=>'Rénovation, savoirs et transmissions, santé, tourisme alternatif, transport alternatif, web numérique, ...'
+                    'agro-alimentaire, transformation,...'=> 'agro-alimentaire, transformation,...',
+                    'art et culture, bio-diversité, éco-conception... '=> 'art et culture, bio-diversité, éco-conception... ',
+                    'éducation, énergie et eau, formation innovante,...'=>'éducation, énergie et eau, formation innovante,...',
+                    'habillement, habitat, gouvernance et participation, gastronomie locale, patrimoine, recyclage,...'=>'habillement, habitat, gouvernance et participation, gastronomie locale, patrimoine, recyclage,...',
+                    'rénovation, savoirs et transmissions, santé, tourisme alternatif, transport alternatif, web numérique, ...'=>'rénovation, savoirs et transmissions, santé, tourisme alternatif, transport alternatif, web et numérique, ...'
                 ),
-                'label'=>'Catégorie'
+                "label"=>"Domaine d'activité"
                 ))
             ->add('description', null, array(
                 'label'=>'Description'
@@ -47,9 +47,13 @@ class ActorOfferType extends AbstractType
                     'Appuyer un projet similaire'=> 'Appuyer un projet similaire',
                     'Echanger sur ce projet'=>'Echanger sur ce projet',
                     'Rechercher un associé'=>'Rechercher un associé',
-                    'co-créer'=>'co-créer'
+                    'Co-créer'=>'Co-créer'
                 ),
                 'label'=>'Souhaits'))
+
+            ->add('fileOffer','file', [
+                "label" => "Photo"],
+                array( 'required'=>false))
         ;
     }
 

@@ -97,7 +97,7 @@ class Needs
     /**
      * @var string
      */
-    private $image2;
+    private $imageNeeds;
     /**
      * @var \BoosterBundle\Entity\User
      */
@@ -332,4 +332,6 @@ class Needs
     {
         return $this->users;
     }
+
+
 }

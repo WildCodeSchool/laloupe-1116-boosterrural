@@ -97,7 +97,7 @@ class Needs
     /**
      * @var string
      */
-    private $image2;
+    private $imageNeeds;
     /**
      * @var \BoosterBundle\Entity\User
      */
@@ -332,10 +332,35 @@ class Needs
     {
         return $this->users;
     }
+
+
     /**
      * @var string
      */
-    private $imageNeeds;
+    private $wish;
 
 
+    /**
+     * Set wish
+     *
+     * @param string $wish
+     *
+     * @return Needs
+     */
+    public function setWish($wish)
+    {
+        $this->wish = $wish;
+
+        return $this;
+    }
+
+    /**
+     * Get wish
+     *
+     * @return string
+     */
+    public function getWish()
+    {
+        return $this->wish;
+    }
 }

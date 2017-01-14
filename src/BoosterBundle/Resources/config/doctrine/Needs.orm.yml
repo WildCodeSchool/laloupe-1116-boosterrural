@@ -28,6 +28,10 @@ BoosterBundle\Entity\Needs:
             type: string
             length: 255
             nullable: true
+        wish:
+            type: string
+            length: 255
+            nullable: true
         lat:
             type: integer
             nullable: true
