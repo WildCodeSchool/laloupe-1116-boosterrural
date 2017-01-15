@@ -39,14 +39,10 @@ section {
     background-color: white;
 }
 
-<<<<<<< HEAD
-=======
-
 .center-block1{
     display: initial;
 }
 
->>>>>>> 5d6259fe70bb7f350b1e192b133ca18fb233f814
 .col-xs-4 {
     padding: 0;
 }
@@ -55,13 +51,10 @@ th {
     padding-right: 5%;
 }
 
-<<<<<<< HEAD
 .center-block1{
     display: initial;
 }
 
-=======
->>>>>>> 5d6259fe70bb7f350b1e192b133ca18fb233f814
 /******************************************************/
 /************************ FRONT PAGE ******************/
 /******************************************************/
@@ -144,6 +137,18 @@ span {
         padding: 2% 0%;
         margin: 5% 0%;
     }
+}
+
+.imgHpBas {
+    width: 70%;
+}
+
+.downMarg {
+    margin: 2% 0;
+}
+
+.downMarg2 {
+    margin: 10% 0;
 }
 
 /*******************************************************/
@@ -649,18 +654,12 @@ footer > ul > li {
 label {
     text-transform: uppercase;
     padding: 0;
-<<<<<<< HEAD
-=======
 
->>>>>>> 5d6259fe70bb7f350b1e192b133ca18fb233f814
 }
 
 input {
     margin-bottom: 1%;
-<<<<<<< HEAD
 
-=======
->>>>>>> 5d6259fe70bb7f350b1e192b133ca18fb233f814
 }
 
 textarea {
@@ -725,8 +724,6 @@ textarea {
 }
 
 
-<<<<<<< HEAD
-=======
 /**
 * Profile
 */
@@ -739,7 +736,6 @@ textarea {
 }
 
 
->>>>>>> 5d6259fe70bb7f350b1e192b133ca18fb233f814
 /******************************************************/
 /************************ PAGE SHOW *******************/
 /******************************************************/
@@ -792,7 +788,6 @@ td {
 #lienListe {
     color: black;
 }
-<<<<<<< HEAD
 
 /**
 * Profile
@@ -803,8 +798,4 @@ td {
 }
 
 
-
-
-=======
->>>>>>> 5d6259fe70bb7f350b1e192b133ca18fb233f814
 
