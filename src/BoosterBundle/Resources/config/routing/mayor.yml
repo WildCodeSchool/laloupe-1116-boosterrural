@@ -53,3 +53,8 @@ mayor_listNeed:
     defaults: { _controller: "BoosterBundle:ProfMayor:listNeedsMayor" }
     methods:  [GET, POST]
 
+mayor_list:
+    path:     /list
+    defaults: { _controller: "BoosterBundle:ProfMayor:listMayor" }
+    methods:  [GET, POST]
+

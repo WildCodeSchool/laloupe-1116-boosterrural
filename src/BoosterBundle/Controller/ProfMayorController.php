@@ -261,4 +261,16 @@ class ProfMayorController extends Controller
             'needs' => $needs,
         ));
     }
+
+
+    public function listMayorAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $user = $em->getRepository('BoosterBundle:User')->createQueryBuilder('u');
+        $user = $user->where($user->expr()->in('u.roles', ['a:1:{i:0;s:10:"ROLE_MAYOR";}']))->getQuery()->getResult();
+        return $this->render('BoosterBundle:Mayor:listMayor.html.twig', array(
+            'user' => $user,
+        ));
+    }
 }
