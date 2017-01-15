@@ -334,4 +334,33 @@ class Needs
     }
 
 
+    /**
+     * @var string
+     */
+    private $wish;
+
+
+    /**
+     * Set wish
+     *
+     * @param string $wish
+     *
+     * @return Needs
+     */
+    public function setWish($wish)
+    {
+        $this->wish = $wish;
+
+        return $this;
+    }
+
+    /**
+     * Get wish
+     *
+     * @return string
+     */
+    public function getWish()
+    {
+        return $this->wish;
+    }
 }
