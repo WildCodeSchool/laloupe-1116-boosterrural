@@ -35,7 +35,8 @@ ul {
 }
 
 section {
-    border: 1px solid gray;
+    border: 4px solid gray;
+    box-shadow: 10px 10px 15px gray;
     background-color: white;
 }
 
@@ -72,6 +73,7 @@ th {
     height: 80%;
     width: 100%;
     border: 1px solid gray;
+    border-radius: 1%;
 }
 
 
@@ -325,14 +327,16 @@ li .liNav2{
 #HPmap {
     height: 600px;
     width: 40%;
-    border: 1px solid gray;
+    border: 3px solid gray;
+    border-radius: 1%;
+    box-shadow: 10px 10px 15px gray;
 }
 
 .map_deco {
     position: relative;
     padding-top: 300px;
     padding-bottom: 450px;
-    border: 1px solid gray;
+    border: 4px solid gray;
 }
 
 .imgHP1 {
@@ -383,19 +387,22 @@ li .liNav2{
 .downPage {
     padding: 30px;
     margin-bottom: 10px;
-    border: 1px solid gray;
     font-size: 18px;
 }
+
 .project{
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
 .chipUl{
     margin-left: 3%;
 }
+
 .chip{
     list-style-type: disc;
 }
+
 /************** Media Queries home page no connect ***************/
 
 @media all and (max-width: 1670px)
@@ -654,12 +661,10 @@ footer > ul > li {
 label {
     text-transform: uppercase;
     padding: 0;
-
 }
 
 input {
     margin-bottom: 1%;
-
 }
 
 textarea {
@@ -685,8 +690,6 @@ textarea {
 .titleFormActor{
     margin-bottom: 0;
 }
-
-
 
 .block2{
     margin-top: 20px;
@@ -723,19 +726,6 @@ textarea {
     display: inline-block;
 }
 
-
-/**
-* Profile
-*/
-
-.block2{
-    margin-top: 20px;
-}
-.gyphicon-plus{
-    ;
-}
-
-
 /******************************************************/
 /************************ PAGE SHOW *******************/
 /******************************************************/
@@ -758,10 +748,6 @@ td {
 
 .showLien a:hover {
     text-decoration: none;
-}
-
-#boosterbundle_needs_file3 > .form-control {
-
 }
 
 .imgShow {
