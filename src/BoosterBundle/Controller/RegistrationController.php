@@ -35,6 +35,7 @@ class RegistrationController extends BaseController
         $user = $userManager->createUser();
         $user->setEnabled(true);
         $user->addRole('ROLE_MAYOR');
+
         $event = new GetResponseUserEvent($user, $request);
         $dispatcher->dispatch(FOSUserEvents::REGISTRATION_INITIALIZE, $event);
         if (null !== $event->getResponse()) {
@@ -46,6 +47,20 @@ class RegistrationController extends BaseController
         if ($form->isSubmitted()) {
             if ($form->isValid()) {
                 $event = new FormEvent($form, $request);
+
+                //recupération de l'adresse totale
+                $plainAddress = str_replace(' ', '%20', $user->getAddress()) . '%20' . $user->getCp() . '%20' . $user->getTown();
+
+                $result = $this->geocodeAction($plainAddress);
+                $lat = $result[0];
+                $lgt = $result[1];
+                $user->setLat($lat);
+                $user->setLgt($lgt);
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($user);
+                $em->flush($user);
+
+
                 $dispatcher->dispatch(FOSUserEvents::REGISTRATION_SUCCESS, $event);
                 $userManager->updateUser($user);
                 if (null === $response = $event->getResponse()) {
@@ -65,6 +80,7 @@ class RegistrationController extends BaseController
             'form' => $form->createView(),
         ));
     }
+
     public function citizenRegisterAction(Request $request)
     {
         /** @var $formFactory FactoryInterface */
@@ -87,6 +103,9 @@ class RegistrationController extends BaseController
         if ($form->isSubmitted()) {
             if ($form->isValid()) {
                 $event = new FormEvent($form, $request);
+
+
+
                 $dispatcher->dispatch(FOSUserEvents::REGISTRATION_SUCCESS, $event);
                 $userManager->updateUser($user);
                 if (null === $response = $event->getResponse()) {
@@ -106,6 +125,7 @@ class RegistrationController extends BaseController
             'form' => $form->createView(),
         ));
     }
+
 
     public function actorRegisterAction(Request $request)
     {
@@ -129,6 +149,19 @@ class RegistrationController extends BaseController
         if ($form->isSubmitted()) {
             if ($form->isValid()) {
                 $event = new FormEvent($form, $request);
+
+                //recupération de l'adresse totale
+                $plainAddress = str_replace(' ', '%20', $user->getAddress()) . '%20' . $user->getCp() . '%20' . $user->getTown();
+
+                $result = $this->geocodeAction($plainAddress);
+                $lat = $result[0];
+                $lgt = $result[1];
+                $user->setLat($lat);
+                $user->setLgt($lgt);
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($user);
+                $em->flush($user);
+
                 $dispatcher->dispatch(FOSUserEvents::REGISTRATION_SUCCESS, $event);
                 $userManager->updateUser($user);
                 if (null === $response = $event->getResponse()) {
@@ -154,10 +187,10 @@ class RegistrationController extends BaseController
      * We use this API to recover latitude and longitude.
      *
      * */
-    public function geocode($address, $cp, $town){
+    public function geocodeAction($plainAddress){
         $user = new User();
-        // Récupération de l'adresse totale
-        $plainAddress= str_replace(' ', '%20', $address). '%20' . $cp . '%20' . $town;
+
+
         $url = "https://maps.google.com/maps/api/geocode/json?address=". $plainAddress ."&key=AIzaSyBSFjZGurwwEtOnMOg1mKgJgS3WcP8ucrk";
 // get the json response
         $resp_json = file_get_contents($url);
@@ -166,31 +199,18 @@ class RegistrationController extends BaseController
 // response status will be 'OK', if able to geocode given address
         if ($resp['status'] == 'OK') {
             // get the important data
-            $lati = $resp['results'][0]['geometry']['location']['lat'];
-            $longi = $resp['results'][0]['geometry']['location']['lng'];
+
+            //ici il récupére les données du fichier Json générer plus haut
+            $lat = $resp['results'][0]['geometry']['location']['lat'];
+            $lgt = $resp['results'][0]['geometry']['location']['lng'];
             // verify if data is complete
-            if ($lati && $longi) {
-                $user->setLat($lati);
-                $user->setLgt($longi);
-                $em = $this->getDoctrine()->getManager();
-                $em->persist($user);
-                $em->flush($user);
+// je veux retourner la latidude et la longitude a mon mayorController
+           return array($lat, $lgt);
+
+
             }
         }
-    }
-    public function checkEmailAction()
-    {
-        $email = $this->get('session')->get('fos_user_send_confirmation_email/email');
-        if (empty($email)) {
-            return new RedirectResponse($this->get('router')->generate('fos_user_registration_register'));
-        }
-        $this->get('session')->remove('fos_user_send_confirmation_email/email');
-        $user = $this->get('fos_user.user_manager')->findUserByEmail($email);
-        if (null === $user) {
-            throw new NotFoundHttpException(sprintf('The user with email "%s" does not exist', $email));
-        }
-        return $this->render('BoosterBundle::home_page_no_connect.html.twig', array(
-            'user' => $user,
-        ));
-    }
+
+
+
 }

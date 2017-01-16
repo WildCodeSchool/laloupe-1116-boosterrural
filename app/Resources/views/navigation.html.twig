@@ -24,7 +24,14 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="#">Mon profil</a>
+                                {% if is_granted('ROLE_MAYOR') %}
+                                    <a href="{{ path('mayor_index') }}">Mon profil</a>
+                                {% elseif is_granted('ROLE_CITIZEN') %}
+                                    <a href="{{ path('citizen_index') }}">Mon profil</a>
+                                {% else %}
+                                    <a href="{{ path('actor_index') }}">Mon profil</a>
+                                {% endif %}
+
                             </li>
                             <li>
                                 <a href="{{ path('fos_user_security_logout') }}">
@@ -34,7 +41,6 @@
                         </ul>
                     </a>
                 </li>
-
 
 
                 <li class="liNav2"> <!--modif-->

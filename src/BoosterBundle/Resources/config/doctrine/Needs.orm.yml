@@ -49,7 +49,7 @@ BoosterBundle\Entity\Needs:
             inversedBy: Id
 
     lifecycleCallbacks:
-<<<<<<< HEAD
+
 
       prePersist: [preUpload2, preUpload3]
       preUpdate: [preUpload2, preUpload3]
@@ -57,10 +57,4 @@ BoosterBundle\Entity\Needs:
       postUpdate: [upload2, upload2]
       postRemove: [removeUpload2, removeUpload2]
 
-=======
-      prePersist:  [preUpload2, preUpload3]
-      preUpdate:   [preUpload2, preUpload3]
-      postPersist: [upload2, upload3]
-      postUpdate:  [upload2, upload3]
-      postRemove:  [removeUpload2, removeUpload3]
->>>>>>> listneedA
+
