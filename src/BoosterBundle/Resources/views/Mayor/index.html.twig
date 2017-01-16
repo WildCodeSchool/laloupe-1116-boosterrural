@@ -271,44 +271,49 @@
       {#*************************************MODALS FOR DELETE AN OFFER AND A NEED********************************************#}
 
 
-      <div class="modal fade" id="deleteOffer">
-          <div class="modal-dialog">
-              <div class="modal-content">
-                  <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                      <h4 class="modal-title">SUPPRESSION D'UNE OFFRE</h4>
-                  </div>
-                  <div class="modal-body">
-                      <p>Confirmez-vous la suppression de cette offre ?</p>
-                  </div>
-                  <div class="modal-footer">
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-                      <button type="button" class="btn btn-primary">Oui</button>
-                  </div>
-              </div><!-- /.modal-content -->
-          </div><!-- /.modal-dialog -->
-      </div><!-- /.modal -->
+      {#*************************************MODALS FOR DELETE AN OFFER AND A NEED********************************************#}
 
 
-      <div class="modal fade" id="deleteNeeds">
-          <div class="modal-dialog">
-              <div class="modal-content">
-                  <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                      <h4 class="modal-title">SUPPRESSION D'UN BESOIN</h4>
-                  </div>
-                  <div class="modal-body">
-                      <p>Confirmez-vous la suppression de ce besoin ?</p>
-                  </div>
-                  <div class="modal-footer">
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-                      <button type="button" class="btn btn-primary">Oui</button>
-                  </div>
-              </div><!-- /.modal-content -->
-          </div><!-- /.modal-dialog -->
-      </div><!-- /.modal -->
+<div class="modal fade" id="deleteOffer">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">SUPPRESSION D'UNE OFFRE</h4>
+            </div>
+            <div class="modal-body">
+                <p>Confirmez-vous la suppression de cette offre ?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                {% for offer in offers %}
+                    <a href="{{ path('actor_deleteOffer', {'id': offer.id} ) }}">Supprimer</a>
+                {% endfor %}
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 
+<div class="modal fade" id="deleteNeeds">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">SUPPRESSION D'UN BESOIN</h4>
+            </div>
+            <div class="modal-body">
+                <p>Confirmez-vous la suppression de ce besoin ?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                {% for needs in needs %}
+                    <input type="button" href="{{ path('mayor_deleteNeeds', {'id': needs.id} ) }}" value="Oui" class="btn btn-default">
+                {% endfor %}
+
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
       {#*******************************************JAVASCRIPT FOR THIS PAGE *************************************************#}
 
       <script src="http://maps.google.com/maps/api/js?sensor=false&key=AIzaSyBSFjZGurwwEtOnMOg1mKgJgS3WcP8ucrk" type="text/javascript"></script>

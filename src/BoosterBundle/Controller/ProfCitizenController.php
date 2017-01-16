@@ -8,10 +8,7 @@ use Symfony\Component\HttpFoundation\Request;
 use BoosterBundle\Entity\User;
 use BoosterBundle\Entity\Needs;
 
-/**
- * Offer controller.
- *
- */
+
 class ProfCitizenController extends Controller
 {
 
@@ -77,11 +74,9 @@ class ProfCitizenController extends Controller
      */
     public function showOfferAction(Offer $offer)
     {
-        $deleteForm = $this->createDeleteForm($offer);
-
         return $this->render('BoosterBundle:Citizen:showOffer.html.twig', array(
             'offer' => $offer,
-            'delete_form' => $deleteForm->createView(),
+
         ));
     }
     /**
@@ -90,7 +85,7 @@ class ProfCitizenController extends Controller
      */
     public function editOfferAction(Request $request, Offer $offer)
     {
-        $deleteForm = $this->createDeleteForm($offer);
+
         $editForm = $this->createForm('BoosterBundle\Form\OfferType', $offer);
         $editForm->handleRequest($request);
 
@@ -103,43 +98,11 @@ class ProfCitizenController extends Controller
         return $this->render('BoosterBundle:Citizen:editNeeds.html.twig', array(
             'offer' => $offer,
             'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+
         ));
     }
 
-    /**
-     * Deletes a offer entity.
-     *
-     */
-    public function deleteOfferAction(Request $request, Offer $offer)
-    {
-        $form = $this->createDeleteForm($offer);
-        $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($offer);
-            $em->flush($offer);
-        }
-
-        return $this->redirectToRoute('citizen_index');
-    }
-
-    /**
-     * Creates a form to delete a offer entity.
-     *
-     * @param Offer $offer The offer entity
-     *
-     * @return \Symfony\Component\Form\Form The form
-     */
-    private function createDeleteForm(Offer $offer)
-    {
-        return $this->createFormBuilder()
-            ->setAction($this->generateUrl('citizen_deleteOffer', array('id' => $offer->getId())))
-            ->setMethod('DELETE')
-            ->getForm()
-            ;
-    }
 
     /**
      * Lists all needs entities.
@@ -175,11 +138,11 @@ class ProfCitizenController extends Controller
 
     public function showNeedAction(Needs $need)
     {
-        $deleteForm = $this->createNeedDeleteForm($need);
+
 
         return $this->render('BoosterBundle:Citizen:showNeeds.html.twig', array(
             'need' => $need,
-            'delete_form' => $deleteForm->createView(),
+
         ));
     }
 
@@ -189,11 +152,11 @@ class ProfCitizenController extends Controller
      */
     public function editNeedAction(Request $request, Needs $need)
     {
-        $deleteForm = $this->createNeedDeleteForm($need);
-        $editForm = $this->createForm('BoosterBundle\Form\CitizenNeedsType', $need);
-        $editForm->handleRequest($request);
 
-        if ($editForm->isSubmitted() && $editForm->isValid()) {
+        $form = $this->createForm('BoosterBundle\Form\CitizenNeedsType', $need);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('citizen_editNeeds', array('id' => $need->getId()));
@@ -201,53 +164,35 @@ class ProfCitizenController extends Controller
 
         return $this->render('BoosterBundle:Citizen:editNeeds.html.twig', array(
             'need' => $need,
-            'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+            'form' => $form->createView(),
+
         ));
     }
 
-    /**
-     * Deletes a need entity.
-     *
-     */
-    public function deleteNeedAction(Request $request, Needs $need)
-    {
-        $form = $this->createDeleteForm($need);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($need);
-            $em->flush($need);
-        }
-
-        return $this->redirectToRoute('citizen_index');
-    }
-
-    /**
-     * Creates a form to delete a need entity.
-     *
-     * @param Needs $need The need entity
-     *
-     * @return \Symfony\Component\Form\Form The form
-     */
-    private function createNeedDeleteForm(Needs $need)
-    {
-        return $this->createFormBuilder()
-            ->setAction($this->generateUrl('citizen_deleteNeeds', array('id' => $need->getId())))
-            ->setMethod('DELETE')
-            ->getForm()
-            ;
-    }
-
-    public function listNeedsCitizenAction()
-    {
+    public function listNeedsCitizenAction(){
         $em = $this->getDoctrine()->getManager();
 
         $needs = $em->getRepository('BoosterBundle:Needs')->findAll();
 
-        return $this->render('BoosterBundle:Needs:citizen.index.html.twig', array(
-            'needs' => $needs,
-        ));
+        return $this->render('BoosterBundle:Citizen:index.html.twig');
+    }
+
+    /************************DELETE OFFER OR NEEDS *************************/
+
+    public function deleteOfferAction(Offer $offer){
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($offer);
+        $em->flush($offer);
+
+        return $this->redirectToRoute('citizen_index');
+
+    }
+    public function deleteNeedsAction(Needs $needs){
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($needs);
+        $em->flush($needs);
+
+        return $this->redirectToRoute('citizen_index');
+
     }
 }

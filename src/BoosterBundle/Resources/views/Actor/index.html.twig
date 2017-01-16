@@ -183,7 +183,7 @@
                                               </div>
                                           </a>
                                           <div class="col-xs-1">
-                                              <span class="glyphicon glyphicon-pencil btn-lg"></span >
+                                              <a href="{{ path('actor_editNeeds', {'id': needs.id}) }}') }}"><span class="glyphicon glyphicon-pencil btn-lg"></span ></a>
                                               <a data-toggle="modal" href="#deleteNeeds"><span class="glyphicon glyphicon-remove btn-lg"></span ></a>
                                           </div>
                                       </div>
@@ -267,7 +267,9 @@
       			</div>
       			<div class="modal-footer">
       				<button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-      				<button type="button" class="btn btn-primary">Oui</button>
+                    {% for offer in offers %}
+                        <a href="{{ path('actor_deleteOffer', {'id': offer.id} ) }}">Supprimer</a>
+                    {% endfor %}
       			</div>
       		</div><!-- /.modal-content -->
       	</div><!-- /.modal-dialog -->
@@ -286,8 +288,10 @@
                   </div>
                   <div class="modal-footer">
                       <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-                      <button type="button" class="btn btn-primary">Oui</button>
-                  </div>
+                      {% for needs in needs %}
+                          <a href="{{ path('actor_deleteNeeds', {'id': needs.id} ) }}">Supprimer</a>
+                      {% endfor %}
+
               </div><!-- /.modal-content -->
           </div><!-- /.modal-dialog -->
       </div><!-- /.modal -->

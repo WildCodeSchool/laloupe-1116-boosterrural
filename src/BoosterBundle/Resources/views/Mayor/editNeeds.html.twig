@@ -10,7 +10,7 @@
 
                     {{ form_start(form) }}
                     {{ form_widget(form) }}
-                    <a href="{{ path('needs_edit', { 'id': need.id }) }}"><input type="submit" value="Modifier" class="center-block showLien2"></a>
+                    <a href="{{ path('mayor_edit', { 'id': need.id }) }}"><input type="submit" value="Modifier" class="center-block showLien2"></a>
                     {{ form_end(form) }}
 
                     <ul>
@@ -20,7 +20,7 @@
                             {{ form_end(delete_form) }}
                         </li>
                         <li>
-                            <a href="{{ path('needs_index') }}" class="btn center-block">Retour à la liste</a>
+                            <a href="{{ path('mayor_index') }}" class="btn center-block">Retour à la liste</a>
                         </li>
                     </ul>
                 </div>

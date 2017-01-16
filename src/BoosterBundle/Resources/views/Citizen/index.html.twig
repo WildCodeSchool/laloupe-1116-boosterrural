@@ -85,8 +85,12 @@
                                       <p>{{ offer.description }}</p>
                                   </div>
                                   <div class="col-xs-1">
-                                      <a href="#"><span class="glyphicon glyphicon-pencil btn-lg"></span ></a>
-                                      <a data-toggle="modal" href="#deleteOffer"><span class="glyphicon glyphicon-remove btn-lg"></span ></a>
+                                      <a href="{{ path('actor_editOffer', {'id': offer.id}) }}') }}">
+                                          <span class="glyphicon glyphicon-pencil btn-lg"></span >
+                                      </a>
+                                      <a data-toggle="modal" href="#deleteNeeds">
+                                          <span class="glyphicon glyphicon-remove btn-lg"></span >
+                                      </a>
                                   </div>
                               </div>
                           </li>
@@ -177,8 +181,12 @@
                                               </div>
                                           </a>
                                           <div class="col-xs-1">
-                                              <span class="glyphicon glyphicon-pencil btn-lg"></span >
-                                              <a data-toggle="modal" href="#deleteNeeds"><span class="glyphicon glyphicon-remove btn-lg"></span ></a>
+                                              <a href="{{ path('citizen_editNeeds', {'id': needs.id}) }}') }}">
+                                                  <span class="glyphicon glyphicon-pencil btn-lg"></span >
+                                              </a>
+                                              <a data-toggle="modal" href="#deleteNeeds">
+                                                  <span class="glyphicon glyphicon-remove btn-lg"></span >
+                                              </a>
                                           </div>
                                       </div>
                                   </li>
@@ -249,43 +257,49 @@
       {#*************************************MODALS FOR DELETE AN OFFER AND A NEED********************************************#}
 
 
-      <div class="modal fade" id="deleteOffer">
-          <div class="modal-dialog">
-              <div class="modal-content">
-                  <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                      <h4 class="modal-title">SUPPRESSION D'UNE OFFRE</h4>
-                  </div>
-                  <div class="modal-body">
-                      <p>Confirmez-vous la suppression de cette offre ?</p>
-                  </div>
-                  <div class="modal-footer">
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-                      <button type="button" class="btn btn-primary">Oui</button>
-                  </div>
-              </div><!-- /.modal-content -->
-          </div><!-- /.modal-dialog -->
-      </div><!-- /.modal -->
+      {#*************************************MODALS FOR DELETE AN OFFER AND A NEED********************************************#}
 
 
-      <div class="modal fade" id="deleteNeeds">
-          <div class="modal-dialog">
-              <div class="modal-content">
-                  <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                      <h4 class="modal-title">SUPPRESSION D'UN BESOIN</h4>
-                  </div>
-                  <div class="modal-body">
-                      <p>Confirmez-vous la suppression de ce besoin ?</p>
-                  </div>
-                  <div class="modal-footer">
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-                      <button type="button" class="btn btn-primary">Oui</button>
-                  </div>
-              </div><!-- /.modal-content -->
-          </div><!-- /.modal-dialog -->
-      </div><!-- /.modal -->
+<div class="modal fade" id="deleteOffer">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">SUPPRESSION D'UNE OFFRE</h4>
+            </div>
+            <div class="modal-body">
+                <p>Confirmez-vous la suppression de cette offre ?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                {% for offer in offers %}
+                    <a href="{{ path('actor_deleteOffer', {'id': offer.id} ) }}">Supprimer</a>
+                {% endfor %}
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
+
+<div class="modal fade" id="deleteNeeds">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">SUPPRESSION D'UN BESOIN</h4>
+            </div>
+            <div class="modal-body">
+                <p>Confirmez-vous la suppression de ce besoin ?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                {% for needs in needs %}
+                    <a href="{{ path('citizen_deleteNeeds', {'id': needs.id} ) }}">Supprimer</a>
+                {% endfor %}
+
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 
       {#*******************************************JAVASCRIPT FOR THIS PAGE *************************************************#}
 

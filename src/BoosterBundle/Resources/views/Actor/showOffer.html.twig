@@ -51,10 +51,10 @@
         <li>
             <a href="{{ path('actor_editOffer', { 'id': offer.id }) }}">Edit</a>
         </li>
-        <li>
+        {#<li>
             {{ form_start(delete_form) }}
                 <input type="submit" value="Delete">
             {{ form_end(delete_form) }}
-        </li>
+        </li>#}
     </ul>
 {% endblock %}

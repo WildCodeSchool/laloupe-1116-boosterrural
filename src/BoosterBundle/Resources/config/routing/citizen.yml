@@ -14,14 +14,14 @@ citizen_newOffer:
     methods:  [GET, POST]
 
 citizen_editOffer:
-    path:     /offer/{id}/edit
+    path:     /offer/{id}
     defaults: { _controller: "BoosterBundle:ProfCitizen:editOffer" }
     methods:  [GET, POST]
 
 citizen_deleteOffer:
     path:     /offer/{id}/delete
     defaults: { _controller: "BoosterBundle:ProfCitizen:deleteOffer" }
-    methods:  DELETE
+    methods:  [GET, POST]
 
 
 citizen_showNeeds:
@@ -35,12 +35,12 @@ citizen_newNeeds:
     methods:  [GET, POST]
 
 citizen_editNeeds:
-    path:     /needs/{id}/edit
+    path:     /needs/{id}
     defaults: { _controller: "BoosterBundle:ProfCitizen:editNeed" }
     methods:  [GET, POST]
 
 citizen_deleteNeeds:
     path:     /needs/{id}/delete
-    defaults: { _controller: "BoosterBundle:ProfCitizen:deleteNeed" }
-    methods:  DELETE
+    defaults: { _controller: "BoosterBundle:ProfCitizen:deleteNeeds" }
+    methods:  [GET, POST]
 
