@@ -35,10 +35,12 @@ BoosterBundle\Entity\Offer:
         lgt:
             type: integer
             nullable: true
+
         imageOffer:
             type: string
             length: 255
             nullable: true
+
     manyToOne:
         users:
             targetEntity: BoosterBundle\Entity\User
@@ -51,3 +53,4 @@ BoosterBundle\Entity\Offer:
       postPersist: [uploadOffer]
       postUpdate: [uploadOffer]
       postRemove: [removeUploadOffer]
+

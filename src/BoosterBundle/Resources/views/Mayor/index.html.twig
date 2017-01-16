@@ -9,14 +9,14 @@
                       <img src="{{ asset('bundles/booster/img/ville.jpg') }}" alt="photo_logo" class="center-block img-responsive "/>
                   </div>
                   <div class="col-md-6 col-xs-12">
-                      <h1>La Loupe</h1>
+                      <li><a class="pencil col-xs-offset-11 col-xs-1" data-toggle="modal" href="#headmod"><span class="glyphicon glyphicon-pencil"></span></a></li>
+                      <h1>{{ user.town }}</h1>
                       <div class="row">
                           <div class="col-sm-12 col-xs-12">
                               <div class="row">
                                   <div class="col-xs-6">
                                       <div class="row">
                                           <ul class="col-xs-12">
-
                                               <li><b>lieu:</b> {{ user.cp }} {{ user.lastname }}</li>
                                               <li><b>Nbre d'habitants :</b> {{ user.resident }} </li>
                                               <li>{{ user.website }}</li>
@@ -57,7 +57,6 @@
               </div>
           </section>
       </div>
-
       <div class="row">
           <div class="col-sm-offset-1 col-sm-10">
               <div class="row flexMap">
@@ -84,35 +83,34 @@
           </div>
       </div>
 
-
-
-
       <div class="row">
           <div class="col-sm-offset-1 col-sm-10 block1">
               <div class="row">
-
-                  <section class="col-sm-6 col-xs-12 backWhite margeMobile secPad2">
+                  <section class="col-sm-6 col-xs-12 backWhite margeMobile secPad2 padShow">
                       <h3 class="title">Mes offres</h3>
                       <h4 class="underTitle">Ce que je propose...</h4>
                       {% if offers == NULL %}
-                      <p>Absence de d'offres</p>
+                      <p>Absence d'Offres</p>
                       {% else %}
                       {% for offer in offers %}
                       <ul>
                           <li>
                               <div class="row">
-                                  <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="no photo" class=" col-xs-2">
-                                  <div class="col-xs-8">
-                                      <span>{{ offer.title }}</span>
-                                      <p>{{ offer.description }}</p>
-                                  </div>
+                                  <a href="{{ path('mayor_showOffer',{'id' : offer.id}) }}" id="lienListe">
+                                      <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="no photo" class=" col-xs-2">
+                                      <div class="col-xs-8">
+                                          <span>{{ offer.title }}</span>
+                                          <p>{{ offer.description }}</p>
+                                      </div>
+                                  </a>
                                   <div class="col-xs-1">
-                                      <a href="#"><span class="glyphicon glyphicon-pencil btn-lg"></span ></a>
-                                      <span class="glyphicon glyphicon-remove btn-lg"></span >
+                                      <a href="{{ path('mayor_editOffer', { 'id': offer.id }) }}"><span class="glyphicon glyphicon-pencil btn-lg"></span ></a>
+                                      <a href="{{ path('mayor_deleteOffer',{'id' : offer.id}) }}"><span class="glyphicon glyphicon-remove btn-lg"></span ></a>
                                   </div>
                               </div>
                           </li>
                           <hr>
+
                           {% endfor %}
                           {% endif %}
 
@@ -122,9 +120,7 @@
                       </ul>
                   </section>
 
-
-
-                  <section class="col-sm-5 col-xs-12 backWhite secPad3">
+                  <section class="col-sm-5 col-xs-12 backWhite secPad3 padShow">
                       <h3 class="title">Mes matchings</h3>
                       <h4 class="underTitle">Qui puis-je aider ?</h4>
                       <ul>
@@ -135,7 +131,6 @@
                                       <span>Lorem ipsum dolor sit amet</span>
                                       <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
                                   </div>
-
                               </div>
                           </li>
                           <hr>
@@ -146,7 +141,6 @@
                                       <span>Lorem ipsum dolor sit amet</span>
                                       <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
                                   </div>
-
                               </div>
                           </li>
                           <hr>
@@ -157,7 +151,6 @@
                                       <span>Lorem ipsum dolor sit amet</span>
                                       <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
                                   </div>
-
                               </div>
                           </li>
                           <hr>
@@ -168,7 +161,6 @@
                                       <span>Lorem ipsum dolor sit amet</span>
                                       <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
                                   </div>
-
                               </div>
                           </li>
                       </ul>
@@ -176,49 +168,47 @@
               </div>
           </div>
       </div>
+
       <div class="row">
           <div class="col-sm-offset-1 col-sm-10 block2">
               <div class="row">
-                  <section class="col-sm-6 col-xs-12 backWhite margeMobile secPad2">
+                  <section class="col-sm-6 col-xs-12 backWhite margeMobile secPad2 padShow">
                       <h3 class="title">Mes besoins</h3>
                       <h4 class="underTitle">Ce dont j'ai besoin...</h4>
+                      {% if needs == NULL %}
+                      <p>Absence de Besoins</p>
+                      {% else %}
+                      {% for needs in needs %}
                       <ul>
-                          {% if needs == NULL %}
-                              <p>Absence de besoins</p>
-                          {% else %}
-                              {% for needs in needs %}
-
-                                  <li>
-
-                                      <div class="row">
-
-                                          <a href="{{ path('actor_showNeeds',{'id' : needs.id}) }}">
-                                              <img src="{{ app.request.basepath }}/uploads/{{ needs.imageNeeds }}" alt="no photo" class=" col-xs-2">
-                                              <div class="col-xs-8">
-                                                  <span>{{ needs.title }}</span>
-                                                  <p>{{ needs.description }}</p>
-                                              </div>
-                                          </a>
-                                          <div class="col-xs-1">
-                                              <span class="glyphicon glyphicon-pencil btn-lg"></span >
-                                              <span class="glyphicon glyphicon-remove btn-lg"></span >
-                                          </div>
+                          <li>
+                              <div class="row">
+                                  <a href="{{ path('mayor_showNeeds',{'id' : needs.id}) }}" id="lienListe">
+                                      <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="no photo" class=" col-xs-2">
+                                      <div class="col-xs-8">
+                                          <span>{{ needs.title }}</span>
+                                          <p>{{ needs.description }}</p>
                                       </div>
-                                  </li>
+                                  </a>
+                                  <div class="col-xs-1">
+                                      <a href="{{ path('mayor_editNeeds', { 'id': needs.id }) }}"><span class="glyphicon glyphicon-pencil btn-lg"></span ></a>
+                                      <a href="{{ path('mayor_deleteOffer',{'id' : needs.id}) }}"><span class="glyphicon glyphicon-remove btn-lg"></span ></a>
+                                  </div>
+                              </div>
+                          </li>
+                          <hr>
 
-
-                              {% endfor %}
-                              <hr>
+                          {% endfor %}
                           {% endif %}
+
                           <div class="row">
                               <a href="{{ path('mayor_newNeeds') }}" class="col-xs-offset-11"> <span class="glyphicon glyphicon-plus btn-lg"></span ></a>
                           </div>
                       </ul>
                   </section>
 
-                  <section class="col-sm-5 col-xs-12 backWhite secPad3">
-                      <h3 class="title">mes matchings</h3>
-                      <h4 class="underTitle">Qui peut m'maider ?</h4>
+                  <section class="col-sm-5 col-xs-12 backWhite secPad3 padShow">
+                      <h3 class="title">Mes matchings</h3>
+                      <h4 class="underTitle">Qui peut m'aider ?</h4>
                       <ul>
                           <li>
                               <div class="row">
@@ -227,7 +217,6 @@
                                       <span>Lorem ipsum dolor sit amet</span>
                                       <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
                                   </div>
-
                               </div>
                           </li>
                           <hr>
@@ -238,7 +227,6 @@
                                       <span>Lorem ipsum dolor sit amet</span>
                                       <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
                                   </div>
-
                               </div>
                           </li>
                           <hr>
@@ -249,7 +237,6 @@
                                       <span>Lorem ipsum dolor sit amet</span>
                                       <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
                                   </div>
-
                               </div>
                           </li>
                           <hr>
@@ -260,7 +247,6 @@
                                       <span>Lorem ipsum dolor sit amet</span>
                                       <p>Curabitur et placerat odio, sed egestas nisi. Etiam non ullamcorper neque, a dapibus enim.</p>
                                   </div>
-
                               </div>
                           </li>
                       </ul>
@@ -268,13 +254,6 @@
               </div>
           </div>
       </div>
-
-
-
-
-
-
-
 
 <script src="http://maps.google.com/maps/api/js?sensor=false&key=AIzaSyBSFjZGurwwEtOnMOg1mKgJgS3WcP8ucrk" type="text/javascript"></script>
 
@@ -313,12 +292,3 @@
 </script>
 
     {% endblock %}
-
-
-
-
-
-
-
-
-

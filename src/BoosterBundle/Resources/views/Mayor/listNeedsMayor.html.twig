@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Liste des Besoins</h1>
+    <h1>Liste des Besoins pour les Villages</h1>
     {% for need in needs %}
         <a href="{{ path('mayor_showNeeds', { 'id': need.id }) }}" id="lienListe">
             <div class="row">
@@ -34,24 +34,5 @@
                 </section>
             </div>
         </a>
-        <div>
-            <ul>
-                {#<li>#}
-                    {#<a href="{{ path('needs_show', { 'id': need.id }) }}" class="btn Button center-block">Voir</a>#}
-                {#</li>#}
-                <li>
-                    <a href="{{ path('mayor_editNeeds', { 'id': need.id }) }}" class="btn Button center-block">Modifier</a>
-                </li>
-            </ul>
-        </div>
     {% endfor %}
-    <div class="row">
-        <div class="col-sm-offset-1 col-sm-10 col-xs-12">
-            <ul>
-                <li>
-                    <a href="{{ path('mayor_newNeeds') }}" class="btn Button center-block">Créer un nouveau besoin</a>
-                </li>
-            </ul>
-        </div>
-    </div>
 {% endblock %}

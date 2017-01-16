@@ -23,6 +23,10 @@ citizen_deleteOffer:
     defaults: { _controller: "BoosterBundle:ProfCitizen:deleteOffer" }
     methods:  DELETE
 
+citizen_listOffer:
+    path:     /offer/list
+    defaults: { _controller: "BoosterBundle:ProfCitizen:listOfferCitizen" }
+    methods:  [GET, POST]
 
 citizen_showNeeds:
     path:     /needs/{id}/show

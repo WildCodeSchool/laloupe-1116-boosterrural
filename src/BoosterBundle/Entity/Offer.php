@@ -16,12 +16,12 @@ class Offer
 
     protected function getUploadRootDir()
     {
-        return __DIR__ . '/../../../web/' . $this->getUploadDir();
+        return __DIR__.'/../../../web/'.$this->getUploadDir();
     }
 
     public function getWebPath()
     {
-        return null === $this->image ? null : $this->getUploadDir() . '/' . $this->image;
+        return null === $this->image ? null : $this->getUploadDir().'/'.$this->image;
     }
 
     public function getAbsolutePath()
@@ -44,9 +44,11 @@ class Offer
         if (null === $this->fileOffer) {
             return;
         }
+
         // if there is an error when moving the file, an exception will
         // be automatically thrown by move(). This will properly prevent
         // the entity from being persisted to the database on error
+
         $this->fileOffer->move($this->getUploadRootDir(), $this->imageOffer);
         unset($this->fileOffer);
     }
@@ -58,8 +60,8 @@ class Offer
         }
     }
 
-
     // code généré
+
     /**
      * @var int
      */
@@ -95,6 +97,20 @@ class Offer
      */
     private $lgt;
 
+    /**
+     * @var \BoosterBundle\Entity\User
+     */
+    private $users;
+
+    /**
+     * @var string
+     */
+    private $image;
+
+    /**
+     * @var string
+     */
+    private $imageOffer;
 
     /**
      * Get id
@@ -299,11 +315,52 @@ class Offer
     {
         return $this->wish;
     }
-    /**
-     * @var \BoosterBundle\Entity\User
-     */
-    private $users;
 
+    /**
+     * Set image
+     *
+     * @param string $image
+     * @return Offer
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * Set imageOffer
+     *
+     * @param string $imageOffer
+     * @return Offer
+     */
+    public function setImageOffer($imageOffer)
+    {
+        $this->imageOffer = $imageOffer;
+
+        return $this;
+    }
+
+    /**
+     * Get imageOffer
+     *
+     * @return string
+     */
+    public function getImageOffer()
+    {
+        return $this->imageOffer;
+    }
 
     /**
      * Set users
@@ -327,33 +384,4 @@ class Offer
     {
         return $this->users;
     }
-
-    /**
-     * Set imageOffer
-     *
-     * @param string $imageOffer
-     * @return Offer
-     */
-    public function setImageOffer($imageOffer)
-    {
-        $this->ImageOffer = $imageOffer;
-        return $this;
-    }
-
-    /**
-     * Get imageOffer
-     *
-     * @return string
-     */
-    public function getImageOffer()
-    {
-        return $this->imageOffer;
-    }
-
-    /**
-     * @var string
-     */
-    private $imageOffer;
-
-
 }

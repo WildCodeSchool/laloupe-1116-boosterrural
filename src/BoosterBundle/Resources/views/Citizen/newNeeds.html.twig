@@ -1,5 +1,4 @@
 {% extends 'base.html.twig' %}
-
 {% form_theme form ":FormTemplate:bootstrap.html.twig" %}
 
 {% block body %}
@@ -8,12 +7,13 @@
         <div class="col-sm-offset-2 col-sm-8 col-xs-12">
             <div class="row">
                 <div class="col-sm-offset-3 col-sm-6">
-                    <h1>Création du besoin</h1>
+                    <h1>création du besoin</h1>
 
                     {{ form_start(form) }}
                     {{ form_widget(form) }}
 
                     <input type="submit" value="Créer un besoin" class="btn center-block Button"/>
+
                     {{ form_end(form) }}
 
                     <ul>
@@ -21,7 +21,6 @@
                             <a href="{{ path('citizen_index') }}" class="btn center-block">Retour au profil</a>
                         </li>
                     </ul>
-
                 </div>
             </div>
         </div>

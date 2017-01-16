@@ -19,6 +19,7 @@ class Needs
     public function getWebPath()
     {
         return null === $this->image ? null : $this->getUploadDir() . '/' . $this->image;
+
     }
 
     public function getAbsolutePath()
@@ -37,27 +38,31 @@ class Needs
     }
 
     public function uploadNeeds()
+
     {
         if (null === $this->fileNeeds) {
             return;
         }
+
         // if there is an error when moving the file, an exception will
         // be automatically thrown by move(). This will properly prevent
         // the entity from being persisted to the database on error
+
         $this->fileNeeds->move($this->getUploadRootDir(), $this->imageNeeds);
         unset($this->fileNeeds);
     }
 
     public function removeUploadNeeds()
     {
-        if ($file = $this->getAbsolutePath()) {
-            unlink($file);
+        if ($file3 = $this->getAbsolutePath()) {
+            unlink($file3);
         }
     }
 
     /**
      * Generate code
      **/
+
     /**
      * @var integer
      */
@@ -99,6 +104,12 @@ class Needs
      */
     private $imageNeeds;
     /**
+     * @var string
+     */
+    private $wish;
+
+
+    /**
      * @var \BoosterBundle\Entity\User
      */
     private $users;
@@ -117,6 +128,7 @@ class Needs
      * Set title
      *
      * @param string $title
+     *
      * @return Needs
      */
     public function setTitle($title)
@@ -139,6 +151,7 @@ class Needs
      * Set cp
      *
      * @param string $cp
+     *
      * @return Needs
      */
     public function setCp($cp)
@@ -161,6 +174,7 @@ class Needs
      * Set town
      *
      * @param string $town
+     *
      * @return Needs
      */
     public function setTown($town)
@@ -183,6 +197,7 @@ class Needs
      * Set description
      *
      * @param string $description
+     *
      * @return Needs
      */
     public function setDescription($description)
@@ -205,6 +220,7 @@ class Needs
      * Set activity
      *
      * @param string $activity
+     *
      * @return Needs
      */
     public function setActivity($activity)
@@ -227,6 +243,7 @@ class Needs
      * Set availability
      *
      * @param string $availability
+     *
      * @return Needs
      */
     public function setAvailability($availability)
@@ -249,6 +266,7 @@ class Needs
      * Set lat
      *
      * @param integer $lat
+     *
      * @return Needs
      */
     public function setLat($lat)
@@ -271,6 +289,7 @@ class Needs
      * Set lgt
      *
      * @param integer $lgt
+     *
      * @return Needs
      */
     public function setLgt($lgt)
@@ -312,35 +331,6 @@ class Needs
     }
 
     /**
-     * Set users
-     *
-     * @param \BoosterBundle\Entity\User $users
-     * @return Needs
-     */
-    public function setUsers(\BoosterBundle\Entity\User $users = null)
-    {
-        $this->users = $users;
-        return $this;
-    }
-
-    /**
-     * Get users
-     *
-     * @return \BoosterBundle\Entity\User
-     */
-    public function getUsers()
-    {
-        return $this->users;
-    }
-
-
-    /**
-     * @var string
-     */
-    private $wish;
-
-
-    /**
      * Set wish
      *
      * @param string $wish
@@ -362,5 +352,29 @@ class Needs
     public function getWish()
     {
         return $this->wish;
+    }
+
+    /**
+     * Set users
+     *
+     * @param \BoosterBundle\Entity\User $users
+     *
+     * @return Needs
+     */
+    public function setUsers(\BoosterBundle\Entity\User $users = null)
+    {
+        $this->users = $users;
+
+        return $this;
+    }
+
+    /**
+     * Get users
+     *
+     * @return \BoosterBundle\Entity\User
+     */
+    public function getUsers()
+    {
+        return $this->users;
     }
 }

@@ -38,6 +38,7 @@ BoosterBundle\Entity\Needs:
         lgt:
             type: integer
             nullable: true
+
         imageNeeds:
             type: string
             length: 255

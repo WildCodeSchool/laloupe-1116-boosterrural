@@ -1,5 +1,3 @@
-
-
 {%- block form_label -%}
     {% if label is not same as(false) -%}
         {% if not compound -%}
@@ -38,6 +36,7 @@
     <textarea {{ block('widget_attributes') }} class="form-control">{{ value }}</textarea>
 {%- endblock textarea_widget -%}
 
+
 {%- block choice_widget_collapsed -%}
     {%- if required and placeholder is none and not placeholder_in_choices and not multiple and (attr.size is not defined or attr.size <= 1) -%}
         {% set required = false %}
@@ -57,4 +56,3 @@
         {{- block('choice_widget_options') -}}
     </select>
 {%- endblock choice_widget_collapsed -%}
-

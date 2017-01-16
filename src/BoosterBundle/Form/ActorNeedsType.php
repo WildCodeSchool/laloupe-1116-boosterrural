@@ -1,12 +1,9 @@
 <?php
-
 namespace BoosterBundle\Form;
-
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-
 class ActorNeedsType extends AbstractType
 {
     /**
@@ -14,7 +11,6 @@ class ActorNeedsType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-
         $builder->add('title', null, [
             "label" => "Titre"
         ])
@@ -39,12 +35,11 @@ class ActorNeedsType extends AbstractType
             ->add('description', null, [
                 "label" => "Description"
             ])
+
             ->add('fileNeeds','file', [
                 "label" => "Photo"],
-                array( 'required'=>false))
-        ;
+                array( 'required'=>false));
     }
-
 
     /**
      * {@inheritdoc}
@@ -63,6 +58,4 @@ class ActorNeedsType extends AbstractType
     {
         return 'boosterbundle_needs';
     }
-
-
 }

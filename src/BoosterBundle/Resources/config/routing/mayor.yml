@@ -18,11 +18,15 @@ mayor_editOffer:
     defaults: { _controller: "BoosterBundle:ProfMayor:editOffer" }
     methods:  [GET, POST]
 
+mayor_listOffer:
+    path:     /offer/list
+    defaults: { _controller: "BoosterBundle:ProfMayor:listOfferMayor" }
+    methods:  [GET, POST]
+
 mayor_deleteOffer:
     path:     /offer/{id}/delete
     defaults: { _controller: "BoosterBundle:ProfMayor:deleteOffer" }
     methods:  DELETE
-
 
 mayor_showNeeds:
     path:     /needs/{id}/show
@@ -47,5 +51,10 @@ mayor_deleteNeeds:
 mayor_listNeed:
     path:     /needs/list
     defaults: { _controller: "BoosterBundle:ProfMayor:listNeedsMayor" }
+    methods:  [GET, POST]
+
+mayor_list:
+    path:     /list
+    defaults: { _controller: "BoosterBundle:ProfMayor:listMayor" }
     methods:  [GET, POST]
 

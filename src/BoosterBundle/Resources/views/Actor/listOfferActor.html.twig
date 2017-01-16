@@ -1,34 +1,38 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<h1>Liste des Offres</h1>
-{% for offer in offers %}
-<a href="{{ path('actor_showOffer', { 'id': offer.id }) }}" id="lienListe">
-    <div class="row">
-        <section class="col-sm-offset-1 col-sm-10 col-xs-12 backWhite sec1 padSHOW">
+    <h1>Liste des Offres pour les Acteurs Ruraux</h1>
+    {% for offer in offers %}
+        <a href="{{ path('actor_showOffer', { 'id': offer.id }) }}" id="lienListe">
             <div class="row">
-                <div class="col-md-6 col-xs-12">
-                    <img src="{{ app.request.basepath }}/uploads/{{ offer.imageOffer }}" alt="photo_logo" class="center-block img-responsive imgSHOW"/>
-                </div>
-                <div class="col-md-6 col-xs-12">
-                    <h1>{{ offer.title }}</h1>
-                    <ul>
-                        <div class="row">
-                            <li class="col-md-6 col-xs-12"><span>Ville :</span>{{ offer.town }}</li>
-                            <li class="col-md-6 col-xs-12"><span>Code Postal :</span>{{ offer.cp }}</li>
+                <section class="col-sm-offset-1 col-sm-10 col-xs-12 backWhite sec1 listIndex">
+                    <div class="row">
+                        <div class="col-md-6 col-xs-12">
+                            <img src="{{ app.request.basepath }}/uploads/{{ offer.imageOffer }}" alt="photo_logo" class="center-block img-responsive imgList"/>
                         </div>
-                        <div class="row">
-                            <li class="col-md-6 col-xs-12"><span>Domaine d'activité :</span>{{ offer.activity }}</li>
-                            <li class="col-md-6 col-xs-12"><span>Souhait :</span>{{ offer.wish }}</li>
+                        <div class="col-md-6 col-xs-12">
+                            <h2>{{ offer.title }}</h2>
+                            <div class="row">
+                                <div class="col-sm-6 col-xs-12">
+                                    <ul>
+                                        <li><span>Nom de la Commune :</span> {{ offer.town }}</li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-6 col-xs-12">
+                                    <ul>
+                                        <li><span>Code Postal :</span> {{ offer.cp }}</li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-12 col-xs-12">
+                                    <ul>
+                                        <li><span>Description de l'Offre :</span><p> {{ offer.description[:300]}} ...</p></li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                        <li><span>Description :</span>{{ offer.description }}</li>
-                    </ul>
-                </div>
+                    </div>
+                </section>
             </div>
-        </section>
-    </div>
-</a>
-
-{% endfor %}
-
+        </a>
+    {% endfor %}
 {% endblock %}

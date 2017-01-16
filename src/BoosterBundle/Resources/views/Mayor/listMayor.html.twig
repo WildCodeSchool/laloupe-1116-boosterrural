@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Liste des Villages</h1>
+    {% for user in user %}
+        <a href="#" id="lienListe">
+            <div class="row">
+                <section class="col-sm-offset-1 col-sm-10 col-xs-12 backWhite sec1 listIndex">
+                    <div class="row">
+                        <div class="col-md-6 col-xs-12">
+                            <img src="{{ asset('bundles/booster/img/acteur_logo.jpg') }}" alt="photo_logo" class="center-block img-responsive imgList"/>
+                        </div>
+                        <div class="col-md-6 col-xs-12">
+                            <h2>{{ user.town }}</h2>
+                            <div class="row">
+                                <div class="col-sm-6 col-xs-12">
+                                    <ul>
+                                        <li><span>Adresse de la Mairie :</span> {{ user.address }}</li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-6 col-xs-12">
+                                    <ul>
+                                        <li><span>Code Postal :</span> {{ user.cp }}</li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-6 col-xs-12">
+                                    <ul>
+                                        <li><span>Téléphone de la Mairie :</span><p> 01 45 65 50 25</p></li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-6 col-xs-12">
+                                    <ul>
+                                        <li><span>Mail de la Mairie :</span><p> mairie@gmail.com</p></li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-6 col-xs-12">
+                                    <ul>
+                                        <li><span>Site Web de la Mairie :</span><p> www.mairie.fr</p></li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-6 col-xs-12">
+                                    <ul>
+                                        <li><span>Nom du Maire :</span><p> Julien MARTIN</p></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </a>
+    {% endfor %}
+{% endblock %}

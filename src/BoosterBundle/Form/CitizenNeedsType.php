@@ -14,7 +14,6 @@ class CitizenNeedsType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-
         $builder->add('title', null, [
             "label" => "Titre"
         ])
@@ -52,10 +51,8 @@ class CitizenNeedsType extends AbstractType
             ])
             ->add('fileNeeds','file', [
                 "label" => "Photo"],
-                array( 'required'=>false))
-        ;
+                array( 'required'=>false));
     }
-
 
     /**
      * {@inheritdoc}
@@ -74,6 +71,4 @@ class CitizenNeedsType extends AbstractType
     {
         return 'boosterbundle_needs';
     }
-
-
 }

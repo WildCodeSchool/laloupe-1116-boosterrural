@@ -1,8 +1,6 @@
 {% extends 'base.html.twig' %}
 
-
     {% block body %}
-
 
             <div class="row">
                 <section class="col-sm-offset-1 col-sm-10 col-xs-12 backWhite sec1">
@@ -90,7 +88,6 @@
         <div class="row">
             <div class="col-sm-offset-1 col-sm-10 block1">
                 <div class="row">
-
                     <section class="col-sm-6 col-xs-12 backWhite margeMobile secPad2">
                         <h3 class="title">Mes offres</h3>
                         <h4 class="underTitle">Ce que je propose...</h4>
@@ -108,7 +105,6 @@
                                     </div>
                                 </div>
                             </li>
-
                             {% endfor %}
                             <hr>
                             {% endif %}
@@ -128,9 +124,7 @@
                                 <p>Absence de besoins</p>
                             {% else %}
                                 {% for needs in needs %}
-
                                     <li>
-
                                         <div class="row">
                                             <a href="{{ path('actor_showNeeds',{'id' : needs.id}) }}">
                                                 <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="no photo" class=" col-xs-2">
@@ -141,8 +135,6 @@
                                             </a>
                                         </div>
                                     </li>
-
-
                                 {% endfor %}
                                 <hr>
                             {% endif %}
@@ -186,6 +178,4 @@
                 }
                 {% endfor %}
             </script>
-
         {% endblock %}
-

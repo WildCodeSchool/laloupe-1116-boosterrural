@@ -4,7 +4,7 @@
         <div class="navbar-header">
             <!-- logo-->
             <div class="navbar-brand">
-                <a href="#"><img id="logo" src="{{ asset('bundles/booster/img/logo-ss-fond.png') }}" alt="logo booster rural"></a>
+                <a href="{{ path('booster_homepage') }}"><img id="logo" src="{{ asset('bundles/booster/img/logo-ss-fond.png') }}" alt="logo booster rural"></a>
             </div>
             <!-- end logo -->
 
@@ -44,15 +44,15 @@
 
 
                 <li class="liNav2"> <!--modif-->
-                    <a href="#" ><span class="glyphicon glyphicon-picture"></span> Villages </a>
+                    <a href="{{ path('mayor_list') }}" ><span class="glyphicon glyphicon-picture"></span> Villages </a>
                 </li>
 
                 <li class="dropdown liNav2"> <!--modif-->
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-comment"></span> Offres</a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Villages</a></li>
-                        <li><a href="#">Acteurs dynamiques</a></li>
-                        <li><a href="#">Citoyens</a></li>
+                        <li><a href="{{ path('mayor_listOffer') }}">Villages</a></li>
+                        <li><a href="{{ path('actor_listOffer') }}">Acteurs dynamiques</a></li>
+                        <li><a href="{{ path('citizen_listOffer') }}">Citoyens</a></li>
                     </ul>
                 </li>
 

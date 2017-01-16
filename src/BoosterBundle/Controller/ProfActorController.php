@@ -54,7 +54,7 @@ class ProfActorController extends Controller
         $user = $this->get('security.context')->getToken()->getUser();
         $offer = new Offer();
         $offer->setUsers($user);
-        $form = $this->createForm('BoosterBundle\Form\OfferType', $offer);
+        $form = $this->createForm('BoosterBundle\Form\ActorOfferType', $offer);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -73,13 +73,14 @@ class ProfActorController extends Controller
             'form' => $form->createView(),
         ));
     }
+
     /**
      * Finds and displays a offer entity.
      *
      */
     public function showOfferAction(Offer $offer)
     {
-        $deleteForm = $this->createDeleteForm($offer);
+        $deleteForm = $this->createOfferDeleteForm($offer);
 
         return $this->render('BoosterBundle:Actor:showOffer.html.twig', array(
             'offer' => $offer,
@@ -92,8 +93,8 @@ class ProfActorController extends Controller
      */
     public function editOfferAction(Request $request, Offer $offer)
     {
-        $deleteForm = $this->createDeleteForm($offer);
-        $editForm = $this->createForm('BoosterBundle\Form\OfferType', $offer);
+        $deleteForm = $this->createOfferDeleteForm($offer);
+        $editForm = $this->createForm('BoosterBundle\Form\ActorOfferType', $offer);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
@@ -102,9 +103,9 @@ class ProfActorController extends Controller
             return $this->redirectToRoute('actor_editOffer', array('id' => $offer->getId()));
         }
 
-        return $this->render('BoosterBundle:Actor:editNeeds.html.twig', array(
+        return $this->render('BoosterBundle:Actor:editOffer.html.twig', array(
             'offer' => $offer,
-            'edit_form' => $editForm->createView(),
+            'form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
@@ -115,7 +116,7 @@ class ProfActorController extends Controller
      */
     public function deleteOfferAction(Request $request, Offer $offer)
     {
-        $form = $this->createDeleteForm($offer);
+        $form = $this->createOfferDeleteForm($offer);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -134,7 +135,7 @@ class ProfActorController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(Offer $offer)
+    private function createOfferDeleteForm(Offer $offer)
     {
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('actor_deleteOffer', array('id' => $offer->getId())))
@@ -142,6 +143,18 @@ class ProfActorController extends Controller
             ->getForm()
             ;
     }
+
+    public function listOfferActorAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $offers = $em->getRepository('BoosterBundle:Offer')->createQueryBuilder('n')->join('n.users','u');
+        $offers = $offers->where($offers->expr()->in('u.roles', ['a:1:{i:0;s:10:"ROLE_ACTOR";}']))->getQuery()->getResult();
+        return $this->render('BoosterBundle:Actor:listOfferActor.html.twig', array(
+            'offers' => $offers,
+        ));
+    }
+
 
     /**
      * Lists all needs entities.
@@ -203,7 +216,7 @@ class ProfActorController extends Controller
 
         return $this->render('BoosterBundle:Actor:editNeeds.html.twig', array(
             'need' => $need,
-            'edit_form' => $editForm->createView(),
+            'form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
@@ -245,9 +258,8 @@ class ProfActorController extends Controller
     public function listNeedsActorAction()
     {
         $em = $this->getDoctrine()->getManager();
-
-        $needs = $em->getRepository('BoosterBundle:Needs')->findAll();
-
+        $needs = $em->getRepository('BoosterBundle:Needs')->createQueryBuilder('n')->join('n.users','u');
+        $needs = $needs->where($needs->expr()->in('u.roles', ['a:1:{i:0;s:10:"ROLE_ACTOR";}']))->getQuery()->getResult();
         return $this->render('BoosterBundle:Actor:listNeedsActor.html.twig', array(
             'needs' => $needs,
         ));
