@@ -1,5 +1,5 @@
 citizen_index:
-    path:     /
+    path:     /profile
     defaults: { _controller: "BoosterBundle:ProfCitizen:index" }
     methods:  GET
 
@@ -44,3 +44,7 @@ citizen_deleteNeeds:
     defaults: { _controller: "BoosterBundle:ProfCitizen:deleteNeed" }
     methods:  DELETE
 
+citizen_listNeed:
+    path:     /needs/list
+    defaults: { _controller: "BoosterBundle:ProfCitizen:listNeedsCitizen" }
+    methods:  [GET, POST]

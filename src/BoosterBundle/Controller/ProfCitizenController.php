@@ -35,6 +35,7 @@ class ProfCitizenController extends Controller
             'offers' => $offers,
             'needs' => $needs,
 
+
         ));
     }
 
@@ -150,7 +151,8 @@ class ProfCitizenController extends Controller
         $user = $this->get('security.context')->getToken()->getUser();
         $needs = new Needs();
         $needs->setUsers($user);
-        $form = $this->createForm('BoosterBundle\Form\CitizenRegistrationType', $needs);
+
+        $form = $this->createForm('BoosterBundle\Form\CitizenNeedsType', $needs);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -221,7 +223,8 @@ class ProfCitizenController extends Controller
             $em->flush($need);
         }
 
-        return $this->redirectToRoute('citizen_index');
+        return $this->redirectToRoute('citizen_deleteNeeds');
+
     }
 
     /**
@@ -246,7 +249,9 @@ class ProfCitizenController extends Controller
 
         $needs = $em->getRepository('BoosterBundle:Needs')->findAll();
 
-        return $this->render('BoosterBundle:Needs:citizen.index.html.twig', array(
+
+        return $this->render('BoosterBundle:Citizen:listNeedsCitizen.html.twig', array(
+
             'needs' => $needs,
         ));
     }

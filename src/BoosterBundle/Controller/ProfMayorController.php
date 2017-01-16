@@ -289,7 +289,7 @@ class ProfMayorController extends Controller
             $em->flush($need);
         }
 
-        return $this->redirectToRoute('actor_index');
+        return $this->redirectToRoute('mayor_index');
     }
 
         /**

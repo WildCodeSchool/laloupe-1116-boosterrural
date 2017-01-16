@@ -8,7 +8,7 @@
                 <section class="col-sm-offset-1 col-sm-10 col-xs-12 backWhite sec1 listIndex">
                     <div class="row">
                         <div class="col-md-6 col-xs-12">
-                            <img src="{{ app.request.basepath }}/uploads/{{ need.image3 }}" alt="photo_logo" class="center-block img-responsive imgList"/>
+                            <img src="{{ app.request.basepath }}/uploads/{{ need.imageNeeds }}" alt="photo_logo" class="center-block img-responsive imgList"/>
                         </div>
                         <div class="col-md-6 col-xs-12">
                             <h2>{{ need.title }}</h2>
@@ -49,7 +49,7 @@
         <div class="col-sm-offset-1 col-sm-10 col-xs-12">
             <ul>
                 <li>
-                    <a href="{{ path('actor_newNeeds') }}" class="btn Button center-block">Créer un nouveu besoin</a>
+                    <a href="{{ path('mayor_newNeeds') }}" class="btn Button center-block">Créer un nouveau besoin</a>
                 </li>
             </ul>
         </div>

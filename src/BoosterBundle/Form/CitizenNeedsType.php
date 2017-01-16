@@ -7,7 +7,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
-class ActorNeedsType extends AbstractType
+class CitizenNeedsType extends AbstractType
 {
     /**
      * {@inheritdoc}
@@ -36,6 +36,17 @@ class ActorNeedsType extends AbstractType
                 ),
                 'label'=>"Domaine d'activité"
             ))
+            ->add('wish', ChoiceType::class, array (
+                "label" => "Je cherche",
+                'choices'  => array(
+                    "Choisir" => "Choisir",
+                    "un stage" => "un stage",
+                    "un environnement agricole, créatif..." => "un environnement agricole, créatif...",
+                    "des personnes en phase avec mon projet" => "des personnes en phase avec mon projet",
+                    "du coaching pour me lancer" => "du coaching pour me lancer")))
+            ->add('availability', null, [
+                "label" => "Disponibilité"
+            ])
             ->add('description', null, [
                 "label" => "Description"
             ])

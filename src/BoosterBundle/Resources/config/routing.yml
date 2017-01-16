@@ -6,15 +6,11 @@ booster_mayorBack:
     resource: "@BoosterBundle/Resources/config/routing/mayor.yml"
     prefix:   /mayor
 
-booster_citizenBack:
+booster_citizeginBack:
     resource: "@BoosterBundle/Resources/config/routing/citizen.yml"
     prefix:   /citizen
 
-booster_offer:
-    resource: "@BoosterBundle/Resources/config/routing/actor.yml"
-    prefix:   /actor
-
-booster_citizenfront:
+booster_citizen:
     path:     /citizenfront
     defaults: { _controller: BoosterBundle:Default:citizen }
 

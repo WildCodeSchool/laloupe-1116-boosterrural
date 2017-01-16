@@ -1,40 +1,34 @@
 {% extends "base.html.twig" %}
 
   {% block body %}
-
+            <!-- *******Identity of citizen******* -->
       <div class="row">
           <section class="col-sm-offset-1 col-sm-10 col-xs-12 backWhite sec1">
               <div class="row">
                   <div class="col-md-6 col-xs-12">
-                      <img src="{{ asset('bundles/booster/img/acteur_logo.jpg') }}" alt="photo_logo" class="center-block img-responsive"/>
+                      <img src="{{ app.request.basepath }}/uploads/{{ user.imageIdentity }}" alt="my photo" class="center-block img-responsive pic1citiz"/>
                   </div>
                   <div class="col-md-6 col-xs-12">
-                      <li><a class="pencil col-xs-offset-11 col-xs-1" data-toggle="modal" href="#headmod"><span class="glyphicon glyphicon-pencil"></span></a></li>
-                      <h1>biodynamic association</h1>
-
-                      <div class="row">
+                      <li><a class="pencil col-xs-offset-11 col-xs-1" data-toggle="modal" href="#headmod"><span class="glyphicon glyphicon-pencil btn-lg"></span></a></li>
+                      <h1>{{ user.lastname }}</h1>
+                      <div class="row identity">
                           <div class="col-sm-6 col-xs-12">
                               <ul>
-                                  <li><span>Président :</span> {{ user.lastname }}</li>
+                                  <li class="state"><span>Statut :</span> </li>
                                   <li><span>Adresse :</span> {{ user.address }}</li>
                                   <li><span>Code Postal :</span> {{ user.cp }}</li>
+                                  <li><span>Commune :</span> {{ user.town }}</li>
                                   <li><span>Adresse Mail :</span> {{ user.email }}</li>
-                                  <li><span>Catégorie :</span> {{ user.category }}</li>
-                              </ul>
-                          </div>
-                          <div class="col-sm-6 col-xs-12">
-                              <ul>
-                                  <li><span>Statut :</span>{{ user.statusActor }}</li>
-                                  <li><span>Commune :</span>{{ user.town }}</li>
                               </ul>
                           </div>
                       </div>
                   </div>
-
               </div>
           </section>
       </div>
+      <!-- *******End identity of citizen******* -->
 
+          <!-- ********** Presentation of citizen ********* -->
       <div class="row">
           <div class="col-sm-offset-1 col-sm-10">
               <div class="row flexMap">
@@ -42,19 +36,21 @@
                       <div class="row">
                           <div class="col-md-5 col-sm-12">
                               <ul class="ulBorder">
-                                  <li><img src="{{ asset('bundles/booster/img/photo1.jpg') }}" alt="photo" class="pitureMini img-responsive center-block"/></li>
-                                  <li><img src="{{ asset('bundles/booster/img/photo2.jpg') }}" alt="photo" class="pitureMini img-responsive center-block"/></li>
-                                  <li><img src="{{ asset('bundles/booster/img/photo3.jpg') }}" alt="photo" class="pitureMini img-responsive center-block"/></li>
+                                  <li><img src="{{ app.request.basepath }}/uploads/{{ user.imageDescription1 }}" alt="photo" class="pitureMini img-responsive center-block"/></li>
+                                  <li><img src="{{ app.request.basepath }}/uploads/{{ user.imageDescription2 }}" alt="photo" class="pitureMini img-responsive center-block"/></li>
+                                  <li><img src="{{ app.request.basepath }}/uploads/{{ user.imageDescription3 }}" alt="photo" class="pitureMini img-responsive center-block"/></li>
                               </ul>
                           </div>
                           <div class="col-md-7 col-sm-12">
-                              <h2 class="mediaTitle">pourquoi nous sommes dynamiques ?</h2>
+                              <h2 class="mediaTitle">pourquoi je suis dynamique ?</h2>
                               <p>{{ user.description }}</p>
                           </div>
-
                       </div>
-                      <li><a class="pencil"><span class="glyphicon glyphicon-pencil"></span></a></li>
+                      <li><a class="pencil"><span class="glyphicon glyphicon-pencil btn-lg"></span></a></li>
                   </section>
+                  <!-- ********** End Presentation of citizen ********* -->
+
+                  <!-- ********** Localisation of citizen ********* -->
                   <section class=" hidden-xs col-sm-5 col-xs-12 backWhite secPad1">
                       <h2>localisation</h2>
                       <div id="map" class="center-block"></div>
@@ -62,9 +58,9 @@
               </div>
           </div>
       </div>
+      <!-- ********** End Localisation of citizen ********* -->
 
-
-
+      <!-- ********** Offers of citizen ********* -->
       <div class="row">
           <div class="col-sm-offset-1 col-sm-10 block1">
               <div class="row">
@@ -79,14 +75,14 @@
                       <ul>
                           <li>
                               <div class="row">
-                                  <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="no photo" class=" col-xs-2">
+                                  <img src="{{ app.request.basepath }}/uploads/{{ offer.imageOffer }}" alt="no photo" class=" col-xs-2">
                                   <div class="col-xs-8">
                                       <span>{{ offer.title }}</span>
                                       <p>{{ offer.description }}</p>
                                   </div>
                                   <div class="col-xs-1">
-                                      <a href="#"><span class="glyphicon glyphicon-pencil btn-lg"></span ></a>
-                                      <span class="glyphicon glyphicon-remove btn-lg"></span >
+                                      <a href="{{ path('citizen_editOffer',{'id' : needs.id}) }}"><span class="glyphicon glyphicon-pencil btn-lg"></span ></a>
+                                      <a href="{{ path('citizen_deleteOffer',{'id' : needs.id}) }}"><span class="glyphicon glyphicon-remove btn-lg"></span ></a>
                                   </div>
                               </div>
                           </li>
@@ -99,9 +95,9 @@
                           </div>
                       </ul>
                   </section>
+                  <!-- ********** End offers of citizen ********* -->
 
-
-
+                  <!-- **********Offer's Matching of citizen ********* -->
                   <section class="col-sm-5 col-xs-12 backWhite secPad3">
                       <h3 class="title">Mes matchings</h3>
                       <h4 class="underTitle">Qui puis-je aider ?</h4>
@@ -154,6 +150,9 @@
               </div>
           </div>
       </div>
+      <!-- ********** End of offer's matching of citizen ********* -->
+
+      <!-- ********** Needs of citizen ********* -->
       <div class="row">
           <div class="col-sm-offset-1 col-sm-10 block2">
               <div class="row">
@@ -170,21 +169,24 @@
 
                                       <div class="row">
                                           <a href="{{ path('citizen_showNeeds',{'id' : needs.id}) }}">
-                                              <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="no photo" class=" col-xs-2">
+
+                                              <img src="{{ app.request.basepath }}/uploads/{{ needs.imageNeeds }}" alt="no photo" class=" col-xs-2">
+
                                               <div class="col-xs-8">
                                                   <span>{{ needs.title }}</span>
                                                   <p>{{ needs.description }}</p>
                                               </div>
                                           </a>
                                           <div class="col-xs-1">
-                                              <span class="glyphicon glyphicon-pencil btn-lg"></span >
-                                              <span class="glyphicon glyphicon-remove btn-lg"></span >
+                                            <a href="{{ path('citizen_editNeeds',{'id' : needs.id}) }}" > <span class="glyphicon glyphicon-pencil btn-lg"></span ></a>
+                                             <a href="{{ path('citizen_deleteNeeds',{'id' : needs.id}) }}"> <span class="glyphicon glyphicon-remove btn-lg"></span ></a>
                                           </div>
                                       </div>
                                   </li>
-
-
                               {% endfor %}
+               <!-- ********** End needs of citizen ********* -->
+
+            <!-- ********** Needs' matching of citizen ********* -->
                               <hr>
                           {% endif %}
                           <div class="row">
@@ -195,7 +197,7 @@
 
                   <section class="col-sm-5 col-xs-12 backWhite secPad3">
                       <h3 class="title">mes matchings</h3>
-                      <h4 class="underTitle">Qui peut m'maider ?</h4>
+                      <h4 class="underTitle">Qui peut m'aider ?</h4>
                       <ul>
                           <li>
                               <div class="row">
@@ -246,14 +248,10 @@
           </div>
       </div>
 
+      <!-- ********** End needs' matching of citizen ********* -->
 
 
-  {% endblock %}
-
-
-
-    {% block javascripts %}
-        {{ parent () }}
+        <!-- ********** Dynamic map ********* -->
         <script>
             function initMap() {
                 var map = new google.maps.Map(document.getElementById('#map'), {
@@ -286,9 +284,9 @@
                 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBR84fXWLx5T5AOpRQHNXs7w3U9jdPneFU&signed_in=true&libraries=visualization&callback=initMap">
         </script>
 
-    {% endblock %}
+            <!-- ********** End dynamic map ********* -->
 
-
+  {% endblock %}
 
 
 

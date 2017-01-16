@@ -704,28 +704,10 @@ textarea {
     display: inline-block;
 }
 
-
-/**
-* Profile
-*/
-
-.block2{
-    margin-top: 20px;
-}
-
-
 /******************************************************/
 /************************ PAGE SHOW *******************/
 /******************************************************/
 
-/*table {
-    margin: 0 auto;
-}
-
-td {
-    padding: 10px;
-}
-*/
 .showAlign {
     text-align: center;
 }
@@ -736,10 +718,6 @@ td {
 
 .showLien a:hover {
     text-decoration: none;
-}
-
-#boosterbundle_needs_file3 > .form-control {
-
 }
 
 .imgShow {

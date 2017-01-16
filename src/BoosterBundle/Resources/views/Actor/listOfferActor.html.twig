@@ -1,6 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+<h1>Liste des Offres</h1>
+{% for offer in offers %}
+<a href="{{ path('actor_showOffer', { 'id': offer.id }) }}" id="lienListe">
     <div class="row">
         <section class="col-sm-offset-1 col-sm-10 col-xs-12 backWhite sec1 padSHOW">
             <div class="row">
@@ -13,7 +16,7 @@
                         <div class="row">
                             <li class="col-md-6 col-xs-12"><span>Ville :</span>{{ offer.town }}</li>
                             <li class="col-md-6 col-xs-12"><span>Code Postal :</span>{{ offer.cp }}</li>
-                           </div>
+                        </div>
                         <div class="row">
                             <li class="col-md-6 col-xs-12"><span>Domaine d'activité :</span>{{ offer.activity }}</li>
                             <li class="col-md-6 col-xs-12"><span>Souhait :</span>{{ offer.wish }}</li>
@@ -24,22 +27,8 @@
             </div>
         </section>
     </div>
+</a>
 
-    <a href="{{ path('actor_listNeed') }}" class="btn center-block1 Button">Retour à la liste</a>
+{% endfor %}
 
-
-    <ul>
-        <li>
-            <a href="{{ path('actor_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('actor_editOffer', { 'id': offer.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
 {% endblock %}
-

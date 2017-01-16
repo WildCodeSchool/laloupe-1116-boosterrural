@@ -6,15 +6,15 @@
         <section class="col-sm-offset-1 col-sm-10 col-xs-12 backWhite sec1 padSHOW">
             <div class="row">
                 <div class="col-md-6 col-xs-12">
-                    <img src="{{ app.request.basepath }}/uploads/{{ need.image2 }}" alt="photo_logo" class="center-block img-responsive imgSHOW"/>
+                    <img src="{{ app.request.basepath }}/uploads/{{ need.imageNeeds }}" alt="photo_logo" class="center-block img-responsive imgSHOW"/>
                 </div>
                 <div class="col-md-6 col-xs-12">
                     <h1>{{ need.title }}</h1>
                     <ul>
                         <div class="row">
-                            <li class="col-md-4 col-xs-12"><span>Ville :</span>{{ need.town }}</li>
+                            <li class="col-md-2 col-xs-12"><span>Ville :</span>{{ need.town }}</li>
                             <li class="col-md-4 col-xs-12"><span>Code Postal :</span>{{ need.cp }}</li>
-                            <li class="col-md-4 col-xs-12"><span>Domaine d'activité :</span>{{ need.activity }}</li>
+                            <li class="col-md-6 col-xs-12"><span>Domaine d'activité :</span>{{ need.activity }}</li>
                         </div>
                         <li><span>Description :</span>{{ need.description }}</li>
                     </ul>
@@ -23,6 +23,7 @@
         </section>
     </div>
 
-    <a href="{{ path('actor_index') }}" class="btn center-block1 Button">Retour à la liste</a>
+    <a href="{{ path('actor_listNeed') }}" class="btn center-block1 Button">Retour à la liste</a>
+
 
 {% endblock %}
