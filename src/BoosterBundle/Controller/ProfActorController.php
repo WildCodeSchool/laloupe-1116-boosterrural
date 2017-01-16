@@ -69,7 +69,7 @@ class ProfActorController extends Controller
         ));
     }
 
-    /************************SHOW OFFER OR NEEDS *************************/
+
     public function newOfferAction(Request $request)
     {
         $user = $this->get('security.context')->getToken()->getUser();
@@ -94,7 +94,7 @@ class ProfActorController extends Controller
             'form' => $form->createView(),
         ));
     }
-
+    /************************SHOW OFFER OR NEEDS *************************/
     public function showOfferAction(Offer $offer)
     {
 
