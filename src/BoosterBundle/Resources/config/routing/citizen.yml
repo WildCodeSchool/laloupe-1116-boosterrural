@@ -44,3 +44,13 @@ citizen_deleteNeeds:
     defaults: { _controller: "BoosterBundle:ProfCitizen:deleteNeeds" }
     methods:  [GET, POST]
 
+citizen_editDescription:
+    path:     /offer/description/{id}
+    defaults: { _controller: "BoosterBundle:ProfCitizen:editDescription" }
+    methods:  [GET, POST]
+
+citizen_editUser:
+    path:     /offer/user/{id}
+    defaults: { _controller: "BoosterBundle:ProfCitizen:editUser" }
+    methods:  [GET, POST]
+

@@ -229,4 +229,59 @@ class ProfMayorController extends Controller
         return $this->redirectToRoute('citizen_index');
 
     }
+
+    public function editDescriptionAction(Request $request, User $user)
+    {
+
+        $form = $this->createForm('BoosterBundle\Form\DescriptionType', $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('mayor_index', array('id' => $user->getId()));
+        }
+
+        return $this->render('BoosterBundle:Mayor:editDescription.html.twig', array(
+            'user' => $user,
+            'form' => $form->createView(),
+
+        ));
+    }
+    public function editUserAction(Request $request, User $user)
+    {
+
+        $form = $this->createForm('BoosterBundle\Form\MayorRegistrationType', $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('mayor_index', array('id' => $user->getId()));
+        }
+
+        return $this->render('BoosterBundle:Mayor:editDescription.html.twig', array(
+            'user' => $user,
+            'form' => $form->createView(),
+
+        ));
+    }
+    public function editWordMayorAction(Request $request, User $user)
+    {
+
+        $form = $this->createForm('BoosterBundle\Form\WordMayorType', $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('mayor_index', array('id' => $user->getId()));
+        }
+
+        return $this->render('BoosterBundle:Mayor:editDescription.html.twig', array(
+            'user' => $user,
+            'form' => $form->createView(),
+
+        ));
+    }
 }

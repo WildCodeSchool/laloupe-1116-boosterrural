@@ -49,3 +49,18 @@ mayor_listNeed:
     defaults: { _controller: "BoosterBundle:ProfMayor:listNeedsMayor" }
     methods:  [GET, POST]
 
+mayor_editDescription:
+    path:     /offer/description/{id}
+    defaults: { _controller: "BoosterBundle:ProfMayor:editDescription" }
+    methods:  [GET, POST]
+
+mayor_editUser:
+    path:     /offer/user/{id}
+    defaults: { _controller: "BoosterBundle:ProfMayor:editUser" }
+    methods:  [GET, POST]
+
+mayor_editWordMayor:
+    path:     /offer/wordMayor/{id}
+    defaults: { _controller: "BoosterBundle:ProfMayor:editWordMayor" }
+    methods:  [GET, POST]
+
