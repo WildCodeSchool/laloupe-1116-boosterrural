@@ -9,7 +9,7 @@
                       <img src="{{ asset('bundles/booster/img/acteur_logo.jpg') }}" alt="photo_logo" class="center-block img-responsive"/>
                   </div>
                   <div class="col-md-6 col-xs-12">
-                      <li><a class="pencil col-xs-offset-11 col-xs-1" data-toggle="modal" href="#headmod"><span class="glyphicon glyphicon-pencil"></span></a></li>
+
                       <h1>biodynamic association</h1>
 
                       <div class="row">
@@ -30,7 +30,7 @@
                           </div>
                       </div>
                   </div>
-
+                  <li class="col-xs-offset-11"> <a href="{{ path('actor_editUser', {'id': user.id}) }}') }}"><span class="glyphicon glyphicon-pencil btn-lg"></span ></a></li>
               </div>
           </section>
       </div>
@@ -54,7 +54,7 @@
 
                       </div>
                       <div>
-                          <a class="pencil" {#href="{{ path('ed') }}"#}><span class="glyphicon glyphicon-pencil"></span></a>
+                          <a href="{{ path('actor_editDescription', {'id': user.id}) }}') }}"><span class="col-xs-offset-11 glyphicon glyphicon-pencil btn-lg"></span ></a>
                       </div>
                   </section>
                   <section class=" hidden-xs col-sm-5 col-xs-12 backWhite secPad1">
@@ -88,7 +88,7 @@
                                   </div>
                                   <div class="col-xs-1">
                                       <a href="{{ path('actor_editOffer', {'id': offer.id}) }}') }}"><span class="glyphicon glyphicon-pencil btn-lg"></span ></a>
-                                      <a data-toggle="modal" href="#deleteOffer"">
+                                      <a data-toggle="modal" href="#deleteOffer">
 
                                           <span class="glyphicon glyphicon-remove btn-lg" ></span >
                                       </a>
@@ -184,7 +184,10 @@
                                           </a>
                                           <div class="col-xs-1">
                                               <a href="{{ path('actor_editNeeds', {'id': needs.id}) }}') }}"><span class="glyphicon glyphicon-pencil btn-lg"></span ></a>
-                                              <a data-toggle="modal" href="#deleteNeeds"><span class="glyphicon glyphicon-remove btn-lg"></span ></a>
+                                              <a data-toggle="modal" href="#deleteNeeds">
+
+                                                  <span class="glyphicon glyphicon-remove btn-lg" ></span >
+                                              </a>
                                           </div>
                                       </div>
                                   </li>

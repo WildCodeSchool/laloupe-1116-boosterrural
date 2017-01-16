@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+{% form_theme form ":FormTemplate:bootstrap.html.twig" %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-sm-offset-2 col-sm-8 col-xs-12">
+            <div class="row">
+                <div class="col-sm-offset-3 col-sm-6">
+                    <h1>Modifification des données utilisateur</h1>
+
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                    <a href="{{ path('actor_editUser', { 'id': user.id }) }}"><input type="submit" value="Modifier" class="center-block showLien2"></a>
+                    {{ form_end(form) }}
+
+                    <ul>
+
+                        <li>
+                            <a href="{{ path('actor_index') }}" class="btn center-block">Retour à la liste</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

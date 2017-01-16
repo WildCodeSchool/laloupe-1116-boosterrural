@@ -16,11 +16,11 @@ class Needs
     }
     public function getWebPath()
     {
-        return null === $this->image ? null : $this->getUploadDir().'/'.$this->image;
+        return null === $this->image2 ? null : $this->getUploadDir().'/'.$this->image2;
     }
     public function getAbsolutePath()
     {
-        return null === $this->image ? null : $this->getUploadRootDir().'/'.$this->image;
+        return null === $this->image2 ? null : $this->getUploadRootDir().'/'.$this->image2;
     }
     /*Image 2*/
     public $file2;
@@ -48,6 +48,9 @@ class Needs
             unlink($file);
         }
     }
+
+
+
     /*Image 3*/
     public $file3;
     public function preUpload3()

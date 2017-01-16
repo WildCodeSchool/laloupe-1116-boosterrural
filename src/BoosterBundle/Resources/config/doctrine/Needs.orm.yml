@@ -54,7 +54,7 @@ BoosterBundle\Entity\Needs:
       prePersist: [preUpload2, preUpload3]
       preUpdate: [preUpload2, preUpload3]
       postPersist: [upload2, upload3]
-      postUpdate: [upload2, upload2]
-      postRemove: [removeUpload2, removeUpload2]
+      postUpdate: [upload2, upload3]
+      postRemove: [removeUpload2, removeUpload3]
 
 

@@ -205,4 +205,41 @@ class ProfActorController extends Controller
         return $this->redirectToRoute('actor_index');
 
     }
+
+    public function editDescriptionAction(Request $request, User $user)
+    {
+
+        $form = $this->createForm('BoosterBundle\Form\DescriptionType', $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('actor_index', array('id' => $user->getId()));
+        }
+
+        return $this->render('BoosterBundle:Actor:editDescription.html.twig', array(
+            'user' => $user,
+            'form' => $form->createView(),
+
+        ));
+    }
+    public function editUserAction(Request $request, User $user)
+    {
+
+        $form = $this->createForm('BoosterBundle\Form\ActorRegistrationType', $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('actor_index', array('id' => $user->getId()));
+        }
+
+        return $this->render('BoosterBundle:Actor:editDescription.html.twig', array(
+            'user' => $user,
+            'form' => $form->createView(),
+
+        ));
+    }
 }

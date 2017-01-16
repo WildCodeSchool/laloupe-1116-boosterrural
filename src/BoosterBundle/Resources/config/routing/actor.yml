@@ -44,3 +44,12 @@ actor_deleteNeeds:
     defaults: { _controller: "BoosterBundle:ProfActor:deleteNeeds" }
     methods:  [GET, POST]
 
+actor_editDescription:
+    path:     /offer/description/{id}
+    defaults: { _controller: "BoosterBundle:ProfActor:editDescription" }
+    methods:  [GET, POST]
+
+actor_editUser:
+    path:     /offer/user/{id}
+    defaults: { _controller: "BoosterBundle:ProfActor:editUser" }
+    methods:  [GET, POST]
