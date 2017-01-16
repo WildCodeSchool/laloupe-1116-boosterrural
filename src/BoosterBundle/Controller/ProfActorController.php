@@ -18,6 +18,8 @@ class ProfActorController extends Controller
     public function indexAction()
     {
         $user = $this->getUser();
+
+
         $user=$this->get('security.context')->getToken()->getUser();
         $em = $this->getDoctrine()->getManager();
         $users = $em->getRepository('BoosterBundle:User')->findAll();
@@ -40,126 +42,8 @@ class ProfActorController extends Controller
         ));
     }
 
-    /**
-     * Lists all offer entities.
-     *
-     */
 
-    /**
-     * Creates a new offer entity.
-     *
-     */
-    public function newOfferAction(Request $request)
-    {
-        $user = $this->get('security.context')->getToken()->getUser();
-        $offer = new Offer();
-        $offer->setUsers($user);
-        $form = $this->createForm('BoosterBundle\Form\ActorOfferType', $offer);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($offer);
-            $em->flush($offer);
-
-            return $this->redirectToRoute('actor_showOffer', array('id' => $offer->getId(
-                array($offer->getUsers()
-            ))));
-
-        }
-
-        return $this->render('BoosterBundle:Actor:newOffer.html.twig', array(
-            'offer' => $offer,
-            'form' => $form->createView(),
-        ));
-    }
-
-    /**
-     * Finds and displays a offer entity.
-     *
-     */
-    public function showOfferAction(Offer $offer)
-    {
-        $deleteForm = $this->createOfferDeleteForm($offer);
-
-        return $this->render('BoosterBundle:Actor:showOffer.html.twig', array(
-            'offer' => $offer,
-            'delete_form' => $deleteForm->createView(),
-        ));
-    }
-    /**
-     * Displays a form to edit an existing offer entity.
-     *
-     */
-    public function editOfferAction(Request $request, Offer $offer)
-    {
-        $deleteForm = $this->createOfferDeleteForm($offer);
-        $editForm = $this->createForm('BoosterBundle\Form\ActorOfferType', $offer);
-        $editForm->handleRequest($request);
-
-        if ($editForm->isSubmitted() && $editForm->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
-
-            return $this->redirectToRoute('actor_editOffer', array('id' => $offer->getId()));
-        }
-
-        return $this->render('BoosterBundle:Actor:editOffer.html.twig', array(
-            'offer' => $offer,
-            'form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
-        ));
-    }
-
-    /**
-     * Deletes a offer entity.
-     *
-     */
-    public function deleteOfferAction(Request $request, Offer $offer)
-    {
-        $form = $this->createOfferDeleteForm($offer);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($offer);
-            $em->flush($offer);
-        }
-
-        return $this->redirectToRoute('actor_deleteOffer');
-    }
-
-    /**
-     * Creates a form to delete a offer entity.
-     *
-     * @param Offer $offer The offer entity
-     *
-     * @return \Symfony\Component\Form\Form The form
-     */
-    private function createOfferDeleteForm(Offer $offer)
-    {
-        return $this->createFormBuilder()
-            ->setAction($this->generateUrl('actor_deleteOffer', array('id' => $offer->getId())))
-            ->setMethod('DELETE')
-            ->getForm()
-            ;
-    }
-
-    public function listOfferActorAction()
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $offers = $em->getRepository('BoosterBundle:Offer')->createQueryBuilder('n')->join('n.users','u');
-        $offers = $offers->where($offers->expr()->in('u.roles', ['a:1:{i:0;s:10:"ROLE_ACTOR";}']))->getQuery()->getResult();
-        return $this->render('BoosterBundle:Actor:listOfferActor.html.twig', array(
-            'offers' => $offers,
-        ));
-    }
-
-
-    /**
-     * Lists all needs entities.
-     */
-
+    /************************NEW OFFER OR NEEDS *************************/
     public function newNeedAction(Request $request)
     {
         $user = $this->get('security.context')->getToken()->getUser();
@@ -185,30 +69,80 @@ class ProfActorController extends Controller
         ));
     }
 
-
-
-
-    public function showNeedAction(Needs $need)
+    /************************SHOW OFFER OR NEEDS *************************/
+    public function newOfferAction(Request $request)
     {
-        $deleteForm = $this->createNeedDeleteForm($need);
+        $user = $this->get('security.context')->getToken()->getUser();
+        $offer = new Offer();
+        $offer->setUsers($user);
+        $form = $this->createForm('BoosterBundle\Form\ActorOfferType', $offer);
+        $form->handleRequest($request);
 
-        return $this->render('BoosterBundle:Actor:showNeeds.html.twig', array(
-            'need' => $need,
-            'delete_form' => $deleteForm->createView(),
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($offer);
+            $em->flush($offer);
+
+            return $this->redirectToRoute('actor_showOffer', array('id' => $offer->getId(
+                array($offer->getUsers()
+                ))));
+
+        }
+
+        return $this->render('BoosterBundle:Actor:newOffer.html.twig', array(
+            'offer' => $offer,
+            'form' => $form->createView(),
         ));
     }
 
-    /**
-     * Displays a form to edit an existing need entity.
-     *
-     */
+    public function showOfferAction(Offer $offer)
+    {
+
+        return $this->render('BoosterBundle:Actor:showOffer.html.twig', array(
+            'offer' => $offer,
+
+        ));
+    }
+
+    public function showNeedAction(Needs $need)
+    {
+
+        return $this->render('BoosterBundle:Actor:showNeeds.html.twig', array(
+            'need' => $need,
+
+        ));
+    }
+
+
+    /************************EDIT OFFER OR NEEDS *************************/
+
+    public function editOfferAction(Request $request, Offer $offer)
+    {
+
+
+        $form = $this->createForm('BoosterBundle\Form\ActorOfferType', $offer);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('actor_editOffer', array('id' => $offer->getId()));
+        }
+
+        return $this->render('BoosterBundle:Actor:editOffer.html.twig', array(
+            'offer' => $offer,
+            'form' => $form->createView(),
+        ));
+    }
+
     public function editNeedAction(Request $request, Needs $need)
     {
-        $deleteForm = $this->createNeedDeleteForm($need);
-        $editForm = $this->createForm('BoosterBundle\Form\ActorNeedsType', $need);
-        $editForm->handleRequest($request);
 
-        if ($editForm->isSubmitted() && $editForm->isValid()) {
+        $form = $this->createForm('BoosterBundle\Form\ActorNeedsType', $need);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('actor_editNeeds', array('id' => $need->getId()));
@@ -216,43 +150,61 @@ class ProfActorController extends Controller
 
         return $this->render('BoosterBundle:Actor:editNeeds.html.twig', array(
             'need' => $need,
-            'form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+            'form' => $form->createView(),
+
         ));
     }
 
-    /**
-     * Deletes a need entity.
-     *
-     */
-    public function deleteNeedAction(Request $request, Needs $need)
+    public function editDescriptionAction(Request $request, User $user)
     {
-        $form = $this->createDeleteForm($need);
+
+        $form = $this->createForm('BoosterBundle\Form\DescriptionType', $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($need);
-            $em->flush($need);
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('actor_index', array('id' => $user->getId()));
         }
 
-        return $this->redirectToRoute('actor_deleteNeeds');
+        return $this->render('BoosterBundle:Actor:editDescription.html.twig', array(
+            'user' => $user,
+            'form' => $form->createView(),
+
+        ));
+    }
+    public function editUserAction(Request $request, User $user)
+    {
+
+        $form = $this->createForm('BoosterBundle\Form\ActorRegistrationType', $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('actor_index', array('id' => $user->getId()));
+        }
+
+        return $this->render('BoosterBundle:Actor:editDescription.html.twig', array(
+            'user' => $user,
+            'form' => $form->createView(),
+
+
+        ));
     }
 
-    /**
-     * Creates a form to delete a need entity.
-     *
-     * @param Needs $need The need entity
-     *
-     * @return \Symfony\Component\Form\Form The form
-     */
-    private function createNeedDeleteForm(Needs $need)
+
+    /************************LIST OFFER OR NEEDS *************************/
+
+    public function listOfferActorAction()
     {
-        return $this->createFormBuilder()
-            ->setAction($this->generateUrl('actor_deleteNeeds', array('id' => $need->getId())))
-            ->setMethod('DELETE')
-            ->getForm()
-            ;
+        $em = $this->getDoctrine()->getManager();
+
+        $offers = $em->getRepository('BoosterBundle:Offer')->createQueryBuilder('n')->join('n.users','u');
+        $offers = $offers->where($offers->expr()->in('u.roles', ['a:1:{i:0;s:10:"ROLE_ACTOR";}']))->getQuery()->getResult();
+        return $this->render('BoosterBundle:Actor:listOfferActor.html.twig', array(
+            'offers' => $offers,
+        ));
     }
 
     public function listNeedsActorAction()
@@ -264,4 +216,28 @@ class ProfActorController extends Controller
             'needs' => $needs,
         ));
     }
+
+
+    /************************DELETE OFFER OR NEEDS *************************/
+
+    public function deleteOfferAction(Offer $offer){
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($offer);
+        $em->flush($offer);
+
+
+        return $this->redirectToRoute('actor_index');
+
+
+    }
+    public function deleteNeedsAction(Needs $needs){
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($needs);
+        $em->flush($needs);
+
+        return $this->redirectToRoute('actor_index');
+
+    }
+
+
 }

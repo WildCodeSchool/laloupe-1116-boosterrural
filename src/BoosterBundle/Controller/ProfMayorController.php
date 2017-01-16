@@ -109,11 +109,10 @@ class ProfMayorController extends Controller
      */
     public function showOfferAction(Offer $offer)
     {
-        $deleteForm = $this->createOfferDeleteForm($offer);
 
         return $this->render('BoosterBundle:Mayor:showOffer.html.twig', array(
             'offer' => $offer,
-            'delete_form' => $deleteForm->createView(),
+
         ));
     }
     /**
@@ -122,11 +121,12 @@ class ProfMayorController extends Controller
      */
     public function editOfferAction(Request $request, Offer $offer)
     {
-        $deleteForm = $this->createOfferDeleteForm($offer);
-        $editForm = $this->createForm('BoosterBundle\Form\MayorOfferType', $offer);
-        $editForm->handleRequest($request);
 
-        if ($editForm->isSubmitted() && $editForm->isValid()) {
+        $form = $this->createForm('BoosterBundle\Form\OfferType', $offer);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('mayor_editOffer', array('id' => $offer->getId()));
@@ -134,44 +134,12 @@ class ProfMayorController extends Controller
 
         return $this->render('BoosterBundle:Mayor:editOffer.html.twig', array(
             'offer' => $offer,
-            'form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+            'form' => $form->createView(),
+
+
         ));
     }
 
-    /**
-     * Deletes a offer entity.
-     *
-     */
-    public function deleteOfferAction(Request $request, Offer $offer)
-    {
-        $form = $this->createOfferDeleteForm($offer);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($offer);
-            $em->flush($offer);
-        }
-
-        return $this->redirectToRoute('mayor_index');
-    }
-
-    /**
-     * Creates a form to delete a offer entity.
-     *
-     * @param Offer $offer The offer entity
-     *
-     * @return \Symfony\Component\Form\Form The form
-     */
-    private function createOfferDeleteForm(Offer $offer)
-    {
-        return $this->createFormBuilder()
-            ->setAction($this->generateUrl('mayor_deleteOffer', array('id' => $offer->getId())))
-            ->setMethod('DELETE')
-            ->getForm()
-            ;
-    }
 
     public function listOfferMayorAction()
     {
@@ -185,6 +153,8 @@ class ProfMayorController extends Controller
     }
 
     /**
+
+
      * Lists all needs entities.
      */
 
@@ -197,75 +167,41 @@ class ProfMayorController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $cp = $needs->getCp();
-            $town = $needs->getTown();
-            $plainAddress = $cp . '%20' . $town;
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($needs);
+            $em->flush($needs);
 
+            return $this->redirectToRoute('mayor_showNeeds', array('id' => $needs->getId(
+                array($needs->getUsers()
+                ))));
 
-            $url = "https://maps.google.com/maps/api/geocode/json?address=" . $plainAddress . "&key=AIzaSyBSFjZGurwwEtOnMOg1mKgJgS3WcP8ucrk";
-
-
-// get the json response
-            $resp_json = file_get_contents($url);
-
-// decode the json
-            $resp = json_decode($resp_json, true);
-
-// response status will be 'OK', if able to geocode given address
-            if ($resp['status'] == 'OK') {
-
-                // get the important data
-                $lat = $resp['results'][0]['geometry']['location']['lat'];
-                $lgt = $resp['results'][0]['geometry']['location']['lng'];
-
-
-                // verify if data is complete
-                if ($lat && $lgt) {
-                    $needs->setLat($lat);
-                    $needs->setLgt($lgt);
-
-
-                    $em = $this->getDoctrine()->getManager();
-                    $em->persist($needs);
-                    $em->flush($needs);
-
-                }
-
-
-                return $this->redirectToRoute('mayor_showNeeds', array('id' => $needs->getId(
-                    array($needs->getUsers()
-                    ))));
-
-            }
-
-            return $this->render('BoosterBundle:Mayor:newNeeds.html.twig', array(
-                'needs' => $needs,
-                'form' => $form->createView(),
-            ));
         }
-    }
 
-        public function showNeedAction(Needs $need)
-    {
-        $deleteForm = $this->createNeedDeleteForm($need);
-
-        return $this->render('BoosterBundle:Mayor:showNeeds.html.twig', array(
-            'need' => $need,
-            'delete_form' => $deleteForm->createView(),
+        return $this->render('BoosterBundle:Mayor:newNeeds.html.twig', array(
+            'needs' => $needs,
+            'form' => $form->createView(),
         ));
     }
 
-        /**
-         * Displays a form to edit an existing need entity.
-         *
-         */
-        public function editNeedAction(Request $request, Needs $need)
+    public function showNeedAction(Needs $need)
     {
-        $deleteForm = $this->createNeedDeleteForm($need);
-        $editForm = $this->createForm('BoosterBundle\Form\MayorNeedsType', $need);
-        $editForm->handleRequest($request);
+        return $this->render('BoosterBundle:Mayor:showNeeds.html.twig', array(
+            'need' => $need,
 
-        if ($editForm->isSubmitted() && $editForm->isValid()) {
+        ));
+    }
+
+    /**
+     * Displays a form to edit an existing need entity.
+     *
+     */
+    public function editNeedAction(Request $request, Needs $need)
+    {
+
+        $form = $this->createForm('BoosterBundle\Form\MayorNeedsType', $need);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
 
@@ -274,49 +210,86 @@ class ProfMayorController extends Controller
 
         return $this->render('BoosterBundle:Mayor:editNeeds.html.twig', array(
             'need' => $need,
-            'form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+            'form' => $form->createView(),
+
         ));
     }
 
-        /**
-         * Deletes a need entity.
-         *
-         */
-        public function deleteNeedAction(Request $request, Needs $need)
+    public function listNeedsMayorAction()
     {
-        $form = $this->createNeedDeleteForm($need);
+        $em = $this->getDoctrine()->getManager();
+
+        $needs = $em->getRepository('BoosterBundle:Needs')->findAll();
+
+        return $this->render('BoosterBundle:Mayor:listNeedsMayor.html.twig', array(
+            'needs' => $needs,
+        ));
+    }
+
+
+    /************************DELETE OFFER OR NEEDS *************************/
+
+    public function deleteOfferAction(Offer $offer){
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($offer);
+        $em->flush($offer);
+
+        return $this->redirectToRoute('citizen_index');
+
+    }
+    public function deleteNeedsAction(Needs $needs){
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($needs);
+        $em->flush($needs);
+
+        return $this->redirectToRoute('citizen_index');
+
+
+    }
+
+    public function editDescriptionAction(Request $request, User $user)
+    {
+
+        $form = $this->createForm('BoosterBundle\Form\DescriptionType', $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($need);
-            $em->flush($need);
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('mayor_index', array('id' => $user->getId()));
         }
 
-        return $this->redirectToRoute('mayor_index');
+        return $this->render('BoosterBundle:Mayor:editDescription.html.twig', array(
+            'user' => $user,
+            'form' => $form->createView(),
 
+
+        ));
     }
-
-        /**
-         * Creates a form to delete a need entity.
-         *
-         * @param Needs $need The need entity
-         *
-         * @return \Symfony\Component\Form\Form The form
-         */
-        private function createNeedDeleteForm(Needs $need)
+    public function editUserAction(Request $request, User $user)
     {
-        return $this->createFormBuilder()
-            ->setAction($this->generateUrl('mayor_deleteNeeds', array('id' => $need->getId())))
-            ->setMethod('DELETE')
-            ->getForm()
-            ;
+
+
+        $form = $this->createForm('BoosterBundle\Form\MayorRegistrationType', $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('mayor_index', array('id' => $user->getId()));
+        }
+
+
+        return $this->render('BoosterBundle:Mayor:editDescription.html.twig', array(
+            'user' => $user,
+            'form' => $form->createView(),
+
+
+        ));
     }
-
-        public function listNeedsMayorAction()
+    public function editWordMayorAction(Request $request, User $user)
     {
-        $em = $this->getDoctrine()->getManager();
+
 
         $needs = $em->getRepository('BoosterBundle:Needs')->createQueryBuilder('n')->join('n.users','u');
         $needs = $needs->where($needs->expr()->in('u.roles', ['a:1:{i:0;s:10:"ROLE_MAYOR";}']))->getQuery()->getResult();
@@ -336,4 +309,7 @@ class ProfMayorController extends Controller
         ));
     }
 }
+
+
+
 

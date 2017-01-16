@@ -19,8 +19,8 @@ BoosterBundle\Entity\Offer:
             type: string
             length: 255
         description:
-            type: string
-            length: 255
+            type: text
+            nullable: true
         activity:
             type: string
             length: 255

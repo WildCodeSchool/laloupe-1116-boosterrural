@@ -8,16 +8,13 @@
                 <div class="col-sm-offset-3 col-sm-6">
                     <h1>Modification du besoin</h1>
 
+
                     {{ form_start(form) }}
                     {{ form_widget(form) }}
                     <a href="{{ path('actor_editOffer', { 'id': offer.id }) }}"><input type="submit" value="Modifier" class="btn center-block Button"></a>
                     {{ form_end(form) }}
                     <ul>
-                        <li>
-                            {{ form_start(delete_form) }}
-                            <input type="submit" value="Supprimer" class="btn center-block Button">
-                            {{ form_end(delete_form) }}
-                        </li>
+
                         <li>
                             <a href="{{ path('actor_listOffer') }}" class="btn center-block">Retour à la liste</a>
                         </li>
@@ -26,5 +23,6 @@
             </div>
         </div>
     </div>
+
 {% endblock %}
 

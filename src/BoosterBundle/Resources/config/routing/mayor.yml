@@ -14,7 +14,7 @@ mayor_newOffer:
     methods:  [GET, POST]
 
 mayor_editOffer:
-    path:     /offer/{id}/edit
+    path:     /offer/{id}
     defaults: { _controller: "BoosterBundle:ProfMayor:editOffer" }
     methods:  [GET, POST]
 
@@ -26,7 +26,7 @@ mayor_listOffer:
 mayor_deleteOffer:
     path:     /offer/{id}/delete
     defaults: { _controller: "BoosterBundle:ProfMayor:deleteOffer" }
-    methods:  DELETE
+    methods:  [GET, POST]
 
 mayor_showNeeds:
     path:     /needs/{id}/show
@@ -39,14 +39,14 @@ mayor_newNeeds:
     methods:  [GET, POST]
 
 mayor_editNeeds:
-    path:     /needs/{id}/edit
+    path:     /needs/{id}
     defaults: { _controller: "BoosterBundle:ProfMayor:editNeed" }
     methods:  [GET, POST]
 
 mayor_deleteNeeds:
     path:     /needs/{id}/delete
-    defaults: { _controller: "BoosterBundle:ProfMayor:deleteNeed" }
-    methods:  DELETE
+    defaults: { _controller: "BoosterBundle:ProfMayor:deleteNeeds" }
+    methods:  [GET, POST]
 
 mayor_listNeed:
     path:     /needs/list
@@ -56,5 +56,19 @@ mayor_listNeed:
 mayor_list:
     path:     /list
     defaults: { _controller: "BoosterBundle:ProfMayor:listMayor" }
+
+mayor_editDescription:
+    path:     /offer/description/{id}
+    defaults: { _controller: "BoosterBundle:ProfMayor:editDescription" }
+    methods:  [GET, POST]
+
+mayor_editUser:
+    path:     /offer/user/{id}
+    defaults: { _controller: "BoosterBundle:ProfMayor:editUser" }
+    methods:  [GET, POST]
+
+mayor_editWordMayor:
+    path:     /offer/wordMayor/{id}
+    defaults: { _controller: "BoosterBundle:ProfMayor:editWordMayor" }
     methods:  [GET, POST]
 
