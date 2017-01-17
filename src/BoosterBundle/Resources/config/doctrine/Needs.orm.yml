@@ -51,11 +51,11 @@ BoosterBundle\Entity\Needs:
 
     lifecycleCallbacks:
 
-      prePersist: [preUploadNeeds]
-      preUpdate: [preUploadNeeds]
-      postPersist: [uploadNeeds]
-      postUpdate: [uploadNeeds]
-      postRemove: [removeUploadNeeds]
+      prePersist: [ preUploadNeeds ]
+      preUpdate: [ preUploadNeeds ]
+      postPersist: [ uploadNeeds ]
+      postUpdate: [ uploadNeeds ]
+      postRemove: [ removeUploadNeeds ]
 
 
 

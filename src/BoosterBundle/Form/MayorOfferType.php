@@ -68,6 +68,4 @@ class MayorOfferType extends AbstractType
     {
         return 'boosterbundle_offer';
     }
-
-
 }

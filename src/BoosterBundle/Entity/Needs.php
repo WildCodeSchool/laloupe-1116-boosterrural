@@ -1,7 +1,7 @@
 <?php
 
 namespace BoosterBundle\Entity;
-
+use Doctrine\ORM\Mapping as ORM;
 /**
  * Needs
  */
@@ -17,12 +17,13 @@ class Needs
     }
     public function getWebPath()
     {
-        return null === $this->image ? null : $this->getUploadDir() . '/' . $this->image;
+        return null === $this->imageNeeds ? null : $this->getUploadDir() . '/' . $this->imageNeeds;
     }
     public function getAbsolutePath()
     {
-        return null === $this->image ? null : $this->getUploadRootDir() . '/' . $this->image;
+        return null === $this->imageNeeds ? null : $this->getUploadRootDir() . '/' . $this->imageNeeds;
     }
+
     public $fileNeeds;
 
     public function preUploadNeeds()

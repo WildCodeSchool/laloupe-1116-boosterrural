@@ -199,7 +199,6 @@ class ProfActorController extends Controller
     public function listOfferActorAction()
     {
         $em = $this->getDoctrine()->getManager();
-
         $offers = $em->getRepository('BoosterBundle:Offer')->createQueryBuilder('n')->join('n.users','u');
         $offers = $offers->where($offers->expr()->in('u.roles', ['a:1:{i:0;s:10:"ROLE_ACTOR";}']))->getQuery()->getResult();
         return $this->render('BoosterBundle:Actor:listOfferActor.html.twig', array(

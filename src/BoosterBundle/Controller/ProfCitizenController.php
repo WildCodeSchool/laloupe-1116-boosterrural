@@ -91,7 +91,7 @@ class ProfCitizenController extends Controller
     {
 
 
-        $form = $this->createForm('BoosterBundle\Form\OfferType', $offer);
+        $form = $this->createForm('BoosterBundle\Form\CitizenOfferType', $offer);
 
         $form->handleRequest($request);
 

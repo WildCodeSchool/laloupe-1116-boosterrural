@@ -9,10 +9,8 @@
                       <img src="{{ asset('bundles/booster/img/ville.jpg') }}" alt="photo_logo" class="center-block img-responsive "/>
                   </div>
                   <div class="col-md-6 col-xs-12">
-
-
-                      <h1>biodynamic association</h1>
-
+                      <li><a class="pencil col-xs-offset-11 col-xs-1" data-toggle="modal" href="#headmod"><span class="glyphicon glyphicon-pencil"></span></a></li>
+                      <h1>{{ user.town }}</h1>
                       <div class="row">
                           <div class="col-sm-12 col-xs-12">
                               <div class="row">
@@ -38,13 +36,11 @@
                           </div>
                       </div>
                   </div>
-
                   <div class="col-xs-offset-11">
                       <a href="{{ path('actor_editUser', {'id': user.id}) }}') }}">
                           <span class="glyphicon glyphicon-pencil btn-lg"></span >
                       </a>
                   </div>
-
               </div>
           </section>
       </div>
@@ -63,6 +59,11 @@
                   <div class="col-md-4 col-xs-12">
                       <img src="{{ asset('bundles/booster/img/maire.jpg') }}" alt="photo_logo" class="center-block img-responsive picture "/>
                   </div>
+              </div>
+              <div>
+                  <a href="{{ path('mayor_editWordMayor', {'id': user.id}) }}') }}">
+                      <span class="col-xs-offset-11 glyphicon glyphicon-pencil btn-lg"></span >
+                  </a>
               </div>
           </section>
       </div>
@@ -83,12 +84,12 @@
                               <p>{{ user.description }}</p>
                           </div>
                       </div>
-
                       <div>
                           <a href="{{ path('actor_editDescription', {'id': user.id}) }}') }}"><span class="col-xs-offset-11 glyphicon glyphicon-pencil btn-lg"></span ></a>
                       </div>
-
                   </section>
+
+
                   <section class=" hidden-xs col-sm-5 col-xs-12 backWhite secPad1">
                       <h2>localisation</h2>
                       <div id="map" class="center-block"></div>
@@ -97,43 +98,43 @@
           </div>
       </div>
 
-<div class="row">
-    <div class="col-sm-offset-1 col-sm-10 block1">
-        <div class="row">
+      <div class="row">
+          <div class="col-sm-offset-1 col-sm-10 block1">
+              <div class="row">
+                  <section class="col-sm-6 col-xs-12 backWhite margeMobile secPad2 padShow">
+                      <h3 class="title">Mes offres</h3>
+                      <h4 class="underTitle">Ce que je propose...</h4>
+                      {% if offers == NULL %}
+                      <p>Absence d'Offres</p>
+                      {% else %}
+                      {% for offer in offers %}
+                      <ul>
+                          <li>
+                              <div class="row">
+                                  <a href="{{ path('actor_showOffer',{'id' : offer.id}) }}" id="lienListe">
+                                      <img src="{{ app.request.basepath }}/uploads/{{ offer.imageOffer }}" alt="photo_offre" class=" col-xs-2">
+                                      <div class="col-xs-8">
+                                          <span>{{ offer.title }}</span>
+                                          <p>{{ offer.description }}</p>
+                                      </div>
+                                  </a>
+                                  <div class="col-xs-1">
+                                      <a href="{{ path('actor_editOffer', { 'id': offer.id }) }}"><span class="glyphicon glyphicon-pencil btn-lg"></span ></a>
+                                      <a href="{{ path('actor_deleteOffer',{'id' : offer.id}) }}"><span class="glyphicon glyphicon-remove btn-lg"></span ></a>
 
-            <section class="col-sm-6 col-xs-12 backWhite margeMobile secPad2">
-                <h3 class="title">Mes offres</h3>
-                <h4 class="underTitle">Ce que je propose...</h4>
-                {% if offers == NULL %}
-                <p>Absence de d'offres</p>
-                {% else %}
-                {% for offer in offers %}
-                <ul>
-                    <li>
-                        <div class="row">
-                            <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="no photo" class=" col-xs-2">
-                            <div class="col-xs-8">
-                                <span>{{ offer.title }}</span>
-                                <p>{{ offer.description }}</p>
-                            </div>
-                            <div class="col-xs-1">
-                                <a href="{{ path('actor_editOffer', {'id': offer.id}) }}') }}"><span class="glyphicon glyphicon-pencil btn-lg"></span ></a>
-                                <a data-toggle="modal" href="#deleteOffer">
+                                  </div>
+                              </div>
+                          </li>
+                          <hr>
 
-                                    <span class="glyphicon glyphicon-remove btn-lg" ></span >
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    <hr>
-                    {% endfor %}
-                    {% endif %}
+                          {% endfor %}
+                          {% endif %}
 
-                    <div class="row">
-                        <a href="{{ path('actor_newOffer') }}" class="col-xs-offset-11"> <span class="glyphicon glyphicon-plus btn-lg"></span ></a>
-                    </div>
-                </ul>
-            </section>
+                          <div class="row">
+                              <a href="{{ path('actor_newOffer') }}" class="col-xs-offset-11"> <span class="glyphicon glyphicon-plus btn-lg"></span ></a>
+                          </div>
+                      </ul>
+                  </section>
 
                   <section class="col-sm-5 col-xs-12 backWhite secPad3 padShow">
                       <h3 class="title">Mes matchings</h3>
@@ -185,42 +186,37 @@
       </div>
 
       <div class="row">
-          <div class="col-sm-offset-1 col-sm-10 block2">
+          <div class="col-sm-offset-1 col-sm-10 block1">
               <div class="row">
-                  <section class="col-sm-6 col-xs-12 backWhite margeMobile secPad2">
+                  <section class="col-sm-6 col-xs-12 backWhite margeMobile secPad2 padShow">
                       <h3 class="title">Mes besoins</h3>
                       <h4 class="underTitle">Ce dont j'ai besoin...</h4>
-
+                      {% if needs == NULL %}
+                      <p>Absence de Besoins</p>
+                      {% else %}
+                      {% for needs in needs %}
                       <ul>
-                          {% if needs == NULL %}
-                              <p>Absence de besoins</p>
-                          {% else %}
-                              {% for needs in needs %}
-
-                                  <li>
-
-                                      <div class="row">
-                                          <a href="{{ path('actor_showNeeds',{'id' : needs.id}) }}">
-                                              <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="no photo" class=" col-xs-2">
-                                              <div class="col-xs-8">
-                                                  <span>{{ needs.title }}</span>
-                                                  <p>{{ needs.description }}</p>
-                                              </div>
-                                          </a>
-                                          <div class="col-xs-1">
-                                              <a href="{{ path('actor_editNeeds', {'id': needs.id}) }}') }}"><span class="glyphicon glyphicon-pencil btn-lg"></span ></a>
-                                              <a data-toggle="modal" href="#deleteNeeds">
-
-                                                  <span class="glyphicon glyphicon-remove btn-lg" ></span >
-                                              </a>
-                                          </div>
+                          <li>
+                              <div class="row">
+                                  <a href="{{ path('actor_showNeeds',{'id' : needs.id}) }}" id="lienListe">
+                                      <img src="{{ app.request.basepath }}/uploads/{{ needs.imageNeeds }}" alt="photo_besoin" class=" col-xs-2">
+                                      <div class="col-xs-8">
+                                          <span>{{ needs.title }}</span>
+                                          <p>{{ needs.description }}</p>
                                       </div>
-                                  </li>
+                                  </a>
+                                  <div class="col-xs-1">
+                                      <a href="{{ path('actor_editNeeds', { 'id': needs.id }) }}"><span class="glyphicon glyphicon-pencil btn-lg"></span ></a>
+                                      <a href="{{ path('actor_deleteNeeds',{'id' : needs.id}) }}"><span class="glyphicon glyphicon-remove btn-lg"></span ></a>
 
+                                  </div>
+                              </div>
+                          </li>
+                          <hr>
 
-                              {% endfor %}
-                              <hr>
+                          {% endfor %}
                           {% endif %}
+
                           <div class="row">
                               <a href="{{ path('actor_newNeeds') }}" class="col-xs-offset-11"> <span class="glyphicon glyphicon-plus btn-lg"></span ></a>
                           </div>
@@ -276,85 +272,84 @@
           </div>
       </div>
 
-{#*************************************MODALS FOR DELETE AN OFFER AND A NEED********************************************#}
+
+      {#*************************************MODALS FOR DELETE AN OFFER AND A NEED********************************************#}
 
 
-<div class="modal fade" id="deleteOffer">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">SUPPRESSION D'UNE OFFRE</h4>
-            </div>
-            <div class="modal-body">
-                <p>Confirmez-vous la suppression de cette offre ?</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-                {% for offer in offers %}
-                    <a href="{{ path('actor_deleteOffer', {'id': offer.id} ) }}">Supprimer</a>
-                {% endfor %}
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+      <div class="modal fade" id="deleteOffer">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title">SUPPRESSION D'UNE OFFRE</h4>
+                  </div>
+                  <div class="modal-body">
+                      <p>Confirmez-vous la suppression de cette offre ?</p>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                      {% for offer in offers %}
+                          <a href="{{ path('actor_deleteOffer', {'id': offer.id} ) }}">Supprimer</a>
+                      {% endfor %}
+                  </div>
+              </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
 
 
-<div class="modal fade" id="deleteNeeds">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">SUPPRESSION D'UN BESOIN</h4>
-            </div>
-            <div class="modal-body">
-                <p>Confirmez-vous la suppression de ce besoin ?</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-                {% for needs in needs %}
-                    <a href="{{ path('actor_deleteNeeds', {'id': needs.id} ) }}">Supprimer</a>
-                {% endfor %}
+      <div class="modal fade" id="deleteNeeds">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title">SUPPRESSION D'UN BESOIN</h4>
+                  </div>
+                  <div class="modal-body">
+                      <p>Confirmez-vous la suppression de ce besoin ?</p>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                      {% for needs in needs %}
+                          <input type="button" href="{{ path('actor_deleteNeeds', {'id': needs.id} ) }}" value="Oui" class="btn btn-default">
+                      {% endfor %}
+                  </div>
+              </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+      {#*******************************************JAVASCRIPT FOR THIS PAGE *************************************************#}
 
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+      <script src="http://maps.google.com/maps/api/js?sensor=false&key=AIzaSyBSFjZGurwwEtOnMOg1mKgJgS3WcP8ucrk" type="text/javascript"></script>
 
+      <script>
 
-    {#*******************************************JAVASCRIPT FOR THIS PAGE *************************************************#}
+          var locations = [
+              {% for user in users %}
+              ['{{ user.cp }}', '{{ user.lat }}', '{{ user.lgt }}'],
+              {% endfor %}
 
-    <script src="http://maps.google.com/maps/api/js?sensor=false&key=AIzaSyBSFjZGurwwEtOnMOg1mKgJgS3WcP8ucrk" type="text/javascript"></script>
-
-    <script>
-        var locations = [
-            {% for user in users %}
-            ['{{ user.cp }}', '{{ user.lat }}', '{{ user.lgt }}'],
-            {% endfor %}
-        ];
-        {% for user in users %}
-        var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 10,
-            center: new google.maps.LatLng({{ user.lat }}, {{ user.lgt }}),
-            mapTypeId: google.maps.MapTypeId.ROADMAP,
-            scrollwheel: false
-        });
-        var infowindow = new google.maps.InfoWindow();
-        var marker, i;
-        for (i = 0; i < locations.length; i++) {
-            marker = new google.maps.Marker({
-                position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-                map: map
-            });
-            google.maps.event.addListener(marker, 'click', (function(marker, i) {
-                return function() {
-                    infowindow.setContent(locations[i][0]);
-                    infowindow.open(map, marker);
-                }
-            })(marker, i));
-        }
-        {% endfor %}
-    </script>
-
-    {% endblock %}
-
+          ];
+          {% for user in users %}
+          var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 10,
+              center: new google.maps.LatLng({{ user.lat }}, {{ user.lgt }}),
+              mapTypeId: google.maps.MapTypeId.ROADMAP,
+              scrollwheel: false
+          });
+          var infowindow = new google.maps.InfoWindow();
+          var marker, i;
+          for (i = 0; i < locations.length; i++) {
+              marker = new google.maps.Marker({
+                  position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                  map: map
+              });
+              google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                  return function() {
+                      infowindow.setContent(locations[i][0]);
+                      infowindow.open(map, marker);
+                  }
+              })(marker, i));
+          }
+          {% endfor %}
+      </script>
+  {% endblock %}
 

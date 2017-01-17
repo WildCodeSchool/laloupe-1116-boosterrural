@@ -30,7 +30,6 @@ class ProfMayorController extends Controller
             array('users'=>$user
             ));
 
-
         return $this->render('BoosterBundle:Mayor:index.html.twig', array(
             'user'=>$user,
             'users'=>$users,
@@ -115,9 +114,7 @@ class ProfMayorController extends Controller
     /************************EDIT OFFER OR NEEDS *************************/
     public function editOfferAction(Request $request, Offer $offer)
     {
-
-        $form = $this->createForm('BoosterBundle\Form\OfferType', $offer);
-
+        $form = $this->createForm('BoosterBundle\Form\MayorOfferType', $offer);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -129,14 +126,11 @@ class ProfMayorController extends Controller
         return $this->render('BoosterBundle:Mayor:editOffer.html.twig', array(
             'offer' => $offer,
             'form' => $form->createView(),
-
-
         ));
     }
 
     public function editNeedAction(Request $request, Needs $need)
     {
-
         $form = $this->createForm('BoosterBundle\Form\MayorNeedsType', $need);
         $form->handleRequest($request);
 
@@ -150,7 +144,6 @@ class ProfMayorController extends Controller
         return $this->render('BoosterBundle:Mayor:editNeeds.html.twig', array(
             'need' => $need,
             'form' => $form->createView(),
-
         ));
     }
 
@@ -228,9 +221,8 @@ class ProfMayorController extends Controller
     public function listNeedsMayorAction()
     {
         $em = $this->getDoctrine()->getManager();
-
-        $needs = $em->getRepository('BoosterBundle:Needs')->findAll();
-
+        $needs = $em->getRepository('BoosterBundle:Needs')->createQueryBuilder('n')->join('n.users','u');
+        $needs = $needs->where($needs->expr()->in('u.roles', ['a:1:{i:0;s:10:"ROLE_MAYOR";}']))->getQuery()->getResult();
         return $this->render('BoosterBundle:Mayor:listNeedsMayor.html.twig', array(
             'needs' => $needs,
         ));
@@ -239,7 +231,6 @@ class ProfMayorController extends Controller
     public function listMayorAction()
     {
         $em = $this->getDoctrine()->getManager();
-
         $user = $em->getRepository('BoosterBundle:User')->createQueryBuilder('u');
         $user = $user->where($user->expr()->in('u.roles', ['a:1:{i:0;s:10:"ROLE_MAYOR";}']))->getQuery()->getResult();
         return $this->render('BoosterBundle:Mayor:listMayor.html.twig', array(

@@ -35,7 +35,7 @@ ul {
 }
 
 section {
-    border: 4px solid gray;
+    border: 2px solid gray;
     box-shadow: 10px 10px 15px gray;
     background-color: white;
 }
@@ -332,16 +332,16 @@ li .liNav2{
 #HPmap {
     height: 600px;
     width: 40%;
-    border: 3px solid gray;
+    border: 1px solid gray;
     border-radius: 1%;
-    box-shadow: 10px 10px 15px gray;
+    box-shadow: 5px 5px 10px gray;
 }
 
 .map_deco {
     position: relative;
     padding-top: 300px;
     padding-bottom: 450px;
-    border: 4px solid gray;
+    border: 2px solid gray;
 }
 
 .imgHP1 {

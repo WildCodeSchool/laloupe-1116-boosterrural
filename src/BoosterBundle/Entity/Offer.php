@@ -17,11 +17,11 @@ class Offer
     }
     public function getWebPath()
     {
-        return null === $this->image ? null : $this->getUploadDir() . '/' . $this->image;
+        return null === $this->imageOffer ? null : $this->getUploadDir() . '/' . $this->imageOffer;
     }
     public function getAbsolutePath()
     {
-        return null === $this->image ? null : $this->getUploadRootDir() . '/' . $this->image;
+        return null === $this->imageOffer ? null : $this->getUploadRootDir() . '/' . $this->imageOffer;
     }
     public $fileOffer;
     public function preUploadOffer()

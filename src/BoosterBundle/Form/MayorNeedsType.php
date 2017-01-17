@@ -52,6 +52,4 @@ class MayorNeedsType extends AbstractType
     {
         return 'boosterbundle_needs';
     }
-
-
 }
