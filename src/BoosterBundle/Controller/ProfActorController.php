@@ -252,4 +252,21 @@ class ProfActorController extends Controller
             'needs' => $needs,
         ));
     }
+
+    public function rechercheAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $motcle = $request->get('motcle');
+
+       // $needs = $em->getRepository('BoosterBundle:Needs')->findBy( array('description' => $motcle));
+
+        $needs = $em->getRepository('BoosterBundle:Needs')->findNeedsBytitle($motcle);
+
+
+        return $this->render('BoosterBundle:Actor:listNeedsActor.html.twig', array(
+            'needs' => $needs,
+        ));
+    }
+
 }

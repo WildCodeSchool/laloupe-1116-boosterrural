@@ -45,9 +45,9 @@ class ActorOfferType extends AbstractType
                     'Dupliquer ce projet' => 'Dupliquer ce projet',
                     'Former sur ce projet'=> 'Former sur ce projet',
                     'Appuyer un projet similaire'=> 'Appuyer un projet similaire',
-                    'Echanger sur ce projet'=>'Echanger sur ce projet',
-                    'Rechercher un associé'=>'Rechercher un associé',
-                    'Co-créer'=>'Co-créer'
+                    'Echanger sur ce projet'=> 'Echanger sur ce projet',
+                    'Rechercher un collaborateur'=> 'Rechercher un collaborateur',
+                    'Co-créer'=> 'Co-créer'
                 ),
                 'label'=>'Souhaits'))
 
