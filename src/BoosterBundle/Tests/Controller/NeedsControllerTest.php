@@ -6,16 +6,31 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class NeedsControllerTest extends WebTestCase
 {
-    /*
-    public function testCompleteScenario()
+
+    public function testHomePage()
     {
+
         // Create a new client to browse the application
         $client = static::createClient();
 
         // Create a new entry in the database
-        $crawler = $client->request('GET', '/needs/');
-        $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /needs/");
-        $crawler = $client->click($crawler->selectLink('Create a new entry')->link());
+        $crawler = $client->request('GET', '/');
+
+        $this->assertEquals('BoosterBundle\Controller\DefaultController::home_page_no_connectAction', $client->getRequest()->attributes->get('_controller'));
+        $this->assertTrue(200 === $client->getResponse()->getStatusCode());
+
+
+        //Test du bouton inscription
+        $link = $crawler
+            ->filter('a:contains("Connexion")')
+            ->eq(0)
+            ->link();
+
+        $crawler = $client->click($link);
+
+        $this->assertEquals('FOS\UserBundle\Controller\SecurityController::loginAction', $client->getRequest()->attributes->get('_controller'));
+        $this->assertTrue(200 === $client->getResponse()->getStatusCode());
+        /*$crawler = $client->click($crawler->selectLink('Create a new entry')->link());
 
         // Fill in the form and submit it
         $form = $crawler->selectButton('Create')->form(array(
@@ -48,8 +63,8 @@ class NeedsControllerTest extends WebTestCase
         $crawler = $client->followRedirect();
 
         // Check the entity has been delete on the list
-        $this->assertNotRegExp('/Foo/', $client->getResponse()->getContent());
+        $this->assertNotRegExp('/Foo/', $client->getResponse()->getContent());*/
     }
 
-    */
+
 }

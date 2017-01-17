@@ -1,13 +1,15 @@
 <?php
 namespace BoosterBundle\DataFixtures\ORM;
 
-use Doctrine\Common\DataFixtures\FixtureInterface;
+
 use Doctrine\Common\Persistence\ObjectManager;
 use BoosterBundle\Entity\User;
-use BoosterBundle\Entity\Offer;
-use BoosterBundle\Entity\Needs;
+use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
+use Doctrine\Common\DataFixtures\AbstractFixture;
 
-class LoadUserData implements FixtureInterface
+
+class LoadUserData extends AbstractFixture implements OrderedFixtureInterface
+
 {
     public function load(ObjectManager $manager)
     {
@@ -30,41 +32,11 @@ Notre commune premier village Etape Numérique de France, souhaite vous apporter
  
 Alain Astruc, Maire d’Aumont-Aubrac.');
         $mayor1->setResident('1146');
-        $mayor1->setPhone('04 66 42 80 02');
+        $mayor1->setPhone('0466428002');
 
 
         $manager->persist($mayor1);
         $manager->flush();
-
-
-        //addition an offer for the mayor 1
-
-        $offerMayor1 = new Offer();
-        $offerMayor1->setTitle('Raccordement gratuit à la fibre optique');
-        $offerMayor1->setCp('48130');
-        $offerMayor1->setTown('Aumont-Aubrac');
-        $offerMayor1->setCategory('Communication');
-        $offerMayor1->setDescription('prolongation de la fibre optique jusqu\’à la zone d\’activités du Pêcher.');
-        $offerMayor1->setWish('Echanger sur ce projet');
-        $offerMayor1->setImageOffer('');
-
-        $manager->persist($offerMayor1);
-        $manager->flush();
-
-
-        //addition an offer for the mayor 1
-
-        $needMayor1 = new Needs();
-        $needMayor1->setTitle('Boulangerie cherche Boulanger');
-        $needMayor1->setCp('48130');
-        $needMayor1->setTown('Aumont-Aubrac');
-        $needMayor1->setDescription('Boulanger H/F pour réaliser la préparation et la cuisson de la pâte à pain selon une méthode donnée. Préparation et mise en place de la Viennoiserie et des Sandwichs. Travail de jour, repos le samedi et un autre jour dans la semaine.
-CAP Boulanger requis.');
-        $needMayor1->setImageNeeds('');
-
-        $manager->persist($needMayor1);
-        $manager->flush();
-
 
         //Create a new actor
 
@@ -81,38 +53,11 @@ CAP Boulanger requis.');
         $actor1->setUsername('Gaillard');
         $actor1->setPassword('123');
         $actor1->setDescription('Boucherie familiale depuis 1965 reputée');
-        $actor1->setPhone('04 66 42 80 34');
+        $actor1->setPhone('0466428034');
 
         $manager->persist($actor1);
         $manager->flush();
 
-
-        //addition an offer for the mayor 1
-
-        $offerActor1 = new Offer();
-        $offerActor1->setTitle('Locaux vacants');
-        $offerActor1->setCp('48130');
-        $offerActor1->setTown('Aumont-Aubrac');
-        $offerActor1->setCategory('Communication');
-        $offerActor1->setDescription('Loue locaux vacant pouvant profiter à des artisans. Locaux de 300m² au nombre de 5');
-        $offerActor1->setWish('Echanger sur ce projet');
-        $offerActor1->setImageOffer('');
-
-        $manager->persist($offerActor1);
-        $manager->flush();
-
-
-        //addition an offer for the mayor 1
-
-        $needActor1 = new Needs();
-        $needActor1->setTitle('Recherche Boucher');
-        $needActor1->setCp('48130');
-        $needActor1->setTown('Aumont-Aubrac');
-        $needActor1->setDescription('Recherche un boucher a former. Si tu es jeune beau et que aime la viande. Notre boucherie est faite pour toi !!!');
-        $needActor1->setImageNeeds('');
-
-        $manager->persist($needActor1);
-        $manager->flush();
 
         //Create a new citizen
 
@@ -122,5 +67,14 @@ CAP Boulanger requis.');
         $citizen1->setPassword('123');
         $citizen1->setEnabled('1');
         $citizen1->setUsername('Albert');
+        $citizen1->setPhone('0466428034');
+
+        $manager->persist($citizen1);
+        $manager->flush();
+    }
+
+    public function getOrder()
+    {
+        return 1;
     }
 }
