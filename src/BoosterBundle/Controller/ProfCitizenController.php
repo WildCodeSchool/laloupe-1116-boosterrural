@@ -11,12 +11,14 @@ use BoosterBundle\Entity\Needs;
 
 class ProfCitizenController extends Controller
 {
-
     public function indexAction()
     {
         $user = $this->getUser();
+
+
         $user=$this->get('security.context')->getToken()->getUser();
         $em = $this->getDoctrine()->getManager();
+        $users = $em->getRepository('BoosterBundle:User')->findAll();
 
         $offers = $em->getRepository('BoosterBundle:Offer')->findBy(
             array('users'=>$user
@@ -29,9 +31,9 @@ class ProfCitizenController extends Controller
 
         return $this->render('BoosterBundle:Citizen:index.html.twig', array(
             'user'=>$user,
+            'users'=>$users,
             'offers' => $offers,
             'needs' => $needs,
-
 
         ));
     }
