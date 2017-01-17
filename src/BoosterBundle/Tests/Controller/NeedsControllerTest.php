@@ -2,9 +2,9 @@
 
 namespace BoosterBundle\Tests\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class NeedsControllerTest extends WebTestCase
+
+class FormulaireControllerTest extends WebTestCasee
 {
 
     public function testHomePage()
