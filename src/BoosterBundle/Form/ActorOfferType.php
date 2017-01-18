@@ -39,10 +39,13 @@ class ActorOfferType extends AbstractType
 
             ->add('wish', choiceType::class, array(
                 'choices' => array(
-                    'dupliquate' => 'Dupliquer ce projet',
-                    'formation'=> 'Former sur ce projet',
-                    'help'=> 'Appuyer un projet similaire',
-                    'tell'=>'Echanger sur ce projet'
+                    'Choisir' => 'Choisir',
+                    'Dupliquer ce projet' => 'Dupliquer ce projet',
+                    'Former sur ce projet'=> 'Former sur ce projet',
+                    'Appuyer un projet similaire'=> 'Appuyer un projet similaire',
+                    'Echanger sur ce projet'=> 'Echanger sur ce projet',
+                    'Rechercher un collaborateur'=> 'Rechercher un collaborateur',
+                    'Co-créer'=> 'Co-créer'
                 ),
                 'label'=>'Souhaits'))
 

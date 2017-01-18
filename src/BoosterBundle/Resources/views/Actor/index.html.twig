@@ -188,13 +188,20 @@
       <div class="row">
           <div class="col-sm-offset-1 col-sm-10 block1">
               <div class="row">
+
                   <section class="col-sm-6 col-xs-12 backWhite margeMobile secPad2 padShow">
-                      <h3 class="title">Mes besoins</h3>
-                      <h4 class="underTitle">Ce dont j'ai besoin...</h4>
+                      <h3 class="title">Nos besoins</h3>
+                      <h4 class="underTitle">Ce dont nous avons besoin...</h4>
+                      <form class="navbar-form navbar-center" action="{{ path('actor_recherche')}}">
+                          <input class="form-control" placeholder="Rechercher..." type="text" name="motcle">
+                      </form>
                       {% if needs == NULL %}
                       <p>Absence de Besoins</p>
                       {% else %}
                       {% for needs in needs %}
+
+
+
                       <ul>
                           <li>
                               <div class="row">
