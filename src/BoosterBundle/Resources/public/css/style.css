@@ -753,8 +753,12 @@ textarea {
 
 .padShow {
     padding: 2%;
-    height: 80vh;
+    height: 70vh;
     overflow-y: scroll;
+}
+
+.padShow2 {
+    height: 90vh;
 }
 
 .listIndex {
