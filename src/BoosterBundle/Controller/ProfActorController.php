@@ -33,12 +33,21 @@ class ProfActorController extends Controller
             ));
 
 
+        $offersall = $em->getRepository('BoosterBundle:Offer')->createQueryBuilder('n')->join('n.users','u');
+        $offersall = $offersall->where($offersall->expr()->in('u.roles', ['a:1:{i:0;s:10:"ROLE_MAYOR";}','a:1:{i:0;s:12:"ROLE_CITIZEN";}']))->            getQuery()->getResult(); //Trier toutes les offres (maires et citoyens) dans la page back
+
+
+        $needsall = $em->getRepository('BoosterBundle:Needs')->createQueryBuilder('n')->join('n.users','u');
+        $needsall = $needsall->where($needsall->expr()->in('u.roles', ['a:1:{i:0;s:10:"ROLE_MAYOR";}','a:1:{i:0;s:12:"ROLE_CITIZEN";}']))->                getQuery()->getResult(); //Trier touts les besoins (maires et citoyens) dans la page back
+
+
         return $this->render('BoosterBundle:Actor:index.html.twig', array(
             'user'=>$user,
             'users'=>$users,
             'offers' => $offers,
             'needs' => $needs,
-
+            'offersall' => $offersall,
+            'needsall' => $needsall,
         ));
     }
 

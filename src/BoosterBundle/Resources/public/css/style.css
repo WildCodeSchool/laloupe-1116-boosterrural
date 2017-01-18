@@ -753,9 +753,27 @@ textarea {
 
 .padShow {
     padding: 2%;
-    height: 80vh;
+    height: 70vh;
     overflow-y: scroll;
 }
+
+.padShow2 {
+    height: 90vh;
+}
+
+.padShow3 {
+    padding: 2%;
+    height: 70vh;
+    overflow-y: scroll;
+}
+
+/*.navbar-form .form-control {*/
+    /*width: 200%;*/
+/*}*/
+
+/*.searchBar {*/
+    /*padding-left: 28%;*/
+/*}*/
 
 .listIndex {
     padding: 2%;
