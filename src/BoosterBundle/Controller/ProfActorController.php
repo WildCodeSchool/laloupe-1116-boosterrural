@@ -65,6 +65,7 @@ class ProfActorController extends Controller
 
         return $this->render('BoosterBundle:Actor:newNeeds.html.twig', array(
             'needs' => $needs,
+            'user' => $user,
             'form' => $form->createView(),
         ));
     }
