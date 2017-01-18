@@ -259,10 +259,8 @@ class ProfActorController extends Controller
 
         $motcle = $request->get('motcle');
 
-       // $needs = $em->getRepository('BoosterBundle:Needs')->findBy( array('description' => $motcle));
 
         $needs = $em->getRepository('BoosterBundle:Needs')->findNeedsBydescription($motcle);
-
 
 
         return $this->render('BoosterBundle:Actor:listNeedsActor.html.twig', array(
