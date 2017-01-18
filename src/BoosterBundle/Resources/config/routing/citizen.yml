@@ -49,12 +49,12 @@ citizen_deleteNeeds:
     methods:  DELETE
 
 citizen_editDescription:
-    path:     /offer/description/{id}
+    path:     /description/{id}
     defaults: { _controller: "BoosterBundle:ProfCitizen:editDescription" }
     methods:  [GET, POST]
 
 citizen_editUser:
-    path:     /offer/user/{id}
+    path:     /user/{id}
     defaults: { _controller: "BoosterBundle:ProfCitizen:editUser" }
     methods:  [GET, POST]
 

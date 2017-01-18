@@ -91,6 +91,7 @@ class ProfActorController extends Controller
 
         return $this->render('BoosterBundle:Actor:newOffer.html.twig', array(
             'offer' => $offer,
+            'user'=>$user,
             'form' => $form->createView(),
         ));
     }
@@ -176,7 +177,7 @@ class ProfActorController extends Controller
     public function editUserAction(Request $request, User $user)
     {
 
-        $form = $this->createForm('BoosterBundle\Form\ActorRegistrationType', $user);
+        $form = $this->createForm('BoosterBundle\Form\ActorEditUserType', $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

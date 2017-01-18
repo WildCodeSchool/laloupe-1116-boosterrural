@@ -24,12 +24,54 @@ class ActorOfferType extends AbstractType
             ->add('town', null, array(
                 'label'=>'Ville'
             ))
-            ->add('activity', choiceType::class, array(
+
+            ->add('development', choiceType::class, array(
                 'choices' => array(
-                    'hobby' => 'Loisirs',
-                    'craftsman'=> 'Artisan',
-                    'benevolat'=> 'Bénévolats',
-                    'communication'=>'Communication'
+                    //DD
+                    'Biodiversité' => 'Biodiversité',
+                    'Eco-conception' => 'Eco-conception',
+                    'Economie circulaire' => 'Economie circulaire',
+                    'Energie / eau optimisées' => 'Energie / eau optimisées',
+                    'Gouvernance et participation' => 'Gouvernance et participation',
+                    'Recyclage' => 'Recyclage',
+                    'Ressourceries' => 'Ressourceries',
+                    'Mode ou textile "éco"' => 'Mode ou textile "éco"',
+                    'Santé alternative' => 'Santé alternative'
+                ),
+                'label'=>'Categorie'))
+
+            ->add('habitation', choiceType::class, array(
+                'choices' => array(
+                    //habitat
+                    'Rénovation thermique' => 'Rénovation thermique',
+                    'Matériaux "éco" ou locaux' => 'Matériaux "éco" ou locaux'
+                ),
+                'label'=>'Categorie'))
+
+            ->add('culture', choiceType::class, array(
+                'choices' => array(
+                    //Culture
+                    'Education' => 'Education',
+                    'Formation innovante' => 'Formation innovante',
+                    'Gastronomie locale' => 'Gastronomie locale',
+                    'Savoirs et transmissions' => 'Savoirs et transmissions',
+                    'Tourisme alternatif' => 'Tourisme alternatif'
+                ),
+                'label'=>'Categorie'))
+
+            ->add('agriculture', choiceType::class, array(
+                'choices' => array(
+                    //Agri
+                    'Agriculture bio, maraîchage, circuits courts' => 'Agriculture bio, maraîchage, circuits courts',
+                    'Agro-alimentaire, transformation' => 'Agro-alimentaire, transformation',
+                    'Commerces innovants et locaux' => 'Commerces innovants et locaux'
+                ),
+                'label'=>'Categorie'))
+
+            ->add('transportation', choiceType::class, array(
+                'choices' => array(
+                    //mobilité
+                    'Transport alternatif, co-voiturage' => 'Transport alternatif, co-voiturage'
                 ),
                 'label'=>'Categorie'))
 

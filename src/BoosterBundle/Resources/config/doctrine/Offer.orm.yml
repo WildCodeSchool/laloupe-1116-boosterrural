@@ -21,7 +21,27 @@ BoosterBundle\Entity\Offer:
         description:
             type: text
             nullable: true
-        activity:
+        development:
+            type: string
+            length: 255
+            nullable: true
+        habitation:
+            type: string
+            length: 255
+            nullable: true
+        culture:
+            type: string
+            length: 255
+            nullable: true
+        agriculture:
+            type: string
+            length: 255
+            nullable: true
+        transportation:
+            type: string
+            length: 255
+            nullable: true
+        coworking:
             type: string
             length: 255
             nullable: true
@@ -35,7 +55,6 @@ BoosterBundle\Entity\Offer:
         lgt:
             type: integer
             nullable: true
-
         imageOffer:
             type: string
             length: 255

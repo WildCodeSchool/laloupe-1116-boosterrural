@@ -9,6 +9,7 @@
                     <h1>Modifification des données utilisateur</h1>
 
                     {{ form_start(form) }}
+
                     {{ form_widget(form) }}
                     <a href="{{ path('actor_editUser', { 'id': user.id }) }}"><input type="submit" value="Modifier" class="center-block showLien2"></a>
                     {{ form_end(form) }}

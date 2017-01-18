@@ -58,17 +58,17 @@ mayor_list:
     defaults: { _controller: "BoosterBundle:ProfMayor:listMayor" }
 
 mayor_editDescription:
-    path:     /offer/description/{id}
+    path:     /description/{id}
     defaults: { _controller: "BoosterBundle:ProfMayor:editDescription" }
     methods:  [GET, POST]
 
 mayor_editUser:
-    path:     /offer/user/{id}
+    path:     /user/{id}
     defaults: { _controller: "BoosterBundle:ProfMayor:editUser" }
     methods:  [GET, POST]
 
 mayor_editWordMayor:
-    path:     /offer/wordMayor/{id}
+    path:     /wordMayor/{id}
     defaults: { _controller: "BoosterBundle:ProfMayor:editWordMayor" }
     methods:  [GET, POST]
 
