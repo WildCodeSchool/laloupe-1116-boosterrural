@@ -1,0 +1,15 @@
+BoosterBundle\Entity\Partners:
+    type: entity
+    table: null
+    repositoryClass: BoosterBundle\Repository\PartnersRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        partnerText:
+            type: text
+            nullable: true
+    lifecycleCallbacks: {  }

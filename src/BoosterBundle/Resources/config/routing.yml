@@ -10,6 +10,14 @@ booster_citizeginBack:
     resource: "@BoosterBundle/Resources/config/routing/citizen.yml"
     prefix:   /citizen
 
+booster_partners:
+    resource: "@BoosterBundle/Resources/config/routing/partners.yml"
+    prefix:   /partners
+
+booster_expert:
+    resource: "@BoosterBundle/Resources/config/routing/expert.yml"
+    prefix:   /expert
+
 booster_citizen:
     path:     /citizenfront/{id}
     defaults: { _controller: BoosterBundle:Default:citizen }

@@ -1,0 +1,14 @@
+BoosterBundle\Entity\Expert:
+    type: entity
+    table: null
+    repositoryClass: BoosterBundle\Repository\ExpertRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        expertText:
+            type: text
+    lifecycleCallbacks: {  }

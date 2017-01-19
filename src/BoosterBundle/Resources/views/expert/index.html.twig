@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Experts list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Experttext</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for expert in experts %}
+            <tr>
+                <td><a href="{{ path('expert_show', { 'id': expert.id }) }}">{{ expert.id }}</a></td>
+                <td>{{ expert.expertText }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('expert_show', { 'id': expert.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('expert_edit', { 'id': expert.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('expert_new') }}">Create a new expert</a>
+        </li>
+    </ul>
+{% endblock %}
