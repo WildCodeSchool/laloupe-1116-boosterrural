@@ -40,6 +40,16 @@ section {
     background-color: white;
 }
 
+.ombreMoteur {
+    box-shadow: 10px 10px 15px gray;
+    border: 2px solid gray;
+    height: 50px;
+}
+
+.ombreMoteur2 {
+    box-shadow: 1px 1px 2px gray;
+}
+
 .center-block1{
     display: initial;
 }
@@ -753,7 +763,7 @@ textarea {
 
 .padShow {
     padding: 2%;
-    height: 70vh;
+    height: 70%;
     overflow-y: scroll;
 }
 
@@ -763,16 +773,14 @@ textarea {
 
 .padShow3 {
     padding: 2%;
-    height: 70vh;
+    height: 70%;
     overflow-y: scroll;
 }
 
-/*.navbar-form .form-control {*/
-    /*width: 200%;*/
-/*}*/
-
-/*.searchBar {*/
-    /*padding-left: 28%;*/
+/*@media all and (max-width: 992px) {*/
+    /*.navbar-form .form-control {*/
+        /*width: 20%;*/
+    /*}*/
 /*}*/
 
 .listIndex {
