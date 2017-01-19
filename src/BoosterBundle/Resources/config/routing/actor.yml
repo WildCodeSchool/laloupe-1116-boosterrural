@@ -54,7 +54,7 @@ actor_listNeed:
     defaults: { _controller: "BoosterBundle:ProfActor:listNeedsActor" }
     methods:  [GET, POST]
 
-actor_editDescrliption:
+actor_editDescription:
     path:     /description/{id}
     defaults: { _controller: "BoosterBundle:ProfActor:editDescription" }
     methods:  [GET, POST]
