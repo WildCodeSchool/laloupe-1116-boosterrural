@@ -47,15 +47,7 @@ class ProfCitizenController extends Controller
         ));
     }
 
-    /**
-     * Lists all offer entities.
-     *
-     */
-
-    /**
-     * Creates a new offer entity.
-     *
-     */
+   /*********************************NEW OFFER AND NEEDS************************************************/
     public function newOfferAction(Request $request)
     {
         $user = $this->get('security.context')->getToken()->getUser();
@@ -81,59 +73,6 @@ class ProfCitizenController extends Controller
             'form' => $form->createView(),
         ));
     }
-    /**
-     * Finds and displays a offer entity.
-     *
-     */
-    public function showOfferAction(Offer $offer)
-    {
-
-        return $this->render('BoosterBundle:Citizen:showOffer.html.twig', array(
-            'offer' => $offer,
-
-        ));
-    }
-    /**
-     * Displays a form to edit an existing offer entity.
-     *
-     */
-    public function editOfferAction(Request $request, Offer $offer)
-    {
-
-
-        $form = $this->createForm('BoosterBundle\Form\CitizenOfferType', $offer);
-
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
-
-            return $this->redirectToRoute('citizen_editOffer', array('id' => $offer->getId()));
-        }
-
-        return $this->render('BoosterBundle:Citizen:editOffer.html.twig', array(
-            'offer' => $offer,
-            'form' => $editForm->createView()
-        ));
-
-    }
-
-    public function listOfferCitizenAction()
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $offers = $em->getRepository('BoosterBundle:Offer')->createQueryBuilder('n')->join('n.users','u');
-        $offers = $offers->where($offers->expr()->in('u.roles', ['a:1:{i:0;s:12:"ROLE_CITIZEN";}']))->getQuery()->getResult();
-        return $this->render('BoosterBundle:Citizen:listOfferCitizen.html.twig', array(
-            'offers' => $offers,
-        ));
-    }
-
-
-    /**
-     * Lists all needs entities.
-     */
-
     public function newNeedAction(Request $request)
     {
         $user = $this->get('security.context')->getToken()->getUser();
@@ -161,23 +100,44 @@ class ProfCitizenController extends Controller
         ));
     }
 
+    /*****************SHOW OFFER AND NEEDS ***************************************************/
+    public function showOfferAction(Offer $offer)
+    {
 
+        return $this->render('BoosterBundle:Citizen:showOffer.html.twig', array(
+            'offer' => $offer,
 
+        ));
+    }
 
     public function showNeedAction(Needs $need)
     {
-
-
         return $this->render('BoosterBundle:Citizen:showNeeds.html.twig', array(
             'need' => $need,
 
         ));
     }
+  /*****************************************EDIT OFFER AND NEEDS******************************************************/
+    public function editOfferAction(Request $request, Offer $offer)
+    {
 
-    /**
-     * Displays a form to edit an existing need entity.
-     *
-     */
+
+        $form = $this->createForm('BoosterBundle\Form\CitizenOfferType', $offer);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('citizen_editOffer', array('id' => $offer->getId()));
+        }
+
+        return $this->render('BoosterBundle:Citizen:editOffer.html.twig', array(
+            'offer' => $offer,
+            'form' => $editForm->createView()
+        ));
+
+    }
     public function editNeedAction(Request $request, Needs $need)
     {
 
@@ -195,34 +155,6 @@ class ProfCitizenController extends Controller
             'form' => $form->createView(),
 
         ));
-    }
-
-    public function listNeedsCitizenAction(){
-        $em = $this->getDoctrine()->getManager();
-        $needs = $em->getRepository('BoosterBundle:Needs')->createQueryBuilder('n')->join('n.users','u');
-        $needs = $needs->where($needs->expr()->in('u.roles', ['a:1:{i:0;s:12:"ROLE_CITIZEN";}']))->getQuery()->getResult();
-        return $this->render('BoosterBundle:Citizen:listNeedsCitizen.html.twig', array(
-            'needs' => $needs,
-            ));
-    }
-
-    /************************DELETE OFFER OR NEEDS *************************/
-
-    public function deleteOfferAction(Offer $offer){
-        $em = $this->getDoctrine()->getManager();
-        $em->remove($offer);
-        $em->flush($offer);
-
-        return $this->redirectToRoute('citizen_index');
-
-    }
-    public function deleteNeedsAction(Needs $needs){
-        $em = $this->getDoctrine()->getManager();
-        $em->remove($needs);
-        $em->flush($needs);
-
-        return $this->redirectToRoute('citizen_index');
-
     }
 
 
@@ -256,6 +188,8 @@ class ProfCitizenController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
+
+
             return $this->redirectToRoute('citizen_index', array('id' => $user->getId()));
         }
 
@@ -266,4 +200,70 @@ class ProfCitizenController extends Controller
 
         ));
     }
+/*****************************************LIST OFFER AND NEEDS ***************************************************/
+    public function listOfferCitizenAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $offers = $em->getRepository('BoosterBundle:Offer')->createQueryBuilder('n')->join('n.users','u');
+        $offers = $offers->where($offers->expr()->in('u.roles', ['a:1:{i:0;s:12:"ROLE_CITIZEN";}']))->getQuery()->getResult();
+        return $this->render('BoosterBundle:Citizen:listOfferCitizen.html.twig', array(
+            'offers' => $offers,
+        ));
+    }
+
+
+    public function listNeedsCitizenAction(){
+        $em = $this->getDoctrine()->getManager();
+        $needs = $em->getRepository('BoosterBundle:Needs')->createQueryBuilder('n')->join('n.users','u');
+        $needs = $needs->where($needs->expr()->in('u.roles', ['a:1:{i:0;s:12:"ROLE_CITIZEN";}']))->getQuery()->getResult();
+        return $this->render('BoosterBundle:Citizen:listNeedsCitizen.html.twig', array(
+            'needs' => $needs,
+        ));
+    }
+
+
+    /************************DELETE OFFER OR NEEDS *************************/
+
+    public function deleteOfferAction(Offer $offer){
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($offer);
+        $em->flush($offer);
+
+        return $this->redirectToRoute('citizen_index');
+
+    }
+    public function deleteNeedsAction(Needs $needs){
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($needs);
+        $em->flush($needs);
+
+        return $this->redirectToRoute('citizen_index');
+
+    }
+
+    public function geocodeAction($plainAddress){
+        $user = new User();
+
+
+        $url = "https://maps.google.com/maps/api/geocode/json?address=". $plainAddress ."&key=AIzaSyBSFjZGurwwEtOnMOg1mKgJgS3WcP8ucrk";
+// get the json response
+        $resp_json = file_get_contents($url);
+// decode the json
+        $resp = json_decode($resp_json, true);
+// response status will be 'OK', if able to geocode given address
+        if ($resp['status'] == 'OK') {
+            // get the important data
+
+            //ici il récupére les données du fichier Json générer plus haut
+            $lat = $resp['results'][0]['geometry']['location']['lat'];
+            $lgt = $resp['results'][0]['geometry']['location']['lng'];
+            // verify if data is complete
+// je veux retourner la latidude et la longitude a mon mayorController
+            return array($lat, $lgt);
+
+
+        }
+    }
+
 }
