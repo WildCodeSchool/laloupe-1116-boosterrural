@@ -877,4 +877,178 @@ class User extends BaseUser
     private $imageMayor;
 
 
+    /**
+     * @var string
+     */
+    private $development;
+
+    /**
+     * @var string
+     */
+    private $habitation;
+
+    /**
+     * @var string
+     */
+    private $culture;
+
+    /**
+     * @var string
+     */
+    private $agriculture;
+
+    /**
+     * @var string
+     */
+    private $transportation;
+
+    /**
+     * @var string
+     */
+    private $coworking;
+
+
+    /**
+     * Set development
+     *
+     * @param string $development
+     *
+     * @return User
+     */
+    public function setDevelopment($development)
+    {
+        $this->development = $development;
+
+        return $this;
+    }
+
+    /**
+     * Get development
+     *
+     * @return string
+     */
+    public function getDevelopment()
+    {
+        return $this->development;
+    }
+
+    /**
+     * Set habitation
+     *
+     * @param string $habitation
+     *
+     * @return User
+     */
+    public function setHabitation($habitation)
+    {
+        $this->habitation = $habitation;
+
+        return $this;
+    }
+
+    /**
+     * Get habitation
+     *
+     * @return string
+     */
+    public function getHabitation()
+    {
+        return $this->habitation;
+    }
+
+    /**
+     * Set culture
+     *
+     * @param string $culture
+     *
+     * @return User
+     */
+    public function setCulture($culture)
+    {
+        $this->culture = $culture;
+
+        return $this;
+    }
+
+    /**
+     * Get culture
+     *
+     * @return string
+     */
+    public function getCulture()
+    {
+        return $this->culture;
+    }
+
+    /**
+     * Set agriculture
+     *
+     * @param string $agriculture
+     *
+     * @return User
+     */
+    public function setAgriculture($agriculture)
+    {
+        $this->agriculture = $agriculture;
+
+        return $this;
+    }
+
+    /**
+     * Get agriculture
+     *
+     * @return string
+     */
+    public function getAgriculture()
+    {
+        return $this->agriculture;
+    }
+
+    /**
+     * Set transportation
+     *
+     * @param string $transportation
+     *
+     * @return User
+     */
+    public function setTransportation($transportation)
+    {
+        $this->transportation = $transportation;
+
+        return $this;
+    }
+
+    /**
+     * Get transportation
+     *
+     * @return string
+     */
+    public function getTransportation()
+    {
+        return $this->transportation;
+    }
+
+    /**
+     * Set coworking
+     *
+     * @param string $coworking
+     *
+     * @return User
+     */
+    public function setCoworking($coworking)
+    {
+        $this->coworking = $coworking;
+
+        return $this;
+    }
+
+    /**
+     * Get coworking
+     *
+     * @return string
+     */
+    public function getCoworking()
+    {
+        return $this->coworking;
+    }
 }

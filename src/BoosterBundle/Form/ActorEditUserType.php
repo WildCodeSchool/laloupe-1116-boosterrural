@@ -1,11 +1,10 @@
 <?php
 namespace BoosterBundle\Form;
-
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
-class ActorRegistrationType extends AbstractType {
+class ActorEditUserType extends AbstractType {
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -34,11 +33,11 @@ class ActorRegistrationType extends AbstractType {
                     'Agriculture/Agroalimentaire' => 'Agriculture/Agroalimentaire',
                     'Culture/Patrimoine' => 'Culture/Patrimoine',
                     'Mobilité' => 'Mobilité',
-                    'Numérique et co-working' => 'Numérique et co-working'),
+                    'Numérique et co-coworking' => 'Numérique et co-coworking'),
                 'placeholder'=>'Choisir',
                 'label'=>'catégorie',
-
             ))
+
             -> add('town', null, array(
                 'label'=>'nom de la commune'
             ))

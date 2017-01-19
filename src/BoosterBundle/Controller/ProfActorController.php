@@ -33,12 +33,21 @@ class ProfActorController extends Controller
             ));
 
 
+        $offersall = $em->getRepository('BoosterBundle:Offer')->createQueryBuilder('n')->join('n.users','u');
+        $offersall = $offersall->where($offersall->expr()->in('u.roles', ['a:1:{i:0;s:10:"ROLE_MAYOR";}','a:1:{i:0;s:12:"ROLE_CITIZEN";}']))->            getQuery()->getResult(); //Trier toutes les offres (maires et citoyens) dans la page back
+
+
+        $needsall = $em->getRepository('BoosterBundle:Needs')->createQueryBuilder('n')->join('n.users','u');
+        $needsall = $needsall->where($needsall->expr()->in('u.roles', ['a:1:{i:0;s:10:"ROLE_MAYOR";}','a:1:{i:0;s:12:"ROLE_CITIZEN";}']))->                getQuery()->getResult(); //Trier touts les besoins (maires et citoyens) dans la page back
+
+
         return $this->render('BoosterBundle:Actor:index.html.twig', array(
             'user'=>$user,
             'users'=>$users,
             'offers' => $offers,
             'needs' => $needs,
-
+            'offersall' => $offersall,
+            'needsall' => $needsall,
         ));
     }
 
@@ -65,6 +74,7 @@ class ProfActorController extends Controller
 
         return $this->render('BoosterBundle:Actor:newNeeds.html.twig', array(
             'needs' => $needs,
+            'user' => $user,
             'form' => $form->createView(),
         ));
     }
@@ -91,6 +101,7 @@ class ProfActorController extends Controller
 
         return $this->render('BoosterBundle:Actor:newOffer.html.twig', array(
             'offer' => $offer,
+            'user'=>$user,
             'form' => $form->createView(),
         ));
     }
@@ -176,7 +187,7 @@ class ProfActorController extends Controller
     public function editUserAction(Request $request, User $user)
     {
 
-        $form = $this->createForm('BoosterBundle\Form\ActorRegistrationType', $user);
+        $form = $this->createForm('BoosterBundle\Form\ActorEditUserType', $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -238,5 +249,20 @@ class ProfActorController extends Controller
 
     }
 
+
+    public function rechercheAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $motcle = $request->get('motcle');
+
+
+        $needs = $em->getRepository('BoosterBundle:Needs')->findNeedsBydescription($motcle);
+
+
+        return $this->render('BoosterBundle:Actor:listNeedsActor.html.twig', array(
+            'needs' => $needs,
+        ));
+    }
 
 }

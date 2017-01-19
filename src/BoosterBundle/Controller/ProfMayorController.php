@@ -30,12 +30,22 @@ class ProfMayorController extends Controller
             array('users'=>$user
             ));
 
+
+        $offersall = $em->getRepository('BoosterBundle:Offer')->createQueryBuilder('n')->join('n.users','u');
+        $offersall = $offersall->where($offersall->expr()->in('u.roles', ['a:1:{i:0;s:10:"ROLE_ACTOR";}','a:1:{i:0;s:12:"ROLE_CITIZEN";}']))->            getQuery()->getResult(); //Trier toutes les offres (acteurs et citoyens) dans la page back
+
+
+        $needsall = $em->getRepository('BoosterBundle:Needs')->createQueryBuilder('n')->join('n.users','u');
+        $needsall = $needsall->where($needsall->expr()->in('u.roles', ['a:1:{i:0;s:10:"ROLE_ACTOR";}','a:1:{i:0;s:12:"ROLE_CITIZEN";}']))->                getQuery()->getResult(); //Trier touts les besoins (acteurs et citoyens) dans la page back
+
+
         return $this->render('BoosterBundle:Mayor:index.html.twig', array(
             'user'=>$user,
             'users'=>$users,
             'offers' => $offers,
             'needs' => $needs,
-
+            'offersall' => $offersall,
+            'needsall' => $needsall,
         ));
     }
 
@@ -207,7 +217,8 @@ class ProfMayorController extends Controller
         ));
     }
 
-    /************************LIST OFFER OR NEEDS *************************/
+    /************************ LIST OFFER OR NEEDS *************************/
+
     public function listOfferMayorAction()
     {
         $em = $this->getDoctrine()->getManager();
@@ -238,7 +249,9 @@ class ProfMayorController extends Controller
         ));
     }
 
-    /************************DELETE OFFER OR NEEDS *************************/
+
+    /************************ DELETE OFFER OR NEEDS *************************/
+
 
     public function deleteOfferAction(Offer $offer){
         $em = $this->getDoctrine()->getManager();

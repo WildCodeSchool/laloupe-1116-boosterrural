@@ -29,12 +29,21 @@ class ProfCitizenController extends Controller
             ));
 
 
+        $offersall = $em->getRepository('BoosterBundle:Offer')->createQueryBuilder('n')->join('n.users','u');
+        $offersall = $offersall->where($offersall->expr()->in('u.roles', ['a:1:{i:0;s:10:"ROLE_ACTOR";}','a:1:{i:0;s:10:"ROLE_MAYOR";}']))->            getQuery()->getResult(); //Trier toutes les offres (acteurs et maires) dans la page back
+
+
+        $needsall = $em->getRepository('BoosterBundle:Needs')->createQueryBuilder('n')->join('n.users','u');
+        $needsall = $needsall->where($needsall->expr()->in('u.roles', ['a:1:{i:0;s:10:"ROLE_ACTOR";}','a:1:{i:0;s:10:"ROLE_MAYOR";}']))->                getQuery()->getResult(); //Trier touts les besoins (acteurs et maires) dans la page back
+
+
         return $this->render('BoosterBundle:Citizen:index.html.twig', array(
             'user'=>$user,
             'users'=>$users,
             'offers' => $offers,
             'needs' => $needs,
-
+            'offersall' => $offersall,
+            'needsall' => $needsall,
         ));
     }
 

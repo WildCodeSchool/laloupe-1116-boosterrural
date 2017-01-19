@@ -58,7 +58,7 @@ mayor_list:
     defaults: { _controller: "BoosterBundle:ProfMayor:listMayor" }
 
 mayor_editDescription:
-    path:  description/{id}
+    path:     /description/{id}
     defaults: { _controller: "BoosterBundle:ProfMayor:editDescription" }
     methods:  [GET, POST]
 
