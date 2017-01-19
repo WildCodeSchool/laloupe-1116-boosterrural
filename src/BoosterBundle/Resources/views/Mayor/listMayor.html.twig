@@ -8,7 +8,7 @@
                 <section class="col-sm-offset-1 col-sm-10 col-xs-12 backWhite sec1 listIndex">
                     <div class="row">
                         <div class="col-md-6 col-xs-12">
-                            <img src="{{ asset('bundles/booster/img/acteur_logo.jpg') }}" alt="photo_logo" class="center-block img-responsive imgList"/>
+                            <img src="{{ app.request.basepath }}/uploads/{{ user.identity }}" alt="photo_logo" class="center-block img-responsive imgList"/>
                         </div>
                         <div class="col-md-6 col-xs-12">
                             <h2>{{ user.town }}</h2>
