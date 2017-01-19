@@ -115,7 +115,12 @@
                               <li>
                                   <div class="row">
                                       <a href="{{ path('mayor_showOffer',{'id' : offer.id}) }}" id="lienListe">
-                                          <img src="{{ app.request.basepath }}/uploads/{{ offer.imageOffer }}" alt="photo_offre" class=" col-xs-2">
+                                          {% if offer.imageOffer != NULL %}
+                                              <img src="{{ app.request.basepath }}/uploads/{{ offer.imageOffer }}" alt="photo_offre" class=" col-xs-2">
+                                          {% else %}
+                                              <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="photo_offre" class=" col-xs-2">
+                                          {% endif %}
+
                                           <div class="col-xs-8">
                                               <span>{{ offer.title }}</span>
                                               <p>{{ offer.description }}</p>
@@ -183,7 +188,11 @@
                               <li>
                                   <div class="row">
                                       <a href="{{ path('mayor_showNeeds',{'id' : needs.id}) }}" id="lienListe">
+                                          {% if needs.imageNeeds != NULL %}
                                           <img src="{{ app.request.basepath }}/uploads/{{ needs.imageNeeds }}" alt="photo_besoin" class=" col-xs-2">
+                                          {% else %}
+                                          <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="photo_besoin" class=" col-xs-2">
+                                          {% endif %}
                                           <div class="col-xs-8">
                                               <span>{{ needs.title }}</span>
                                               <p>{{ needs.description }}</p>
