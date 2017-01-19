@@ -5,13 +5,11 @@
           <section class="col-sm-offset-1 col-sm-10 col-xs-12 backWhite sec1">
               <div class="row">
                   <div class="col-md-6 col-xs-12">
-
                       {% if user.imageIdentity != NULL %}
                           <img src="{{ app.request.basepath }}/uploads/{{ user.imageIdentity }}" alt="photo_logo" class="center-block img-responsive pic1citiz"/>
                       {% else %}
                           <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="photo_logo" class="center-block img-responsive pic1citiz"/>
                       {% endif %}
-
                   </div>
 
                   <div class="col-md-6 col-xs-12">
