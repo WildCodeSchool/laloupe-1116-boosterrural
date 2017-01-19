@@ -1,15 +1,30 @@
 <?php
 namespace BoosterBundle\Controller;
+
 use BoosterBundle\Entity\Offer;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use BoosterBundle\Entity\User;
 use BoosterBundle\Entity\Needs;
+
 class DefaultController extends Controller
 {
     public function actorAction()
     {
-        return $this->render('BoosterBundle::actor.html.twig');
+        $user = $this->getUser();
+        $em = $this->getDoctrine()->getManager();
+        $users = $em->getRepository('BoosterBundle:User')->findAll();
+        $offers = $em->getRepository('BoosterBundle:Offer')->findBy(
+            array('users'=>$user
+            ));
+        $needs = $em->getRepository('BoosterBundle:Needs')->findBy(
+            array('users'=>$user
+            ));
+        return $this->render('BoosterBundle::actor.html.twig', array(
+            'users'=>$users,
+            'offers' => $offers,
+            'needs' => $needs,
+        ));
     }
     public function home_page_no_connectAction()
     {
@@ -26,7 +41,21 @@ class DefaultController extends Controller
     }
     public function citizenAction()
     {
-        return $this->render('BoosterBundle::citizen.html.twig');
+        $user = $this->getUser();
+        $em = $this->getDoctrine()->getManager();
+        $users = $em->getRepository('BoosterBundle:User')->findAll();
+        $offers = $em->getRepository('BoosterBundle:Offer')->findBy(
+            array('users'=>$user
+            ));
+        $needs = $em->getRepository('BoosterBundle:Needs')->findBy(
+            array('users'=>$user
+            ));
+        return $this->render('BoosterBundle::citizen.html.twig', array(
+            'users'=>$users,
+            'offers' => $offers,
+            'needs' => $needs,
+        ));
+
     }
     public function mayorAction()
     {

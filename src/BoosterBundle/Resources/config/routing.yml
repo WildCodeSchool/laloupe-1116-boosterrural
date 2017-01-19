@@ -11,11 +11,11 @@ booster_citizeginBack:
     prefix:   /citizen
 
 booster_citizen:
-    path:     /citizenfront
+    path:     /citizenfront/{id}
     defaults: { _controller: BoosterBundle:Default:citizen }
 
 booster_actor:
-    path:     /actorfront
+    path:     /actorfront/{id}
     defaults: { _controller: BoosterBundle:Default:actor}
 
 booster_homepage:
@@ -23,7 +23,7 @@ booster_homepage:
     defaults: { _controller: BoosterBundle:Default:home_page_no_connect }
 
 booster_mayor:
-    path:     /mayorfront
+    path:     /mayorfront/{id}
     defaults: { _controller: BoosterBundle:Default:mayor}
 
 booster_registerMayor:
