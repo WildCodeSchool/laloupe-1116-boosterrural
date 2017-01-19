@@ -6,7 +6,7 @@
         <div class="col-sm-offset-1 col-sm-10 col-xs-12">
             <form>
                 <div class="form-group">
-                    <input class="form-control" placeholder="Rechercher..." type="text" id="search2"> <!--id return in recherchejQuery.js-->
+                    <input class="form-control ombreMoteur" placeholder="Rechercher..." type="text" id="search2"> <!--id return in recherchejQuery.js-->
                 </div>
             </form>
         </div>
@@ -14,7 +14,7 @@
     {% for offer in offers %}
         <a href="{{ path('mayor_showOffer', { 'id': offer.id }) }}" id="lienListe">
             <div class="row">
-                <section class="col-sm-offset-1 col-sm-10 col-xs-12 backWhite sec1 listIndex">
+                <section class="col-sm-offset-1 col-sm-10 col-xs-12 backWhite sec1 listIndex filtre2">
                     <div class="row">
                         <div class="col-md-6 col-xs-12">
                             <img src="{{ app.request.basepath }}/uploads/{{ offer.imageOffer }}" alt="photo_logo" class="center-block img-responsive imgList"/>
