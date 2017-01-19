@@ -5,7 +5,11 @@
           <section class="col-sm-offset-1 col-sm-10 col-xs-12 backWhite sec1">
               <div class="row">
                   <div class="col-md-6 col-xs-12">
+                      {% if user.imageIdentity != NULL %}
                       <img src="{{ app.request.basepath }}/uploads/{{ user.imageIdentity }}" alt="photo_logo" class="center-block img-responsive"/>
+                      {% else %}
+                      <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="photo_logo" class="center-block img-responsive"/>
+                      {% endif %}
                   </div>
                   <div class="col-md-6 col-xs-12">
                       <h1>{{ user.organization }}</h1>
@@ -46,9 +50,23 @@
                       <div class="row">
                           <div class="col-md-4 col-sm-12">
                               <ul class="ulBorder">
-                                  <li><img src="{{ app.request.basepath }}/uploads/{{ user.imageDescription1 }}" alt="photo" class="pitureMini img-responsive center-block"/></li>
-                                  <li><img src="{{ app.request.basepath }}/uploads/{{ user.imageDescription2 }}" alt="photo" class="pitureMini img-responsive center-block"/></li>
-                                  <li><img src="{{ app.request.basepath }}/uploads/{{ user.imageDescription3 }}" alt="photo" class="pitureMini img-responsive center-block"/></li>
+                                  {% if user.imageDescription1 != NULL %}
+                                      <li><img src="{{ app.request.basepath }}/uploads/{{ user.imageDescription1 }}" alt="photo" class="pitureMini img-responsive center-block"/></li>
+                                  {% else %}
+                                      <li><img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="photo" class="pitureMini img-responsive center-block"/></li>
+                                  {% endif %}
+
+                                  {% if user.imageDescription2 != NULL %}
+                                      <li><img src="{{ app.request.basepath }}/uploads/{{ user.imageDescription2 }}" alt="photo" class="pitureMini img-responsive center-block"/></li>
+                                  {% else %}
+                                      <li><img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="photo" class="pitureMini img-responsive center-block"/></li>
+                                  {% endif %}
+
+                                  {% if user.imageDescription3 != NULL %}
+                                      <li><img src="{{ app.request.basepath }}/uploads/{{ user.imageDescription3 }}" alt="photo" class="pitureMini img-responsive center-block"/></li>
+                                  {% else %}
+                                      <li><img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="photo" class="pitureMini img-responsive center-block"/></li>
+                                  {% endif %}
                               </ul>
                           </div>
                           <div class="col-md-8 col-sm-12">
@@ -87,8 +105,11 @@
                               <li>
                                   <div class="row">
                                       <a href="{{ path('actor_showOffer',{'id' : offer.id}) }}" id="lienListe">
-                                          <img src="{{ app.request.basepath }}/uploads/{{ offer.imageOffer }}" alt="photo_offre" class=" col-xs-2">
-                                          <div class="col-xs-8">
+                                          {% if offer.imageOffer != NULL %}
+                                              <img src="{{ app.request.basepath }}/uploads/{{ offer.imageOffer }}" alt="photo_offre" class=" col-xs-2">
+                                          {% else %}
+                                              <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="photo_offre" class=" col-xs-2">
+                                          {% endif %}
                                               <span>{{ offer.title }}</span>
                                               <p>{{ offer.description }}</p>
                                           </div>
@@ -160,7 +181,11 @@
                               <li>
                                   <div class="row">
                                       <a href="{{ path('actor_showNeeds',{'id' : needs.id}) }}" id="lienListe">
-                                          <img src="{{ app.request.basepath }}/uploads/{{ needs.imageNeeds }}" alt="photo_besoin" class=" col-xs-2">
+                                          {% if needs.imageNeeds != NULL %}
+                                              <img src="{{ app.request.basepath }}/uploads/{{ needs.imageNeeds }}" alt="photo_besoin" class=" col-xs-2">
+                                          {% else %}
+                                              <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="photo_besoin" class=" col-xs-2">
+                                          {% endif %}
                                           <div class="col-xs-8">
                                               <span>{{ needs.title }}</span>
                                               <p>{{ needs.description }}</p>
