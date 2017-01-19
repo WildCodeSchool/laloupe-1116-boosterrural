@@ -14,7 +14,7 @@ registration:
             Pour valider votre compte utilisateur, merci de vous rendre sur %confirmationUrl%
             Cordialement,
             L'équipe du Booster Rural.
-            L'équipe
+
 layout:
     logout: 'Déconnexion'
     login: 'Connexion'
