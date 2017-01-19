@@ -54,12 +54,12 @@ actor_listNeed:
     methods:  [GET, POST]
 
 actor_editDescription:
-    path:     /offer/description/{id}
+    path:     /description/{id}
     defaults: { _controller: "BoosterBundle:ProfActor:editDescription" }
     methods:  [GET, POST]
 
 actor_editUser:
-    path:     /offer/user/{id}
+    path:     /user/{id}
     defaults: { _controller: "BoosterBundle:ProfActor:editUser" }
     methods:  [GET, POST]
 

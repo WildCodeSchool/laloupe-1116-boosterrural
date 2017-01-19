@@ -1,38 +1,23 @@
 {% extends "base.html.twig" %}
 
   {% block body %}
-
       <div class="row">
           <section class="col-sm-offset-1 col-sm-10 col-xs-12 backWhite sec1">
               <div class="row">
-                  <div class="col-md-6 col-xs-12 picture">
-                      <img src="{{ asset('bundles/booster/img/ville.jpg') }}" alt="photo_logo" class="center-block img-responsive "/>
+                  <div class="col-md-6 col-xs-12">
+                      <img src="{{ app.request.basepath }}/uploads/{{ user.imageUser }}" alt="my photo" class="center-block img-responsive pic1citiz"/>
                   </div>
                   <div class="col-md-6 col-xs-12">
-                      <li><a class="pencil col-xs-offset-11 col-xs-1" data-toggle="modal" href="#headmod"><span class="glyphicon glyphicon-pencil"></span></a></li>
-                      <h1>{{ user.town }}</h1>
-                      <div class="row">
-                          <div class="col-sm-12 col-xs-12">
-                              <div class="row">
-                                  <div class="col-xs-6">
-                                      <div class="row">
-                                          <ul class="col-xs-12">
-                                              <li><b>lieu:</b> {{ user.cp }} {{ user.lastname }}</li>
-                                              <li><b>Nbre d'habitants :</b> {{ user.resident }} </li>
-                                              <li>{{ user.website }}</li>
-                                          </ul>
-                                      </div>
-                                  </div>
-                                  <div class="col-xs-6 ">
-                                      <div class="row">
-                                          <ul class="col-xs-12">
-                                              <li><b>mail:</b>  {{ user.email }}</li>
-                                              <li><b>Téléphone :</b> {{ user.phone }}</li>
-                                              <li><b>Maire:</b> {{ user.lastname }}</li>
-                                          </ul>
-                                      </div>
-                                  </div>
-                              </div>
+                      <h1>{{ user.lastname }}</h1>
+                      <div class="row identity">
+                          <div class="col-sm-6 col-xs-12">
+                              <ul>
+                                  <li class="state"><span>Statut :</span> {{ user.statusCitizen }}</li>
+                                  <li><span>Adresse :</span>{{ user.address}}</li>
+                                  <li><span>Code Postal :</span> {{ user.cp }}</li>
+                                  <li><span>Commune :</span> {{ user.town }}</li>
+                                  <li><span>Adresse Mail :</span> {{ user.email }}</li>
+                              </ul>
                           </div>
                       </div>
                   </div>
@@ -44,39 +29,17 @@
               </div>
           </section>
       </div>
-      <div class="row">
-          <section class="col-sm-offset-1 col-sm-10 col-xs-12 backWhite sec1">
-              <div class="row">
-                  <div class="col-md-8 col-xs-12">
-                      <h2>Le mot du Maire</h2>
-                      <div class="row">
-                          <div class="col-sm-12 col-xs-12">
-                              <p>{{ user.messageMayor }}</p>
 
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col-md-4 col-xs-12">
-                      <img src="{{ asset('bundles/booster/img/maire.jpg') }}" alt="photo_logo" class="center-block img-responsive picture "/>
-                  </div>
-              </div>
-              <div>
-                  <a href="{{ path('mayor_editWordMayor', {'id': user.id}) }}') }}">
-                      <span class="col-xs-offset-11 glyphicon glyphicon-pencil btn-lg"></span >
-                  </a>
-              </div>
-          </section>
-      </div>
       <div class="row">
           <div class="col-sm-offset-1 col-sm-10">
               <div class="row flexMap">
-                  <section class="col-sm-6 col-xs-12 backWhite sec2">
+                  <section class="col-sm-6 col-xs-12 backWhite sec2 padShow">
                       <div class="row">
                           <div class="col-md-4 col-sm-12">
                               <ul class="ulBorder">
-                                  <li><img src="{{ asset('bundles/booster/img/tof1.png') }}" alt="photo" class="pitureMini img-responsive center-block"/></li>
-                                  <li><img src="{{ asset('bundles/booster/img/tof2.png') }}" alt="photo" class="pitureMini img-responsive center-block"/></li>
-                                  <li><img src="{{ asset('bundles/booster/img/tof3.png') }}" alt="photo" class="pitureMini img-responsive center-block"/></li>
+                                  <li><img src="{{ app.request.basepath }}/uploads/{{ user.imageDescription1 }}" alt="photo" class="pitureMini img-responsive center-block"/></li>
+                                  <li><img src="{{ app.request.basepath }}/uploads/{{ user.imageDescription2 }}" alt="photo" class="pitureMini img-responsive center-block"/></li>
+                                  <li><img src="{{ app.request.basepath }}/uploads/{{ user.imageDescription3 }}" alt="photo" class="pitureMini img-responsive center-block"/></li>
                               </ul>
                           </div>
                           <div class="col-md-8 col-sm-12">
@@ -319,37 +282,58 @@
       {#*******************************************JAVASCRIPT FOR THIS PAGE *************************************************#}
 
       <script src="http://maps.google.com/maps/api/js?sensor=false&key=AIzaSyBSFjZGurwwEtOnMOg1mKgJgS3WcP8ucrk" type="text/javascript"></script>
-
       <script>
-
           var locations = [
               {% for user in users %}
-              ['{{ user.cp }}', '{{ user.lat }}', '{{ user.lgt }}'],
+              ['{{ user.cp }}', '{{ user.lat }}', '{{ user.lgt }}', '{{  user.category }}', '{{ user.lastname }}', '{{ user.organization }}', '{{ user.town }}'],
               {% endfor %}
 
           ];
-          {% for user in users %}
+
           var map = new google.maps.Map(document.getElementById('map'), {
               zoom: 10,
-              center: new google.maps.LatLng({{ user.lat }}, {{ user.lgt }}),
+              center: new google.maps.LatLng({{ user.lat }},{{ user.lgt }}),
               mapTypeId: google.maps.MapTypeId.ROADMAP,
               scrollwheel: false
           });
+
           var infowindow = new google.maps.InfoWindow();
+
+
           var marker, i;
           for (i = 0; i < locations.length; i++) {
+              var image = {url: '{{ asset('bundles/booster/img/purpleFlag.png') }}', origin: new google.maps.Point(0,0)};
+              if(locations[i][3] == 'Développement durable') {
+                  image.url = '{{ asset('bundles/booster/img/greenFlag.png') }}';
+              } else if(locations[i][3] == 'Habitat') {
+                  image.url = '{{ asset('bundles/booster/img/greyFlag.png') }}';
+              }
+              else if(locations[i][3] == 'Agriculture/Agroalimentaire') {
+                  image.url = '{{ asset('bundles/booster/img/yellowFlag.png') }}';
+              }
+              else if(locations[i][3] == 'Culture/Patrimoine') {
+                  image.url = '{{ asset('bundles/booster/img/brownFlag.png') }}';
+              }
+              else if(locations[i][3] == 'Mobilité') {
+                  image.url = '{{ asset('bundles/booster/img/blueFlag.png') }}';
+              }
+              else if(locations[i][3] == 'Numérique et co-working') {
+                  image.url = '{{ asset('bundles/booster/img/orangeFlag.png') }}';
+              }
               marker = new google.maps.Marker({
                   position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-                  map: map
+                  map: map,
+                  icon: image
               });
               google.maps.event.addListener(marker, 'click', (function(marker, i) {
                   return function() {
-                      infowindow.setContent(locations[i][0]);
+
+                      infowindow.setContent(locations[i][5], locations[i][4], locations[i][0], locations[i][6] );
                       infowindow.open(map, marker);
                   }
               })(marker, i));
+
           }
-          {% endfor %}
       </script>
   {% endblock %}
 

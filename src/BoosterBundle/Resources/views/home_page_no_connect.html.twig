@@ -38,12 +38,12 @@
                             Ceci afin d’enrichir, de diversifier, de rajeunir, et de dynamiser l’action locale grâce à la mise en lien d’une multitude d’acteurs innovants qui ne se connaissent ou ne se rencontrent pas.
                             L’objectif est à la fois d’enrayer la désertification rurale, d’offrir une ouverture sur des territoires aux nombreuses ressources et d’inciter à innover ensemble sur ces territoires.<br><br>
                             Pour ce faire, la plateforme offre plusieurs services :
-                            <ul class="chipUl">
-                                <li class="chip">Un espace d’expression pour les maires et leur écosystème dynamique, les porteurs de projets et les réseaux d’acteurs,</li>
-                                <li class="chip">Un service de mise en relation ou de matching qualitatif entre les acteurs,</li>
-                                <li class="chip">Le repérage et l’identification des réseaux ou acteurs les plus innovants sur le territoire dans tous les secteurs grâce à une carte,</li>
-                                <li class="chip">La présentation d’événements et de partenariat avec d’autres plateformes.</li>
-                            </ul>
+                        <ul class="chipUl">
+                            <li class="chip">Un espace d’expression pour les maires et leur écosystème dynamique, les porteurs de projets et les réseaux d’acteurs,</li>
+                            <li class="chip">Un service de mise en relation ou de matching qualitatif entre les acteurs,</li>
+                            <li class="chip">Le repérage et l’identification des réseaux ou acteurs les plus innovants sur le territoire dans tous les secteurs grâce à une carte,</li>
+                            <li class="chip">La présentation d’événements et de partenariat avec d’autres plateformes.</li>
+                        </ul>
                         </p>
                     </section>
                 </div>
@@ -70,48 +70,58 @@
         </div>
     </div>
 
-        <script src="http://maps.google.com/maps/api/js?sensor=false&key=AIzaSyBSFjZGurwwEtOnMOg1mKgJgS3WcP8ucrk" type="text/javascript"></script>
-        <script>
-            var locations = [
-                {% for user in users %}
-                ['{{ user.cp }}', '{{ user.lat }}', '{{ user.lgt }}'],
-                {% endfor %}
+    <script src="http://maps.google.com/maps/api/js?sensor=false&key=AIzaSyBSFjZGurwwEtOnMOg1mKgJgS3WcP8ucrk" type="text/javascript"></script>
+    <script>
+        var locations = [
+            {% for user in users %}
+            ['{{ user.cp }}', '{{ user.lat }}', '{{ user.lgt }}', '{{  user.category }}', '{{ user.lastname }}', '{{ user.organization }}', '{{ user.town }}'],
+            {% endfor %}
 
-            ];
+        ];
 
-            var map = new google.maps.Map(document.getElementById('HPmap'), {
-                zoom: 6,
-                center: new google.maps.LatLng(46.8114340,1.6867790),
-                mapTypeId: google.maps.MapTypeId.ROADMAP,
-                scrollwheel: false
-            });
-            var infowindow = new google.maps.InfoWindow();
-            //--> Configuration de l'icône personnalisée
-            /*var image = {
-                // Adresse de l'icône personnalisée
-                url: 'images/drapeau.png',
-                // Taille de l'icône personnalisée
-                size: new google.maps.Size(25, 40),
-                // Origine de l'image, souvent (0, 0)
-                origin: new google.maps.Point(0,0),
-                // L'ancre de l'image. Correspond au point de l'image que l'on raccroche à la carte. Par exemple, si votre îcone est un drapeau, cela correspond à son mâts
-                anchor: new google.maps.Point(0, 20)
-            };*/
+        var map = new google.maps.Map(document.getElementById('HPmap'), {
+            zoom: 6,
+            center: new google.maps.LatLng(46.8114340,1.6867790),
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            scrollwheel: false
+        });
 
-            var marker, i;
-            for (i = 0; i < locations.length; i++) {
-                marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-                    map: map
-//                    icon: image
-                });
-                google.maps.event.addListener(marker, 'click', (function(marker, i) {
-                    return function() {
-                        infowindow.setContent(locations[i][0]);
-                        infowindow.open(map, marker);
-                    }
-                })(marker, i));
+        var infowindow = new google.maps.InfoWindow();
 
+
+        var marker, i;
+        for (i = 0; i < locations.length; i++) {
+            var image = {url: '{{ asset('bundles/booster/img/purpleFlag.png') }}', origin: new google.maps.Point(0,0)};
+            if(locations[i][3] == 'Développement durable') {
+                image.url = '{{ asset('bundles/booster/img/greenFlag.png') }}';
+            } else if(locations[i][3] == 'Habitat') {
+                image.url = '{{ asset('bundles/booster/img/greyFlag.png') }}';
             }
-        </script>
+            else if(locations[i][3] == 'Agriculture/Agroalimentaire') {
+                image.url = '{{ asset('bundles/booster/img/yellowFlag.png') }}';
+            }
+            else if(locations[i][3] == 'Culture/Patrimoine') {
+                image.url = '{{ asset('bundles/booster/img/brownFlag.png') }}';
+            }
+            else if(locations[i][3] == 'Mobilité') {
+                image.url = '{{ asset('bundles/booster/img/blueFlag.png') }}';
+            }
+            else if(locations[i][3] == 'Numérique et co-working') {
+                image.url = '{{ asset('bundles/booster/img/orangeFlag.png') }}';
+            }
+            marker = new google.maps.Marker({
+                position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                map: map,
+                icon: image
+            });
+            google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                return function() {
+
+                    infowindow.setContent(locations[i][5], locations[i][4], locations[i][0], locations[i][6] );
+                    infowindow.open(map, marker);
+                }
+            })(marker, i));
+
+        }
+    </script>
 {% endblock %}
