@@ -112,9 +112,8 @@ class CitizenOfferType extends AbstractType
                 'label'=>'Souhaits',
                 'placeholder'=>'Choisir'))
 
-            ->add('fileOffer', 'file', array('required' => false,
-                'label'=>'fichier image'
-            ));
+
+            ;
     }
 
     /**

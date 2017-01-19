@@ -38,7 +38,15 @@ class EditCitizenRegistrationType extends AbstractType
                 'label'=>'catégorie',
             ))
 
+            ->add('statusCitizen', choiceType::class, array(
+                'choices' => array(
+                    'En recherche d\'emploi' => 'En recherche d\'emploi',
+                    'Artisan'=> 'Artisan',
+                    'benevolat'=> 'Bénévolat',
 
+                ),
+                'label'=>'Categorie',
+                'placeholder'=>'Choisir'))
         ;
     }
 
