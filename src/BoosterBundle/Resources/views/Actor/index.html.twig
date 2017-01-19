@@ -113,12 +113,9 @@
                   <section class="col-sm-5 col-xs-12 backWhite secPad3 padShow2">
                       <h3 class="title">Mes matchings</h3>
                       <h4 class="underTitle">Qui puis-je aider ?</h4>
-                      <form class="navbar-form" action="{{ path('actor_recherche')}}">
+                      <form class="navbar-form">
                           <div class="form-group">
-                          <input class="form-control" placeholder="Rechercher..." type="text"name="motcle">
-                          </div>
-                          <div class="form-group">
-                          <button type="submit" class="btn Button">Valider</button>
+                              <input class="form-control" placeholder="Rechercher..." type="text" id="search2"> <!--id return in recherchejQuery.js-->
                           </div>
                       </form>
                       <div class="padShow3">
@@ -128,7 +125,7 @@
                           {% for needsall in needsall %}
                           <ul>
                               <li>
-                                  <div class="row">
+                                  <div class="row filtre2"> <!-- filtre2 return in recherchejQuery.js -->
                                       <a href="{{ path('actor_showNeeds',{'id' : needsall.id}) }}" id="lienListe">
                                           <img src="{{ app.request.basepath }}/uploads/{{ needsall.imageNeeds }}" alt="photo_offre" class=" col-xs-2">
                                           <div class="col-xs-8">
@@ -189,6 +186,11 @@
                   <section class="col-sm-5 col-xs-12 backWhite secPad3 padShow2">
                       <h3 class="title">Mes matchings</h3>
                       <h4 class="underTitle">Qui peut m'aider ?</h4>
+                      <form class="navbar-form">
+                          <div class="form-group">
+                              <input class="form-control" placeholder="Rechercher..." type="text" id="search"> <!-- id return in recherchejQuery.js -->
+                          </div>
+                      </form>
                       <div class="padShow">
                           {% if offersall == NULL %}
                           <p>Absence d'Offres</p>
@@ -196,7 +198,7 @@
                           {% for offersall in offersall %}
                           <ul>
                               <li>
-                                  <div class="row">
+                                  <div class="row  filtre"> <!-- filtre return in recherchejQuery.js-->
                                       <a href="{{ path('actor_showOffer',{'id' : offersall.id}) }}" id="lienListe">
                                           <img src="{{ app.request.basepath }}/uploads/{{ offersall.imageOffer }}" alt="photo_offre" class=" col-xs-2">
                                           <div class="col-xs-8">
@@ -262,6 +264,9 @@
       </div><!-- /.modal -->
       {#*******************************************JAVASCRIPT FOR THIS PAGE *************************************************#}
 
+      <script src="http://thecodeplayer.com/uploads/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+      <script src="http://thecodeplayer.com/uploads/js/jquery.easing.min.js" type="text/javascript"></script>
+      <script src="{{ asset('bundles/booster/js/recherchejQuery.js') }}"></script>
 
       <script src="http://maps.google.com/maps/api/js?sensor=false&key=AIzaSyBSFjZGurwwEtOnMOg1mKgJgS3WcP8ucrk" type="text/javascript"></script>
       <script>
