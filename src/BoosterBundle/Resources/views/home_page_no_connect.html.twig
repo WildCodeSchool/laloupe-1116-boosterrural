@@ -75,7 +75,9 @@
     <script>
         var locations = [
             {% for user in users %}
+
             ['{{ user.cp }}', '{{ user.lat }}', '{{ user.lgt }}', '{{  user.category }}', '{{ user.lastname }}', '{{ user.organization }}', '{{ user.town }}'],
+
             {% endfor %}
         ];
         var map = new google.maps.Map(document.getElementById('HPmap'), {
@@ -85,9 +87,10 @@
             scrollwheel: false
         });
         var infowindow = new google.maps.InfoWindow();
+
         var marker, i;
         for (i = 0; i < locations.length; i++) {
-            var image = {url: '{{ asset('bundles/booster/img/purpleFlag.png') }}', origin: new google.maps.Point(0,0)};
+            var image = {url: '{{ asset('bundles/booster/img/redFlag.png') }}', origin: new google.maps.Point(0,0)};
             if(locations[i][3] == 'Développement durable') {
                 image.url = '{{ asset('bundles/booster/img/greenFlag.png') }}';
             } else if(locations[i][3] == 'Habitat') {

@@ -63,9 +63,3 @@ actor_editUser:
     path:     /user/{id}
     defaults: { _controller: "BoosterBundle:ProfActor:editUser" }
     methods:  [GET, POST]
-
-actor_recherche:
-    path:     /recherche
-    defaults: { _controller: "BoosterBundle:ProfActor:recherche" }
-    methods:  [GET, POST]
-

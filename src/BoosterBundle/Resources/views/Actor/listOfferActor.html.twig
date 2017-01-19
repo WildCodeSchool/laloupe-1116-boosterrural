@@ -2,6 +2,15 @@
 
 {% block body %}
     <h1>Liste des Offres pour les Acteurs Ruraux</h1>
+    <div class="row">
+        <div class="col-sm-offset-1 col-sm-10 col-xs-12">
+            <form action="{{ path('actor_recherche')}}">
+                <div class="form-group">
+                    <input class="form-control" placeholder="Rechercher..." type="text" name="motcle">
+                </div>
+            </form>
+        </div>
+    </div>
     {% for offer in offers %}
         <a href="{{ path('actor_showOffer', { 'id': offer.id }) }}" id="lienListe">
             <div class="row">
