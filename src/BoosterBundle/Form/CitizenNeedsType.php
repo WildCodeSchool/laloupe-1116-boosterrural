@@ -23,28 +23,73 @@ class CitizenNeedsType extends AbstractType
             ->add('town', null, [
                 "label" => "Ville"
             ])
-            ->add('activity', choiceType::class, array(
+
+            ->add('development', choiceType::class, array(
                 'choices' => array(
-                    'Choisir' => 'Choisir',
-                    'agriculture, maraîchage, circuit court,...' => 'agriculture, maraîchage, circuit court,...',
-                    'agro-alimentaire, transformation,...'=> 'agro-alimentaire, transformation,...',
-                    'art et culture, bio-diversité, éco-conception... '=> 'art et culture, bio-diversité, éco-conception... ',
-                    'éducation, énergie et eau, formation innovante,...'=>'éducation, énergie et eau, formation innovante,...',
-                    'habillement, habitat, gouvernance et participation, gastronomie locale, patrimoine, recyclage,...'=>'habillement, habitat, gouvernance et participation, gastronomie locale, patrimoine, recyclage,...',
-                    'rénovation, savoirs et transmissions, santé, tourisme alternatif, transport alternatif, web numérique, ...'=>'rénovation, savoirs et transmissions, santé, tourisme alternatif, transport alternatif, web numérique, ...'
+                    //DD
+                    'Biodiversité' => 'Biodiversité',
+                    'Eco-conception' => 'Eco-conception',
+                    'Economie circulaire' => 'Economie circulaire',
+                    'Energie / eau optimisées' => 'Energie / eau optimisées',
+                    'Gouvernance et participation' => 'Gouvernance et participation',
+                    'Recyclage' => 'Recyclage',
+                    'Ressourceries' => 'Ressourceries',
+                    'Mode ou textile "éco"' => 'Mode ou textile "éco"',
+                    'Santé alternative' => 'Santé alternative'
                 ),
-                'label'=>"Domaine d'activité"
-            ))
+                'label'=>'Categorie',
+                'placeholder'=>'Choisir'))
+
+            ->add('habitation', choiceType::class, array(
+                'choices' => array(
+                    //habitat
+                    'Rénovation thermique' => 'Rénovation thermique',
+                    'Matériaux "éco" ou locaux' => 'Matériaux "éco" ou locaux'
+                ),
+                'label'=>'Categorie',
+                'placeholder'=>'Choisir'))
+
+            ->add('culture', choiceType::class, array(
+                'choices' => array(
+                    //Culture
+                    'Education' => 'Education',
+                    'Formation innovante' => 'Formation innovante',
+                    'Gastronomie locale' => 'Gastronomie locale',
+                    'Savoirs et transmissions' => 'Savoirs et transmissions',
+                    'Tourisme alternatif' => 'Tourisme alternatif'
+                ),
+                'label'=>'Categorie',
+                'placeholder'=>'Choisir'))
+
+            ->add('agriculture', choiceType::class, array(
+                'choices' => array(
+                    //Agri
+                    'Agriculture bio, maraîchage, circuits courts' => 'Agriculture bio, maraîchage, circuits courts',
+                    'Agro-alimentaire, transformation' => 'Agro-alimentaire, transformation',
+                    'Commerces innovants et locaux' => 'Commerces innovants et locaux'
+                ),
+                'label'=>'Categorie',
+                'placeholder'=>'Choisir'))
+
+            ->add('transportation', choiceType::class, array(
+                'choices' => array(
+                    //mobilité
+                    'Transport alternatif, co-voiturage' => 'Transport alternatif, co-voiturage'
+                ),
+                'label'=>'Categorie',
+                'placeholder'=>'Choisir'))
+
             ->add('wish', ChoiceType::class, array (
                 "label" => "Je cherche",
+                'placeholder'=>'Choisir',
                 'choices'  => array(
-                    "Choisir" => "Choisir",
                     "un stage" => "un stage",
                     "un environnement agricole, créatif..." => "un environnement agricole, créatif...",
                     "des personnes en phase avec mon projet" => "des personnes en phase avec mon projet",
                     "du coaching pour me lancer" => "du coaching pour me lancer")))
             ->add('availability', null, [
-                "label" => "Disponibilité"
+                "label" => "Disponibilité",
+
             ])
             ->add('description', null, [
                 "label" => "Description"
@@ -69,6 +114,6 @@ class CitizenNeedsType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'boosterbundle_needs';
+        return 'boosterbundle_citizenNeeds';
     }
 }

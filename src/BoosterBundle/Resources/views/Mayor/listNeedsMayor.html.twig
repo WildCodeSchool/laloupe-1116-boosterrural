@@ -17,7 +17,11 @@
                 <section class="col-sm-offset-1 col-sm-10 col-xs-12 backWhite sec1 listIndex filtre2">
                     <div class="row">
                         <div class="col-md-6 col-xs-12">
-                            <img src="{{ app.request.basepath }}/uploads/{{ need.imageNeeds }}" alt="photo_logo" class="center-block img-responsive imgList"/>
+                            <{% if need.imageNeeds != NULL %}
+                        <img src="{{ app.request.basepath }}/uploads/{{ need.imageNeeds }}" alt="photo_logo" class="center-block img-responsive imgList"/>
+                        {% else %}
+                            <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="photo_logo" class="center-block img-responsive imgList"/>
+                            {% endif %}
                         </div>
                         <div class="col-md-6 col-xs-12">
                             <h2>{{ need.title }}</h2>

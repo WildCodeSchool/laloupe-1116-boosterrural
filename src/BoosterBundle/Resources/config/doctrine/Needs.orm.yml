@@ -56,6 +56,10 @@ BoosterBundle\Entity\Needs:
             type: string
             length: 255
             nullable: true
+        category:
+            type: string
+            length: 255
+            nullable: true
         lat:
             type: integer
             nullable: true

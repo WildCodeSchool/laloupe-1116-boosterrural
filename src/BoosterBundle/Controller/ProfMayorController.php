@@ -180,7 +180,7 @@ class ProfMayorController extends Controller
     {
 
 
-        $form = $this->createForm('BoosterBundle\Form\MayorRegistrationType', $user);
+        $form = $this->createForm('BoosterBundle\Form\EditMayorRegistrationType', $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

@@ -33,7 +33,8 @@ class ActorNeedsType extends AbstractType
                     'Mode ou textile "éco"' => 'Mode ou textile "éco"',
                     'Santé alternative' => 'Santé alternative'
                 ),
-                'label'=>'Categorie'))
+                'label'=>'Categorie',
+                'placeholder'=>'Choisir'))
 
             ->add('habitation', choiceType::class, array(
                 'choices' => array(
@@ -41,7 +42,8 @@ class ActorNeedsType extends AbstractType
                     'Rénovation thermique' => 'Rénovation thermique',
                     'Matériaux "éco" ou locaux' => 'Matériaux "éco" ou locaux'
                 ),
-                'label'=>'Categorie'))
+                'label'=>'Categorie',
+                'placeholder'=>'Choisir'))
 
             ->add('culture', choiceType::class, array(
                 'choices' => array(
@@ -52,7 +54,8 @@ class ActorNeedsType extends AbstractType
                     'Savoirs et transmissions' => 'Savoirs et transmissions',
                     'Tourisme alternatif' => 'Tourisme alternatif'
                 ),
-                'label'=>'Categorie'))
+                'label'=>'Categorie',
+                'placeholder'=>'Choisir'))
 
             ->add('agriculture', choiceType::class, array(
                 'choices' => array(
@@ -61,22 +64,20 @@ class ActorNeedsType extends AbstractType
                     'Agro-alimentaire, transformation' => 'Agro-alimentaire, transformation',
                     'Commerces innovants et locaux' => 'Commerces innovants et locaux'
                 ),
-                'label'=>'Categorie'))
+                'label'=>'Categorie',
+                'placeholder'=>'Choisir'))
 
             ->add('transportation', choiceType::class, array(
                 'choices' => array(
                     //mobilité
                     'Transport alternatif, co-voiturage' => 'Transport alternatif, co-voiturage'
                 ),
-                'label'=>'Categorie'))
+                'label'=>'Categorie',
+                'placeholder'=>'Choisir'))
 
             ->add('description','textarea', array(
                 'label'=>'Description de l\'offre'
             ))
-
-            ->add('description', null, [
-                "label" => "Description"
-            ])
 
             ->add('fileNeeds','file', [
                 "label" => "Photo"],
