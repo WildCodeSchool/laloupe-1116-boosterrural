@@ -6,9 +6,9 @@
               <div class="row">
                   <div class="col-md-6 col-xs-12">
                       {% if user.imageIdentity != NULL %}
-                      <img src="{{ app.request.basepath }}/uploads/{{ user.imageIdentity }}" alt="photo_logo" class="center-block img-responsive"/>
+                          <img src="{{ app.request.basepath }}/uploads/{{ user.imageIdentity }}" alt="photo_logo" class="center-block img-responsive"/>
                       {% else %}
-                      <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="photo_logo" class="center-block img-responsive"/>
+                          <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="photo_logo" class="center-block img-responsive"/>
                       {% endif %}
                   </div>
                   <div class="col-md-6 col-xs-12">
@@ -110,60 +110,60 @@
                                           {% else %}
                                               <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="photo_offre" class=" col-xs-2">
                                           {% endif %}
-                                              <span>{{ offer.title }}</span>
-                                              <p>{{ offer.description }}</p>
-                                          </div>
-                                      </a>
-                                      <div class="col-xs-1">
-                                          <a href="{{ path('actor_editOffer', { 'id': offer.id }) }}"><span class="glyphicon glyphicon-pencil btn-lg"></span ></a>
-                                          <a href="{{ path('actor_deleteOffer',{'id' : offer.id}) }}"><span class="glyphicon glyphicon-remove btn-lg"></span ></a>
-
-                                      </div>
+                                          <span>{{ offer.title }}</span>
+                                          <p>{{ offer.description }}</p>
                                   </div>
-                              </li>
-                              <hr>
-                              {% endfor %}
-                              {% endif %}
-                          </ul>
-                      </div>
-                      <div class="row">
-                          <a href="{{ path('actor_newOffer') }}" class="col-xs-offset-11"> <span class="glyphicon glyphicon-plus btn-lg"></span ></a>
-                      </div>
-                  </section>
+                                  </a>
+                                  <div class="col-xs-1">
+                                      <a href="{{ path('actor_editOffer', { 'id': offer.id }) }}"><span class="glyphicon glyphicon-pencil btn-lg"></span ></a>
+                                      <a href="{{ path('actor_deleteOffer',{'id' : offer.id}) }}"><span class="glyphicon glyphicon-remove btn-lg"></span ></a>
 
-                  <section class="col-sm-5 col-xs-12 backWhite secPad3 padShow2">
-                      <h3 class="title">Mes matchings</h3>
-                      <h4 class="underTitle">Qui puis-je aider ?</h4>
-                      <form class="navbar-form">
-                          <div class="form-group">
-                              <input class="form-control" placeholder="Rechercher..." type="text" id="search2"> <!--id return in recherchejQuery.js-->
-                          </div>
-                      </form>
-                      <div class="padShow3">
-                          {% if needsall == NULL %}
-                          <p>Absence de Besoins</p>
-                          {% else %}
-                          {% for needsall in needsall %}
-                          <ul>
-                              <li>
-                                  <div class="row filtre2"> <!-- filtre2 return in recherchejQuery.js -->
-                                      <a href="{{ path('actor_showNeeds',{'id' : needsall.id}) }}" id="lienListe">
-                                          <img src="{{ app.request.basepath }}/uploads/{{ needsall.imageNeeds }}" alt="photo_offre" class=" col-xs-2">
-                                          <div class="col-xs-8">
-                                              <span>{{ needsall.title }}</span>
-                                              <p>{{ needsall.description }}</p>
-                                          </div>
-                                      </a>
                                   </div>
-                              </li>
-                              <hr>
-                              {% endfor %}
-                              {% endif %}
-                          </ul>
                       </div>
-                  </section>
+                      </li>
+                      <hr>
+                      {% endfor %}
+                      {% endif %}
+                      </ul>
               </div>
+              <div class="row">
+                  <a href="{{ path('actor_newOffer') }}" class="col-xs-offset-11"> <span class="glyphicon glyphicon-plus btn-lg"></span ></a>
+              </div>
+              </section>
+
+              <section class="col-sm-5 col-xs-12 backWhite secPad3 padShow2">
+                  <h3 class="title">Mes matchings</h3>
+                  <h4 class="underTitle">Qui puis-je aider ?</h4>
+                  <form class="navbar-form">
+                      <div class="form-group">
+                          <input class="form-control" placeholder="Rechercher..." type="text" id="search2"> <!--id return in recherchejQuery.js-->
+                      </div>
+                  </form>
+                  <div class="padShow3">
+                      {% if needsall == NULL %}
+                      <p>Absence de Besoins</p>
+                      {% else %}
+                      {% for needsall in needsall %}
+                      <ul>
+                          <li>
+                              <div class="row filtre2"> <!-- filtre2 return in recherchejQuery.js -->
+                                  <a href="{{ path('actor_showNeeds',{'id' : needsall.id}) }}" id="lienListe">
+                                      <img src="{{ app.request.basepath }}/uploads/{{ needsall.imageNeeds }}" alt="photo_offre" class=" col-xs-2">
+                                      <div class="col-xs-8">
+                                          <span>{{ needsall.title }}</span>
+                                          <p>{{ needsall.description }}</p>
+                                      </div>
+                                  </a>
+                              </div>
+                          </li>
+                          <hr>
+                          {% endfor %}
+                          {% endif %}
+                      </ul>
+                  </div>
+              </section>
           </div>
+      </div>
       </div>
 
       <div class="row">
@@ -174,34 +174,33 @@
                       <h4 class="underTitle">Ce dont j'ai besoin...</h4>
                       <div class="padShow">
                           {% if needs == NULL %}
-                          <p>Absence de Besoins</p>
+                              <p>Absence de Besoins</p>
                           {% else %}
-                          {% for needs in needs %}
-                          <ul>
-                              <li>
-                                  <div class="row">
-                                      <a href="{{ path('actor_showNeeds',{'id' : needs.id}) }}" id="lienListe">
-                                          {% if needs.imageNeeds != NULL %}
-                                              <img src="{{ app.request.basepath }}/uploads/{{ needs.imageNeeds }}" alt="photo_besoin" class=" col-xs-2">
-                                          {% else %}
-                                              <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="photo_besoin" class=" col-xs-2">
-                                          {% endif %}
-                                          <div class="col-xs-8">
-                                              <span>{{ needs.title }}</span>
-                                              <p>{{ needs.description }}</p>
+                              {% for needs in needs %}
+                                  <ul>
+                                      <li>
+                                          <div class="row">
+                                              <a href="{{ path('actor_showNeeds',{'id' : needs.id}) }}" id="lienListe">
+                                                  {% if needs.imageNeeds != NULL %}
+                                                      <img src="{{ app.request.basepath }}/uploads/{{ needs.imageNeeds }}" alt="photo_besoin" class=" col-xs-2">
+                                                  {% else %}
+                                                      <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="photo_besoin" class=" col-xs-2">
+                                                  {% endif %}
+                                                  <div class="col-xs-8">
+                                                      <span>{{ needs.title }}</span>
+                                                      <p>{{ needs.description }}</p>
+                                                  </div>
+                                              </a>
+                                              <div class="col-xs-1">
+                                                  <a href="{{ path('actor_editNeeds', { 'id': needs.id }) }}"><span class="glyphicon glyphicon-pencil btn-lg"></span ></a>
+                                                  <a href="{{ path('actor_deleteNeeds',{'id' : needs.id}) }}"><span class="glyphicon glyphicon-remove btn-lg"></span ></a>
+                                              </div>
                                           </div>
-                                      </a>
-                                      <div class="col-xs-1">
-                                          <a href="{{ path('actor_editNeeds', { 'id': needs.id }) }}"><span class="glyphicon glyphicon-pencil btn-lg"></span ></a>
-                                          <a href="{{ path('actor_deleteNeeds',{'id' : needs.id}) }}"><span class="glyphicon glyphicon-remove btn-lg"></span ></a>
-                                      </div>
-                                  </div>
-                              </li>
-                              <hr>
-
+                                      </li>
+                                      <hr>
+                                  </ul>
                               {% endfor %}
-                              {% endif %}
-                          </ul>
+                          {% endif %}
                       </div>
                       <div class="row">
                           <a href="{{ path('actor_newNeeds') }}" class="col-xs-offset-11"> <span class="glyphicon glyphicon-plus btn-lg"></span ></a>

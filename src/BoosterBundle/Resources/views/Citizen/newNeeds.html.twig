@@ -10,6 +10,48 @@
                     <h1>création du besoin</h1>
 
                     {{ form_start(form) }}
+                    {{ form_start(form) }}
+                    {{ form_row(form.title) }}
+                    {{ form_row(form.cp) }}
+                    {{ form_row(form.town) }}
+                    {% if   user.category  == 'Développement durable'%}
+                        {{ form_row(form.development)}}
+                        {{ form_widget(form.habitation,{'attr':{'style':'display:none'}}) }}
+                        {{ form_widget(form.culture,{'attr':{'style':'display:none'}}) }}
+                        {{ form_widget(form.agriculture,{'attr':{'style':'display:none'}}) }}
+                        {{ form_widget(form.transportation,{'attr':{'style':'display:none'}}) }}
+                    {% elseif user.category == 'Habitat' %}
+                        {{ form_row(form.habitation)}}
+                        {{ form_widget(form.development,{'attr':{'style':'display:none'}})}}
+                        {{ form_widget(form.culture,{'attr':{'style':'display:none'}}) }}
+                        {{ form_widget(form.agriculture,{'attr':{'style':'display:none'}}) }}
+                        {{ form_widget(form.transportation,{'attr':{'style':'display:none'}}) }}
+                    {% elseif user.category == 'Culture/patrimoine' %}
+                        {{ form_row(form.culture)}}
+                        {{ form_widget(form.development,{'attr':{'style':'display:none'}})}}
+                        {{ form_widget(form.habitation,{'attr':{'style':'display:none'}}) }}
+                        {{ form_widget(form.agriculture,{'attr':{'style':'display:none'}}) }}
+                        {{ form_widget(form.transportation,{'attr':{'style':'display:none'}}) }}
+                    {% elseif user.category == 'Agriculture/Agroalimentaire' %}
+                        {{ form_row(form.agriculture)}}
+                        {{ form_widget(form.development,{'attr':{'style':'display:none'}})}}
+                        {{ form_widget(form.habitation,{'attr':{'style':'display:none'}}) }}
+                        {{ form_widget(form.culture,{'attr':{'style':'display:none'}}) }}
+                        {{ form_widget(form.transportation,{'attr':{'style':'display:none'}}) }}
+                    {% elseif user.category == 'Mobilité'  %}
+                        {{ form_row(form.transportation)}}
+                        {{ form_widget(form.development,{'attr':{'style':'display:none'}})}}
+                        {{ form_widget(form.habitation,{'attr':{'style':'display:none'}}) }}
+                        {{ form_widget(form.culture,{'attr':{'style':'display:none'}}) }}
+                        {{ form_widget(form.agriculture,{'attr':{'style':'display:none'}}) }}
+                    {% else %}
+                        {{ form_widget(form.development,{'attr':{'style':'display:none'}})}}
+                        {{ form_widget(form.habitation,{'attr':{'style':'display:none'}}) }}
+                        {{ form_widget(form.culture,{'attr':{'style':'display:none'}}) }}
+                        {{ form_widget(form.agriculture,{'attr':{'style':'display:none'}}) }}
+                        {{ form_widget(form.transportation,{'attr':{'style':'display:none'}}) }}
+
+                    {% endif %}
                     {{ form_widget(form) }}
 
                     <input type="submit" value="Créer un besoin" class="btn center-block Button"/>

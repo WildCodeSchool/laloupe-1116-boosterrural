@@ -31,7 +31,8 @@ class MayorOfferType extends AbstractType
                     'benevolat'=> 'Bénévolats',
                     'communication'=>'Communication'
                 ),
-                'label'=>'Categorie'))
+                'label'=>'Categorie',
+                'placeholder'=>'Choisir'))
 
             ->add('description','textarea', array(
                 'label'=>'Description de l\'offre'
@@ -44,7 +45,8 @@ class MayorOfferType extends AbstractType
                     'help'=> 'Appuyer un projet similaire',
                     'tell'=>'Echanger sur ce projet'
                 ),
-                'label'=>'Souhaits'))
+                'label'=>'Souhaits',
+                'placeholder'=>'Choisir'))
 
             ->add('fileOffer', 'file', array('required' => false,
                 'label'=>'fichier image'

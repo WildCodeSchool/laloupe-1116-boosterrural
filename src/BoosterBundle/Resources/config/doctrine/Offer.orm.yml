@@ -49,6 +49,10 @@ BoosterBundle\Entity\Offer:
             type: string
             length: 255
             nullable: true
+        category:
+            type: string
+            length: 255
+            nullable: true
         lat:
             type: integer
             nullable: true

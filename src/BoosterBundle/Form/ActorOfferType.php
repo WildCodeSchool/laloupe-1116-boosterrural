@@ -38,7 +38,8 @@ class ActorOfferType extends AbstractType
                     'Mode ou textile "éco"' => 'Mode ou textile "éco"',
                     'Santé alternative' => 'Santé alternative'
                 ),
-                'label'=>'Categorie'))
+                'label'=>'Categorie',
+                'placeholder'=>'Choisir'))
 
             ->add('habitation', choiceType::class, array(
                 'choices' => array(
@@ -46,7 +47,8 @@ class ActorOfferType extends AbstractType
                     'Rénovation thermique' => 'Rénovation thermique',
                     'Matériaux "éco" ou locaux' => 'Matériaux "éco" ou locaux'
                 ),
-                'label'=>'Categorie'))
+                'label'=>'Categorie',
+                'placeholder'=>'Choisir'))
 
             ->add('culture', choiceType::class, array(
                 'choices' => array(
@@ -57,7 +59,8 @@ class ActorOfferType extends AbstractType
                     'Savoirs et transmissions' => 'Savoirs et transmissions',
                     'Tourisme alternatif' => 'Tourisme alternatif'
                 ),
-                'label'=>'Categorie'))
+                'label'=>'Categorie',
+                'placeholder'=>'Choisir'))
 
             ->add('agriculture', choiceType::class, array(
                 'choices' => array(
@@ -66,14 +69,16 @@ class ActorOfferType extends AbstractType
                     'Agro-alimentaire, transformation' => 'Agro-alimentaire, transformation',
                     'Commerces innovants et locaux' => 'Commerces innovants et locaux'
                 ),
-                'label'=>'Categorie'))
+                'label'=>'Categorie',
+                'placeholder'=>'Choisir'))
 
             ->add('transportation', choiceType::class, array(
                 'choices' => array(
                     //mobilité
                     'Transport alternatif, co-voiturage' => 'Transport alternatif, co-voiturage'
                 ),
-                'label'=>'Categorie'))
+                'label'=>'Categorie',
+                'placeholder'=>'Choisir'))
 
             ->add('description','textarea', array(
                 'label'=>'Description de l\'offre'
@@ -89,7 +94,8 @@ class ActorOfferType extends AbstractType
                     'Rechercher un collaborateur'=> 'Rechercher un collaborateur',
                     'Co-créer'=> 'Co-créer'
                 ),
-                'label'=>'Souhaits'))
+                'label'=>'Proposition de projets',
+                'placeholder'=>'Choisir'))
 
             ->add('fileOffer','file', [
                 "label" => "Photo"],

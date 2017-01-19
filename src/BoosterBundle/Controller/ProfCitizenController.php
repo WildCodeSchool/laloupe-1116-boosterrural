@@ -77,6 +77,7 @@ class ProfCitizenController extends Controller
 
         return $this->render('BoosterBundle:Citizen:newOffer.html.twig', array(
             'offer' => $offer,
+            'user' => $user,
             'form' => $form->createView(),
         ));
     }
@@ -155,6 +156,7 @@ class ProfCitizenController extends Controller
 
         return $this->render('BoosterBundle:Citizen:newNeeds.html.twig', array(
             'needs' => $needs,
+            'user' => $user,
             'form' => $form->createView(),
         ));
     }
@@ -248,7 +250,7 @@ class ProfCitizenController extends Controller
     public function editUserAction(Request $request, User $user)
     {
 
-        $form = $this->createForm('BoosterBundle\Form\CitizenRegistrationType', $user);
+        $form = $this->createForm('BoosterBundle\Form\EditCitizenRegistrationType', $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

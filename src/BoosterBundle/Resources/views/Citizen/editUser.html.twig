@@ -10,13 +10,13 @@
 
                     {{ form_start(form) }}
                     {{ form_widget(form) }}
-                    <a href="{{ path('actor_editUser', { 'id': user.id }) }}"><input type="submit" value="Modifier" class="center-block showLien2"></a>
+                    <a href="{{ path('citizen_editUser', { 'id': user.id }) }}"><input type="submit" value="Modifier" class="center-block showLien2"></a>
                     {{ form_end(form) }}
 
                     <ul>
 
                         <li>
-                            <a href="{{ path('actor_index') }}" class="btn center-block">Retour à la liste</a>
+                            <a href="{{ path('citizen_index') }}" class="btn center-block">Retour à la liste</a>
                         </li>
                     </ul>
                 </div>
