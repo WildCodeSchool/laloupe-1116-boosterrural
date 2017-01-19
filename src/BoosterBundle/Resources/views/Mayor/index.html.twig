@@ -147,7 +147,7 @@
 
                                           <div class="col-xs-8">
                                               <span>{{ offer.title }}</span>
-                                              <p>{{ offer.description }}</p>
+                                              <p>{{ offer.description[:300] }} ...</p>
                                           </div>
                                       </a>
                                       <div class="col-xs-1">
@@ -170,10 +170,9 @@
                   <section class="col-sm-5 col-xs-12 backWhite secPad3 padShow2">
                       <h3 class="title">Mes matchings</h3>
                       <h4 class="underTitle">Qui puis-je aider ?</h4>
-                      <form class="navbar-form">
-                          <div class="form-group">
-                              <input class="form-control" placeholder="Rechercher..." type="text" id="search2"> <!-- id return in recherchejQuery.js -->
-
+                      <form>
+                          <div>
+                              <input class="form-control ombreMoteur2" placeholder="Rechercher..." type="text" id="search2"> <!-- id return in recherchejQuery.js -->
                           </div>
                       </form>
                       <div class="padShow">
@@ -188,7 +187,7 @@
                                           <img src="{{ app.request.basepath }}/uploads/{{ needsall.imageNeeds }}" alt="photo_offre" class=" col-xs-2">
                                           <div class="col-xs-8">
                                               <span>{{ needsall.title }}</span>
-                                              <p>{{ needsall.description }}</p>
+                                              <p>{{ needsall.description[:300] }} ...</p>
                                           </div>
                                       </a>
                                   </div>
@@ -225,7 +224,7 @@
                                           {% endif %}
                                           <div class="col-xs-8">
                                               <span>{{ needs.title }}</span>
-                                              <p>{{ needs.description }}</p>
+                                              <p>{{ needs.description[:300] }} ...</p>
                                           </div>
                                       </a>
                                       <div class="col-xs-1">
@@ -249,9 +248,9 @@
                   <section class="col-sm-5 col-xs-12 backWhite secPad3 padShow2">
                       <h3 class="title">Mes matchings</h3>
                       <h4 class="underTitle">Qui peut m'aider ?</h4>
-                      <form class="navbar-form">
+                      <form>
                           <div class="form-group">
-                              <input class="form-control" placeholder="Rechercher..." type="text" id="search"> <!-- id return in recherchejQuery.js -->
+                              <input class="form-control ombreMoteur2" placeholder="Rechercher..." type="text" id="search"> <!-- id return in recherchejQuery.js -->
                           </div>
                       </form>
                       <div class="padShow">
@@ -266,7 +265,7 @@
                                           <img src="{{ app.request.basepath }}/uploads/{{ offersall.imageOffer }}" alt="photo_offre" class=" col-xs-2">
                                           <div class="col-xs-8">
                                               <span>{{ offersall.title }}</span>
-                                              <p>{{ offersall.description }}</p>
+                                              <p>{{ offersall.description[:300] }} ...</p>
                                           </div>
                                       </a>
                                   </div>
