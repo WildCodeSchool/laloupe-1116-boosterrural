@@ -108,40 +108,63 @@
 </div>
 
 
+
 <script src="http://maps.google.com/maps/api/js?sensor=false&key=AIzaSyBSFjZGurwwEtOnMOg1mKgJgS3WcP8ucrk" type="text/javascript"></script>
-
 <script>
-
     var locations = [
         {% for user in users %}
-        ['{{ user.cp }}', '{{ user.lat }}', '{{ user.lgt }}'],
+        ['{{ user.cp }}', '{{ user.lat }}', '{{ user.lgt }}', '{{  user.category }}', '{{ user.lastname }}', '{{ user.organization }}', '{{ user.town }}'], {{ user.roles }}
         {% endfor %}
 
     ];
-    {% for user in users %}
+
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 10,
-        center: new google.maps.LatLng({{ user.lat }}, {{ user.lgt }}),
+        center: new google.maps.LatLng({{ user.lat }},{{ user.lgt }}),
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         scrollwheel: false
     });
+
     var infowindow = new google.maps.InfoWindow();
+
+
     var marker, i;
     for (i = 0; i < locations.length; i++) {
+        var image = {url: '{{ asset('bundles/booster/img/purpleFlag.png') }}', origin: new google.maps.Point(0,0)};
+        if(locations[i][3] == 'Développement durable') {
+            image.url = '{{ asset('bundles/booster/img/greenFlag.png') }}';
+        } else if(locations[i][3] == 'Habitat') {
+            image.url = '{{ asset('bundles/booster/img/greyFlag.png') }}';
+        }
+        else if(locations[i][3] == 'Agriculture/Agroalimentaire') {
+            image.url = '{{ asset('bundles/booster/img/brownFlag.png') }}';
+        }
+        else if(locations[i][3] == 'Culture/Patrimoine') {
+            image.url = '{{ asset('bundles/booster/img/yellowFlag.png') }}';
+        }
+        else if(locations[i][3] == 'Mobilité') {
+            image.url = '{{ asset('bundles/booster/img/blueFlag.png') }}';
+        }
+        else if(locations[i][3] == 'Numérique et co-working') {
+            image.url = '{{ asset('bundles/booster/img/orangeFlag.png') }}';
+        }
+        else if(locations[i][7] == 'a:1:{i:0;s:10:"ROLE_CITIZEN";}') {
+            image.url = '{{ asset('bundles/booster/img/purpleFlag.png') }}';
+        }
         marker = new google.maps.Marker({
             position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-            map: map
+            map: map,
+            icon: image
         });
         google.maps.event.addListener(marker, 'click', (function(marker, i) {
             return function() {
-                infowindow.setContent(locations[i][0]);
+
+                infowindow.setContent(locations[i][5], locations[i][4], locations[i][0], locations[i][6] );
                 infowindow.open(map, marker);
             }
         })(marker, i));
+
     }
-    {% endfor %}
 </script>
-
-
 {% endblock %}
 
