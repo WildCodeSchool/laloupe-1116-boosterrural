@@ -267,7 +267,7 @@
       <script>
           var locations = [
               {% for user in users %}
-              ['{{ user.cp }}', '{{ user.lat }}', '{{ user.lgt }}', '{{  user.category }}', '{{ user.lastname }}', '{{ user.organization }}', '{{ user.town }}'], {{ user.roles }}
+              ['{{ user.cp }}', '{{ user.lat }}', '{{ user.lgt }}', '{{  user.category }}', '{{ user.lastname }}', '{{ user.organization }}', '{{ user.town }}'],
               {% endfor %}
 
           ];

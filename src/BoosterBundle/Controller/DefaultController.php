@@ -19,6 +19,7 @@ class DefaultController extends Controller
 
         return $this->render('BoosterBundle::home_page_no_connect.html.twig', array(
             'users'=>$users,
+            'user'=>$user,
 
         ));
 
