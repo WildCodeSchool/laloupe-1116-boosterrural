@@ -47,6 +47,11 @@ class EditCitizenRegistrationType extends AbstractType
                 ),
                 'label'=>'Categorie',
                 'placeholder'=>'Choisir'))
+
+            ->add('fileIdentity','file', [
+                "label" => "Photo"],
+                array( 'required'=>false));
+
         ;
     }
 

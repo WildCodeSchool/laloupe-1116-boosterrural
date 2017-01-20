@@ -31,6 +31,10 @@ class EditMayorRegistrationType extends AbstractType {
             -> add('lastname', Null, array(
                 'label'=>'Nom et prénom du maire'
             ))
+            ->add('fileIdentity','file', [
+                "label" => "Photo"],
+                array( 'required'=>false));
+
 
 
         ;
