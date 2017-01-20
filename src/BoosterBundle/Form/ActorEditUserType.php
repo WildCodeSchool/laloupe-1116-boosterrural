@@ -46,8 +46,14 @@ class ActorEditUserType extends AbstractType {
             ))
             -> add('address', null, array(
                 'label'=>'adresse'
-            ));
+            ))
+
+            ->add('fileIdentity','file', [
+                "label" => "Photo"],
+                array( 'required'=>false));
+
     }
+
     public function getParent(){
         return 'fos_user_registration';
     }
