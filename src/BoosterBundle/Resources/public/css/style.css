@@ -625,7 +625,13 @@ footer > ul > li {
 }
 .picture{
     margin-top: 15px;
+    margin-bottom: 15px;
 
+}
+.nobody{
+    margin-top: 25%;
+    font-size: 30px;
+    text-align: center;
 }
 
 @media all and (max-width: 992px) {
