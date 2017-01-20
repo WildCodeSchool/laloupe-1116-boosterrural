@@ -1,16 +1,45 @@
 {% extends 'base.html.twig' %}
+{% form_theme form ":FormTemplate:bootstrap.html.twig" %}
 
 {% block body %}
-    <h1>Partner creation</h1>
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
+    <div class="row">
+        <div class="col-sm-offset-2 col-sm-8 col-xs-12">
+            <div class="row">
+                <div class="col-sm-offset-3 col-sm-6">
+                    <h1>Créer un partenaire</h1>
 
-    <ul>
-        <li>
-            <a href="{{ path('partners_index') }}">Back to the list</a>
-        </li>
-    </ul>
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                    <input type="submit" value="Créer un besoin" class="btn center-block Button"/>
+                    {{ form_end(form) }}
+
+                    <ul>
+                        <li>
+                            <a href="{{ path('partners_index') }}" class="btn center-block">Retour à la liste</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}
+
+{#{% extends 'base.html.twig' %}#}
+
+{#{% block body %}#}
+    {#<h1>Partner creation</h1>#}
+
+    {#{{ form_start(form) }}#}
+        {#{{ form_widget(form) }}#}
+        {#<input type="submit" value="Create" />#}
+    {#{{ form_end(form) }}#}
+
+    {#<ul>#}
+        {#<li>#}
+            {#<a href="{{ path('partners_index') }}">Back to the list</a>#}
+        {#</li>#}
+    {#</ul>#}
+{#{% endblock %}#}

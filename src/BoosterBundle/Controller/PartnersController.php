@@ -33,7 +33,7 @@ class PartnersController extends Controller
      */
     public function newAction(Request $request)
     {
-        $partner = new Partner();
+        $partner = new Partners();
         $form = $this->createForm('BoosterBundle\Form\PartnersType', $partner);
         $form->handleRequest($request);
 
@@ -83,7 +83,7 @@ class PartnersController extends Controller
 
         return $this->render('BoosterBundle:partners:edit.html.twig', array(
             'partner' => $partner,
-            'edit_form' => $editForm->createView(),
+            'form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }

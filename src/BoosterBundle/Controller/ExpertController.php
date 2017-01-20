@@ -83,7 +83,7 @@ class ExpertController extends Controller
 
         return $this->render('BoosterBundle:expert:edit.html.twig', array(
             'expert' => $expert,
-            'edit_form' => $editForm->createView(),
+            'form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
