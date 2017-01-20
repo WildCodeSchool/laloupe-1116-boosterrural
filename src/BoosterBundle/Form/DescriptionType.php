@@ -19,8 +19,23 @@ class DescriptionType extends AbstractType
             ->add('description', 'textarea', [
             "label" => "Pourquoi nous sommes dynamiques ?"
         ])
+            ->add('fileDescription1','file', [
+                "label" => "Photo 1"],
+                array( 'required'=>false))
+            ->add('fileDescription2','file', [
+                "label" => "Photo 2"],
+                array( 'required'=>false))
+            ->add('fileDescription3','file', [
+                "label" => "Photo 3"],
+                array( 'required'=>false));
+
+
+
+
+
         ;
     }
+
 
 
     /**
