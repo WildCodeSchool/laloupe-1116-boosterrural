@@ -19,6 +19,10 @@ class WordMayorType extends AbstractType
             ->add('messageMayor', 'textarea', [
             "label" => "Le mot du maire"
         ])
+            ->add('fileMayor','file', [
+                "label" => "Photo du maire"],
+                array( 'required'=>false));
+
         ;
     }
 
