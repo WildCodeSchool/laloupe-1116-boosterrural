@@ -6,7 +6,7 @@
               <div class="row">
                   <div class="col-md-6 col-xs-12">
                       {% if user.imageIdentity != NULL %}
-                          <img src="{{ app.request.basepath }}/uploads/{{ user.imageIdentity }}" alt="photo_logo" class="center-block img-responsive"/>
+                          <img src="{{ app.request.basepath }}/uploads/{{ user.imageIdentity }}" alt="photo_logo" class="center-block img-responsive constraint"/>
                       {% else %}
                           <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="photo_logo" class="center-block img-responsive"/>
                       {% endif %}

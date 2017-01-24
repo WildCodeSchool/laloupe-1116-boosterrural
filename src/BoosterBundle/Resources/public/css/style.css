@@ -812,5 +812,10 @@ textarea {
     margin-top: 20px;
 }
 
+.constraint{
+    width: 40%;
+    height: 40%;
+}
+
 
 
