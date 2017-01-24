@@ -6,5 +6,17 @@
     <p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
     {% if targetUrl %}
     <p><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></p>
+
+        <h3>Le Booster rural : mode d'emploi</h3>
+
+        <p>En cliquant sur votre nom en haut à gauche, vous accédez à votre profil. Une fois sur cette page vous avez la possibilité de compléter vos informations et d'ajouter des photos.
+            En complétant les parties "Offres" et "Besoins" vous augmentez vos chances de visibilité sur le site. Une fois vos offres et besoins validées vous avez la possibilité de les modifier ou de les supprimer.
+
+            Dans les encadrés "Matching", le moteur de recherche vous permet de rechercher des annonces par mots-clés.
+
+            Enfin si vous souhaitez accéder à l'ensemble des annonces concernant les maires, les acteurs dynamiques et les citoyens, cliquez sur les mots "besoins" et "offres" dans la barre de navigation. L'onglet "Villages" affiche quant à lui l'ensemble des communes inscrites sur le site.</p>
+
+
+
     {% endif %}
 {% endblock fos_user_content %}
