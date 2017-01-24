@@ -63,7 +63,7 @@
                               </ul>
                           </div>
                           <div class="col-md-8 col-sm-12">
-                              <h2 class="mediaTitle">pourquoi nous sommes dynamiques ?</h2>
+                              <h2 class="mediaTitle">pourquoi je suis dynamique ?</h2>
                               <p>{{ user.description }}</p>
                           </div>
                       </div>
@@ -91,7 +91,7 @@
                       <h4 class="underTitle">Ce que je propose...</h4>
                       <div class="padShow">
                           {% if offers == NULL %}
-                              <p class="nobody">Absence d'Offres</p>
+                              <p class="nobody">Pour créer une offre cliquez sur<span class="glyphicon glyphicon-plus btn-lg"></span ></p>
                           {% else %}
                               {% for offer in offers %}
                                   <ul>
@@ -127,7 +127,7 @@
                   </section>
 
                   <section class="col-sm-5 col-xs-12 backWhite secPad3 padShow2">
-                      <h3 class="title">Mes matchings</h3>
+                      <h3 class="title">Mes matching</h3>
                       <h4 class="underTitle">Qui puis-je aider ?</h4>
                       <form>
                           <div class="form-group">
@@ -136,7 +136,7 @@
                       </form>
                       <div class="padShow">
                           {% if needsall == NULL %}
-                              <p class="nobody">Absence de Besoins</p>
+                              <p class="nobody">Aucun résultat</p>
                           {% else %}
                               {% for needsall in needsall %}
                                   <ul>
@@ -170,7 +170,7 @@
                       <h4 class="underTitle">Ce dont j'ai besoin...</h4>
                       <div class="padShow">
                           {% if needs == NULL %}
-                          <p class="nobody">Absence de Besoins</p>
+                          <p class="nobody">Pour créer un besoin cliquez sur<span class="glyphicon glyphicon-plus btn-lg"></span ></p>
                           {% else %}
                           {% for needs in needs %}
                           <ul>
@@ -206,7 +206,7 @@
                   </section>
 
                   <section class="col-sm-5 col-xs-12 backWhite secPad3 padShow2">
-                      <h3 class="title">Mes matchings</h3>
+                      <h3 class="title">Mes matching</h3>
                       <h4 class="underTitle">Qui peut m'aider ?</h4>
                       <form>
                           <div class="form-group">
@@ -215,7 +215,7 @@
                       </form>
                       <div class="padShow">
                           {% if offersall == NULL %}
-                              <p class="nobody">Absence d'Offres</p>
+                              <p class="nobody">Aucun résultat</p>
                           {% else %}
                               {% for offersall in offersall %}
                                   <ul>
