@@ -5,7 +5,7 @@
 {% block fos_user_content %}
 
 <div class="row">
-    <div class="col-sm-offset-2 col-sm-8 col-xs-12  ">
+    <div class="col-sm-offset-2 col-sm-8 col-xs-12">
         <div class="row">
             <div class="col-sm-offset-3 col-sm-6">
                 <h2>Inscription</h2>
@@ -22,7 +22,9 @@
 
                     {{ form_widget(form) }}
 
+                <div>
                 <input type="submit" value="{{ 'registration.submit'|trans }}" class="btn center-block Button" data-toggle="modal" href="#send_mail"/>
+                </div>
 
                     <div class="modal fade" id="send_mail">
                         <div class="modal-dialog">

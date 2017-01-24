@@ -1,6 +1,7 @@
 {% extends "base.html.twig" %}
 
   {% block body %}
+
       <div class="row">
           <section class="col-sm-offset-1 col-sm-10 col-xs-12 backWhite sec1">
               <div class="row">
@@ -98,7 +99,7 @@
                       <h4 class="underTitle">Ce que nous proposons...</h4>
                       <div class="padShow">
                           {% if offers == NULL %}
-                              <p class="nobody">Pour créer une offre cliquez sur<span class="glyphicon glyphicon-plus btn-lg"></span ></p>
+                              <p class="nobody">Pour ajouter une offre cliquez sur<span class="glyphicon glyphicon-plus btn-lg"></span ></p>
                           {% else %}
                               {% for offer in offers %}
                                   <ul>
@@ -177,7 +178,7 @@
                       <h4 class="underTitle">Ce dont nous avons besoin...</h4>
                       <div class="padShow">
                           {% if needs == NULL %}
-                              <p class="nobody">Pour créer un besoin cliquez sur<span class="glyphicon glyphicon-plus btn-lg"></span ></p>
+                              <p class="nobody">Pour ajouter un besoin cliquez sur<span class="glyphicon glyphicon-plus btn-lg"></span ></p>
                           {% else %}
                               {% for needs in needs %}
                                   <ul>
@@ -355,4 +356,5 @@
           }
       </script>
   {% endblock %}
+
 
