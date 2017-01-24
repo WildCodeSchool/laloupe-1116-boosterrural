@@ -96,9 +96,9 @@ class User extends BaseUser
 
     public function preUploadDescription2()
     {
-        if (null !== $this->fileDescription1) {
+        if (null !== $this->fileDescription2) {
             // do whatever you want to generate a unique name
-            $this->imageDescription1 = uniqid() . '.' . $this->fileDescription1->guessExtension();
+            $this->imageDescription2 = uniqid() . '.' . $this->fileDescription2->guessExtension();
         }
     }
 
