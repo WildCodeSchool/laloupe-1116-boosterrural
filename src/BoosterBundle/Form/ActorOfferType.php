@@ -94,7 +94,7 @@ class ActorOfferType extends AbstractType
                     'Rechercher un collaborateur'=> 'Rechercher un collaborateur',
                     'Co-créer'=> 'Co-créer'
                 ),
-                'label'=>'Proposition de projets',
+                'label'=>'Nature de l\'échange',
                 'placeholder'=>'Choisir'))
 
             ->add('fileOffer','file', [
