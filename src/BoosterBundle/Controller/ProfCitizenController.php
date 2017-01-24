@@ -63,7 +63,7 @@ class ProfCitizenController extends Controller
 
             return $this->redirectToRoute('citizen_showOffer', array('id' => $offer->getId(
                 array($offer->getUsers()
-            ))));
+                ))));
 
         }
 
@@ -73,12 +73,12 @@ class ProfCitizenController extends Controller
             'form' => $form->createView(),
         ));
     }
+
     public function newNeedAction(Request $request)
     {
         $user = $this->get('security.context')->getToken()->getUser();
         $needs = new Needs();
         $needs->setUsers($user);
-
         $form = $this->createForm('BoosterBundle\Form\CitizenNeedsType', $needs);
         $form->handleRequest($request);
 
