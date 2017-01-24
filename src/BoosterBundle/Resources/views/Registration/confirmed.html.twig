@@ -3,20 +3,25 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 {% block fos_user_content %}
-    <p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
+    <p class="help">{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
     {% if targetUrl %}
     <p><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></p>
-
-        <h3>Le Booster rural : mode d'emploi</h3>
-
-        <p>En cliquant sur votre nom en haut à gauche, vous accédez à votre profil. Une fois sur cette page vous avez la possibilité de compléter vos informations et d'ajouter des photos.
-            En complétant les parties "Offres" et "Besoins" vous augmentez vos chances de visibilité sur le site. Une fois vos offres et besoins validées vous avez la possibilité de les modifier ou de les supprimer.
-
-            Dans les encadrés "Matching", le moteur de recherche vous permet de rechercher des annonces par mots-clés.
-
-            Enfin si vous souhaitez accéder à l'ensemble des annonces concernant les maires, les acteurs dynamiques et les citoyens, cliquez sur les mots "besoins" et "offres" dans la barre de navigation. L'onglet "Villages" affiche quant à lui l'ensemble des communes inscrites sur le site.</p>
-
-
-
     {% endif %}
+        <h3>Le Booster rural : mode d'emploi</h3>
+<div class="row" id="aids">
+        <p class="col-xs-12 col-md-6 help" id="scroll">En cliquant sur votre nom en haut à gauche, vous accédez à votre profil. Une fois sur cette page vous avez la possibilité de compléter vos informations et d'ajouter des photos (1).
+            <br/>
+            <br/>
+            En complétant les parties "Offres" et "Besoins" vous augmentez vos chances de visibilité sur le site (2). Une fois vos offres et besoins validés vous avez la possibilité de les modifier ou de les supprimer (1)(3).
+<br/>
+<br/>
+            Dans les encadrés "Matching", le moteur de recherche vous permet de rechercher des annonces par mots-clés (4).
+<br/>
+<br/>
+            Enfin si vous souhaitez accéder à l'ensemble des annonces concernant les maires, les acteurs dynamiques et les citoyens, cliquez sur les mots "besoins" et "offres" (5) dans la barre de navigation. L'onglet "Villages" (5) affiche quant à lui l'ensemble des communes inscrites sur le site.</p>
+
+        <img class="col-xs-12 col-md-6" src="{{ asset("bundles/booster/img/Aide.png") }}" alt="exemple profil">
+
+</div>
+
 {% endblock fos_user_content %}
