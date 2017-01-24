@@ -128,11 +128,11 @@
           <div class="col-sm-offset-1 col-sm-10 block1">
               <div class="row">
                   <section class="col-sm-6 col-xs-12 backWhite margeMobile secPad2 padShow2">
-                      <h3 class="title">Mes offres</h3>
-                      <h4 class="underTitle">Ce que je propose...</h4>
+                      <h3 class="title">Nos offres</h3>
+                      <h4 class="underTitle">Ce que nous proposons...</h4>
                       <div class="padShow">
                           {% if offers == NULL %}
-                              <p class="nobody">Absence d'Offres</p>
+                              <p class="nobody">Pour créer une offre cliquez sur<span class="glyphicon glyphicon-plus btn-lg"></span ></p>
                           {% else %}
                               {% for offer in offers %}
                                   <ul>
@@ -168,8 +168,8 @@
                   </section>
 
                   <section class="col-sm-5 col-xs-12 backWhite secPad3 padShow2">
-                      <h3 class="title">Mes matchings</h3>
-                      <h4 class="underTitle">Qui puis-je aider ?</h4>
+                      <h3 class="title">Nos matching</h3>
+                      <h4 class="underTitle">Qui pouvons-nous aider ?</h4>
                       <form>
                           <div>
                               <input class="form-control ombreMoteur2" placeholder="Rechercher..." type="text" id="search2"> <!-- id return in recherchejQuery.js -->
@@ -177,7 +177,7 @@
                       </form>
                       <div class="padShow">
                           {% if needsall == NULL %}
-                              <p class="nobody">Absence de Besoins</p>
+                              <p class="nobody">Aucun résultat</p>
                           {% else %}
                               {% for needsall in needsall %}
                                   <ul>
@@ -206,11 +206,11 @@
           <div class="col-sm-offset-1 col-sm-10 block1">
               <div class="row">
                   <section class="col-sm-6 col-xs-12 backWhite margeMobile secPad2 padShow2">
-                      <h3 class="title">Mes besoins</h3>
-                      <h4 class="underTitle">Ce dont j'ai besoin...</h4>
+                      <h3 class="title">Nos besoins</h3>
+                      <h4 class="underTitle">Ce dont nous avons besoin...</h4>
                       <div class="padShow">
                           {% if needs == NULL %}
-                              <p class="nobody">Absence de Besoins</p>
+                              <p class="nobody">Pour créer un besoin cliquez sur<span class="glyphicon glyphicon-plus btn-lg"></span ></p>
                           {% else %}
                               {% for needs in needs %}
                                   <ul>
@@ -245,8 +245,8 @@
                   </section>
 
                   <section class="col-sm-5 col-xs-12 backWhite secPad3 padShow2">
-                      <h3 class="title">Mes matchings</h3>
-                      <h4 class="underTitle">Qui peut m'aider ?</h4>
+                      <h3 class="title">Nos matching</h3>
+                      <h4 class="underTitle">Qui pouvons-nous aider ?</h4>
                       <form>
                           <div class="form-group">
                               <input class="form-control ombreMoteur2" placeholder="Rechercher..." type="text" id="search"> <!-- id return in recherchejQuery.js -->
@@ -254,7 +254,7 @@
                       </form>
                       <div class="padShow">
                           {% if offersall == NULL %}
-                              <p class="nobody">Absence d'Offres</p>
+                              <p class="nobody">Aucun résultat</p>
                           {% else %}
                               {% for offersall in offersall %}
                                   <ul>
