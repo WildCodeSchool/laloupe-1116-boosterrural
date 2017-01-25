@@ -12,7 +12,6 @@ class ActorEditUserType extends AbstractType {
             -> add('organization', null, array(
                 'label'=>'nom de la structure',
 
-
             ))
             -> add('lastname', null, array(
                 'label'=>'nom et prénom du responsable'
@@ -22,14 +21,15 @@ class ActorEditUserType extends AbstractType {
 
                     'Réseaux (Fondation RTE, Compagnons bâtisseurs...)' => 'Réseaux (Fondation RTE, Compagnons bâtisseurs...)',
                     'Association' => 'Association',
-                    'TPE/Artisans' => 'TPE/Artisans'),
+                    'TPE/Artisans' => 'TPE/Artisans',
+                    'Ecole' => 'Ecole'),
                 'placeholder'=>'Choisir',
                 'label'=>'statut'
             ))
             -> add('category', ChoiceType::class, array(
                 'choices' => array(
                     'Développement durable' => 'Développement durable',
-                    'Habitat' => 'Habitat',
+                    'Habitat/Ingénierie' => 'Habitat/Ingénierie',
                     'Agriculture/Agroalimentaire' => 'Agriculture/Agroalimentaire',
                     'Culture/Patrimoine' => 'Culture/Patrimoine',
                     'Mobilité' => 'Mobilité',

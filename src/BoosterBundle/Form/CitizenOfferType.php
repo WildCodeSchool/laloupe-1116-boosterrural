@@ -88,29 +88,11 @@ class CitizenOfferType extends AbstractType
                     "des personnes en phase avec mon projet" => "des personnes en phase avec mon projet",
                     "du coaching pour me lancer" => "du coaching pour me lancer")))
 
-            ->add('activity', choiceType::class, array(
-                'choices' => array(
-                    'hobby' => 'Loisirs',
-                    'craftsman'=> 'Artisan',
-                    'benevolat'=> 'Bénévolats',
-                    'communication'=>'Communication'
-                ),
-                'label'=>'Categorie',
-                'placeholder'=>'Choisir'))
 
             ->add('description','textarea', array(
                 'label'=>'Description de l\'offre'
             ))
 
-            ->add('wish', choiceType::class, array(
-                'choices' => array(
-                    'dupliquate' => 'Dupliquer ce projet',
-                    'formation'=> 'Former sur ce projet',
-                    'help'=> 'Appuyer un projet similaire',
-                    'tell'=>'Echanger sur ce projet'
-                ),
-                'label'=>'Souhaits',
-                'placeholder'=>'Choisir'))
 
 
             ;
