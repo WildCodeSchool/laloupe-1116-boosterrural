@@ -735,7 +735,7 @@ textarea {
 .loglabel {
     padding-top: 5px;
 }
-.connectButton {
+/*.connectButton {
     background-color: rgb(252, 183, 0);
     border: 1px solid black;
     color: black;
@@ -745,7 +745,7 @@ textarea {
 }
 .inline {
     display: inline-block;
-}
+}*/
 
 /******************************************************/
 /************************ PAGE SHOW *******************/
