@@ -53,7 +53,9 @@ class ProfCitizenController extends Controller
         $user = $this->get('security.context')->getToken()->getUser();
         $offer = new Offer();
         $offer->setUsers($user);
-        $form = $this->createForm('BoosterBundle\Form\CitizenOfferType', $offer);
+        $form = $this->createForm('BoosterBundle\Form\CitizenOfferType', $offer, array(
+            'attr'=>array('novalidate'=>'novalidate')
+        ));
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -79,7 +81,9 @@ class ProfCitizenController extends Controller
         $user = $this->get('security.context')->getToken()->getUser();
         $needs = new Needs();
         $needs->setUsers($user);
-        $form = $this->createForm('BoosterBundle\Form\CitizenNeedsType', $needs);
+        $form = $this->createForm('BoosterBundle\Form\CitizenNeedsType', $needs, array(
+            'attr'=>array('novalidate'=>'novalidate')
+        ));
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

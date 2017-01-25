@@ -58,7 +58,10 @@ class ProfActorController extends Controller
         $user = $this->get('security.context')->getToken()->getUser();
         $needs = new Needs();
         $needs->setUsers($user);
-        $form = $this->createForm('BoosterBundle\Form\ActorNeedsType', $needs);
+        $form = $this->createForm('BoosterBundle\Form\ActorNeedsType', $needs, array(
+            'attr'=>array('novalidate'=>'novalidate')
+        ));
+
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -85,7 +88,9 @@ class ProfActorController extends Controller
         $user = $this->get('security.context')->getToken()->getUser();
         $offer = new Offer();
         $offer->setUsers($user);
-        $form = $this->createForm('BoosterBundle\Form\ActorOfferType', $offer);
+        $form = $this->createForm('BoosterBundle\Form\ActorOfferType', $offer, array(
+            'attr'=>array('novalidate'=>'novalidate')
+        ));
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
