@@ -36,8 +36,6 @@ $("#search").keyup(function() // " search" est notre cible, à chaque levée d'u
 });
 
 /* *************************************** search 2 ************************** */
-
-console.log('BONJOURRRRR');
 $("#search2").keyup(function() // " search" est notre cible, à chaque levée d'une touche du clavier sur l'id search, on fera :
 
 {
