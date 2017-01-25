@@ -36,6 +36,7 @@ class EditCitizenRegistrationType extends AbstractType
                     'Numérique et co-coworking' => 'Numérique et co-coworking'),
                 'placeholder'=>'Choisir',
                 'label'=>'catégorie',
+
             ))
 
             ->add('statusCitizen', choiceType::class, array(

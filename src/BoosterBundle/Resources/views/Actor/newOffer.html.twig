@@ -21,7 +21,7 @@
                         {{ form_widget(form.transportation,{'attr':{'style':'display:none'}}) }}
                     {% elseif user.category == 'Habitat' %}
                         {{ form_row(form.habitation)}}
-                        {{ form_widget(form.development,{'attr':{'style':'display:none'}})}}
+                        {{ form_widget(form.development,{'attr':{'style':'display:none'}}) }}
                         {{ form_widget(form.culture,{'attr':{'style':'display:none'}}) }}
                         {{ form_widget(form.agriculture,{'attr':{'style':'display:none'}}) }}
                         {{ form_widget(form.transportation,{'attr':{'style':'display:none'}}) }}
@@ -51,9 +51,8 @@
                         {{ form_widget(form.transportation,{'attr':{'style':'display:none'}}) }}
 
                     {% endif %}
-
                     {{ form_widget(form) }}
-                    <input type="submit" value="Créer une Offre" class="btn center-block Button"/>
+                    <input type="submit" value="Créer un besoin" class="btn center-block Button"/>
                     {{ form_end(form) }}
 
                     <ul>
