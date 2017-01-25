@@ -24,30 +24,9 @@ class MayorOfferType extends AbstractType
             ->add('town', null, array(
                 'label'=>'Ville'
             ))
-            ->add('activity', choiceType::class, array(
-                'choices' => array(
-                    'hobby' => 'Loisirs',
-                    'craftsman'=> 'Artisan',
-                    'benevolat'=> 'Bénévolats',
-                    'communication'=>'Communication'
-                ),
-                'label'=>'Categorie',
-                'placeholder'=>'Choisir'))
-
             ->add('description','textarea', array(
                 'label'=>'Description de l\'offre'
             ))
-
-            ->add('wish', choiceType::class, array(
-                'choices' => array(
-                    'dupliquate' => 'Dupliquer ce projet',
-                    'formation'=> 'Former sur ce projet',
-                    'help'=> 'Appuyer un projet similaire',
-                    'tell'=>'Echanger sur ce projet'
-                ),
-                'label'=>'Souhaits',
-                'placeholder'=>'Choisir'))
-
             ->add('fileOffer', 'file', array('required' => false,
                 'label'=>'fichier image'
             ));

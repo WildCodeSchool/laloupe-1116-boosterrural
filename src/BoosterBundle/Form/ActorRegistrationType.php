@@ -23,14 +23,15 @@ class ActorRegistrationType extends AbstractType {
 
                     'Réseaux (Fondation RTE, Compagnons bâtisseurs...)' => 'Réseaux (Fondation RTE, Compagnons bâtisseurs...)',
                     'Association' => 'Association',
-                    'TPE/Artisans' => 'TPE/Artisans'),
+                    'TPE/Artisans' => 'TPE/Artisans',
+                    'Ecole' => 'Ecole'),
                 'placeholder'=>'Choisir',
                 'label'=>'statut'
             ))
             -> add('category', ChoiceType::class, array(
                 'choices' => array(
                     'Développement durable' => 'Développement durable',
-                    'Habitat' => 'Habitat',
+                    'Habitat/Ingénierie' => 'Habitat/Ingénierie',
                     'Agriculture/Agroalimentaire' => 'Agriculture/Agroalimentaire',
                     'Culture/Patrimoine' => 'Culture/Patrimoine',
                     'Mobilité' => 'Mobilité',
