@@ -136,7 +136,9 @@ class ProfActorController extends Controller
     {
 
 
-        $form = $this->createForm('BoosterBundle\Form\ActorOfferType', $offer);
+        $form = $this->createForm('BoosterBundle\Form\ActorOfferType', $offer, array(
+            'attr'=>array('novalidate'=>'novalidate')
+        ));
 
         $form->handleRequest($request);
 
@@ -155,7 +157,9 @@ class ProfActorController extends Controller
     public function editNeedAction(Request $request, Needs $need)
     {
 
-        $form = $this->createForm('BoosterBundle\Form\ActorNeedsType', $need);
+        $form = $this->createForm('BoosterBundle\Form\ActorNeedsType', $need,  array(
+            'attr'=>array('novalidate'=>'novalidate')
+        ));
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -174,7 +178,9 @@ class ProfActorController extends Controller
     public function editDescriptionAction(Request $request, User $user)
     {
 
-        $form = $this->createForm('BoosterBundle\Form\DescriptionType', $user);
+        $form = $this->createForm('BoosterBundle\Form\DescriptionType', $user, array(
+            'attr'=>array('novalidate'=>'novalidate')
+        ));
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -192,7 +198,9 @@ class ProfActorController extends Controller
     public function editUserAction(Request $request, User $user)
     {
 
-        $form = $this->createForm('BoosterBundle\Form\ActorEditUserType', $user);
+        $form = $this->createForm('BoosterBundle\Form\ActorEditUserType', $user,  array(
+            'attr'=>array('novalidate'=>'novalidate')
+        ));
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

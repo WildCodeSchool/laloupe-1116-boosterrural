@@ -126,7 +126,9 @@ class ProfCitizenController extends Controller
     {
 
 
-        $form = $this->createForm('BoosterBundle\Form\CitizenOfferType', $offer);
+        $form = $this->createForm('BoosterBundle\Form\CitizenOfferType', $offer,  array(
+            'attr'=>array('novalidate'=>'novalidate')
+        ));
 
         $form->handleRequest($request);
 
@@ -138,14 +140,16 @@ class ProfCitizenController extends Controller
 
         return $this->render('BoosterBundle:Citizen:editOffer.html.twig', array(
             'offer' => $offer,
-            'form' => $editForm->createView()
+            'form' => $form->createView()
         ));
 
     }
     public function editNeedAction(Request $request, Needs $need)
     {
 
-        $form = $this->createForm('BoosterBundle\Form\CitizenNeedsType', $need);
+        $form = $this->createForm('BoosterBundle\Form\CitizenNeedsType', $need,  array(
+            'attr'=>array('novalidate'=>'novalidate')
+        ));
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -165,7 +169,9 @@ class ProfCitizenController extends Controller
     public function editDescriptionAction(Request $request, User $user)
     {
 
-        $form = $this->createForm('BoosterBundle\Form\DescriptionType', $user);
+        $form = $this->createForm('BoosterBundle\Form\DescriptionType', $user,  array(
+            'attr'=>array('novalidate'=>'novalidate')
+        ));
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -186,7 +192,9 @@ class ProfCitizenController extends Controller
     public function editUserAction(Request $request, User $user)
     {
 
-        $form = $this->createForm('BoosterBundle\Form\EditCitizenRegistrationType', $user);
+        $form = $this->createForm('BoosterBundle\Form\EditCitizenRegistrationType', $user,  array(
+            'attr'=>array('novalidate'=>'novalidate')
+        ));
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
