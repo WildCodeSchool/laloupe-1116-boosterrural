@@ -56,7 +56,9 @@ class ProfMayorController extends Controller
         $user = $this->get('security.context')->getToken()->getUser();
         $offer = new Offer();
         $offer->setUsers($user);
-        $form = $this->createForm('BoosterBundle\Form\MayorOfferType', $offer);
+        $form = $this->createForm('BoosterBundle\Form\MayorOfferType', $offer,  array(
+            'attr'=>array('novalidate'=>'novalidate')
+        ));
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -81,7 +83,9 @@ class ProfMayorController extends Controller
         $user = $this->get('security.context')->getToken()->getUser();
         $needs = new Needs();
         $needs->setUsers($user);
-        $form = $this->createForm('BoosterBundle\Form\MayorNeedsType', $needs);
+        $form = $this->createForm('BoosterBundle\Form\MayorNeedsType', $needs,  array(
+            'attr'=>array('novalidate'=>'novalidate')
+        ));
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -124,7 +128,9 @@ class ProfMayorController extends Controller
     /************************EDIT OFFER OR NEEDS *************************/
     public function editOfferAction(Request $request, Offer $offer)
     {
-        $form = $this->createForm('BoosterBundle\Form\MayorOfferType', $offer);
+        $form = $this->createForm('BoosterBundle\Form\MayorOfferType', $offer,  array(
+            'attr'=>array('novalidate'=>'novalidate')
+        ));
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -141,7 +147,9 @@ class ProfMayorController extends Controller
 
     public function editNeedAction(Request $request, Needs $need)
     {
-        $form = $this->createForm('BoosterBundle\Form\MayorNeedsType', $need);
+        $form = $this->createForm('BoosterBundle\Form\MayorNeedsType', $need,  array(
+            'attr'=>array('novalidate'=>'novalidate')
+        ));
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -160,7 +168,9 @@ class ProfMayorController extends Controller
     public function editDescriptionAction(Request $request, User $user)
     {
 
-        $form = $this->createForm('BoosterBundle\Form\DescriptionType', $user);
+        $form = $this->createForm('BoosterBundle\Form\DescriptionType', $user,  array(
+            'attr'=>array('novalidate'=>'novalidate')
+        ));
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -180,7 +190,9 @@ class ProfMayorController extends Controller
     {
 
 
-        $form = $this->createForm('BoosterBundle\Form\EditMayorRegistrationType', $user);
+        $form = $this->createForm('BoosterBundle\Form\EditMayorRegistrationType', $user,  array(
+            'attr'=>array('novalidate'=>'novalidate')
+        ));
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -201,7 +213,9 @@ class ProfMayorController extends Controller
     {
 
 
-        $form = $this->createForm('BoosterBundle\Form\WordMayorType', $user);
+        $form = $this->createForm('BoosterBundle\Form\WordMayorType', $user,  array(
+            'attr'=>array('novalidate'=>'novalidate')
+        ));
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
