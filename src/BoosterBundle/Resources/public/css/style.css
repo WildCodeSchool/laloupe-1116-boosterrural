@@ -806,5 +806,11 @@ textarea {
     margin-top: 20px;
 }
 
+.ligneHr {
+    border: 1px solid rgb(252, 183, 0);
+    width: 50%;
+}
 
-
+.italTitre {
+    font-style: italic;
+}

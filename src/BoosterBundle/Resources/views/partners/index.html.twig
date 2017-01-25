@@ -1,39 +1,24 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Partners list</h1>
-
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Partnertext</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for partner in partners %}
-            <tr>
-                <td><a href="{{ path('partners_show', { 'id': partner.id }) }}">{{ partner.id }}</a></td>
-                <td>{{ partner.partnerText }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('partners_show', { 'id': partner.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('partners_edit', { 'id': partner.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('partners_new') }}">Create a new partner</a>
-        </li>
-    </ul>
+    <h1>Nos Partenaires</h1>
+    <div class="row">
+        <div class="col-sm-offset-1 col-sm-10 col-xs-12 project">
+            <p>
+                Pour <strong>« Ensemble le Booster rural »</strong> les partenaires partagent les mêmes objectifs et portent les mêmes valeurs que notre projet. Ces valeurs sont celles d’invention, d’innovation, d’expérimentation  et de soutien aux forces vives et vivantes des territoires hors métropoles à l’échelle nationale. Elle contribue à présenter cette dimension créative et à renforcer les synergies tout en proposant des Solutions.
+                <br>
+                Les partenaires contribuent à la plate-forme par un soutien sous forme de mécénat, de financement, de contribution  en  contenus, en expertise technique ou de communication.
+            </p>
+            {% for partner in partners %}
+            <div class="row downMarg2">
+                <div class="col-xs-3">
+                    <img src="{{ app.request.basepath }}/uploads/{{ partner.imagePartners }}" alt="photo_partenaire" class="img-responsive" width="">
+                </div>
+                <div class="col-xs-9">
+                    <p>{{ partner.partnerText }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}

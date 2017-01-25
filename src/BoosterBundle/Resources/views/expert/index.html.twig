@@ -1,39 +1,23 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Experts list</h1>
+    <h1>Nos Experts</h1>
+    <div class="row">
+        <div class="col-sm-offset-1 col-sm-10 col-xs-12 project">
+            <p>
+                Pour <strong>« Ensemble le Booster rural »</strong> les Experts appartiennent aux professions juridiques, notariales, immobilières, d’ingénierie territoriale en environnement  et en ingénierie de réseaux.
+            </p>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Experttext</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for expert in experts %}
-            <tr>
-                <td><a href="{{ path('expert_show', { 'id': expert.id }) }}">{{ expert.id }}</a></td>
-                <td>{{ expert.expertText }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('expert_show', { 'id': expert.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('expert_edit', { 'id': expert.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('expert_new') }}">Create a new expert</a>
-        </li>
-    </ul>
+            {% for expert in experts %}
+                <div class="row downMarg2">
+                    <div class="col-xs-3">
+                        <img src="{{ app.request.basepath }}/uploads/{{ expert.imageExperts }}" alt="photo_expert" class="img-responsive" width="">
+                    </div>
+                    <div class="col-xs-9">
+                        <p>{{ expert.expertText }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}

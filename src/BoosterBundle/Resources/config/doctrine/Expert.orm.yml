@@ -11,4 +11,18 @@ BoosterBundle\Entity\Expert:
     fields:
         expertText:
             type: text
-    lifecycleCallbacks: {  }
+            nullable: true
+
+        imageExperts:
+            type: string
+            length: 255
+            nullable: true
+
+
+    lifecycleCallbacks:
+
+      prePersist: [ preUploadExperts ]
+      preUpdate: [ preUploadExperts ]
+      postPersist: [ uploadExperts ]
+      postUpdate: [ uploadExperts ]
+      postRemove: [ removeUploadExperts ]

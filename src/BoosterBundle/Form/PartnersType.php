@@ -13,7 +13,12 @@ class PartnersType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('partnerText')        ;
+        $builder
+            ->add('partnerText')
+
+            ->add('filePartners', 'file', array('required' => false,
+            'label'=>'Photo'
+            ));
     }
     
     /**
@@ -33,6 +38,4 @@ class PartnersType extends AbstractType
     {
         return 'boosterbundle_partners';
     }
-
-
 }

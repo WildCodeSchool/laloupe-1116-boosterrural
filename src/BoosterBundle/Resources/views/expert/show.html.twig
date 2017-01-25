@@ -1,32 +1,27 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Expert</h1>
+    <div class="row">
+        <div class="col-sm-offset-2 col-sm-8 col-xs-12">
+            <div class="row">
+                <div class="col-sm-offset-3 col-sm-6">
+                    <h1>Expert</h1>
+                    <p style="text-align: justify">
 
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ expert.id }}</td>
-            </tr>
-            <tr>
-                <th>Experttext</th>
-                <td>{{ expert.expertText }}</td>
-            </tr>
-        </tbody>
-    </table>
+                        <img src="{{ app.request.basepath }}/uploads/{{ expert.imageExperts }}" alt="photo_expert" class="img-responsive" style="margin: 20px auto">
 
-    <ul>
-        <li>
-            <a href="{{ path('expert_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('expert_edit', { 'id': expert.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+                        {{ expert.expertText }}
+
+                        <a href="{{ path('expert_show', { 'id': expert.id }) }}" class="btn center-block">{{ expert.id }}</a>
+
+                        <a href="{{ path('expert_edit', { 'id': expert.id }) }}" class="btn center-block">Editer</a>
+
+                        <a href="{{ path('expert_index') }}" class="btn center-block">Retour à la liste</a>
+
+                        <a href="{{ path('expert_new') }}" class="btn center-block">Créer un nouveau expert</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

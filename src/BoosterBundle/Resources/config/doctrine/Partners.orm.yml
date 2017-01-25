@@ -12,4 +12,17 @@ BoosterBundle\Entity\Partners:
         partnerText:
             type: text
             nullable: true
-    lifecycleCallbacks: {  }
+
+        imagePartners:
+            type: string
+            length: 255
+            nullable: true
+
+
+    lifecycleCallbacks:
+
+      prePersist: [ preUploadPartners ]
+      preUpdate: [ preUploadPartners ]
+      postPersist: [ uploadPartners ]
+      postUpdate: [ uploadPartners ]
+      postRemove: [ removeUploadPartners ]

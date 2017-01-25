@@ -11,7 +11,7 @@
 
                     {{ form_start(form) }}
                     {{ form_widget(form) }}
-                    <input type="submit" value="Créer un besoin" class="btn center-block Button"/>
+                    <input type="submit" value="Créer un partenaire" class="btn center-block Button"/>
                     {{ form_end(form) }}
 
                     <ul>
@@ -19,27 +19,9 @@
                             <a href="{{ path('partners_index') }}" class="btn center-block">Retour à la liste</a>
                         </li>
                     </ul>
-
                 </div>
             </div>
         </div>
     </div>
-
 {% endblock %}
 
-{#{% extends 'base.html.twig' %}#}
-
-{#{% block body %}#}
-    {#<h1>Partner creation</h1>#}
-
-    {#{{ form_start(form) }}#}
-        {#{{ form_widget(form) }}#}
-        {#<input type="submit" value="Create" />#}
-    {#{{ form_end(form) }}#}
-
-    {#<ul>#}
-        {#<li>#}
-            {#<a href="{{ path('partners_index') }}">Back to the list</a>#}
-        {#</li>#}
-    {#</ul>#}
-{#{% endblock %}#}

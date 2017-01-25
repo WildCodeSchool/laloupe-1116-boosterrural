@@ -13,7 +13,12 @@ class ExpertType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('expertText')        ;
+        $builder
+            ->add('expertText')
+
+            ->add('fileExperts', 'file', array('required' => false,
+                'label'=>'Photo'
+            ));
     }
     
     /**

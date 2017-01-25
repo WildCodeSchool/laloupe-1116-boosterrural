@@ -6,14 +6,17 @@
         <div class="col-sm-offset-2 col-sm-8 col-xs-12">
             <div class="row">
                 <div class="col-sm-offset-3 col-sm-6">
-                    <h1>Modification du besoin</h1>
-
-                    {{ form_start(form) }}
-                    {{ form_widget(form) }}
-                    <input type="submit" value="Modifier" class="btn center-block Button"></a>
-                    {{ form_end(form) }}
+                    <h1>Modification du partenaire</h1>
                     <ul>
-
+                        {{ form_start(form) }}
+                        {{ form_widget(form) }}
+                        <input type="submit" value="Modifier" class="btn center-block Button">
+                        {{ form_end(form) }}
+                        <li>
+                            {{ form_start(delete_form) }}
+                            <input type="submit" value="Supprimer" class="btn center-block Button">
+                            {{ form_end(delete_form) }}
+                        </li>
                         <li>
                             <a href="{{ path('partners_index') }}" class="btn center-block">Retour à la liste</a>
                         </li>
@@ -22,28 +25,4 @@
             </div>
         </div>
     </div>
-
 {% endblock %}
-
-
-{#{% extends 'base.html.twig' %}#}
-
-{#{% block body %}#}
-    {#<h1>Partner edit</h1>#}
-
-    {#{{ form_start(edit_form) }}#}
-        {#{{ form_widget(edit_form) }}#}
-        {#<input type="submit" value="Edit" />#}
-    {#{{ form_end(edit_form) }}#}
-
-    {#<ul>#}
-        {#<li>#}
-            {#<a href="{{ path('partners_index') }}">Back to the list</a>#}
-        {#</li>#}
-        {#<li>#}
-            {#{{ form_start(delete_form) }}#}
-                {#<input type="submit" value="Delete">#}
-            {#{{ form_end(delete_form) }}#}
-        {#</li>#}
-    {#</ul>#}
-{#{% endblock %}#}
