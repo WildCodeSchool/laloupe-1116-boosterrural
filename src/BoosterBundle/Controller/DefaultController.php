@@ -26,6 +26,7 @@ class DefaultController extends Controller
             'needs' => $needs,
         ));
     }
+
     public function home_page_no_connectAction()
     {
         $user = $this->getUser();
@@ -39,6 +40,7 @@ class DefaultController extends Controller
         ));
 
     }
+
     public function citizenAction()
     {
         $user = $this->getUser();
@@ -57,6 +59,7 @@ class DefaultController extends Controller
         ));
 
     }
+
     public function mayorAction()
     {
         $user = $this->getUser();

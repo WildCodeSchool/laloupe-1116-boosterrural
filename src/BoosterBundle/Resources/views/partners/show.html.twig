@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-sm-offset-2 col-sm-8 col-xs-12">
+            <div class="row">
+                <div class="col-sm-offset-3 col-sm-6">
+                    <h1>Partenaire</h1>
+                    <p style="text-align: justify">
+
+                        <img src="{{ app.request.basepath }}/uploads/{{ partner.imagePartners }}" alt="photo_partenaire" class="img-responsive" style="margin: 20px auto">
+
+                        {{ partner.partnerText }}
+
+                        <a href="{{ path('partners_show', { 'id': partner.id }) }}" class="btn center-block">{{ partner.id }}</a>
+
+                        <a href="{{ path('partners_edit', { 'id': partner.id }) }}" class="btn center-block">Editer</a>
+
+                        <a href="{{ path('partners_index') }}" class="btn center-block">Retour à la liste</a>
+
+                        <a href="{{ path('partners_new') }}" class="btn center-block">Créer un nouveau partenaire</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+

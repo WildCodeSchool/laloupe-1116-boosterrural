@@ -1,0 +1,28 @@
+BoosterBundle\Entity\Partners:
+    type: entity
+    table: null
+    repositoryClass: BoosterBundle\Repository\PartnersRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        partnerText:
+            type: text
+            nullable: true
+
+        imagePartners:
+            type: string
+            length: 255
+            nullable: true
+
+
+    lifecycleCallbacks:
+
+      prePersist: [ preUploadPartners ]
+      preUpdate: [ preUploadPartners ]
+      postPersist: [ uploadPartners ]
+      postUpdate: [ uploadPartners ]
+      postRemove: [ removeUploadPartners ]

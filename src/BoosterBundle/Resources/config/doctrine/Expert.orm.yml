@@ -1,0 +1,28 @@
+BoosterBundle\Entity\Expert:
+    type: entity
+    table: null
+    repositoryClass: BoosterBundle\Repository\ExpertRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        expertText:
+            type: text
+            nullable: true
+
+        imageExperts:
+            type: string
+            length: 255
+            nullable: true
+
+
+    lifecycleCallbacks:
+
+      prePersist: [ preUploadExperts ]
+      preUpdate: [ preUploadExperts ]
+      postPersist: [ uploadExperts ]
+      postUpdate: [ uploadExperts ]
+      postRemove: [ removeUploadExperts ]
