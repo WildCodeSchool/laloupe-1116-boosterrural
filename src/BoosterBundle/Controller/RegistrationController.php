@@ -203,7 +203,7 @@ class RegistrationController extends BaseController
             $lat = $resp['results'][0]['geometry']['location']['lat'];
             $lgt = $resp['results'][0]['geometry']['location']['lng'];
             // verify if data is complete
-// je veux retourner la latidude et la longitude a mon mayorController
+// je veux retourner la latitude et la longitude a mon mayorController
            return array($lat, $lgt);
 
 
