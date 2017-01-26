@@ -142,7 +142,7 @@ class ProfActorController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('actor_editOffer', array('id' => $offer->getId()));
+            return $this->redirectToRoute('actor_index', array('id' => $offer->getId()));
         }
 
         return $this->render('BoosterBundle:Actor:editOffer.html.twig', array(
@@ -162,7 +162,7 @@ class ProfActorController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('actor_editNeeds', array('id' => $need->getId()));
+            return $this->redirectToRoute('actor_index', array('id' => $need->getId()));
         }
 
         return $this->render('BoosterBundle:Actor:editNeeds.html.twig', array(
@@ -206,7 +206,7 @@ class ProfActorController extends Controller
             return $this->redirectToRoute('actor_index', array('id' => $user->getId()));
         }
 
-        return $this->render('BoosterBundle:Actor:editDescription.html.twig', array(
+        return $this->render('BoosterBundle:Actor:editUser.html.twig', array(
             'user' => $user,
             'form' => $form->createView(),
 
