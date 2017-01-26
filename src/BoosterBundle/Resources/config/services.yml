@@ -1,4 +1,17 @@
 services:
-#    booster.example:
-#        class: BoosterBundle\Example
-#        arguments: ["@service_id", "plain_value", "%parameter%"]
+
+
+    boosteruser.form.mayorRegistration:
+        class: BoosterBundle\Form\MayorRegistrationType
+        tags:
+            - { name: form.type, alias: booster_mayor_registration }
+
+    boosteruser.form.citizenRegistration:
+        class: BoosterBundle\Form\CitizenRegistrationType
+        tags:
+            - { name: form.type, alias: booster_citizen_registration }
+
+    boosteruser.form.actorRgistration:
+        class: BoosterBundle\Form\ActorRegistrationType
+        tags:
+            - { name: form.type, alias: booster_actor_registration }

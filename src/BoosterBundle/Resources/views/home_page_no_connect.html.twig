@@ -1,0 +1,125 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    <h1>rejoignez la communauté</h1>
+
+    <div class="row">
+        <div class="col-sm-offset-1 col-sm-10 col-xs-12">
+            <div class="row">
+                <div class="hidden-xs hidden-sm hidden-md col-lg-12">
+                    <section class="map_deco">
+                        <img src="{{ asset('bundles/booster/img/maire.png') }}" alt="photo_maire" class="center-block imgHP1"/>
+                        <img src="{{ asset('bundles/booster/img/fleche.png') }}" alt="fleche" class="fleche1"/>
+
+                        <img src="{{ asset('bundles/booster/img/citoyen.png') }}" alt="photo_citoyen" class="center-block imgHP2"/>
+                        <img src="{{ asset('bundles/booster/img/fleche.png') }}" alt="fleche" class="fleche2"/>
+
+                        <div id="HPmap" class="center-block"></div>
+
+                        <img src="{{ asset('bundles/booster/img/acteur.png') }}" alt="photo_acteur" class="center-block imgHP3"/>
+                        <img src="{{ asset('bundles/booster/img/fleche.png') }}" alt="fleche" class="fleche3"/>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row ">
+        <div class="col-sm-offset-1 col-sm-10 col-xs-12 project">
+            <div class="row">
+                <div class="col-xs-12">
+                    <section class="downPage">
+                        <p>
+                            Ensemble le Booster Rural, la plateforme numérique dynamique des ruralités
+                            est un outil de mise en relations de bonnes pratiques et d’opportunités <strong>innovantes</strong> sur les territoires ruraux entre des maires, des porteurs de projets, des acteurs, des TPE, des citoyens urbains et d’autres plateformes du monde rural.
+                            Ce projet a pour objectif de soutenir les <strong>territoires ruraux</strong> par un maillage des acteurs dynamiques des territoires entendu les maires, les acteurs ou porteurs de projets, les TPE et les citoyens urbains.
+                            Ceci afin d’enrichir, de diversifier, de rajeunir, et de dynamiser l’action locale grâce à la mise en lien d’une multitude d’acteurs innovants qui ne se connaissent ou ne se rencontrent pas.
+                            L’objectif est à la fois d’enrayer la désertification rurale, d’offrir une ouverture sur des territoires aux nombreuses ressources et d’inciter à innover ensemble sur ces territoires.<br><br>
+                            Pour ce faire, la plateforme offre plusieurs services :
+                        <ul class="chipUl">
+                            <li class="chip">Un espace d’expression pour les maires et leur écosystème dynamique, les porteurs de projets et les réseaux d’acteurs,</li>
+                            <li class="chip">Un service de mise en relation ou de matching qualitatif entre les acteurs,</li>
+                            <li class="chip">Le repérage et l’identification des réseaux ou acteurs les plus innovants sur le territoire dans tous les secteurs grâce à une carte,</li>
+                            <li class="chip">La présentation d’événements et de partenariat avec d’autres plateformes.</li>
+                        </ul>
+                        </p>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {#<div class="row downMarg">
+        <div class="col-sm-offset-1 col-sm-10 col-xs-12 project">
+            <div class="row">
+                <div class="col-xs-3">
+                    <img src="{{ asset('bundles/booster/img/logo1.png') }}" alt="logo1" class="imgHpBas img-responsive">
+                </div>
+                <div class="col-xs-3">
+                    <img src="{{ asset('bundles/booster/img/logo2.png') }}" alt="logo2" class="imgHpBas img-responsive">
+                </div>
+                <div class="col-xs-3">
+                    <img src="{{ asset('bundles/booster/img/logo3.png') }}" alt="logo3" class="imgHpBas img-responsive">
+                </div>
+                <div class="col-xs-3">
+                    <img src="{{ asset('bundles/booster/img/logo4.png') }}" alt="logo4" class="imgHpBas img-responsive">
+                </div>
+            </div>
+        </div>
+    </div>#}
+
+
+    <script src="http://maps.google.com/maps/api/js?sensor=false&key=AIzaSyBSFjZGurwwEtOnMOg1mKgJgS3WcP8ucrk" type="text/javascript"></script>
+    <script>
+        var locations = [
+            {% for user in users %}
+
+            ['{{ user.cp }}', '{{ user.lat }}', '{{ user.lgt }}', '{{  user.category }}', '{{ user.lastname }}', '{{ user.organization }}', '{{ user.town }}'],
+
+            {% endfor %}
+        ];
+        var map = new google.maps.Map(document.getElementById('HPmap'), {
+            zoom: 6,
+            center: new google.maps.LatLng(46.8114340,1.6867790),
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            scrollwheel: false
+        });
+        var infowindow = new google.maps.InfoWindow();
+
+        var marker, i;
+        for (i = 0; i < locations.length; i++) {
+            var image = {url: '{{ asset('bundles/booster/img/redFlag.png') }}', origin: new google.maps.Point(0,0)};
+            if(locations[i][3] == 'Développement durable') {
+                image.url = '{{ asset('bundles/booster/img/greenFlag.png') }}';
+            } else if(locations[i][3] == 'Habitat') {
+                image.url = '{{ asset('bundles/booster/img/greyFlag.png') }}';
+            }
+            else if(locations[i][3] == 'Agriculture/Agroalimentaire') {
+                image.url = '{{ asset('bundles/booster/img/brownFlag.png') }}';
+            }
+            else if(locations[i][3] == 'Culture/Patrimoine') {
+                image.url = '{{ asset('bundles/booster/img/yellowFlag.png') }}';
+            }
+            else if(locations[i][3] == 'Mobilité') {
+                image.url = '{{ asset('bundles/booster/img/blueFlag.png') }}';
+            }
+            else if(locations[i][3] == 'Numérique et co-working') {
+                image.url = '{{ asset('bundles/booster/img/orangeFlag.png') }}';
+            }
+
+            marker = new google.maps.Marker({
+                position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                map: map,
+                icon: image
+            });
+            google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                return function() {
+                    infowindow.setContent(locations[i][5] );
+                    infowindow.open(map, marker);
+                }
+            })(marker, i));
+        }
+    </script>
+{% endblock %}

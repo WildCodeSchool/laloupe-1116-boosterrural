@@ -1,0 +1,79 @@
+BoosterBundle\Entity\Offer:
+    type: entity
+    table: null
+    repositoryClass: BoosterBundle\Repository\OfferRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: 255
+        cp:
+            type: string
+            length: 255
+        town:
+            type: string
+            length: 255
+        description:
+            type: text
+            nullable: true
+        development:
+            type: string
+            length: 255
+            nullable: true
+        habitation:
+            type: string
+            length: 255
+            nullable: true
+        culture:
+            type: string
+            length: 255
+            nullable: true
+        agriculture:
+            type: string
+            length: 255
+            nullable: true
+        transportation:
+            type: string
+            length: 255
+            nullable: true
+        coworking:
+            type: string
+            length: 255
+            nullable: true
+        wish:
+            type: string
+            length: 255
+            nullable: true
+        category:
+            type: string
+            length: 255
+            nullable: true
+        lat:
+            type: integer
+            nullable: true
+        lgt:
+            type: integer
+            nullable: true
+        imageOffer:
+            type: string
+            length: 255
+            nullable: true
+
+    manyToOne:
+        users:
+            targetEntity: BoosterBundle\Entity\User
+            inversedBy: Id
+
+    lifecycleCallbacks:
+
+      prePersist: [preUploadOffer]
+      preUpdate: [preUploadOffer]
+      postPersist: [uploadOffer]
+      postUpdate: [uploadOffer]
+      postRemove: [removeUploadOffer]
+

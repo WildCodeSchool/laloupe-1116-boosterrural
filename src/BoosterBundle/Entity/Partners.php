@@ -1,0 +1,130 @@
+<?php
+
+namespace BoosterBundle\Entity;
+
+/**
+ * Partners
+ */
+class Partners
+{
+    protected function getUploadDir()
+    {
+        return 'uploads';
+    }
+    protected function getUploadRootDir()
+    {
+        return __DIR__ . '/../../../web/' . $this->getUploadDir();
+    }
+    public function getWebPath()
+    {
+        return null === $this->imagePartners ? null : $this->getUploadDir() . '/' . $this->imagePartners;
+    }
+    public function getAbsolutePath()
+    {
+        return null === $this->imagePartners ? null : $this->getUploadRootDir() . '/' . $this->imagePartners;
+    }
+
+    public $filePartners;
+
+    public function preUploadPartners()
+    {
+        if (null !== $this->filePartners) {
+            // do whatever you want to generate a unique name
+            $this->imagePartners = uniqid() . '.' . $this->filePartners->guessExtension();
+        }
+    }
+    public function uploadPartners()
+    {
+        if (null === $this->filePartners) {
+            return;
+        }
+        // if there is an error when moving the file, an exception will
+        // be automatically thrown by move(). This will properly prevent
+        // the entity from being persisted to the database on error
+        $this->filePartners->move($this->getUploadRootDir(), $this->imagePartners);
+        unset($this->filePartners);
+    }
+    public function removeUploadPartners()
+    {
+        if ($file = $this->getAbsolutePath()) {
+            unlink($file);
+        }
+    }
+
+    /*************************************GENERATE CODE*****************************************************/
+
+
+
+    /**
+     * @var int
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $partnerText;
+
+    /**
+     * @var string
+     */
+    private $imagePartners;
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set partnerText
+     *
+     * @param string $partnerText
+     *
+     * @return Partners
+     */
+    public function setPartnerText($partnerText)
+    {
+        $this->partnerText = $partnerText;
+
+        return $this;
+    }
+
+    /**
+     * Get partnerText
+     *
+     * @return string
+     */
+    public function getPartnerText()
+    {
+        return $this->partnerText;
+    }
+
+    /**
+     * Set imagePartners
+     *
+     * @param string $imagePartners
+     *
+     * @return Partners
+     */
+    public function setImagePartners($imagePartners)
+    {
+        $this->imagePartners = $imagePartners;
+
+        return $this;
+    }
+
+    /**
+     * Get imagePartners
+     *
+     * @return string
+     */
+    public function getImagePartners()
+    {
+        return $this->imagePartners;
+    }
+}

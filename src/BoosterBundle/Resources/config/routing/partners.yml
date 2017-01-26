@@ -1,0 +1,24 @@
+partners_index:
+    path:     /
+    defaults: { _controller: "BoosterBundle:Partners:index" }
+    methods:  GET
+
+partners_show:
+    path:     /{id}/show
+    defaults: { _controller: "BoosterBundle:Partners:show" }
+    methods:  GET
+
+partners_new:
+    path:     /new
+    defaults: { _controller: "BoosterBundle:Partners:new" }
+    methods:  [GET, POST]
+
+partners_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BoosterBundle:Partners:edit" }
+    methods:  [GET, POST]
+
+partners_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BoosterBundle:Partners:delete" }
+    methods:  DELETE

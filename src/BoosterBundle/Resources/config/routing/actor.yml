@@ -1,0 +1,65 @@
+actor_index:
+    path:     /profile
+    defaults: { _controller: "BoosterBundle:ProfActor:index" }
+    methods:  GET
+
+actor_showOffer:
+    path:     /offer/{id}/show
+    defaults: { _controller: "BoosterBundle:ProfActor:showOffer" }
+    methods:  GET
+
+actor_newOffer:
+    path:     /offer/new
+    defaults: { _controller: "BoosterBundle:ProfActor:newOffer" }
+    methods:  [GET, POST]
+
+actor_editOffer:
+    path:     /offer/{id}/edit
+    defaults: { _controller: "BoosterBundle:ProfActor:editOffer" }
+    methods:  [GET, POST]
+
+actor_deleteOffer:
+    path:     /offer/{id}/delete
+    defaults: { _controller: "BoosterBundle:ProfActor:deleteOffer" }
+    methods:  [GET, POST]
+
+
+actor_listOffer:
+    path:     /offer/list
+    defaults: { _controller: "BoosterBundle:ProfActor:listOfferActor" }
+    methods:  [GET, POST]
+
+actor_showNeeds:
+    path:     /needs/{id}/show
+    defaults: { _controller: "BoosterBundle:ProfActor:showNeed" }
+    methods:  GET
+
+actor_newNeeds:
+    path:     /needs/new
+    defaults: { _controller: "BoosterBundle:ProfActor:newNeed" }
+    methods:  [GET, POST]
+
+actor_editNeeds:
+    path:     /needs/{id}/edit
+    defaults: { _controller: "BoosterBundle:ProfActor:editNeed" }
+    methods:  [GET, POST]
+
+actor_deleteNeeds:
+    path:     /needs/{id}/delete
+    defaults: { _controller: "BoosterBundle:ProfActor:deleteNeeds" }
+    methods:  [GET, POST]
+
+actor_listNeed:
+    path:     /needs/list
+    defaults: { _controller: "BoosterBundle:ProfActor:listNeedsActor" }
+    methods:  [GET, POST]
+
+actor_editDescription:
+    path:     /description/{id}
+    defaults: { _controller: "BoosterBundle:ProfActor:editDescription" }
+    methods:  [GET, POST]
+
+actor_editUser:
+    path:     /user/{id}
+    defaults: { _controller: "BoosterBundle:ProfActor:editUser" }
+    methods:  [GET, POST]

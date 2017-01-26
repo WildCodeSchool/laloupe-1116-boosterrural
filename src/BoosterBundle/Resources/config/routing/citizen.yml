@@ -1,0 +1,64 @@
+citizen_index:
+    path:     /profile
+    defaults: { _controller: "BoosterBundle:ProfCitizen:index" }
+    methods:  GET
+
+citizen_showOffer:
+    path:     /offer/{id}/show
+    defaults: { _controller: "BoosterBundle:ProfCitizen:showOffer" }
+    methods:  GET
+
+citizen_newOffer:
+    path:     /offer/new
+    defaults: { _controller: "BoosterBundle:ProfCitizen:newOffer" }
+    methods:  [GET, POST]
+
+citizen_editOffer:
+    path:     /offer/{id}/edit
+    defaults: { _controller: "BoosterBundle:ProfCitizen:editOffer" }
+    methods:  [GET, POST]
+
+citizen_deleteOffer:
+    path:     /offer/{id}/delete
+    defaults: { _controller: "BoosterBundle:ProfCitizen:deleteOffer" }
+    methods:  [GET, POST]
+
+citizen_listOffer:
+    path:     /offer/list
+    defaults: { _controller: "BoosterBundle:ProfCitizen:listOfferCitizen" }
+    methods:  [GET, POST]
+
+citizen_showNeeds:
+    path:     /needs/{id}/show
+    defaults: { _controller: "BoosterBundle:ProfCitizen:showNeed" }
+    methods:  GET
+
+citizen_newNeeds:
+    path:     /needs/new
+    defaults: { _controller: "BoosterBundle:ProfCitizen:newNeed" }
+    methods:  [GET, POST]
+
+citizen_editNeeds:
+    path:     /needs/{id}/edit
+    defaults: { _controller: "BoosterBundle:ProfCitizen:editNeed" }
+    methods:  [GET, POST]
+
+citizen_deleteNeeds:
+    path:     /needs/{id}/delete
+    defaults: { _controller: "BoosterBundle:ProfCitizen:deleteNeeds" }
+    methods:  [GET, POST]
+
+citizen_editDescription:
+    path:     /description/{id}
+    defaults: { _controller: "BoosterBundle:ProfCitizen:editDescription" }
+    methods:  [GET, POST]
+
+citizen_editUser:
+    path:     /user/{id}
+    defaults: { _controller: "BoosterBundle:ProfCitizen:editUser" }
+    methods:  [GET, POST]
+
+citizen_listNeed:
+    path:     /needs/list
+    defaults: { _controller: "BoosterBundle:ProfCitizen:listNeedsCitizen" }
+    methods:  [GET, POST]

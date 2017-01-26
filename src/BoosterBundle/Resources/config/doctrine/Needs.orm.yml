@@ -1,0 +1,89 @@
+BoosterBundle\Entity\Needs:
+    type: entity
+    table: null
+    repositoryClass: BoosterBundle\Repository\NeedsRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: 255
+        cp:
+            type: string
+            length: 255
+        town:
+            type: string
+            length: 255
+        description:
+            type: text
+        activity:
+            type: string
+            length: 255
+            nullable: true
+        development:
+            type: string
+            length: 255
+            nullable: true
+        habitation:
+            type: string
+            length: 255
+            nullable: true
+        culture:
+            type: string
+            length: 255
+            nullable: true
+        agriculture:
+            type: string
+            length: 255
+            nullable: true
+        transportation:
+            type: string
+            length: 255
+            nullable: true
+        coworking:
+            type: string
+            length: 255
+            nullable: true
+        availability:
+            type: string
+            length: 255
+            nullable: true
+        wish:
+            type: string
+            length: 255
+            nullable: true
+        category:
+            type: string
+            length: 255
+            nullable: true
+        lat:
+            type: integer
+            nullable: true
+        lgt:
+            type: integer
+            nullable: true
+
+        imageNeeds:
+            type: string
+            length: 255
+            nullable: true
+
+    manyToOne:
+        users:
+            targetEntity: BoosterBundle\Entity\User
+            inversedBy: Id
+
+    lifecycleCallbacks:
+
+      prePersist: [ preUploadNeeds ]
+      preUpdate: [ preUploadNeeds ]
+      postPersist: [ uploadNeeds ]
+      postUpdate: [ uploadNeeds ]
+      postRemove: [ removeUploadNeeds ]
+
+
+

@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+{% form_theme form ":FormTemplate:bootstrap.html.twig" %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="col-sm-offset-2 col-sm-8 col-xs-12">
+            <div class="row">
+                <div class="col-sm-offset-3 col-sm-6">
+                    <h1>création de l'offre</h1>
+
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                    <input type="submit" value="Créer une Offre" class="btn center-block Button"/>
+                    {{ form_end(form) }}
+
+                    <ul>
+                        <li>
+                            <a href="{{ path('mayor_listOffer') }}" class="btn center-block">Retour à la liste</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
