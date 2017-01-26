@@ -21,7 +21,7 @@ actor_editOffer:
 actor_deleteOffer:
     path:     /offer/{id}/delete
     defaults: { _controller: "BoosterBundle:ProfActor:deleteOffer" }
-    methods:  DELETE
+    methods:  [GET, POST]
 
 
 actor_listOffer:
@@ -47,7 +47,7 @@ actor_editNeeds:
 actor_deleteNeeds:
     path:     /needs/{id}/delete
     defaults: { _controller: "BoosterBundle:ProfActor:deleteNeeds" }
-    methods:  DELETE
+    methods:  [GET, POST]
 
 actor_listNeed:
     path:     /needs/list

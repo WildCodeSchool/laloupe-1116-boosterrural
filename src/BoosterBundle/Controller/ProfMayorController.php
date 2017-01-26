@@ -168,7 +168,7 @@ class ProfMayorController extends Controller
     public function editDescriptionAction(Request $request, User $user)
     {
 
-        $form = $this->createForm('BoosterBundle\Form\DescriptionType', $user,  array(
+        $form = $this->createForm('BoosterBundle\Form\DescriptionType', $user, array(
             'attr'=>array('novalidate'=>'novalidate')
         ));
         $form->handleRequest($request);
@@ -190,8 +190,8 @@ class ProfMayorController extends Controller
     {
 
 
-        $form = $this->createForm('BoosterBundle\Form\EditMayorRegistrationType', $user,  array(
-            'attr'=>array('novalidate'=>'novalidate')
+        $form = $this->createForm('BoosterBundle\Form\EditMayorRegistrationType', $user, array(
+            'attr'=> array('novalidate'=>'novalidate')
         ));
         $form->handleRequest($request);
 

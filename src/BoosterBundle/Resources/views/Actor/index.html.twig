@@ -119,7 +119,7 @@
                                               </a>
                                               <div class="col-xs-1">
                                                   <a href="{{ path('actor_editOffer', { 'id': offer.id }) }}"><span class="glyphicon glyphicon-pencil btn-lg"></span ></a>
-                                                  <a href="{{ path('actor_deleteOffer',{'id' : offer.id}) }}"><span class="glyphicon glyphicon-remove btn-lg"></span ></a>
+                                                  <a data-toggle="modal" href="#deleteOffer"><span class="glyphicon glyphicon-remove btn-lg"></span ></a>
 
                                               </div>
                                           </div>
@@ -199,7 +199,7 @@
                                               </a>
                                               <div class="col-xs-1">
                                                   <a href="{{ path('actor_editNeeds', { 'id': needs.id }) }}"><span class="glyphicon glyphicon-pencil btn-lg"></span ></a>
-                                                  <a href="{{ path('actor_deleteNeeds',{'id' : needs.id}) }}"><span class="glyphicon glyphicon-remove btn-lg"></span ></a>
+                                                  <a data-toggle="modal" href="#deleteNeeds"><span class="glyphicon glyphicon-remove btn-lg"></span ></a>
 
                                               </div>
                                           </div>
@@ -265,9 +265,11 @@
                       <p>Confirmez-vous la suppression de cette offre ?</p>
                   </div>
                   <div class="modal-footer">
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                      <button type="button" class="btn Button" data-dismiss="modal">Annuler</button>
                       {% for offer in offers %}
-                          <a href="{{ path('actor_deleteOffer', {'id': offer.id} ) }}">Supprimer</a>
+                          <a href="{{ path('actor_deleteOffer', {'id': offer.id} ) }}">
+                          <button type="submit" class="btn Button">Supprimer</button>
+                      </a>
                       {% endfor %}
                   </div>
               </div><!-- /.modal-content -->
@@ -286,9 +288,11 @@
                       <p>Confirmez-vous la suppression de ce besoin ?</p>
                   </div>
                   <div class="modal-footer">
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                      <button type="button" class="btn Button" data-dismiss="modal">Annuler</button>
                       {% for needs in needs %}
-                          <input type="button" href="{{ path('actor_deleteNeeds', {'id': needs.id} ) }}" value="Oui" class="btn btn-default">
+                          <a href="{{ path('actor_deleteNeeds', {'id': needs.id} ) }}">
+                              <button type="submit" class="btn Button">Supprimer</button>
+                          </a>
                       {% endfor %}
                   </div>
               </div><!-- /.modal-content -->
