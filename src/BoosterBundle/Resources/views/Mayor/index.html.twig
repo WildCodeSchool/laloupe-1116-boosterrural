@@ -190,7 +190,11 @@
                                       <li>
                                           <div class="row filtre2"> <!-- filtre2 return in recherchejQuery.js -->
                                               <a href="{{ path('mayor_showNeeds',{'id' : needsall.id}) }}" id="lienListe">
+                                                  {% if needsall.imageNeeds%}
                                                   <img src="{{ app.request.basepath }}/uploads/{{ needsall.imageNeeds }}" alt="photo_offre" class=" col-xs-2">
+                                                  {% else %}
+                                                  <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="photo_offre" class=" col-xs-2">
+                                                  {% endif %}
                                                   <div class="col-xs-8">
                                                       <span>{{ needsall.title }}</span>
                                                       <p>{{ needsall.description[:300] }} ...</p>
@@ -273,7 +277,11 @@
                                       <li>
                                           <div class="row filtre"> <!-- filtre return in recherchejQuery.js -->
                                               <a href="{{ path('mayor_showOffer',{'id' : offersall.id}) }}" id="lienListe">
+                                                  {% if offersall.imageOffer == NULL %}
                                                   <img src="{{ app.request.basepath }}/uploads/{{ offersall.imageOffer }}" alt="photo_offre" class=" col-xs-2">
+                                                  {% else %}
+                                                  <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="photo_offre" class=" col-xs-2">
+                                                  {% endif %}
                                                   <div class="col-xs-8">
                                                       <span>{{ offersall.title }}</span>
                                                       <p>{{ offersall.description[:300] }} ...</p>
@@ -369,7 +377,7 @@
               var image = {url: '{{ asset('bundles/booster/img/purpleFlag.png') }}', origin: new google.maps.Point(0,0)};
               if(locations[i][3] == 'Développement durable') {
                   image.url = '{{ asset('bundles/booster/img/greenFlag.png') }}';
-              } else if(locations[i][3] == 'Habitat') {
+              } else if(locations[i][3] == 'Habitat/Ingénierie') {
                   image.url = '{{ asset('bundles/booster/img/greyFlag.png') }}';
               }
               else if(locations[i][3] == 'Agriculture/Agroalimentaire') {
