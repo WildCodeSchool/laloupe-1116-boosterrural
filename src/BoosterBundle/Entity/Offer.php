@@ -60,7 +60,10 @@ class Offer
     private $title;
 
     /**
-     * @var string
+     * @Assert\Regex(
+     *     pattern="/^[0-9]$/"
+     *     message="Le code postal ne peut contenir que des chiffres
+     *     )
      */
     private $cp;
 
