@@ -1,7 +1,9 @@
 <?php
 
 namespace BoosterBundle\Entity;
+
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 /**
  * Needs
  */
@@ -69,7 +71,10 @@ class Needs
     private $cp;
 
     /**
-     * @var string
+     * @Assert\Regex(
+     *     pattern="/^[0-9]{5}$/"
+     *     message="Le code postal ne peut contenir que des chiffres"
+     *     )
      */
     private $town;
 

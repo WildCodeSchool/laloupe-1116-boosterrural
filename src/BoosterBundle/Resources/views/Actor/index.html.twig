@@ -153,7 +153,11 @@
                                       <li>
                                           <div class="row filtre2"> <!-- filtre2 return in recherchejQuery.js -->
                                               <a href="{{ path('actor_showNeeds',{'id' : needsall.id}) }}" id="lienListe">
+                                                  {% if needsall.imageNeeds != NULL %}
                                                   <img src="{{ app.request.basepath }}/uploads/{{ needsall.imageNeeds }}" alt="photo_offre" class=" col-xs-2">
+                                                  {% else %}
+                                                  <img src="{{ asset('bundles/booster/img/nophoto.png')}}" alt="photo_offre" class=" col-xs-2">
+                                                  {% endif %}
                                                   <div class="col-xs-8">
                                                       <span>{{ needsall.title }}</span>
                                                       <p>{{ needsall.description[:300] }} ...</p>
@@ -232,7 +236,11 @@
                                       <li>
                                           <div class="row filtre"> <!-- filtre return in recherchejQuery.js -->
                                               <a href="{{ path('actor_showOffer',{'id' : offersall.id}) }}" id="lienListe">
+                                                  {% if offersall.imageOffer != NULL %}
                                                   <img src="{{ app.request.basepath }}/uploads/{{ offersall.imageOffer }}" alt="photo_offre" class=" col-xs-2">
+                                                  {% else %}
+                                                  <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="photo_offre" class=" col-xs-2">
+                                                  {% endif %}
                                                   <div class="col-xs-8">
                                                       <span>{{ offersall.title }}</span>
                                                       <p>{{ offersall.description[:300] }} ...</p>

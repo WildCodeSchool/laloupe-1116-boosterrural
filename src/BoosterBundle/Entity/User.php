@@ -4,6 +4,7 @@ namespace BoosterBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 class User extends BaseUser
 {
@@ -200,7 +201,7 @@ class User extends BaseUser
     private $cp;
 
     /**
-     * @var string
+     *@var string
      */
     private $address;
 
@@ -210,7 +211,10 @@ class User extends BaseUser
     private $phone;
 
     /**
-     * @var integer
+     *  @Assert\Regex(
+     *     pattern="/^[0-9]$/",
+     *     message="Ce champ ne peut contenir que des chiffres"
+     *     )
      */
     private $resident;
 
