@@ -76,7 +76,7 @@ class ActorNeedsType extends AbstractType
                 'placeholder'=>'Choisir'))
 
             ->add('description','textarea', array(
-                'label'=>'Description de l\'offre'
+                'label'=>'Description du besoin'
             ))
 
             ->add('fileNeeds','file', [

@@ -21,30 +21,30 @@
                         {{ form_widget(form.transportation,{'attr':{'style':'display:none'}}) }}
                     {% elseif user.category == 'Habitat' %}
                         {{ form_row(form.habitation)}}
-                        {{ form_widget(form.development,{'attr':{'style':'display:none'}})}}
+                        {{ form_widget(form.development,{'attr':{'style':'display:none'}}) }}
                         {{ form_widget(form.culture,{'attr':{'style':'display:none'}}) }}
                         {{ form_widget(form.agriculture,{'attr':{'style':'display:none'}}) }}
                         {{ form_widget(form.transportation,{'attr':{'style':'display:none'}}) }}
                     {% elseif user.category == 'Culture/patrimoine' %}
                         {{ form_row(form.culture)}}
-                        {{ form_widget(form.development,{'attr':{'style':'display:none'}})}}
+                        {{ form_widget(form.development,{'attr':{'style':'display:none'}}) }}
                         {{ form_widget(form.habitation,{'attr':{'style':'display:none'}}) }}
                         {{ form_widget(form.agriculture,{'attr':{'style':'display:none'}}) }}
                         {{ form_widget(form.transportation,{'attr':{'style':'display:none'}}) }}
                     {% elseif user.category == 'Agriculture/Agroalimentaire' %}
                         {{ form_row(form.agriculture)}}
-                        {{ form_widget(form.development,{'attr':{'style':'display:none'}})}}
+                        {{ form_widget(form.development,{'attr':{'style':'display:none'}}) }}
                         {{ form_widget(form.habitation,{'attr':{'style':'display:none'}}) }}
                         {{ form_widget(form.culture,{'attr':{'style':'display:none'}}) }}
                         {{ form_widget(form.transportation,{'attr':{'style':'display:none'}}) }}
                     {% elseif user.category == 'Mobilité'  %}
                         {{ form_row(form.transportation)}}
-                        {{ form_widget(form.development,{'attr':{'style':'display:none'}})}}
+                        {{ form_widget(form.development,{'attr':{'style':'display:none'}}) }}
                         {{ form_widget(form.habitation,{'attr':{'style':'display:none'}}) }}
                         {{ form_widget(form.culture,{'attr':{'style':'display:none'}}) }}
                         {{ form_widget(form.agriculture,{'attr':{'style':'display:none'}}) }}
-                    {% elseif user.category == 'Numérique et co-working'%}
-                       {{ form_widget(form.development,{'attr':{'style':'display:none'}})}}
+                    {% elseif user.category == 'Numérique et co-working' %}
+                        {{ form_widget(form.development,{'attr':{'style':'display:none'}}) }}
                         {{ form_widget(form.habitation,{'attr':{'style':'display:none'}}) }}
                         {{ form_widget(form.culture,{'attr':{'style':'display:none'}}) }}
                         {{ form_widget(form.agriculture,{'attr':{'style':'display:none'}}) }}
@@ -60,7 +60,6 @@
                             <a href="{{ path('actor_index') }}" class="btn center-block Button">Retour au profil</a>
                         </li>
                     </ul>
-
                 </div>
             </div>
         </div>
