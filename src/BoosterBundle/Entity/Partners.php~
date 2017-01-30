@@ -26,7 +26,7 @@ class Partners
 
     public $filePartners;
 
-    public function preUploadNeeds()
+    public function preUploadPartners()
     {
         if (null !== $this->filePartners) {
             // do whatever you want to generate a unique name
@@ -42,7 +42,7 @@ class Partners
         // be automatically thrown by move(). This will properly prevent
         // the entity from being persisted to the database on error
         $this->filePartners->move($this->getUploadRootDir(), $this->imagePartners);
-        unset($this->fileNeeds);
+        unset($this->filePartners);
     }
     public function removeUploadPartners()
     {
@@ -102,5 +102,29 @@ class Partners
     public function getPartnerText()
     {
         return $this->partnerText;
+    }
+
+    /**
+     * Set imagePartners
+     *
+     * @param string $imagePartners
+     *
+     * @return Partners
+     */
+    public function setImagePartners($imagePartners)
+    {
+        $this->imagePartners = $imagePartners;
+
+        return $this;
+    }
+
+    /**
+     * Get imagePartners
+     *
+     * @return string
+     */
+    public function getImagePartners()
+    {
+        return $this->imagePartners;
     }
 }
