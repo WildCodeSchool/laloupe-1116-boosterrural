@@ -6,17 +6,16 @@
         <div class="col-sm-offset-2 col-sm-8 col-xs-12">
             <div class="row">
                 <div class="col-sm-offset-3 col-sm-6">
-                    <h1>Modifification des données utilisateur</h1>
+                    <h3>Modification des données utilisateur</h3>
 
                     {{ form_start(form) }}
                     {{ form_widget(form) }}
-                    <a href="{{ path('citizen_editUser', { 'id': user.id }) }}"><input type="submit" value="Modifier" class="center-block showLien2"></a>
+                    <a href="{{ path('citizen_editUser', { 'id': user.id }) }}"><input type="submit" value="Modifier" class="btn center-block Button"></a>
                     {{ form_end(form) }}
 
                     <ul>
-
                         <li>
-                            <a href="{{ path('citizen_index') }}" class="btn center-block">Retour à la liste</a>
+                            <a href="{{ path('citizen_index') }}" class="btn center-block Button">Retour au profil</a>
                         </li>
                     </ul>
                 </div>

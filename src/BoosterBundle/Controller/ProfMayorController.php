@@ -66,7 +66,7 @@ class ProfMayorController extends Controller
             $em->persist($offer);
             $em->flush($offer);
 
-            return $this->redirectToRoute('mayor_showOffer', array('id' => $offer->getId(
+            return $this->redirectToRoute('mayor_index', array('id' => $offer->getId(
                 array($offer->getUsers()
                 ))));
 
@@ -93,7 +93,7 @@ class ProfMayorController extends Controller
             $em->persist($needs);
             $em->flush($needs);
 
-            return $this->redirectToRoute('mayor_showNeeds', array('id' => $needs->getId(
+            return $this->redirectToRoute('mayor_index', array('id' => $needs->getId(
                 array($needs->getUsers()
                 ))));
 
@@ -136,7 +136,7 @@ class ProfMayorController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('mayor_editOffer', array('id' => $offer->getId()));
+            return $this->redirectToRoute('mayor_index', array('id' => $offer->getId()));
         }
 
         return $this->render('BoosterBundle:Mayor:editOffer.html.twig', array(
@@ -156,7 +156,7 @@ class ProfMayorController extends Controller
             $this->getDoctrine()->getManager()->flush();
 
 
-            return $this->redirectToRoute('mayor_editNeeds', array('id' => $need->getId()));
+            return $this->redirectToRoute('mayor_index', array('id' => $need->getId()));
         }
 
         return $this->render('BoosterBundle:Mayor:editNeeds.html.twig', array(
