@@ -9,6 +9,20 @@ use BoosterBundle\Entity\Needs;
 
 class DefaultController extends Controller
 {
+    public function home_page_no_connectAction()
+    {
+        $user = $this->getUser();
+        $em = $this->getDoctrine()->getManager();
+        $users = $em->getRepository('BoosterBundle:User')->findAll();
+
+        return $this->render('BoosterBundle::home_page_no_connect.html.twig', array(
+            'users'=>$users,
+            'user'=>$user,
+
+        ));
+
+    }
+
     public function actorAction()
     {
         $user = $this->getUser();
@@ -22,23 +36,10 @@ class DefaultController extends Controller
             ));
         return $this->render('BoosterBundle::actor.html.twig', array(
             'users'=>$users,
+            'user'=>$user,
             'offers' => $offers,
             'needs' => $needs,
         ));
-    }
-
-    public function home_page_no_connectAction()
-    {
-        $user = $this->getUser();
-        $em = $this->getDoctrine()->getManager();
-        $users = $em->getRepository('BoosterBundle:User')->findAll();
-
-        return $this->render('BoosterBundle::home_page_no_connect.html.twig', array(
-            'users'=>$users,
-            'user'=>$user,
-
-        ));
-
     }
 
     public function citizenAction()
@@ -74,6 +75,7 @@ class DefaultController extends Controller
             ));
         return $this->render('BoosterBundle::mayor.html.twig', array(
             'users'=>$users,
+            'user'=>$user,
             'offers' => $offers,
             'needs' => $needs,
         ));
