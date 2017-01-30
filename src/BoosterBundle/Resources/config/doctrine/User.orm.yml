@@ -20,10 +20,12 @@ BoosterBundle\Entity\User:
             length: 255
             nullable: true
         phone:
-            type: integer
+            type: string
+            length: 10
             nullable: true
         resident:
-            type: integer
+            type: string
+            length: 10
             nullable: true
         website:
             type: string

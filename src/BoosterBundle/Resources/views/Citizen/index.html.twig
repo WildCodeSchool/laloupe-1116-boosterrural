@@ -71,9 +71,13 @@
                   </section>
 
 
-                  <section class=" hidden-xs col-sm-5 col-xs-12 backWhite secPad1">
+                  <section class=" hidden-xs col-sm-5 col-xs-12 backWhite secPad1" onload="initialize()">
                       <h2>localisation</h2>
-                      <div id="map" class="center-block"></div>
+                      {% if user.lat != NULL %}
+                          <div id="map" class="center-block"></div>
+                      {% else %}
+                          <p class="nobody"> Si vous voulez voir les acteurs et les mairies dynamiques dans votre secteur. Mettez votre adresse dans votre profil.</p>
+                      {% endif %}
                   </section>
               </div>
           </div>
@@ -146,9 +150,9 @@
                                           <div class="row filtre2"> <!-- filtre2 return in recherchejQuery.js -->
                                               <a href="{{ path('citizen_showNeeds',{'id' : needsall.id}) }}" id="lienListe">
                                                   {% if needsall.imageNeeds != NULL %}
-                                                  <img src="{{ app.request.basepath }}/uploads/{{ needsall.imageNeeds }}" alt="photo_offre" class=" col-xs-2">
+                                                      <img src="{{ app.request.basepath }}/uploads/{{ needsall.imageNeeds }}" alt="photo_offre" class=" col-xs-2">
                                                   {% else %}
-                                                  <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="photo_offre" class=" col-xs-2">
+                                                      <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="photo_offre" class=" col-xs-2">
                                                   {% endif %}
                                                   <div class="col-xs-8">
                                                       <span>{{ needsall.title }}</span>
@@ -233,9 +237,9 @@
                                           <div class="row filtre"> <!-- filtre return in recherchejQuery.js -->
                                               <a href="{{ path('citizen_showOffer',{'id' : offersall.id}) }}" id="lienListe">
                                                   {% if offersall.imageOffer != NULL %}
-                                                  <img src="{{ app.request.basepath }}/uploads/{{ offersall.imageOffer }}" alt="photo_offre" class=" col-xs-2">
+                                                      <img src="{{ app.request.basepath }}/uploads/{{ offersall.imageOffer }}" alt="photo_offre" class=" col-xs-2">
                                                   {% else %}
-                                                  <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="photo_offre" class=" col-xs-2">
+                                                      <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="photo_offre" class=" col-xs-2">
                                                   {% endif %}
                                                   <div class="col-xs-8">
                                                       <span>{{ offersall.title }}</span>
@@ -315,16 +319,23 @@
               ['{{ user.cp }}', '{{ user.lat }}', '{{ user.lgt }}', '{{  user.category }}', '{{ user.lastname }}', '{{ user.organization }}', '{{ user.town }}'],
               {% endfor %}
           ];
-          var map = new google.maps.Map(document.getElementById('HPmap'), {
+
+          var map = new google.maps.Map(document.getElementById('map'), {
               zoom: 10,
               center: new google.maps.LatLng({{ user.lat }},{{ user.lgt }}),
               mapTypeId: google.maps.MapTypeId.ROADMAP,
               scrollwheel: false
           });
+
+
+
+
           var infowindow = new google.maps.InfoWindow();
           var marker, i;
+
+          // display different color of marker by category
           for (i = 0; i < locations.length; i++) {
-              var image = {url: '{{ asset('bundles/booster/img/purpleFlag.png') }}', origin: new google.maps.Point(0,0)};
+              var image = {url: '{{ asset('bundles/booster/img/redFlag.png') }}', origin: new google.maps.Point(0,0)};
               if(locations[i][3] == 'Développement durable') {
                   image.url = '{{ asset('bundles/booster/img/greenFlag.png') }}';
               } else if(locations[i][3] == 'Habitat/Ingénierie') {

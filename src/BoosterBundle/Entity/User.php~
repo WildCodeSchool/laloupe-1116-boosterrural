@@ -4,6 +4,7 @@ namespace BoosterBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 class User extends BaseUser
 {
@@ -96,9 +97,9 @@ class User extends BaseUser
 
     public function preUploadDescription2()
     {
-        if (null !== $this->fileDescription1) {
+        if (null !== $this->fileDescription2) {
             // do whatever you want to generate a unique name
-            $this->imageDescription1 = uniqid() . '.' . $this->fileDescription1->guessExtension();
+            $this->imageDescription2 = uniqid() . '.' . $this->fileDescription2->guessExtension();
         }
     }
 
@@ -195,22 +196,28 @@ class User extends BaseUser
     private $town;
 
     /**
-     * @var integer
+     * @Assert\Regex(
+     *     pattern="/^(([0-8][0-9])|(9[0-5])|(2[ab]))[0-9]{3}$/",
+     *     message="Le code postal saisi est invalide"
+     *     )
      */
     private $cp;
 
     /**
-     * @var string
+     *@var string
      */
     private $address;
 
     /**
-     * @var integer
+     * @Assert\Regex(pattern="/^(0|(\\+33)|(0033))[1-9][0-9]{8}$/")
      */
     private $phone;
 
     /**
-     * @var integer
+     *  @Assert\Regex(
+     *     pattern="/^[0-9]$/",
+     *     message="Ce champ ne peut contenir que des chiffres"
+     *     )
      */
     private $resident;
 

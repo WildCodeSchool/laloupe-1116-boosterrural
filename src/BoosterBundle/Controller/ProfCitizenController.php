@@ -198,7 +198,20 @@ class ProfCitizenController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+
+            $plainAddress = $user->getCp() . '%20' . str_replace(' ', '%20', $user->getTown());
+            $result = $this->geocodeAction($plainAddress);
+            $lat = $result[0];
+            $lgt = $result[1];
+            $user->setLat($lat);
+            $user->setLgt($lgt);
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($user);
+            $em->flush($user);
+
+
+
+            /*$this->getDoctrine()->getManager()->flush();*/
 
 
 
@@ -254,6 +267,11 @@ class ProfCitizenController extends Controller
 
     }
 
+    /**
+     *
+     * We use this API to recover latitude and longitude.
+     *
+     * */
     public function geocodeAction($plainAddress){
         $user = new User();
 
@@ -271,7 +289,7 @@ class ProfCitizenController extends Controller
             $lat = $resp['results'][0]['geometry']['location']['lat'];
             $lgt = $resp['results'][0]['geometry']['location']['lng'];
             // verify if data is complete
-// je veux retourner la latidude et la longitude a mon mayorController
+// je veux retourner la latitude et la longitude a mon mayorController
             return array($lat, $lgt);
 
 
