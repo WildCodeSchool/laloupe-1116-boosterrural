@@ -43,8 +43,8 @@
                         {{ form_widget(form.habitation,{'attr':{'style':'display:none'}}) }}
                         {{ form_widget(form.culture,{'attr':{'style':'display:none'}}) }}
                         {{ form_widget(form.agriculture,{'attr':{'style':'display:none'}}) }}
-                    {% else %}
-                        {{ form_widget(form.development,{'attr':{'style':'display:none'}})}}
+                    {% elseif user.category == 'Numérique et co-working'%}
+                       {{ form_widget(form.development,{'attr':{'style':'display:none'}})}}
                         {{ form_widget(form.habitation,{'attr':{'style':'display:none'}}) }}
                         {{ form_widget(form.culture,{'attr':{'style':'display:none'}}) }}
                         {{ form_widget(form.agriculture,{'attr':{'style':'display:none'}}) }}

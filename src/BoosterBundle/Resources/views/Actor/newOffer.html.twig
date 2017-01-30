@@ -43,7 +43,7 @@
                         {{ form_widget(form.habitation,{'attr':{'style':'display:none'}}) }}
                         {{ form_widget(form.culture,{'attr':{'style':'display:none'}}) }}
                         {{ form_widget(form.agriculture,{'attr':{'style':'display:none'}}) }}
-                    {% else %}
+                    {% elseif user.category == 'Numérique et co-working' %}
                         {{ form_widget(form.development,{'attr':{'style':'display:none'}})}}
                         {{ form_widget(form.habitation,{'attr':{'style':'display:none'}}) }}
                         {{ form_widget(form.culture,{'attr':{'style':'display:none'}}) }}
@@ -53,7 +53,7 @@
                     {% endif %}
                     {{ form_widget(form) }}
 
-                    <input type="submit" value="Créer un besoin" class="btn center-block Button"/>
+                    <input type="submit" value="Créer une offre" class="btn center-block Button"/>
 
                     {{ form_end(form) }}
 

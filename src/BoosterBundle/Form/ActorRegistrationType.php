@@ -23,7 +23,7 @@ class ActorRegistrationType extends AbstractType {
 
                     'Réseaux (Fondation RTE, Compagnons bâtisseurs...)' => 'Réseaux (Fondation RTE, Compagnons bâtisseurs...)',
                     'Association' => 'Association',
-                    'TPE/Artisans' => 'TPE/Artisans',
+                    'TPE/Artisans/Auto-entrepreneur' => 'TPE/Artisans/Auto-entrepreneur',
                     'Ecole' => 'Ecole'),
                 'placeholder'=>'Choisir',
                 'label'=>'statut'
@@ -37,7 +37,7 @@ class ActorRegistrationType extends AbstractType {
                     'Mobilité' => 'Mobilité',
                     'Numérique et co-working' => 'Numérique et co-working'),
                 'placeholder'=>'Choisir',
-                'label'=>'catégorie',
+                'label'=>'secteur d\'activité',
 
             ))
             -> add('town', null, array(

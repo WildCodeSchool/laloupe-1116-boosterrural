@@ -18,7 +18,6 @@ class CitizenRegistrationType extends AbstractType
 
             -> add('status_citizen', ChoiceType::class, array(
                 'choices' => array(
-
                     'actif' => 'actif',
                     'retraité' => 'retraité',
                     'en recherche d\'emploi' => 'en recherche d\'emploi'),
