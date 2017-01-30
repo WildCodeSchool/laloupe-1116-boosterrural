@@ -54,6 +54,7 @@ class DefaultController extends Controller
             ));
         return $this->render('BoosterBundle::citizen.html.twig', array(
             'users'=>$users,
+            'user'=>$user,
             'offers' => $offers,
             'needs' => $needs,
         ));
