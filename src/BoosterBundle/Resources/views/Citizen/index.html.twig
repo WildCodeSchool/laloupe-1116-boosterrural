@@ -27,12 +27,10 @@
                           </div>
                       </div>
                   </div>
-                  <div class="col-xs-offset-11">
-                      <a href="{{ path('citizen_editUser', {'id': user.id}) }}') }}">
-                          <span class="glyphicon glyphicon-pencil btn-lg"></span >
-                      </a>
-                  </div>
               </div>
+              <a href="{{ path('citizen_editUser', {'id': user.id}) }}') }}">
+                  <i class="col-xs-offset-11 fa fa-pencil-square-o fa-3x" aria-hidden="true"></i>
+              </a>
           </section>
       </div>
 
@@ -67,9 +65,9 @@
                               <p>{{ user.description }}</p>
                           </div>
                       </div>
-                      <div>
-                          <a href="{{ path('citizen_editDescription', {'id': user.id}) }}') }}"><span class="col-xs-offset-11 glyphicon glyphicon-pencil btn-lg"></span ></a>
-                      </div>
+                      <a href="{{ path('citizen_editDescription', {'id': user.id}) }}') }}">
+                          <i class="col-xs-offset-11 fa fa-pencil-square-o fa-3x" aria-hidden="true"></i>
+                      </a>
                   </section>
 
 
@@ -110,21 +108,23 @@
                                                   </div>
                                               </a>
                                               <div class="col-xs-1">
-                                                  <a href="{{ path('citizen_editOffer', { 'id': offer.id }) }}"><span class="glyphicon glyphicon-pencil btn-lg"></span ></a>
-                                                  <a data-toggle="modal" href="#deleteOffer"><span class="glyphicon glyphicon-remove btn-lg"></span ></a>
-
+                                                  <a href="{{ path('citizen_editOffer', { 'id': offer.id }) }}">
+                                                      <i class="col-xs-offset-11 fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
+                                                  </a>
+                                                  <a href="{{ path('citizen_deleteOffer',{'id' : offer.id}) }}">
+                                                      <i class="col-xs-offset-11 fa fa-times fa-2x" aria-hidden="true"></i>
+                                                  </a>
                                               </div>
                                           </div>
                                       </li>
                                       <hr>
-
                                   </ul>
                               {% endfor %}
                           {% endif %}
                       </div>
-                      <div class="row">
-                          <a href="{{ path('citizen_newOffer') }}" class="col-xs-offset-11"> <span class="glyphicon glyphicon-plus btn-lg"></span ></a>
-                      </div>
+                      <a href="{{ path('citizen_newOffer') }}">
+                          <i class="fa fa-plus-circle fa-3x col-xs-offset-11" aria-hidden="true"></i>
+                      </a>
                   </section>
 
                   <section class="col-sm-5 col-xs-12 backWhite secPad3 padShow2">
@@ -153,12 +153,11 @@
                                                   <div class="col-xs-8">
                                                       <span>{{ needsall.title }}</span>
                                                       <p>{{ needsall.description[:300] }} ...</p>
+                                                      <hr>
                                                   </div>
                                               </a>
                                           </div>
                                       </li>
-                                      <hr>
-
                                   </ul>
                               {% endfor %}
                           {% endif %}
@@ -195,9 +194,12 @@
                                           </div>
                                       </a>
                                       <div class="col-xs-1">
-                                          <a href="{{ path('citizen_editNeeds', { 'id': needs.id }) }}"><span class="glyphicon glyphicon-pencil btn-lg"></span ></a>
-                                          <a data-toggle="modal" href="#deleteNeeds"><span class="glyphicon glyphicon-remove btn-lg"></span ></a>
-
+                                          <a href="{{ path('citizen_editNeeds', { 'id': needs.id }) }}">
+                                              <i class="col-xs-offset-11 fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
+                                          </a>
+                                          <a href="{{ path('citizen_deleteNeeds',{'id' : needs.id}) }}">
+                                              <i class="col-xs-offset-11 fa fa-times fa-2x" aria-hidden="true"></i>
+                                          </a>
                                       </div>
                                   </div>
                               </li>
@@ -207,9 +209,9 @@
                               {% endif %}
                           </ul>
                       </div>
-                      <div class="row">
-                          <a href="{{ path('citizen_newNeeds') }}" class="col-xs-offset-11"> <span class="glyphicon glyphicon-plus btn-lg"></span ></a>
-                      </div>
+                      <a href="{{ path('citizen_newNeeds') }}">
+                          <i class="fa fa-plus-circle fa-3x col-xs-offset-11" aria-hidden="true"></i>
+                      </a>
                   </section>
 
                   <section class="col-sm-5 col-xs-12 backWhite secPad3 padShow2">
@@ -238,11 +240,11 @@
                                                   <div class="col-xs-8">
                                                       <span>{{ offersall.title }}</span>
                                                       <p>{{ offersall.description[:300] }} ...</p>
+                                                      <hr>
                                                   </div>
                                               </a>
                                           </div>
                                       </li>
-                                      <hr>
                                   </ul>
                               {% endfor %}
                           {% endif %}
