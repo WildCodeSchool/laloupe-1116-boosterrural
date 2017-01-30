@@ -72,8 +72,8 @@ class Needs
 
     /**
      * @Assert\Regex(
-     *     pattern="/^[0-9]{5}$/"
-     *     message="Le code postal ne peut contenir que des chiffres"
+     *     pattern="/^(([0-8][0-9])|(9[0-5])|(2[ab]))[0-9]{3}$/",
+     *     message="Le code postal saisi est invalide"
      *     )
      */
     private $town;
