@@ -78,7 +78,6 @@ class CitizenNeedsType extends AbstractType
                 ),
                 'label'=>'Categorie',
                 'placeholder'=>'Choisir'))
-
             ->add('wish', ChoiceType::class, array (
                 "label" => "Je cherche",
                 'placeholder'=>'Choisir',

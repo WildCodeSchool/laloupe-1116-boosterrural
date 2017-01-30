@@ -29,24 +29,23 @@ class EditCitizenRegistrationType extends AbstractType
             -> add('category', ChoiceType::class, array(
                 'choices' => array(
                     'Développement durable' => 'Développement durable',
-                    'Habitat' => 'Habitat',
+                    'Habitat/Ingénierie' => 'Habitat/Ingénierie',
                     'Agriculture/Agroalimentaire' => 'Agriculture/Agroalimentaire',
                     'Culture/Patrimoine' => 'Culture/Patrimoine',
                     'Mobilité' => 'Mobilité',
-                    'Numérique et co-coworking' => 'Numérique et co-coworking'),
+                    'Numérique et co-working' => 'Numérique et co-working'),
                 'placeholder'=>'Choisir',
-                'label'=>'catégorie',
+                'label'=>'secteur d\'activité',
 
             ))
 
             ->add('statusCitizen', choiceType::class, array(
                 'choices' => array(
                     'En recherche d\'emploi' => 'En recherche d\'emploi',
-                    'Artisan'=> 'Artisan',
-                    'benevolat'=> 'Bénévolat',
-
+                    'Actif'=> 'Actif',
+                    'Retraité'=> 'Retraité',
                 ),
-                'label'=>'Categorie',
+                'label'=>'Statut',
                 'placeholder'=>'Choisir'))
 
             ->add('fileIdentity','file', [

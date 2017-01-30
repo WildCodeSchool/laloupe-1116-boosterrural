@@ -135,7 +135,7 @@ class ProfCitizenController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('citizen_editOffer', array('id' => $offer->getId()));
+            return $this->redirectToRoute('citizen_index', array('id' => $offer->getId()));
         }
 
         return $this->render('BoosterBundle:Citizen:editOffer.html.twig', array(
@@ -155,7 +155,7 @@ class ProfCitizenController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('citizen_editNeeds', array('id' => $need->getId()));
+            return $this->redirectToRoute('citizen_index', array('id' => $need->getId()));
         }
 
         return $this->render('BoosterBundle:Citizen:editNeeds.html.twig', array(
