@@ -773,7 +773,7 @@ textarea {
 }
 
 .padShow {
-    padding: 2%;
+    padding: 0 2% 0 2%;
     height: 70%;
     overflow-y: scroll;
 }
@@ -855,6 +855,12 @@ textarea {
 .constraint{
     width: 40%;
     height: 40%;
+    margin-top: 4%;
+    margin-bottom: 2%;
+}
+
+.ulBorder{
+   margin-top: 53%;
 }
 
 
