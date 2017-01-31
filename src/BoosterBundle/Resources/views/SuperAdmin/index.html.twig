@@ -5,9 +5,28 @@
       <div class="row">
           <section class="col-sm-offset-1 col-sm-10 col-xs-12 backWhite sec1">
               <div class="row">
-                  <a href="{{ path('partners_new') }}"> <button type="submit" class="btn center-block Button">Ajouter un Partenaire</button></a>
-                  <a href="{{ path('expert_new') }}"><button type="submit" class="btn center-block Button" >Ajouter un expert</button></a>
-                  <button type="submit" class="btn center-block Button">Supprimer un utilisateur</button>
+                  <div class="col-xs-offset-1 col-xs-2">
+                      <a href="{{ path('partners_new') }}"> <button type="submit" class="btn center-block Button">Ajouter un Partenaire</button></a>
+                  </div>
+                  <div class="col-xs-offset-1 col-xs-2">
+                  <a href="{{ path('partners_admin') }}"> <button type="submit" class="btn center-block Button">Modifier/Supprimer un Partenaire</button></a>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-xs-offset-1 col-xs-2">
+                      <a href="{{ path('expert_new') }}"> <button type="submit" class="btn center-block Button">Ajouter un expert</button></a>
+                  </div>
+                  <div class="col-xs-offset-1 col-xs-2">
+                      <a href="{{ path('expert_admin') }}"> <button type="submit" class="btn center-block Button">Modifier/Supprimer un expert</button></a>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-xs-offset-1 col-xs-2">
+                      <a href="#"> <button type="submit" class="btn center-block Button">Supprimer un utilisateur</button></a>
+                  </div>
+              </div>
+
+
 
 
               </div>
