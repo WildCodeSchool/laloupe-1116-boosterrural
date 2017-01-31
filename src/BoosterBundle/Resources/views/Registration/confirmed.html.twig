@@ -4,35 +4,9 @@
 
 {% block fos_user_content %}
     <p class="help">{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
-
-    <div class="backColor">
-        <h3>Le Booster rural : mode d'emploi</h3>
-        <div class="row">
-            <p class="col-xs-offset-1 col-xs-10 col-xs-offset-1 help">Pour accéder à votre profil cliquez en haut à gauche sur votre nom d'utilisateur.
-                Sur ce profil vous pouvez changer toutes vos informations en cliquant sur le petit crayon.
-                <br/>
-                <br/>
-                <img class="center-block" src="{{ asset("bundles/booster/img/access_profile.png") }}" alt="menu d'accès">
-                <br/>
-                Tout le site fonctionne sur le même principe: à chaque fois que vous avez un petit crayon vous pouvez modifier vos informations, et à chaque fois que vous avez des petits " + " vous pouvez ajouter des offres ou des besoins.
-                <br/>
-                <br/>
-                La carte dynamique sur votre profil affiche, dans un cercle de 50km environ autour de vous, les maires (en rouge) et les acteurs par domaine d'activité: vert pour "Développement durable", gris pour "Habitat", jaune pour "Culture/patrimoine", marron pour "Agriculture/agroalimentaire", bleu pour "Mobilité" et orange pour "Numérique".
-                Pour afficher l'ensemble des maires et des acteurs dynamiques sur la carte de France, cliquez sur le logo du Booster rural: vous serez automatiquement redirigé vers la page d'accueil.
-                A noter: pour des raisons de confidentialité, les citoyens ne sont pas localisés sur la carte.
-                <br/>
-                <br/>
-
-                Dans les encadrés "Matching", le moteur de recherche vous permet de rechercher des annonces par mots-clés. Saisissez un ou plusieurs termes dans la barre de recherche: un tri automatique s'opère sélectionnant les annonces où apparaissent ces mots! Vous n'avez plus qu'à cliquer sur l'offre ou le besoin qui vous intéresse pour accéder au descriptif complet.
-                <br/>
-                <br/>
-                Enfin si vous souhaitez accéder à l'ensemble des annonces concernant les villages, les acteurs dynamiques ou les citoyens, cliquez sur les mots "besoins" et "offres" dans la barre de navigation. Sélectionnez ensuite les types d'annonces que vous voulez consulter.
-                <br/>
-                <br/>
-                A tout moment, retrouvez ce mode d'emploi en cliquant sur "Aide".</p>
-
-
+    <div class="row">
+        <div class="col-xs-offset-3 col-xs-6 col-xs-offset-3">
+            <img src="{{ asset('bundles/booster/img/mode_d_emploi.png') }}" >
         </div>
     </div>
-
 {% endblock fos_user_content %}
