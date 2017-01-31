@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-sm-offset-2 col-sm-8 col-xs-12">
+            <div class="row">
+                <div class="col-sm-offset-3 col-sm-6">
+                    <h1>Expert</h1>
+                    <p style="text-align: justify">
+
+                        <img src="{{ app.request.basepath }}/uploads/{{ expert.imageExperts }}" alt="photo_expert" class="img-responsive" style="margin: 20px auto">
+
+                        {{ expert.expertText }}
+
+                        <a href="{{ path('expert_show', { 'id': expert.id }) }}" class="btn center-block">{{ expert.id }}</a>
+
+                        <a href="{{ path('expert_edit', { 'id': expert.id }) }}" class="btn center-block">Editer</a>
+
+                        <a href="{{ path('expert_index') }}" class="btn center-block">Retour à la liste</a>
+
+                        <a href="{{ path('expert_new') }}" class="btn center-block">Créer un nouveau expert</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

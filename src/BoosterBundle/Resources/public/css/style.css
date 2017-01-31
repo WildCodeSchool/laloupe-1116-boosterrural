@@ -1,0 +1,862 @@
+/******************************************************/
+/************************ COMMON **********************/
+/******************************************************/
+
+body{
+    background-color: rgb(204,204,204);
+}
+
+#page{
+    min-height: 60vh;
+}
+
+li {
+    list-style-type: none;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 3% 0%;
+    margin: 15px 0px;
+}
+
+h2{
+    font-size: 22px; /*modifs*/
+}
+
+.backWhite > h2{
+    padding: 2% 0%; /*modifs*/
+}
+
+p {
+    text-align: justify;
+}
+
+ul {
+    padding-left: 0;
+}
+
+section {
+    border: 2px solid gray;
+    box-shadow: 10px 10px 15px gray;
+    background-color: white;
+}
+
+.ombreMoteur {
+    box-shadow: 10px 10px 15px gray;
+    border: 2px solid gray;
+    height: 50px;
+}
+
+.ombreMoteur2 {
+    box-shadow: 1px 1px 2px gray;
+}
+
+.center-block1{
+    display: initial;
+}
+
+
+.col-xs-4 {
+    padding: 0;
+}
+
+th {
+    padding-right: 5%;
+}
+
+.center-block1{
+    display: initial;
+}
+
+/******************************************************/
+/************************ FRONT PAGE ******************/
+/******************************************************/
+
+#ulPad {
+    padding-left: 45%;
+
+}
+
+.flexMap {
+    display: flex;
+}
+
+#map {
+    height: 80%;
+    width: 100%;
+    border: 1px solid gray;
+    border-radius: 1%;
+}
+
+
+.backWhite {
+    background-color: white;
+}
+
+span {
+    font-weight: bold;
+}
+
+
+.pitureMini {
+    width: 100%;
+    margin-top: 50px;
+    border: 1px solid gray;
+}
+
+#title2 {
+    padding: 2% 0%;
+    margin: 0%;
+}
+
+.sec1 {
+    margin-bottom: 2%;
+}
+
+.secPad1 {
+    margin-left: 2%;
+    width: 50%;
+}
+
+.secPad2 {
+    width: 49%;
+}
+
+.secPad3 {
+    margin-left: 2%;
+    width: 49%;
+
+}
+
+@media all and (max-width: 992px) {
+    .mediaTitle {
+        font-size: 1.5em;
+    }
+}
+
+@media all and (max-width: 768px) {
+    .margeMobile {
+        margin-bottom: 30px;
+    }
+
+    .secPad2 {
+        width: 100%;
+    }
+
+    .secPad3 {
+        margin-left: 0%;
+        width: 100%;
+    }
+
+    #title2 {
+        padding: 2% 0%;
+        margin: 5% 0%;
+    }
+}
+
+.imgHpBas {
+    width: 70%;
+}
+
+.downMarg {
+    margin: 2% 0;
+}
+
+.downMarg2 {
+    margin: 10% 0;
+}
+
+/*******************************************************/
+/******************* HEADER ****************************/
+/*******************************************************/
+
+.navColor{
+    background-color: rgb(252, 183, 0);
+    border:inherit;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+.navbar-brand{
+    position: absolute;
+    left: calc(50% - 200px);
+    padding: 0;
+}
+
+.navbar-brand a {
+    text-decoration: inherit;
+    color: white;
+}
+
+.navbar-collapse {
+    margin-top: 100px; /*modif*/
+    text-align: center;
+}
+
+#logo {
+    width: 350px;
+    margin-top: 5px; /*modif*/
+
+}
+
+.navbar .navbar-nav {
+    float: none;
+    display: inline-block;
+}
+
+.navbar-default {
+    border: inherit;
+}
+
+.navbar-default .navbar-nav > li {
+    margin-left: 60px;
+}
+
+.navbar-default .navbar-nav > li:first-child {
+    margin-left: 0px;
+}
+
+.navbar-default .navbar-nav > li > a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+    padding-bottom: 30px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.liNav1 {
+    padding-right: 350px;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #444444;
+}
+
+.nav-icon {
+    padding-right: 5px;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: white;
+}
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+    background-color: #444444;
+}
+
+
+/************************************* Nav Dropdown ******************************/
+
+
+.dropdown-menu {
+    background-color: rgb(252, 183, 0);
+    border: inherit;
+}
+
+.dropdown-menu > li > a {
+    background-color: rgb(252, 183, 0);
+    color: white;
+    font-weight: bold;
+}
+
+.dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover {
+    background-color: rgb(252, 183, 0);
+    color: #444444;
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+    background-color: rgb(252, 183, 0);
+    color: #444444;
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+/****************************************** Media Queries Nav ********************************/
+
+@media (max-width: 1060px){
+    .navbar-default .navbar-nav > li > a {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 992px){
+    .navbar-default .navbar-nav > li {
+        margin-left: 0px;
+    }
+    .nav > li > a{
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .navbar-brand{
+        left: 0;
+        position: inherit;
+    }
+    #logo{
+        width: 150px;
+        margin-top: 0px;
+    }
+    .navbar-collapse{
+        margin-top: 0px;
+        text-align: right;
+    }
+    .navbar-toggle{
+        margin-top: 20px;
+        margin-bottom: 0px;
+        margin-right: 20px;
+    }
+    .navbar-default .navbar-nav > li{
+        margin-right: 20px;
+    }
+    .navbar-default .navbar-nav > li > a{
+        padding-bottom: 10px;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a{
+        color: white;
+        text-align: right;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover{
+        color:#444444;
+    }
+    .liNav1{
+        padding-right: 0px;
+    }
+}
+
+/****************nav-connect**************/
+
+li .liNav2{
+    padding-right: 40px;
+    margin-left: 60px;
+}
+
+/*******************************************************/
+/************** HOME PAGE NO CONNECT *******************/
+/*******************************************************/
+
+#HPmap {
+    height: 600px;
+    width: 40%;
+    border: 1px solid gray;
+    border-radius: 1%;
+    box-shadow: 5px 5px 10px gray;
+}
+
+.map_deco {
+    position: relative;
+    padding-top: 300px;
+    padding-bottom: 450px;
+    border: 2px solid gray;
+}
+
+.imgHP1 {
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    width: 20%;
+}
+
+.imgHP2 {
+    position: absolute;
+    right: 10%;
+    top: 20%;
+    width: 18%;
+}
+
+.imgHP3 {
+    position: absolute;
+    left: 40%;
+    bottom: 2%;
+    width: 20%;
+}
+
+.fleche1 {
+    position: absolute;
+    right: 40%;
+    top: -10%;
+    transform: rotate(250deg);
+    width: 20%;
+}
+
+.fleche2 {
+    position: absolute;
+    left: 5%;
+    bottom: 15%;
+    transform: rotate(500deg);
+    width: 20%;
+}
+
+.fleche3 {
+    position: absolute;
+    right: 10%;
+    bottom: 10%;
+    transform: rotate(15deg);
+    width: 20%;
+}
+
+.downPage {
+    padding: 30px;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.project{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.chipUl{
+    margin-left: 3%;
+}
+
+.chip{
+    list-style-type: disc;
+}
+
+/************** Media Queries home page no connect ***************/
+
+@media all and (max-width: 1670px)
+
+{
+    #HPmap {
+        height: 550px;
+    }
+
+    .map_deco {
+        position: relative;
+        padding-top: 250px;
+        padding-bottom: 400px;
+    }
+}
+
+@media all and (max-width: 1500px)
+
+{
+    #HPmap {
+        height: 400px;
+    }
+
+    .map_deco {
+        position: relative;
+        padding-top: 250px;
+        padding-bottom: 400px;
+    }
+}
+
+@media all and (max-width: 1350px)
+
+{
+    #HPmap {
+        height: 350px;
+    }
+
+    .map_deco {
+        position: relative;
+        padding-top: 150px;
+        padding-bottom: 300px;
+    }
+}
+
+/******************************************************/
+/************************ CITIZEN *********************/
+/******************************************************/
+
+.pic1citiz{
+    margin-top: 7%;
+    margin-bottom: 7%;
+}
+
+.identity{
+    font-size: 112%;
+}
+
+.state{
+    margin-top: 7px;
+}
+
+.identity > div > ul > li{
+    padding-bottom: 3px;
+}
+
+/*******************************************************/
+/******************* FOOTER ****************************/
+/*******************************************************/
+
+.footerColor {
+    background-color: #444444;
+    margin-top: 30px;
+    text-align: center;
+    padding: 1%;
+    margin-bottom: inherit;
+}
+
+footer a {
+    color: white;
+    font-size: 1.2em;
+}
+
+.foot-item {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+
+    color: white;
+}
+
+footer a:hover {
+    text-decoration: none;
+    color: white;
+    border-bottom: 1px solid white;
+    cursor: pointer;
+}
+
+footer .icon-social a:hover {
+    border-bottom: 0px;
+}
+
+footer a:focus {
+    color: white;
+}
+
+footer h4 {
+    text-align: center;
+}
+
+footer i {
+    padding-right: 2%;
+    padding-top: 1%;
+}
+
+footer > ul > li {
+    list-style: none;
+    padding: 0%;
+    text-align: center;
+}
+
+.li-footer {
+    padding-top: 3%;
+}
+
+.ul-footer {
+    padding-top: 1%;
+}
+
+.logo-footer {
+    margin-top: 1%;
+    width: 70%;
+}
+
+.mentions_légales_text {
+    text-align: center;
+}
+
+#credits {
+    text-align: center;
+}
+
+#credits a {
+    color: #56ADD8;
+    font-weight: normal;
+}
+
+#credits a:hover {
+    border-bottom: 1px solid #56ADD8;
+}
+
+/************************** Media-queries footer *********************************/
+
+@media (max-width: 1400px) {
+    .logo-footer{
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo-footer{
+        width: 25%;
+    }
+    footer ul{
+        margin: 0;
+        padding: 0;
+    }
+    footer li{
+        margin: 0;
+        padding: 2% 0%;
+    }
+}
+
+@media (max-width: 400px) {
+    .logo-footer{
+        width: 40%;
+    }
+}
+
+.pitureMini {
+    width: 100%;
+    margin-top: 50px;
+    border: 1px solid gray;
+}
+
+#title2 {
+    padding: 2% 0%;
+    margin: 0%;
+}
+
+.sec1 {
+    margin-bottom: 2%;
+}
+
+.secPad1 {
+    margin-left: 2%;
+    width: 50%;
+}
+
+.secPad2 {
+    width: 49%;
+}
+
+.secPad3 {
+    margin-left: 2%;
+    width: 49%;
+}
+.picture{
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+}
+.nobody{
+    margin-top: 25%;
+    font-size: 30px;
+    text-align: center;
+}
+
+@media all and (max-width: 992px) {
+    .mediaTitle {
+        font-size: 1.5em;
+    }
+}
+
+@media all and (max-width: 768px) {
+    .margeMobile {
+        margin-bottom: 30px;
+    }
+
+    .secPad2 {
+        width: 100%;
+    }
+
+    .secPad3 {
+        margin-left: 0%;
+        width: 100%;
+    }
+
+    #title2 {
+        padding: 2% 0%;
+        margin: 5% 0%;
+    }
+
+}
+
+/******************************************************/
+/************************ FORM ************************/
+/******************************************************/
+
+.Button{
+    background-color: rgb(252, 183, 0);
+    margin-top: 5%;
+    margin-bottom: 5%;
+    color:white;
+    border-color: rgb(252, 183, 0);
+}
+
+.Button:hover{
+    background-color: rgb(252, 183, 0);
+    border-color: rgb(252, 183, 0);
+    color:black;
+}
+
+label {
+    text-transform: uppercase;
+    padding: 0;
+}
+
+input {
+    margin-bottom: 1%;
+}
+
+textarea {
+    margin-bottom: 1%;
+    resize: none;
+}
+/****************** Form Actor ************************/
+
+.formActorWidth {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 2.5%;
+}
+
+.col-form-label{
+    padding: 0;
+}
+.secPad2, .secPad3 {
+    margin-top: 20px;
+}
+.titleFormActor{
+    margin-bottom: 0;
+}
+
+.block2{
+    margin-top: 20px;
+}
+.title{
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.underTitle {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+/******************************************************/
+/************************ LOGIN ***********************/
+/******************************************************/
+
+.log{
+    margin-top: 10px;
+}
+
+.loglabel {
+    padding-top: 5px;
+}
+
+.vCenter{
+    margin-top: 15vh;
+}
+/******************************************************/
+/************************ PAGE SHOW *******************/
+/******************************************************/
+
+.showAlign {
+    text-align: center;
+}
+
+.showLien2 {
+    color: #3F3343;
+}
+
+.showLien a:hover {
+    text-decoration: none;
+}
+
+.imgShow {
+    padding: 25%;
+}
+
+.padShow {
+    padding: 0 2% 0 2%;
+    height: 70%;
+    overflow-y: scroll;
+}
+
+.padShow2 {
+    height: 90vh;
+}
+
+.padShow3 {
+    padding: 2%;
+    height: 70%;
+    overflow-y: scroll;
+}
+
+
+.listIndex {
+    padding: 2%;
+    height: 40vh;
+    overflow-y: scroll;
+}
+
+.imgList {
+    height: 250px;
+    margin-top: 2%;
+}
+
+#lienListe {
+    color: black;
+}
+
+.italTitre {
+    font-style: italic;
+}
+
+.fa-pencil-square-o {
+    color: #444444;
+}
+
+.fa-times {
+    color: #444444;
+    margin-top: 40%;
+}
+
+.fa-plus-circle {
+    color: #444444;
+    margin-top: 3%;
+}
+
+    /******************************************************/
+/************************ PROFILE *******************/
+/******************************************************/
+
+.block2{
+    margin-top: 20px;
+}
+
+.ligneHr {
+    border: 1px solid rgb(252, 183, 0);
+    width: 50%;
+}
+
+
+/******************************************************/
+/************************ PAGE HELP *******************/
+/******************************************************/
+
+.help{
+    font-size: medium;
+}
+
+.backColor{
+    background-color: white;
+    margin: 5% 7% 7% 7%;
+}
+
+/******************************************************/
+/************************ Pictures *******************/
+/******************************************************/
+.constraint{
+    width: 40%;
+    height: 40%;
+    margin-top: 4%;
+    margin-bottom: 2%;
+}
+
+.ulBorder{
+   margin-top: 53%;
+}
+
+.wordMayor{
+    margin-left: 5%;
+}
+
+
+
+

@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+{#{% form_theme form ":FormTemplate:bootstrap.html.twig" %}#}
+
+{% block body %}
+
+    <div class="row">
+        <section class="col-sm-offset-1 col-sm-10 col-xs-12 backWhite sec1 padShow">
+            <div class="row">
+                <div class="col-md-6 col-xs-12">
+                    {% if offer.imageOffer != NULL %}
+                    <img src="{{ app.request.basepath }}/uploads/{{ offer.imageOffer }}" alt="photo_logo" class="center-block img-responsive imgShow"/>
+                    {% else %}
+                    <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="photo_logo" class="center-block img-responsive imgShow"/>
+                    {% endif %}
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <h1>{{ offer.title }}</h1>
+                    <div class="row">
+                        <div class="col-sm-6 col-xs-12">
+                            <ul>
+                                <li><span>Nom de la Commune :</span> {{ offer.town }}</li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-xs-12">
+                            <ul>
+                                <li><span>Code Postal :</span> {{ offer.cp }}</li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-12 col-xs-12">
+                            <ul>
+                                <li><span>Description du Besoin :</span><p> {{ offer.description }}</p></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="row">
+        <div class="col-xs-offset-3 col-xs-2">
+            <a href="{{ path('actor_listOffer') }}" class="btn center-block Button">Retour à la liste</a>
+        </div>
+        <div class="col-xs-offset-2 col-xs-2 col-xs-offset-3">
+            <a href="{{ path('booster_actor',{'id' : user.id}) }}" class="btn center-block Button">Consulter le profil</a>
+        </div>
+    </div>
+
+{% endblock %}
+

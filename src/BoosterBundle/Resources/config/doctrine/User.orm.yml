@@ -1,0 +1,105 @@
+BoosterBundle\Entity\User:
+    type:  entity
+    table: fos_user
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        town:
+            type: string
+            length: 255
+            nullable: true
+        cp:
+            type: integer
+            nullable: true
+        address:
+            type: string
+            length: 255
+            nullable: true
+        phone:
+            type: string
+            length: 10
+            nullable: true
+        resident:
+            type: string
+            length: 10
+            nullable: true
+        website:
+            type: string
+            length: 255
+            nullable: true
+        lastname:
+            type: string
+            length: 255
+            nullable: true
+        message_mayor:
+            type: text
+            nullable: true
+        description:
+            type: text
+            nullable: true
+        lat:
+            type: float
+            nullable: true
+        lgt:
+            type: float
+            nullable: true
+        organization:
+            type: string
+            length: 255
+            nullable: true
+        status_actor:
+            type: string
+            length: 255
+            nullable: true
+        status_citizen:
+            type: string
+            length: 255
+            nullable: true
+        category:
+            type: string
+            length: 255
+            nullable: true
+        project:
+            type: string
+            length: 255
+            nullable: true
+        imageIdentity:
+            type: string
+            length: 255
+            nullable: true
+        imageDescription1:
+            type: string
+            length: 255
+            nullable: true
+        imageDescription2:
+            type: string
+            length: 255
+            nullable: true
+        imageDescription3:
+            type: string
+            length: 255
+            nullable: true
+        imageMayor:
+            type: string
+            length: 255
+            nullable: true
+
+    oneToMany:
+        offers:
+            targetEntity: BoosterBundle\Entity\Offer
+            mappedBy: Id
+        needs:
+            targetEntity: BoosterBundle\Entity\Needs
+            mappedBy: Id
+
+    lifecycleCallbacks:
+
+      prePersist: [preUploadIdentity, preUploadDescription1, preUploadDescription2, preUploadDescription3, preUploadMayor]
+      preUpdate: [preUploadIdentity, preUploadDescription1, preUploadDescription2, preUploadDescription3, preUploadMayor]
+      postPersist: [uploadIdentity, uploadDescription1, uploadDescription2, uploadDescription3, uploadMayor]
+      postUpdate: [uploadIdentity, uploadDescription1, uploadDescription2, uploadDescription3, uploadMayor]
+      postRemove: [removeUploadIdentity, removeUploadDescription1, removeUploadDescription2, removeUploadDescription3, removeUploadMayor]
