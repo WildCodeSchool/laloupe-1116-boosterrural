@@ -79,22 +79,9 @@ class CitizenOfferType extends AbstractType
                 'label'=>'Categorie',
                 'placeholder'=>'Choisir'))
 
-            ->add('wish', ChoiceType::class, array (
-                "label" => "Je cherche",
-                'placeholder'=>'Choisir',
-                'choices'  => array(
-                    "un stage" => "un stage",
-                    "un environnement agricole, créatif..." => "un environnement agricole, créatif...",
-                    "des personnes en phase avec mon projet" => "des personnes en phase avec mon projet",
-                    "du coaching pour me lancer" => "du coaching pour me lancer")))
-
-
             ->add('description','textarea', array(
                 'label'=>'Description de l\'offre'
             ))
-
-
-
             ;
     }
 
