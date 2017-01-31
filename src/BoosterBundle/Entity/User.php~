@@ -214,10 +214,7 @@ class User extends BaseUser
     private $phone;
 
     /**
-     *  @Assert\Regex(
-     *     pattern="/^[0-9]$/",
-     *     message="Ce champ ne peut contenir que des chiffres"
-     *     )
+     *  @var string
      */
     private $resident;
 
