@@ -87,7 +87,7 @@
                       <h4 class="underTitle italTitre">Ce que je propose...</h4>
                       <div class="padShow">
                           {% if offers == NULL %}
-                              <p class="nobody">Pour créer une offre cliquez sur<span class="glyphicon glyphicon-plus btn-lg"></span ></p>
+                              <p class="nobody">Pas d'Offres</p>
                           {% else %}
                               {% for offer in offers %}
                                   <ul>
@@ -119,7 +119,7 @@
                       <h4 class="underTitle italTitre">Ce dont j'ai besoin...</h4>
                       <div class="padShow">
                           {% if needs == NULL %}
-                              <p class="nobody">Pour créer un besoin cliquez sur<span class="glyphicon glyphicon-plus btn-lg"></span ></p>
+                              <p class="nobody">Pas de Besoins</p>
                           {% else %}
                               {% for needs in needs %}
                                   <ul>
