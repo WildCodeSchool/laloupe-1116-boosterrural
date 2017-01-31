@@ -20,14 +20,15 @@
                                   <li><span>Responsable :</span> {{ user.lastname }}</li>
                                   <li><span>Adresse :</span> {{ user.address }}</li>
                                   <li><span>Code Postal :</span> {{ user.cp }}</li>
-                                  <li><span>Adresse Mail :</span> {{ user.email }}</li>
-                                  <li><span>Catégorie :</span> {{ user.category }}</li>
+                                  <li><span>Commune :</span>{{ user.town }}</li>
                               </ul>
                           </div>
                           <div class="col-sm-6 col-xs-12">
                               <ul>
+                                  <li><span>Adresse Mail :</span> {{ user.email }}</li>
+                                  <li><span>Téléphone :</span>{{ user.phone }}</li>
+                                  <li><span>Catégorie :</span> {{ user.category }}</li>
                                   <li><span>Statut :</span>{{ user.statusActor }}</li>
-                                  <li><span>Commune :</span>{{ user.town }}</li>
                               </ul>
                           </div>
                       </div>
