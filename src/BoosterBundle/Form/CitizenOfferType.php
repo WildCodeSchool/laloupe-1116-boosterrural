@@ -82,7 +82,10 @@ class CitizenOfferType extends AbstractType
             ->add('description','textarea', array(
                 'label'=>'Description de l\'offre'
             ))
-            ;
+
+            ->add('fileOffer','file', [
+                "label" => "Photo"],
+                array( 'required'=>false));
     }
 
     /**
