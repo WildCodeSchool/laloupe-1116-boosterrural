@@ -4,9 +4,6 @@
 
 {% block fos_user_content %}
     <p class="help">{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
-    {% if targetUrl %}
-    <p><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></p>
-    {% endif %}
 
         <h3>Le Booster rural : mode d'emploi</h3>
 <div class="row">
