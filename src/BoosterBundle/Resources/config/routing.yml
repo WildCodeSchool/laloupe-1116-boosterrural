@@ -46,6 +46,10 @@ booster_registerActor:
     path:     /actor/register
     defaults: { _controller: BoosterBundle:Registration:actorRegister}
 
+booster_admin:
+    path:     /admin/
+    defaults: { _controller: BoosterBundle:Default:admin}
+
 
 
 

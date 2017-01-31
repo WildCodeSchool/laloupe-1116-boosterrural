@@ -80,4 +80,15 @@ class DefaultController extends Controller
             'needs' => $needs,
         ));
     }
+
+    public function adminAction()
+    {
+
+
+
+        return $this->render('BoosterBundle:SuperAdmin:index.html.twig');
+
+
+
+    }
 }

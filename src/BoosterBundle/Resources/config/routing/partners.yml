@@ -3,6 +3,11 @@ partners_index:
     defaults: { _controller: "BoosterBundle:Partners:index" }
     methods:  GET
 
+partners_admin:
+    path:     /admin
+    defaults: { _controller: "BoosterBundle:Partners:admin" }
+    methods:  GET
+
 partners_show:
     path:     /{id}/show
     defaults: { _controller: "BoosterBundle:Partners:show" }
@@ -21,4 +26,4 @@ partners_edit:
 partners_delete:
     path:     /{id}/delete
     defaults: { _controller: "BoosterBundle:Partners:delete" }
-    methods:  DELETE
+    methods:  [GET, POST]

@@ -92,33 +92,14 @@ class ExpertController extends Controller
      * Deletes a expert entity.
      *
      */
-    public function deleteAction(Request $request, Expert $expert)
-    {
-        $form = $this->createDeleteForm($expert);
-        $form->handleRequest($request);
+    public function deleteAction(Expert $expert){
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($expert);
+        $em->flush($expert);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($expert);
-            $em->flush($expert);
-        }
 
-        return $this->redirectToRoute('expert_index');
-    }
+        return $this->redirectToRoute('expert_admin');
 
-    /**
-     * Creates a form to delete a expert entity.
-     *
-     * @param Expert $expert The expert entity
-     *
-     * @return \Symfony\Component\Form\Form The form
-     */
-    private function createDeleteForm(Expert $expert)
-    {
-        return $this->createFormBuilder()
-            ->setAction($this->generateUrl('expert_delete', array('id' => $expert->getId())))
-            ->setMethod('DELETE')
-            ->getForm()
-        ;
+
     }
 }

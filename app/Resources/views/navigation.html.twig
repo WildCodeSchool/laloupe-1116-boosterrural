@@ -25,7 +25,9 @@
                     </a>
                         <ul class="dropdown-menu">
                             <li>
-                                {% if is_granted('ROLE_MAYOR') %}
+                                {% if is_granted('ROLE_ADMIN') %}
+                                    <a href="{{ path('booster_admin') }}">Mon profil</a>
+                                {% elseif is_granted('ROLE_MAYOR') %}
                                     <a href="{{ path('mayor_index') }}">Mon profil</a>
                                 {% elseif is_granted('ROLE_CITIZEN') %}
                                     <a href="{{ path('citizen_index') }}">Mon profil</a>
