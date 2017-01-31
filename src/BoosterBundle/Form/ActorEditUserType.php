@@ -48,6 +48,10 @@ class ActorEditUserType extends AbstractType {
                 'label'=>'adresse'
             ))
 
+            -> add('phone', null, array(
+                'label'=> 'Téléphone'
+            ))
+
             ->add('fileIdentity','file', [
                 "label" => "Photo"],
                 array( 'required'=>false));
