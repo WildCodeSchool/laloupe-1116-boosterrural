@@ -111,20 +111,22 @@ class ProfActorController extends Controller
         ));
     }
     /************************SHOW OFFER OR NEEDS *************************/
-    public function showOfferAction(Offer $offer)
+    public function showOfferAction(Offer $offer, User $user)
     {
 
         return $this->render('BoosterBundle:Actor:showOffer.html.twig', array(
             'offer' => $offer,
+            'user'=> $user
 
         ));
     }
 
-    public function showNeedAction(Needs $need)
+    public function showNeedAction(Needs $need, User $user)
     {
 
         return $this->render('BoosterBundle:Actor:showNeeds.html.twig', array(
             'need' => $need,
+            'user'=> $user
 
         ));
     }
