@@ -35,14 +35,12 @@
             </div>
         </section>
     </div>
-    <div>
-        <ul>
-            <li>
+    <div class="row">
+        <div class="col-xs-offset-3 col-xs-2">
                 <a href="{{ path('actor_listNeed') }}" class="btn center-block Button">Retour à la liste</a>
-            </li>
-            <li>
-                <a href="{{ path('booster_actor') }}" class="btn center-block Button">Consultation du profil</a>
-            </li>
-        </ul>
+         </div>
+        <div class="col-xs-offset-2 col-xs-2 col-xs-offset-3">
+                <a href="{{ path('booster_actor',{'id' : need.id})}}" class="btn center-block Button">Consultation du profil</a>
+        </div>
     </div>
 {% endblock %}
