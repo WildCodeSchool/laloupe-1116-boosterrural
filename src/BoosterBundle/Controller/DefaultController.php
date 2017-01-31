@@ -23,9 +23,9 @@ class DefaultController extends Controller
 
     }
 
-    public function actorAction()
+    public function actorAction(User $user)
     {
-        $user = $this->getUser();
+        /*$user = $this->getUser();*/
         $em = $this->getDoctrine()->getManager();
         $users = $em->getRepository('BoosterBundle:User')->findAll();
         $offers = $em->getRepository('BoosterBundle:Offer')->findBy(
@@ -42,9 +42,9 @@ class DefaultController extends Controller
         ));
     }
 
-    public function citizenAction()
+    public function citizenAction(User $user)
     {
-        $user = $this->getUser();
+        /*$user = $this->getUser();*/
         $em = $this->getDoctrine()->getManager();
         $users = $em->getRepository('BoosterBundle:User')->findAll();
         $offers = $em->getRepository('BoosterBundle:Offer')->findBy(
@@ -62,9 +62,9 @@ class DefaultController extends Controller
 
     }
 
-    public function mayorAction()
+    public function mayorAction(User $user)
     {
-        $user = $this->getUser();
+        /*$user = $this->getUser();*/
         $em = $this->getDoctrine()->getManager();
         $users = $em->getRepository('BoosterBundle:User')->findAll();
         $offers = $em->getRepository('BoosterBundle:Offer')->findBy(
