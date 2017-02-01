@@ -82,12 +82,12 @@
           <div class="col-sm-offset-1 col-sm-10 block1">
               <div class="row">
                   <section class="col-sm-6 col-xs-12 backWhite margeMobile secPad2 padShow2">
-                      <h3 class="title">Mes offres</h3>
+                      <h3 class="title">Ses offres</h3>
                       <hr class="ligneHr">
                       <h4 class="underTitle italTitre">Ce que je propose...</h4>
                       <div class="padShow">
                           {% if offers == NULL %}
-                              <p class="nobody">Pour créer une offre cliquez sur<span class="glyphicon glyphicon-plus btn-lg"></span ></p>
+                              <p class="nobody">Pas d'Offres</p>
                           {% else %}
                               {% for offer in offers %}
                                   <ul>
@@ -114,12 +114,12 @@
                   </section>
 
                   <section class="col-sm-6 col-xs-12 backWhite secPad3 padShow2">
-                      <h3 class="title">Mes besoins</h3>
+                      <h3 class="title">Ses besoins</h3>
                       <hr class="ligneHr">
                       <h4 class="underTitle italTitre">Ce dont j'ai besoin...</h4>
                       <div class="padShow">
                           {% if needs == NULL %}
-                              <p class="nobody">Pour créer un besoin cliquez sur<span class="glyphicon glyphicon-plus btn-lg"></span ></p>
+                              <p class="nobody">Pas de Besoins</p>
                           {% else %}
                               {% for needs in needs %}
                                   <ul>
