@@ -6,6 +6,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use BoosterBundle\Entity\User;
 use BoosterBundle\Entity\Needs;
+use FOS\UserBundle\Doctrine\UserManager;
+use Symfony\Component\DependencyInjection\ContainerInterface as Container;
 
 class DefaultController extends Controller
 {
@@ -83,11 +85,30 @@ class DefaultController extends Controller
 
     public function adminAction()
     {
-
-
-
         return $this->render('BoosterBundle:SuperAdmin:index.html.twig');
 
+    }
+
+    public function userAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $users = $em->getRepository('BoosterBundle:User')->findAll();
+
+        return $this->render('BoosterBundle:SuperAdmin:user.html.twig', array(
+            'users' => $users,
+        ));
+    }
+
+    public function deleteUserAction(User $user){
+
+        $em = $this->getDoctrine()->getManager();
+        $user->setEnabled(false);
+        $em->persist($user);
+        $em->flush($user);
+
+
+        return $this->redirectToRoute('booster_user');
 
 
     }

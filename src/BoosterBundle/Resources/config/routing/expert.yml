@@ -5,7 +5,7 @@ expert_index:
 
 expert_admin:
     path:     /admin
-    defaults: { _controller: "BoosterBundle:Partners:admin" }
+    defaults: { _controller: "BoosterBundle:Expert:admin" }
     methods:  GET
 
 expert_show:
@@ -19,7 +19,7 @@ expert_new:
     methods:  [GET, POST]
 
 expert_edit:
-    path:     /{id}/edit
+    path:     /edit/{id}
     defaults: { _controller: "BoosterBundle:Expert:edit" }
     methods:  [GET, POST]
 

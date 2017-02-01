@@ -15,14 +15,14 @@
                 <div class="row downMarg2">
 
                     <div class="col-xs-3">
-                        {% if partner.imageExpert != NULL %}
-                            <img src="{{ app.request.basepath }}/uploads/{{ partner.imageExpert }}" alt="photo_partenaire" class="img-responsive constraint">
+                        {% if expert.imageExperts != NULL %}
+                            <img src="{{ app.request.basepath }}/uploads/{{ expert.imageExperts }}" alt="photo expert" class="img-responsive constraint">
                         {% else %}
                             <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="photo_partenaire" class="img-responsive constraint">
                         {% endif %}
                     </div>
                     <div class="col-xs-9">
-                        <p>{{ partner.expertText }}</p>
+                        <p>{{ expert.expertText }}</p>
                     </div>
 
                 </div>

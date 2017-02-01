@@ -19,7 +19,7 @@ partners_new:
     methods:  [GET, POST]
 
 partners_edit:
-    path:     /{id}/edit
+    path:     /edit/{id}
     defaults: { _controller: "BoosterBundle:Partners:edit" }
     methods:  [GET, POST]
 

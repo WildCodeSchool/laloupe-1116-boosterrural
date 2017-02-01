@@ -27,6 +27,17 @@ class ExpertController extends Controller
         ));
     }
 
+    public function adminAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $experts = $em->getRepository('BoosterBundle:Expert')->findAll();
+
+        return $this->render('BoosterBundle:expert:admin.html.twig', array(
+            'experts' => $experts,
+        ));
+    }
+
     /**
      * Creates a new expert entity.
      *
@@ -57,11 +68,11 @@ class ExpertController extends Controller
      */
     public function showAction(Expert $expert)
     {
-        $deleteForm = $this->createDeleteForm($expert);
+
 
         return $this->render('BoosterBundle:expert:show.html.twig', array(
             'expert' => $expert,
-            'delete_form' => $deleteForm->createView(),
+
         ));
     }
 
@@ -71,7 +82,7 @@ class ExpertController extends Controller
      */
     public function editAction(Request $request, Expert $expert)
     {
-        $deleteForm = $this->createDeleteForm($expert);
+
         $editForm = $this->createForm('BoosterBundle\Form\ExpertType', $expert);
         $editForm->handleRequest($request);
 
@@ -84,7 +95,7 @@ class ExpertController extends Controller
         return $this->render('BoosterBundle:expert:edit.html.twig', array(
             'expert' => $expert,
             'form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+
         ));
     }
 

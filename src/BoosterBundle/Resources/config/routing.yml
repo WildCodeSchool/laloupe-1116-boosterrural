@@ -51,6 +51,17 @@ booster_admin:
     defaults: { _controller: BoosterBundle:Default:admin}
 
 
+booster_user:
+    path:     /admin/user
+    defaults: { _controller: BoosterBundle:Default:user}
+    methods: [GET, POST]
+
+booster_deleteUser:
+    path:     /admin/{id}/delete
+    defaults: { _controller: BoosterBundle:Default:deleteUser}
+    methods: [GET, POST]
+
+
 
 
 

@@ -68,11 +68,11 @@ class PartnersController extends Controller
      */
     public function showAction(Partners $partner)
     {
-        $deleteForm = $this->createDeleteForm($partner);
+
 
         return $this->render('BoosterBundle:partners:show.html.twig', array(
             'partner' => $partner,
-            'delete_form' => $deleteForm->createView(),
+
         ));
     }
 
@@ -82,7 +82,7 @@ class PartnersController extends Controller
      */
     public function editAction(Request $request, Partners $partner)
     {
-        $deleteForm = $this->createDeleteForm($partner);
+
         $editForm = $this->createForm('BoosterBundle\Form\PartnersType', $partner);
         $editForm->handleRequest($request);
 
@@ -95,7 +95,6 @@ class PartnersController extends Controller
         return $this->render('BoosterBundle:partners:edit.html.twig', array(
             'partner' => $partner,
             'form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
         ));
     }
 
