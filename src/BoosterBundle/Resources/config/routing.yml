@@ -58,7 +58,7 @@ booster_user:
 
 booster_deleteUser:
     path:     /admin/{id}/delete
-    defaults: { _controller: BoosterBundle:Default:deleteUser}
+    defaults: { _controller: BoosterBundle:Default:enabledUser}
     methods: [GET, POST]
 
 

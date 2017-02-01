@@ -100,7 +100,7 @@ class DefaultController extends Controller
         ));
     }
 
-    public function deleteUserAction(User $user){
+    public function enabledUserAction(User $user){
 
         $em = $this->getDoctrine()->getManager();
         $user->setEnabled(false);
