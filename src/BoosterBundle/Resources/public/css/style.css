@@ -739,19 +739,9 @@ textarea {
     padding-top: 5px;
 }
 
-
-/*.connectButton {
-    background-color: rgb(252, 183, 0);
-    border: 1px solid black;
-    color: black;
+.vCenter{
+    margin-top: 15vh;
 }
-.connectButton:hover{
-    background-color: rgb(252, 183, 0);
-}
-.inline {
-    display: inline-block;
-}*/
-
 /******************************************************/
 /************************ PAGE SHOW *******************/
 /******************************************************/
@@ -788,11 +778,6 @@ textarea {
     overflow-y: scroll;
 }
 
-/*@media all and (max-width: 992px) {*/
-    /*.navbar-form .form-control {*/
-        /*width: 20%;*/
-    /*}*/
-/*}*/
 
 @media all and (max-width: 768px) {
     .padShow2 {
@@ -866,8 +851,10 @@ textarea {
 /******************************************************/
 
 .help{
-    font-size: medium;
+    size: 500px;
 }
+
+
 
 /******************************************************/
 /************************ Pictures *******************/
@@ -881,6 +868,10 @@ textarea {
 
 .ulBorder{
    margin-top: 53%;
+}
+
+.wordMayor{
+    margin-left: 5%;
 }
 
 
