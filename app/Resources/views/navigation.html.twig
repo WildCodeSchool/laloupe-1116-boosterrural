@@ -23,29 +23,55 @@
                 <li class="dropdown liNav2"> <!--modif-->
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}
                     </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                {% if is_granted('ROLE_MAYOR') %}
-                                    <a href="{{ path('mayor_index') }}">Mon profil</a>
-                                {% elseif is_granted('ROLE_CITIZEN') %}
-                                    <a href="{{ path('citizen_index') }}">Mon profil</a>
-                                {% else %}
-                                    <a href="{{ path('actor_index') }}">Mon profil</a>
-                                {% endif %}
+                    <ul class="dropdown-menu">
+                        <li>
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <a href="{{ path('booster_admin') }}">Mon profil</a>
+                            {% elseif is_granted('ROLE_MAYOR') %}
+                                <a href="{{ path('mayor_index') }}">Mon profil</a>
+                            {% elseif is_granted('ROLE_CITIZEN') %}
+                                <a href="{{ path('citizen_index') }}">Mon profil</a>
+                            {% else %}
+                                <a href="{{ path('actor_index') }}">Mon profil</a>
+                            {% endif %}
 
-                            </li>
-                            <li>
-                                <a href="{{ path('fos_user_security_logout') }}">
-                                    {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ path('fos_user_registration_confirmed') }}">Aide</a>
-                            </li>
-                        </ul>
+                        </li>
+
+                        <li>
+                            <a href="{{ path('fos_user_security_logout') }}">
+                                {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('fos_user_registration_confirmed') }}">Aide</a>
+                        </li>
+                    </ul>
                 </li>
 
+                {% if is_granted('ROLE_ADMIN') %}
+                <li class="liNav2"> <!--modif-->
+                    <a href="{{ path('booster_user') }}" ><span class="glyphicon glyphicon-picture"></span> Supprimer un utilisateur </a>
+                </li>
 
+                <li class="dropdown liNav2"> <!--modif-->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-comment"></span> Partenaires</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ path('partners_new') }}">Ajouter</a></li>
+                        <li><a href="{{ path('partners_admin') }}">Modifier/Supprimer</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="dropdown liNav2"> <!--modif-->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-comment"></span> Experts</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ path('expert_new') }}">Ajouter</a></li>
+                        <li><a href="{{ path('expert_admin') }}">Modifier/Supprimer</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+            {% else %}
                 <li class="liNav2"> <!--modif-->
                     <a href="{{ path('mayor_list') }}" ><span class="glyphicon glyphicon-picture"></span> Villages </a>
                 </li>
@@ -67,9 +93,10 @@
                         <li><a href="{{ path('citizen_listNeed') }}">Citoyens</a></li>
                     </ul>
                 </li>
-            </ul>
+                </ul>
+            {% endif %}
 
-        {% else %}
+            {% else %}
             <li class="dropdown liNav1">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-log-in"></span> S'inscrire</a>
                 <ul class="dropdown-menu">

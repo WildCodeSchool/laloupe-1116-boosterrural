@@ -27,6 +27,17 @@ class PartnersController extends Controller
         ));
     }
 
+    public function adminAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $partners = $em->getRepository('BoosterBundle:Partners')->findAll();
+
+        return $this->render('BoosterBundle:partners:admin.html.twig', array(
+            'partners' => $partners,
+        ));
+    }
+
     /**
      * Creates a new partner entity.
      *
@@ -57,11 +68,11 @@ class PartnersController extends Controller
      */
     public function showAction(Partners $partner)
     {
-        $deleteForm = $this->createDeleteForm($partner);
+
 
         return $this->render('BoosterBundle:partners:show.html.twig', array(
             'partner' => $partner,
-            'delete_form' => $deleteForm->createView(),
+
         ));
     }
 
@@ -71,7 +82,7 @@ class PartnersController extends Controller
      */
     public function editAction(Request $request, Partners $partner)
     {
-        $deleteForm = $this->createDeleteForm($partner);
+
         $editForm = $this->createForm('BoosterBundle\Form\PartnersType', $partner);
         $editForm->handleRequest($request);
 
@@ -84,7 +95,6 @@ class PartnersController extends Controller
         return $this->render('BoosterBundle:partners:edit.html.twig', array(
             'partner' => $partner,
             'form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
         ));
     }
 
@@ -92,33 +102,16 @@ class PartnersController extends Controller
      * Deletes a partner entity.
      *
      */
-    public function deleteAction(Request $request, Partners $partner)
-    {
-        $form = $this->createDeleteForm($partner);
-        $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($partner);
-            $em->flush($partner);
-        }
 
-        return $this->redirectToRoute('partners_index');
-    }
+    public function deleteAction(Partners $partner){
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($partner);
+        $em->flush($partner);
 
-    /**
-     * Creates a form to delete a partner entity.
-     *
-     * @param Partners $partner The partner entity
-     *
-     * @return \Symfony\Component\Form\Form The form
-     */
-    private function createDeleteForm(Partners $partner)
-    {
-        return $this->createFormBuilder()
-            ->setAction($this->generateUrl('partners_delete', array('id' => $partner->getId())))
-            ->setMethod('DELETE')
-            ->getForm()
-        ;
+
+        return $this->redirectToRoute('partners_admin');
+
+
     }
 }

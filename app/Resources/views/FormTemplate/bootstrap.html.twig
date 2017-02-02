@@ -17,7 +17,7 @@
             {%- endif -%}
         {%- endif -%}
 
-        <label{% for attrname, attrvalue in label_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %} class="col-xs-4 col-form-label">{{ translation_domain is same as(false) ? label : label|trans({}, translation_domain) }}</label>
+        <label{% for attrname, attrvalue in label_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %} class="col-xs-6 col-form-label">{{ translation_domain is same as(false) ? label : label|trans({}, translation_domain) }}</label>
     {%- endif -%}
 {%- endblock form_label -%}
 

@@ -7,9 +7,11 @@
                 <div class="col-sm-offset-3 col-sm-6">
                     <h1>Expert</h1>
                     <p style="text-align: justify">
-
-                        <img src="{{ app.request.basepath }}/uploads/{{ expert.imageExperts }}" alt="photo_expert" class="img-responsive" style="margin: 20px auto">
-
+                        {% if expert.imageExperts != NULL %}
+                            <img src="{{ app.request.basepath }}/uploads/{{ expert.imageExperts }}" alt="photo_expert" class="img-responsive" style="margin: 20px auto">
+                        {% else %}
+                            <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="photo_expert" class="img-responsive" style="margin: 20px auto">
+                        {% endif %}
                         {{ expert.expertText }}
 
                         <a href="{{ path('expert_show', { 'id': expert.id }) }}" class="btn center-block">{{ expert.id }}</a>

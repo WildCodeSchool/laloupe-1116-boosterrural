@@ -46,6 +46,21 @@ booster_registerActor:
     path:     /actor/register
     defaults: { _controller: BoosterBundle:Registration:actorRegister}
 
+booster_admin:
+    path:     /admin/
+    defaults: { _controller: BoosterBundle:Default:admin}
+
+
+booster_user:
+    path:     /admin/user
+    defaults: { _controller: BoosterBundle:Default:user}
+    methods: [GET, POST]
+
+booster_deleteUser:
+    path:     /admin/{id}/delete
+    defaults: { _controller: BoosterBundle:Default:enabledUser}
+    methods: [GET, POST]
+
 
 
 

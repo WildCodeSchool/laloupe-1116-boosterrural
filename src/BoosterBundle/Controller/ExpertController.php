@@ -27,6 +27,17 @@ class ExpertController extends Controller
         ));
     }
 
+    public function adminAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $experts = $em->getRepository('BoosterBundle:Expert')->findAll();
+
+        return $this->render('BoosterBundle:expert:admin.html.twig', array(
+            'experts' => $experts,
+        ));
+    }
+
     /**
      * Creates a new expert entity.
      *
@@ -57,11 +68,11 @@ class ExpertController extends Controller
      */
     public function showAction(Expert $expert)
     {
-        $deleteForm = $this->createDeleteForm($expert);
+
 
         return $this->render('BoosterBundle:expert:show.html.twig', array(
             'expert' => $expert,
-            'delete_form' => $deleteForm->createView(),
+
         ));
     }
 
@@ -71,7 +82,7 @@ class ExpertController extends Controller
      */
     public function editAction(Request $request, Expert $expert)
     {
-        $deleteForm = $this->createDeleteForm($expert);
+
         $editForm = $this->createForm('BoosterBundle\Form\ExpertType', $expert);
         $editForm->handleRequest($request);
 
@@ -84,7 +95,7 @@ class ExpertController extends Controller
         return $this->render('BoosterBundle:expert:edit.html.twig', array(
             'expert' => $expert,
             'form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+
         ));
     }
 
@@ -92,33 +103,14 @@ class ExpertController extends Controller
      * Deletes a expert entity.
      *
      */
-    public function deleteAction(Request $request, Expert $expert)
-    {
-        $form = $this->createDeleteForm($expert);
-        $form->handleRequest($request);
+    public function deleteAction(Expert $expert){
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($expert);
+        $em->flush($expert);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($expert);
-            $em->flush($expert);
-        }
 
-        return $this->redirectToRoute('expert_index');
-    }
+        return $this->redirectToRoute('expert_admin');
 
-    /**
-     * Creates a form to delete a expert entity.
-     *
-     * @param Expert $expert The expert entity
-     *
-     * @return \Symfony\Component\Form\Form The form
-     */
-    private function createDeleteForm(Expert $expert)
-    {
-        return $this->createFormBuilder()
-            ->setAction($this->generateUrl('expert_delete', array('id' => $expert->getId())))
-            ->setMethod('DELETE')
-            ->getForm()
-        ;
+
     }
 }

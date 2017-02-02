@@ -14,7 +14,9 @@ class ExpertType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('expertText')
+            ->add('expertText', null, array (
+                'label'=> 'Description de l\'expert'
+            ))
 
             ->add('fileExperts', 'file', array('required' => false,
                 'label'=>'Photo'

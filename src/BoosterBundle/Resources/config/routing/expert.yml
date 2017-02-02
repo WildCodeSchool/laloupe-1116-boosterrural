@@ -3,6 +3,11 @@ expert_index:
     defaults: { _controller: "BoosterBundle:Expert:index" }
     methods:  GET
 
+expert_admin:
+    path:     /admin
+    defaults: { _controller: "BoosterBundle:Expert:admin" }
+    methods:  GET
+
 expert_show:
     path:     /{id}/show
     defaults: { _controller: "BoosterBundle:Expert:show" }
@@ -14,11 +19,11 @@ expert_new:
     methods:  [GET, POST]
 
 expert_edit:
-    path:     /{id}/edit
+    path:     /edit/{id}
     defaults: { _controller: "BoosterBundle:Expert:edit" }
     methods:  [GET, POST]
 
 expert_delete:
     path:     /{id}/delete
     defaults: { _controller: "BoosterBundle:Expert:delete" }
-    methods:  DELETE
+    methods:  [GET, POST]

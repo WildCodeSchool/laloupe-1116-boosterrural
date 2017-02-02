@@ -7,16 +7,18 @@
                 <div class="col-sm-offset-3 col-sm-6">
                     <h1>Partenaire</h1>
                     <p style="text-align: justify">
-
-                        <img src="{{ app.request.basepath }}/uploads/{{ partner.imagePartners }}" alt="photo_partenaire" class="img-responsive" style="margin: 20px auto">
-
+                        {% if partner.imagePartners != NULL %}
+                            <img src="{{ app.request.basepath }}/uploads/{{ partner.imagePartners }}" alt="photo_partenaire" class="img-responsive" style="margin: 20px auto">
+                        {% else %}
+                            <img src="{{ asset('bundles/booster/img/nophoto.png') }}" alt="photo_partenaire" class="img-responsive" style="margin: 20px auto">
+                        {% endif %}
                         {{ partner.partnerText }}
 
-                        <a href="{{ path('partners_show', { 'id': partner.id }) }}" class="btn center-block">{{ partner.id }}</a>
+                        <a href="{{ path('partners_edit', { 'id': partner.id }) }}" class="btn center-block">
+                            <button type="submit" class="Button">Modifier</button></a>
 
-                        <a href="{{ path('partners_edit', { 'id': partner.id }) }}" class="btn center-block">Editer</a>
-
-                        <a href="{{ path('partners_index') }}" class="btn center-block">Retour à la liste</a>
+                        <a href="{{ path('partners_index') }}" class="btn center-block">
+                            <button type="submit">Retour à la liste</button></a>
 
                         <a href="{{ path('partners_new') }}" class="btn center-block">Créer un nouveau partenaire</a>
                     </p>
