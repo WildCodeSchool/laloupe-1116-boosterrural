@@ -18,9 +18,15 @@ Installation du projet:
  Installer le projet:
     
     git clone git@github.com:WildCodeSchool/laloupe-1116-boosterrural.git
-    cd laloupe-1116-boosterrural
+   
+    cd laloupe-1116-boosterrural 
+    
     composer install
-    php app/console doctrine:database:create
+   
+    php app/console doctrine:database:create
+    
     php app/console doctrine:schema:update --force (to update the changes)
+    
     php app/console asset:install (to update the CSS)
+    
     php app/console cache:clear 
