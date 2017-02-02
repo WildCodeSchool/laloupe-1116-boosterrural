@@ -106,8 +106,8 @@ class PartnersController extends Controller
 
     public function deleteAction(Partners $partner){
         $em = $this->getDoctrine()->getManager();
-        $em->remove($partner);
-        $em->flush($partner);
+            $em->remove($partner);
+            $em->flush($partner);
 
 
         return $this->redirectToRoute('partners_admin');

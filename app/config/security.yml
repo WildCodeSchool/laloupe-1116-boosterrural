@@ -44,5 +44,5 @@ security:
         - { path: ^/partners, role: ROLE_ADMIN }
         - { path: ^/expert, role: ROLE_ADMIN }
         - { path: ^/admin/user, role: ROLE_ADMIN }
-        - { path: ^/admin/{id}/delete, role: ROLE_ADMIN }
+
 
