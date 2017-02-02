@@ -779,6 +779,26 @@ textarea {
 }
 
 
+@media all and (max-width: 768px) {
+    .padShow2 {
+        height: auto;
+    }
+
+    .padShow {
+        height: 70vh;
+    }
+}
+
+@media all and (max-height: 600px) {
+    .padShow2 {
+        height: auto;
+    }
+
+    .padShow {
+        height: 70vh;
+    }
+}
+
 .listIndex {
     padding: 2%;
     height: 40vh;
@@ -831,13 +851,10 @@ textarea {
 /******************************************************/
 
 .help{
-    font-size: medium;
+    size: 500px;
 }
 
-.backColor{
-    background-color: white;
-    margin: 5% 7% 7% 7%;
-}
+
 
 /******************************************************/
 /************************ Pictures *******************/
