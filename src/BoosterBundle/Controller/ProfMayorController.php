@@ -107,12 +107,12 @@ class ProfMayorController extends Controller
 
 
     /************************SHOW OFFER OR NEEDS *************************/
-    public function showOfferAction(Offer $offer, User $user)
+    public function showOfferAction(Offer $offer)
     {
 
         return $this->render('BoosterBundle:Mayor:showOffer.html.twig', array(
             'offer' => $offer,
-            'user'=>$user
+            'user'=>$offer->getUsers()
 
         ));
     }

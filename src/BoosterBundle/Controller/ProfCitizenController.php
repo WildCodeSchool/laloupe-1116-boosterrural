@@ -105,12 +105,12 @@ class ProfCitizenController extends Controller
     }
 
     /*****************SHOW OFFER AND NEEDS ***************************************************/
-    public function showOfferAction(Offer $offer, User $user)
+    public function showOfferAction(Offer $offer)
     {
 
         return $this->render('BoosterBundle:Citizen:showOffer.html.twig', array(
             'offer' => $offer,
-            'user' => $user
+            'user' => $offer->getUsers()
 
         ));
     }

@@ -45,7 +45,9 @@ Notre commune premier village Etape Numérique de France, souhaite vous apporter
 Alain Astruc, Maire d’Aumont-Aubrac.');
         $mayor1->setResident('1146');
         $mayor1->setPhone('0466428002');
+        $mayor1->setRoles(["ROLE_MAYOR"]);
         $userManager->updateUser($mayor1);
+        $this->addReference('mayor', $mayor1);
 
         //Create a new actor
         $actor1 = $userManager->createUser();
@@ -59,21 +61,25 @@ Alain Astruc, Maire d’Aumont-Aubrac.');
         $actor1->setEmail('boucherie@mail.fr');
         $actor1->setEnabled('1');
         $actor1->setUsername('Gaillard');
-        $actor1->setPassword('123');
+        $actor1->setPlainPassword('123');
         $actor1->setDescription('Boucherie familiale depuis 1965 reputée');
         $actor1->setPhone('0466428034');
-        $userManager->updateUser($mayor1);
+        $actor1->setRoles(["ROLE_ACTOR"]);
+        $userManager->updateUser($actor1);
+        $this->addReference('actor', $actor1);
 
 
         //Create a new citizen
         $citizen1 = new User();
         $citizen1->setLastname('Albert Pomero');
         $citizen1->setEmail('pomero@mail.fr');
-        $citizen1->setPassword('123');
+        $citizen1->setPlainPassword('123');
         $citizen1->setEnabled('1');
         $citizen1->setUsername('Albert');
         $citizen1->setPhone('0466428034');
-        $userManager->updateUser($mayor1);
+        $citizen1->setRoles(["ROLE_CITIZEN"]);
+        $userManager->updateUser($citizen1);
+        $this->addReference('citizen', $citizen1);
     }
 
     public function getOrder()
