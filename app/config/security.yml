@@ -40,9 +40,9 @@ security:
         - { path: ^/mayor/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/citizen/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/admin/, role: ROLE_ADMIN }
-        - { path: ^/partners, role: ROLE_ADMIN }
-        - { path: ^/expert, role: ROLE_ADMIN }
-        - { path: ^/admin/user, role: ROLE_ADMIN }
+        - { path: ^/admin/, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/partners, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/expert, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin/user, role: IS_AUTHENTICATED_ANONYMOUSLY }
 
 

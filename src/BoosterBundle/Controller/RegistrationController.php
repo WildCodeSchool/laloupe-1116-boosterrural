@@ -23,7 +23,9 @@ use BoosterBundle\Form\MayorRegistrationType;
 use BoosterBundle\Form\CitizenRegistrationType;
 use BoosterBundle\Form\ActorRegistrationType;
 class RegistrationController extends BaseController
-{
+{    public function __construct()
+    {
+    }
     public function mayorRegisterAction(Request $request)
     {
         /** @var $formFactory FactoryInterface */
