@@ -80,6 +80,27 @@ Alain Astruc, Maire d’Aumont-Aubrac.');
         $citizen1->setRoles(["ROLE_CITIZEN"]);
         $userManager->updateUser($citizen1);
         $this->addReference('citizen', $citizen1);
+
+
+
+        //Create a new actor
+        $actor1 = $userManager->createUser();
+        $actor1->setOrganization('Booster Admin');
+        $actor1->setLastname('Booster');
+        $actor1->setStatusActor('Admin');
+        $actor1->setCategory('Agriculture/Agroalimentaire');
+        $actor1->setTown('Aumont-Aubrac');
+        $actor1->setCp('48130');
+        $actor1->setAddress(' Le Bouchet');
+        $actor1->setEmail('admin@mail.fr');
+        $actor1->setEnabled('1');
+        $actor1->setUsername('Admin');
+        $actor1->setPlainPassword('123');
+        $actor1->setDescription('Admin de la plateforme');
+        $actor1->setPhone('0699999999');
+        $actor1->setRoles(["ROLE_SUPER_ADMIN"]);
+        $userManager->updateUser($actor1);
+        $this->addReference('admin', $actor1);
     }
 
     public function getOrder()
