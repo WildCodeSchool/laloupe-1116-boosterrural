@@ -78,7 +78,7 @@ fos_user:
            type: boosterrural_citizenregister
            type: booster_actor_registration
         confirmation:
-            enabled: true
+            enabled: false
     from_email:
         address: "%mailer_user%"
         sender_name: "%mailer_user%"
