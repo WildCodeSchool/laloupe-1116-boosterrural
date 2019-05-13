@@ -18,28 +18,33 @@
 
 <body>
 
-{#<div class="row text-center">#}
-    {#<div class="col-md-3 col-xs-12">#}
-        {#<form action="{{ path("fos_user_security_check") }}" method="post">#}
-            {#<input style="display: none" type="text" id="username" name="_username" value="admin@mail.fr" required="required"/>#}
-            {#<input style="display: none"  type="password" id="password" name="_password" value="123" required="required"/>#}
-            {#<input type="submit" id="_submit" name="_submit" value="Se connecter en admin" class="btn center-block Button"/>#}
-        {#</form>#}
-    {#</div>#}
-    {#<div class="col-md-3 col-xs-12">#}
-        {#<form action="{{ path("fos_user_security_check") }}" method="post">#}
-            {#<input style="display: none" type="text" id="username" name="_username" value="aumont@mail.fr" required="required"/>#}
-            {#<input style="display: none"  type="password" id="password" name="_password" value="123" required="required"/>#}
-            {#<input type="submit" id="_submit" name="_submit" value="Se connecter en maire" class="btn center-block Button"/>#}
-        {#</form>#}
-    {#</div>#}
-    {#<div class="col-md-3 col-xs-12">#}
-        {#<form action="{{ path("fos_user_security_check") }}" method="post">#}
-            {#<input style="display: none" type="text" id="username" name="_username" value="boucherie@mail.fr" required="required"/>#}
-            {#<input style="display: none"  type="password" id="password" name="_password" value="123" required="required"/>#}
-            {#<input type="submit" id="_submit" name="_submit" value="Se connecter en acteur" class="btn center-block Button"/>#}
-        {#</form>#}
-    {#</div>#}
+<div class="row text-center">
+    <div class="col-md-3 col-xs-12">
+        <form action="{{ path("fos_user_security_check") }}" method="post">
+            <input style="display: none" type="text" id="username" name="_username" value="admin@mail.fr" required="required"/>
+            <input style="display: none"  type="password" id="password" name="_password" value="123" required="required"/>
+            <input type="submit" id="_submit" name="_submit" value="Se connecter en admin" class="btn center-block Button"/>
+        </form>
+    </div>
+    <div class="col-md-3 col-xs-12">
+        <form action="{{ path("fos_user_security_check") }}" method="post">
+            <input style="display: none" type="text" id="username" name="_username" value="aumont@mail.fr" required="required"/>
+            <input style="display: none"  type="password" id="password" name="_password" value="123" required="required"/>
+            <input type="submit" id="_submit" name="_submit" value="Se connecter en maire" class="btn center-block Button"/>
+        </form>
+    </div>
+    <div class="col-md-3 col-xs-12">
+        <form action="{{ path("fos_user_security_check") }}" method="post">
+            <input style="display: none" type="text" id="username" name="_username" value="boucherie@mail.fr" required="required"/>
+            <input style="display: none"  type="password" id="password" name="_password" value="123" required="required"/>
+            <input type="submit" id="_submit" name="_submit" value="Se connecter en acteur" class="btn center-block Button"/>
+        </form>
+    </div>
+    <div class="col-md-3 col-xs-12">
+        <a class="btn center-block Button" style="width: 50%" href="{{ path('fos_user_security_logout') }}">
+            {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+        </a>
+    </div>
     {#<div class="col-md-3 col-xs-12">#}
         {#<form action="{{ path("fos_user_security_check") }}" method="post">#}
             {#<input style="display: none" type="text" id="username" name="_username" value="pomero@mail.fr" required="required"/>#}
@@ -47,7 +52,7 @@
             {#<input type="submit" id="_submit" name="_submit" value="Se connecter en citoyen" class="btn center-block Button"/>#}
         {#</form>#}
     {#</div>#}
-{#</div>#}
+</div>
 <!-- header -->
 <header>
     <!-- navbar -->
